@@ -55,7 +55,7 @@ class BoostrapShortcodes {
     add_shortcode('badge', array( $this, 'bs_badge' ));
     add_shortcode('icon', array( $this, 'bs_icon' ));
     add_shortcode('icon_white', array( $this, 'bs_icon_white' ));
-    add_shortcode('table', array( $this, 'simple_table' ));
+    add_shortcode('table', array( $this, 'bs_table' ));
     add_shortcode('collapsibles', array( $this, 'bs_collapsibles' ));
     add_shortcode('collapse', array( $this, 'bs_collapse' ));
     add_shortcode('well', array( $this, 'bs_well' ));
@@ -250,7 +250,7 @@ class BoostrapShortcodes {
     * @since 1.0
     * 
     *-------------------------------------------------------------------------------------*/
-  function simple_table( $atts ) {
+  function bs_table( $atts ) {
       extract( shortcode_atts( array(
           'cols' => 'none',
           'data' => 'none',
