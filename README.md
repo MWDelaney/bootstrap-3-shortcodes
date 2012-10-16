@@ -8,6 +8,9 @@ This plugin won't do anything if you don't have website built with the [Twitter 
 
 The plugin is tested to work with ```Bootstrap version 2.1.1``` and ```WordPress 3.4.2```.
 
+## Installation
+To install this plugin, just download it, and drop the folder in the ```wp-content/plugins/```. Then login to WordPress and activate the plugin.
+
 ## Supported shortcodes
 The plugin doesn't support all Bootstrap elements yet, but most of them.
 
