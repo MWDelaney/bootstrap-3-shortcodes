@@ -1,11 +1,13 @@
 <?php
 /*
 Plugin Name: Bootstrap Shortcodes
-Plugin URI: http://wp-snippets.com/freebies/bootstrap-shortcodes
+Plugin URI: http://wp-snippets.com/freebies/bootstrap-shortcodes or https://github.com/filipstefansson/bootstrap-shortcodes
 Description: The plugin adds a shortcodes for all Bootstrap elements.
 Version: 1.0
 Author: Filip Stefansson
 Author URI: http://wp-snippets.com
+Modified by: TwItCh AKA Dustin Crisman twitch@twitch.es
+Modified URI: https://github.com/TwItChDW/bootstrap-shortcodes/
 License: GPL2
 */
 
@@ -72,15 +74,16 @@ class BoostrapShortcodes {
     *
     * @author Filip Stefansson
     * @since 1.0
-    * 
+    * //DW mod added xclass var
     *-------------------------------------------------------------------------------------*/
   function bs_button($atts, $content = null) {
      extract(shortcode_atts(array(
         "type" => '',
         "size" => '',
-        "link" => ''
+        "link" => '',
+        "xclass" => ''
      ), $atts));
-     return '<a href="' . $link . '" class="btn btn-' . $type . ' btn-' . $size . '">' . do_shortcode( $content ) . '</a>';
+     return '<a href="' . $link . '" class="btn btn-' . $type . ' btn-' . $size . ' ' . $xclass . '">' . do_shortcode( $content ) . '</a>';
   }
   
 
@@ -207,14 +210,15 @@ class BoostrapShortcodes {
     *
     * @author Filip Stefansson
     * @since 1.0
-    * 
+    *  //DW Mod to add icon sizing
     *-------------------------------------------------------------------------------------*/
   function bs_icon( $atts, $content = null ) {
     extract(shortcode_atts(array(
-      "type" => 'type'
+      "type" => 'type',
+      "size" => 'normal',
     ), $atts));
 
-    return '<i class="icon icon-' . $type . '"></i>';
+    return '<i class="icon icon-' . $type . ' icon-' . $size .'"></i>'; 
 
   }
   
@@ -304,7 +308,8 @@ class BoostrapShortcodes {
     *
     * @author Filip Stefansson
     * @since 1.0
-    * 
+    * Modified by TwItCh twitch@designweapon.com
+    *Now acts a whole nav/tab/pill shortcode solution!
     *-------------------------------------------------------------------------------------*/
   function bs_tabs( $atts, $content = null ) {
     
@@ -312,9 +317,12 @@ class BoostrapShortcodes {
       $GLOBALS['tabs_count']++;
     else
       $GLOBALS['tabs_count'] = 0;
-
-    $defaults = array();
-    extract( shortcode_atts( $defaults, $atts ) );
+    extract( shortcode_atts( array(
+    'tabtype' => 'nav-tabs',
+    'tabdirection' => '',
+  ), $atts ) );
+   //DW $defaults = array('tabtype' => 'bla', 'tabdirection' => 'one');
+   //DW extract( shortcode_atts( $defaults, array(), $atts ) );
     
     // Extract the tab titles for use in the tab widget.
     preg_match_all( '/tab title="([^\"]+)"/i', $content, $matches, PREG_OFFSET_CAPTURE );
@@ -325,7 +333,7 @@ class BoostrapShortcodes {
     $output = '';
     
     if( count($tab_titles) ){
-      $output .= '<ul class="nav nav-tabs" id="custom-tabs-'. rand(1, 100) .'">';
+      $output .= '<div class="tabbable '.$tabdirection.'"><ul class="nav '. $tabtype .'" id="custom-tabs-'. rand(1, 100) .'">';
       
       $i = 0;
       foreach( $tab_titles as $tab ){
@@ -341,7 +349,7 @@ class BoostrapShortcodes {
         $output .= '</ul>';
         $output .= '<div class="tab-content">';
         $output .= do_shortcode( $content );
-        $output .= '</div>';
+        $output .= '</div></div>';
     } else {
       $output .= do_shortcode( $content );
     }
