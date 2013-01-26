@@ -313,7 +313,7 @@ class BoostrapShortcodes {
     else
       $GLOBALS['tabs_count'] = 0;
 
-    $defaults = array();
+    $defaults = array('class' => 'nav-tabs');
     extract( shortcode_atts( $defaults, $atts ) );
     
     // Extract the tab titles for use in the tab widget.
@@ -325,7 +325,7 @@ class BoostrapShortcodes {
     $output = '';
     
     if( count($tab_titles) ){
-      $output .= '<ul class="nav nav-tabs" id="custom-tabs-'. rand(1, 100) .'">';
+      $output .= '<ul class="nav ' . $class . '" id="custom-tabs-'. rand(1, 100) .'">';
       
       $i = 0;
       foreach( $tab_titles as $tab ){
