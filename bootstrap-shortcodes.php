@@ -333,7 +333,7 @@ class BoostrapShortcodes {
     $output = '';
     
     if( count($tab_titles) ){
-      $output .= '<div class="tabbable '.$tabdirection.'"><ul class="nav '. $tabtype .'" id="custom-tabs-'. rand(1, 100) .'">';
+      $output .= '<div class="tabbable tabs-'.$tabdirection.'"><ul class="nav '. $tabtype .'" id="custom-tabs-'. rand(1, 100) .'">';
       
       $i = 0;
       foreach( $tab_titles as $tab ){
