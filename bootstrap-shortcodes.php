@@ -101,7 +101,7 @@ class BoostrapShortcodes {
         "type" => '',
         "close" => true
      ), $atts));
-     return '<div class="alert alert-' . $type . '">' . do_shortcode( $content ) . '<button type="button" class="close" data-dismiss="alert">&times;</button></div>';
+     return '<div class="alert alert-' . $type . '"><button type="button" class="close" data-dismiss="alert">&times;</button>' . do_shortcode( $content ) . '</div>';
   }
   
 
