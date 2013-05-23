@@ -58,7 +58,7 @@ You use the shortcodes just like you would with any other shortcode, with the ex
 	  [span size="6"]
 	    …
 	  [/span]
-	  [span size="6"]
+	  [span size="4" offset="2"]
 	    …
 	  [/span]
 	[/row]
