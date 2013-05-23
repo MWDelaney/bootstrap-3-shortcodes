@@ -121,7 +121,7 @@ class BoostrapShortcodes {
         "size" => '',
         "link" => ''
      ), $atts));
-     return '<pre><code>' . do_shortcode( $content ) . '</code></pre>';
+     return '<pre><code>' . $content . '</code></pre>';
   }
   
 
