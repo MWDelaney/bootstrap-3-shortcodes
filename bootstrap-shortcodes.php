@@ -63,6 +63,7 @@ class BoostrapShortcodes {
     add_shortcode('well', array( $this, 'bs_well' ));
     add_shortcode('tabs', array( $this, 'bs_tabs' ));
     add_shortcode('tab', array( $this, 'bs_tab' ));
+    add_shortcode('tooltip', array( $this, 'bs_tooltip' ));
 
   }
 
@@ -468,6 +469,21 @@ class BoostrapShortcodes {
       </div>
     </div>
     ';
+  }
+
+  function bs_tooltip( $atts, $content = null ) {
+    
+    $defaults = array( 
+	'title' => '', 
+	'placement' => 'top',
+	'animation' => 'true',
+	'html' => 'false'
+    );
+    extract( shortcode_atts( $defaults, $atts ) );
+
+    wp_enqueue_script( 'bootsrap-shortcodes-tooltip', plugins_url( 'js/bootstrap-shortcodes-tooltip.js', __FILE__ ), array( 'jquery' ), false, true );
+
+    return '<a href="#" class="bs-tooltip" data-toggle="tooltip" title="' . $title . '" data-placement="' . $placement . '" data-animation="' . $animation . '" data-html="' . $html . '">' . $content . '</a>';
   }
 
 }
