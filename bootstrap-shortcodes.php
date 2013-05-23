@@ -78,12 +78,19 @@ class BoostrapShortcodes {
     *-------------------------------------------------------------------------------------*/
   function bs_button($atts, $content = null) {
      extract(shortcode_atts(array(
-        "type" => '',
-        "size" => '',
+        "type" => false,
+        "size" => false,
         "link" => '',
-        "xclass" => ''
+        "xclass" => false
      ), $atts));
-     return '<a href="' . $link . '" class="btn btn-' . $type . ' btn-' . $size . ' ' . $xclass . '">' . do_shortcode( $content ) . '</a>';
+
+     $return  =  '<a href="' . $link . '" class="btn';
+     $return .= ($type) ? ' btn-' . $type : '';
+     $return .= ($size) ? ' btn-' . $size : '';
+     $return .= ($xclass) ? ' ' . $xclass : '';
+     $return .= '">' . do_shortcode( $content ) . '</a>';
+
+     return $return;
   }
   
 
