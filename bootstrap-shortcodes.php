@@ -4,7 +4,7 @@ Plugin Name: Bootstrap Shortcodes
 Plugin URI: http://wp-snippets.com/freebies/bootstrap-shortcodes or https://github.com/filipstefansson/bootstrap-shortcodes
 Description: The plugin adds a shortcodes for all Bootstrap elements.
 Version: 1.0
-Author: Filip Stefansson
+Author: Filip Stefansson and Michael W. Delaney
 Author URI: http://wp-snippets.com
 Modified by: TwItCh AKA Dustin Crisman twitch@twitch.es
 Modified URI: https://github.com/TwItChDW/bootstrap-shortcodes/
@@ -63,6 +63,7 @@ class BoostrapShortcodes {
     add_shortcode('well', array( $this, 'bs_well' ));
     add_shortcode('tabs', array( $this, 'bs_tabs' ));
     add_shortcode('tab', array( $this, 'bs_tab' ));
+    add_shortcode('lead', array( $this, 'bs_lead' ));
 
   }
 
@@ -125,6 +126,22 @@ class BoostrapShortcodes {
   }
   
 
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_lead
+    *
+    * @author Michael W. Delaney
+    * @since 1.0
+    * 
+    *-------------------------------------------------------------------------------------*/
+  function bs_lead( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+      "xclass" => ''
+    ), $atts));
+
+    return '<p class="lead ' . $xclass . '">' . do_shortcode( $content ) . '</p>';
+
+  }
 
 
   /*--------------------------------------------------------------------------------------
@@ -465,7 +482,7 @@ class BoostrapShortcodes {
       </div>
       <div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="accordion-body collapse ' . $state . '">
         <div class="accordion-inner">
-          ' . $content . ' 
+          ' . do_shortcode($content) . ' 
         </div>
       </div>
     </div>
