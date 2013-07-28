@@ -327,18 +327,10 @@ class BoostrapShortcodes {
       $GLOBALS['tabs_count']++;
     else
       $GLOBALS['tabs_count'] = 0;
-<<<<<<< HEAD
-    extract( shortcode_atts( array(
-    'tabtype' => 'nav-tabs',
-    'tabdirection' => '',
-  ), $atts ) );
-   //DW $defaults = array('tabtype' => 'bla', 'tabdirection' => 'one');
-   //DW extract( shortcode_atts( $defaults, array(), $atts ) );
-=======
 
     $defaults = array('class' => 'nav-tabs');
     extract( shortcode_atts( $defaults, $atts ) );
->>>>>>> d156c9de88529b1e43a9b87c66e269022c3533cc
+
     
     // Extract the tab titles for use in the tab widget.
     preg_match_all( '/tab title="([^\"]+)"/i', $content, $matches, PREG_OFFSET_CAPTURE );
@@ -349,11 +341,7 @@ class BoostrapShortcodes {
     $output = '';
     
     if( count($tab_titles) ){
-<<<<<<< HEAD
-      $output .= '<div class="tabbable tabs-'.$tabdirection.'"><ul class="nav '. $tabtype .'" id="custom-tabs-'. rand(1, 100) .'">';
-=======
       $output .= '<ul class="nav ' . $class . '" id="custom-tabs-'. rand(1, 100) .'">';
->>>>>>> d156c9de88529b1e43a9b87c66e269022c3533cc
       
       $i = 0;
       foreach( $tab_titles as $tab ){
