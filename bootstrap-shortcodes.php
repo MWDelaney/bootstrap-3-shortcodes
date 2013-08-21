@@ -225,10 +225,9 @@ class BoostrapShortcodes {
   function bs_icon( $atts, $content = null ) {
     extract(shortcode_atts(array(
       "type" => 'type',
-      "size" => 'normal',
     ), $atts));
 
-    return '<i class="icon icon-' . $type . ' icon-' . $size .'"></i>';
+    return '<span class="glyphicon glyphicon-' . $type . '"></span>';
 
   }
 
