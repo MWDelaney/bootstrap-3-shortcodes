@@ -4,9 +4,9 @@ Bootstrap Shortcodes for WordPress
 This is a plugin for WordPress that adds shortcodes for easier use of the Bootstrap elements in your content.
 
 ## Requirements
-This plugin won't do anything if you don't have website built with the [Twitter Bootstrap framework](http://twitter.github.com/bootstrap/). **The plugin does not include the Bootstrap framework**.
+This plugin won't do anything if you don't have website built with the [Twitter Bootstrap framework](http://getbootstrap.com/). **The plugin does not include the Bootstrap framework**.
 
-The plugin is tested to work with ```Bootstrap version 2.1.1``` and ```WordPress 3.4.2```.
+The plugin is tested to work with ```Bootstrap version 3.0.0``` and ```WordPress 3.6```.
 
 ## Installation
 To install this plugin, just download it, and drop the folder in the ```wp-content/plugins/```. Then login to WordPress and activate the plugin.
