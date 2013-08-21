@@ -231,30 +231,6 @@ class BoostrapShortcodes {
 
   }
 
-
-
-
-  /*--------------------------------------------------------------------------------------
-    *
-    * bs_icon_white
-    *
-    * @author Filip Stefansson
-    * @since 1.0
-    *
-    *-------------------------------------------------------------------------------------*/
-  function bs_icon_white( $atts, $content = null ) {
-    extract(shortcode_atts(array(
-      "type" => 'type'
-    ), $atts));
-
-    return '<i class="icon icon-' . $type . ' icon-white"></i>';
-
-  }
-
-
-
-
-
   /*--------------------------------------------------------------------------------------
     *
     * simple_table
