@@ -55,6 +55,7 @@ class BoostrapShortcodes {
     add_shortcode('code', array( $this, 'bs_code' ));
     add_shortcode('span', array( $this, 'bs_span' ));
     add_shortcode('row', array( $this, 'bs_row' ));
+    add_shortcode('column', array( $this, 'bs_column' ));
     add_shortcode('label', array( $this, 'bs_label' ));
     add_shortcode('badge', array( $this, 'bs_badge' ));
     add_shortcode('icon', array( $this, 'bs_icon' ));
@@ -176,6 +177,28 @@ class BoostrapShortcodes {
 
   /*--------------------------------------------------------------------------------------
     *
+    * bs_column
+    *
+    * @author Filip Stefansson
+    * @since 1.0
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_column( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+      "large" => '0',
+      "medium" => '0',
+      "small" => '0',
+      "offset" => '0',
+    ), $atts));
+    return '<div class="">' . do_shortcode( $content ) . '</div>';
+
+  }
+
+
+
+
+  /*--------------------------------------------------------------------------------------
+    *
     * bs_label
     *
     * @author Filip Stefansson
@@ -276,6 +299,9 @@ class BoostrapShortcodes {
     * @author Filip Stefansson
     * @since 1.0
     *
+    * Options:
+    *   size: sm = small, lg = large
+    *
     *-------------------------------------------------------------------------------------*/
     function bs_well( $atts, $content = null ) {
       extract(shortcode_atts(array(
@@ -294,7 +320,7 @@ class BoostrapShortcodes {
     * @author Filip Stefansson
     * @since 1.0
     * Modified by TwItCh twitch@designweapon.com
-    *Now acts a whole nav/tab/pill shortcode solution!
+    * Now acts a whole nav/tab/pill shortcode solution!
     *-------------------------------------------------------------------------------------*/
   function bs_tabs( $atts, $content = null ) {
 
