@@ -34,14 +34,20 @@ You use the shortcodes just like you would with any other shortcode, with the ex
 #### Buttons
 	[button type="success" size="lg" link="#"] … [/button]
 
-Parameter | Required | Values
---- | --- | ---
-type | optional | primary, success, info, warning, danger, link
-size | optional | xs, sm, lg
-xclass | optional | any other classes you want
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of the button | optional | default, primary, success, info, warning, danger, link | default
+size | The size of the button | optional | xs, sm, lg | <none>
+xclass | Any extra classes you want to add | optional | Any text | <none>
 
 #### Alerts
 	[alert type="success"] … [/alert]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of the alert | required | success, info, warning, danger | success
+dismissable | If the alert should be dismissable | optional | true, false | false
+strong | Text to display in bold at the beginning | optional | Any text | false
 
 #### Code
 	[code] … [/code]
