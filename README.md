@@ -37,8 +37,8 @@ You use the shortcodes just like you would with any other shortcode, with the ex
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of the button | optional | default, primary, success, info, warning, danger, link | default
-size | The size of the button | optional | xs, sm, lg | <none>
-xclass | Any extra classes you want to add | optional | Any text | <none>
+size | The size of the button | optional | xs, sm, lg | none
+xclass | Any extra classes you want to add | optional | Any text | none
 
 #### Alerts
 	[alert type="success"] … [/alert]
