@@ -135,11 +135,17 @@ class BoostrapShortcodes {
     *-------------------------------------------------------------------------------------*/
   function bs_code($atts, $content = null) {
      extract(shortcode_atts(array(
-        "type" => '',
-        "size" => '',
-        "link" => ''
+        "inline" => false,
+        "scrollable" => false
      ), $atts));
-     return '<pre><code>' . $content . '</code></pre>';
+    if($inline) {
+      $return = '<code>' . $content . '</code>';
+    } else {
+      $return  = '<pre';
+      $return .= ($scrollable) ? ' class="pre-scrollable"': '';
+      $return .= '>' . $content . '</pre>';
+    }
+    return $return;
   }
 
 

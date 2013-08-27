@@ -52,6 +52,11 @@ strong | Text to display in bold at the beginning | optional | Any text | false
 #### Code
 	[code] … [/code]
 
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+inline | display inline code | optional | true, false | false
+scrollable | set a max height of 350px and provide a scroll bar | optional | true, false | false
+
 #### Labels
 	[label type="success"] … [/label]
 
