@@ -89,7 +89,7 @@ class BoostrapShortcodes {
      ), $atts));
 
      $return  =  '<a href="' . $link . '" class="btn';
-     $return .= ($type) ? ' btn-' . $type : '';
+     $return .= ($type) ? ' btn-' . $type : ' btn-default';
      $return .= ($size) ? ' btn-' . $size : '';
      $return .= ($xclass) ? ' ' . $xclass : '';
      $return .= '">' . do_shortcode( $content ) . '</a>';

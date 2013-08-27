@@ -32,7 +32,13 @@ You use the shortcodes just like you would with any other shortcode, with the ex
 
 
 #### Buttons
-	[button type="success" size="large" link="#"] … [/button]
+	[button type="success" size="lg" link="#"] … [/button]
+
+Parameter | Required | Values
+--- | --- | ---
+type | optional | primary, success, info, warning, danger, link
+size | optional | xs, sm, lg
+xclass | optional | any other classes you want
 
 #### Alerts
 	[alert type="success"] … [/alert]
