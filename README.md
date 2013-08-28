@@ -28,10 +28,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 
 ## Usage
 
-You use the shortcodes just like you would with any other shortcode, with the exception of tables, accordion and the tabs.
-
-
-#### Buttons
+### Buttons
 	[button type="success" size="lg" link="#"] … [/button]
 
 Parameter | Description | Required | Values | Default
@@ -42,7 +39,7 @@ xclass | Any extra classes you want to add | optional | Any text | none
 
 [Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
 
-#### Alerts
+### Alerts
 	[alert type="success"] … [/alert]
 
 Parameter | Description | Required | Values | Default
@@ -53,7 +50,7 @@ strong | Text to display in bold at the beginning | optional | Any text | false
 
 [Bootstrap alert documentation](http://getbootstrap.com/components/#alerts)
 
-#### Code
+### Code
 	[code] … [/code]
 
 Parameter | Description | Required | Values | Default
@@ -63,20 +60,20 @@ scrollable | set a max height of 350px and provide a scroll bar. Not usable with
 
 [Bootstrap code documentation](http://getbootstrap.com/css/#code)
 
-#### Labels
+### Labels
 	[label type="success"] … [/label]
 
-#### Badges
+### Badges
 	[badge type="success"] … [/badge]
 
-#### Wells
+### Wells
 	[well] … [/well]
 
-#### Icons
+### Icons
 	[icon type="arrow"]
 	[icon_white type="arrow"]
 
-#### Grid
+### Grid
 	[row]
 	  [column medium="6"]
 	    …
@@ -95,10 +92,10 @@ lg | size of column on large screens (≥1200px) | optional | 1-12 | false
 
 [Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
 
-#### Tables
+### Tables
 	[table type="striped" cols="#,First Name, Last Name, Username" data="1, Filip, Stefansson, filipstefansson, 2, Victor, Meyer, Pudge, 3, Måns, Ketola-Backe, mossboll"]
 
-#### Accordion
+### Accordion
 	[collapsibles]
 	  [collapse title="Collapse 1" state="active"]
 	    …
@@ -111,7 +108,7 @@ lg | size of column on large screens (≥1200px) | optional | 1-12 | false
 	  [/collapse]
 	[/collapsibles]
 
-#### Tabs
+### Tabs
 	[tabs]
 	  [tab title="Home"]
 	    …
