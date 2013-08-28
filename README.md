@@ -109,10 +109,10 @@ type | The type of icon you want to display | required | See Bootstrap docs | no
 
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-xs | size of column on extra small screens (<768px) | optional | 1-12 | false
-sm | size of column on small screens (≥768px) | optional | 1-12 | false
-md | size of column on medium screens (≥992px) | optional | 1-12 | false
-lg | size of column on large screens (≥1200px) | optional | 1-12 | false
+xsmall | size of column on extra small screens (<768px) | optional | 1-12 | false
+small | size of column on small screens (≥768px) | optional | 1-12 | false
+medium | size of column on medium screens (≥992px) | optional | 1-12 | false
+large | size of column on large screens (≥1200px) | optional | 1-12 | false
 
 [Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
 
