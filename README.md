@@ -24,7 +24,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 * [Tables](#tables)
 * [Accordion](#accordion)
 * [Tabs](#tabs)
-* [Wells](#well)
+* [Wells](#wells)
 
 ## Usage
 
