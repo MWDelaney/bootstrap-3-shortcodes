@@ -68,6 +68,8 @@ Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | the type of label to display | optional | default, primary, success, info, warning, danger | default
 
+[Bootstrap label documentation](http://getbootstrap.com/components/#labels)
+
 ### Badges
 	[badge type="success"] … [/badge]
 
