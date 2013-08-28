@@ -249,9 +249,9 @@ class BoostrapShortcodes {
     *-------------------------------------------------------------------------------------*/
   function bs_badge( $atts, $content = null ) {
     extract(shortcode_atts(array(
-      "right" => ''
+      "right" => false
     ), $atts));
-    $right = (!empty($right)) ? " pull-right" : "";
+    $right = ($right) ? " pull-right" : "";
     return '<span class="badge' . $right . '">' . do_shortcode( $content ) . '</span>';
 
   }

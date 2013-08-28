@@ -71,7 +71,13 @@ type | the type of label to display | optional | default, primary, success, info
 [Bootstrap label documentation](http://getbootstrap.com/components/#labels)
 
 ### Badges
-	[badge type="success"] … [/badge]
+	[badge right="true"] … [/badge]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+right | Whether the badge should align to the right of its container | optional | true, false | false
+
+[Bootstrap badges documentation](http://getbootstrap.com/components/#badges)
 
 ### Wells
 	[well] … [/well]
