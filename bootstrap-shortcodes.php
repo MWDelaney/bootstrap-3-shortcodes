@@ -327,10 +327,20 @@ class BoostrapShortcodes {
     *-------------------------------------------------------------------------------------*/
     function bs_well( $atts, $content = null ) {
       extract(shortcode_atts(array(
-        "size" => 'size'
+        "size" => false
       ), $atts));
 
-      return '<div class="well well-' . $size . '">' . do_shortcode( $content ) . '</div>';
+      if($size) {
+        if($size == "large") {
+          $size = ' well-lg';
+        } elseif($size == "small") {
+          $size = ' well-sm';
+        } else {
+          $size = '';
+        }
+      }
+
+      return '<div class="well' . $size . '">' . do_shortcode( $content ) . '</div>';
     }
 
 

@@ -80,7 +80,13 @@ right | Whether the badge should align to the right of its container | optional 
 [Bootstrap badges documentation](http://getbootstrap.com/components/#badges)
 
 ### Wells
-	[well] … [/well]
+	[well size="small"] … [/well]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+size | Modifies the amount of padding inside the well | optional | small, large | normal
+
+[Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
 
 ### Icons
 	[icon type="arrow"]
