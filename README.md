@@ -15,15 +15,15 @@ To install this plugin, just download it, and drop the folder in the ```wp-conte
 The plugin doesn't support all Bootstrap elements yet, but most of them.
 
 * [Grid](#grid)
-* [Buttons](#button)
-* [Alerts](#alert)
+* [Buttons](#buttons)
+* [Alerts](#alerts)
 * [Code](#code)
-* [Labels](#label)
-* [Badges](#badge)
-* [Icons](#icon)
-* [Tables](#table)
+* [Labels](#labels)
+* [Badges](#badges)
+* [Icons](#icons)
+* [Tables](#tables)
 * [Accordion](#accordion)
-* [Tabs](#tab)
+* [Tabs](#tabs)
 * [Wells](#well)
 
 ## Usage
@@ -31,7 +31,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 You use the shortcodes just like you would with any other shortcode, with the exception of tables, accordion and the tabs.
 
 
-#### <a id="button"></a>Buttons
+#### Buttons
 	[button type="success" size="lg" link="#"] … [/button]
 
 Parameter | Description | Required | Values | Default
@@ -40,7 +40,7 @@ type | The type of the button | optional | default, primary, success, info, warn
 size | The size of the button | optional | xs, sm, lg | none
 xclass | Any extra classes you want to add | optional | Any text | none
 
-#### <a id="alert"></a>Alerts
+#### Alerts
 	[alert type="success"] … [/alert]
 
 Parameter | Description | Required | Values | Default
@@ -49,7 +49,7 @@ type | The type of the alert | required | success, info, warning, danger | succe
 dismissable | If the alert should be dismissable | optional | true, false | false
 strong | Text to display in bold at the beginning | optional | Any text | false
 
-#### <a id="code"></a>Code
+#### Code
 	[code] … [/code]
 
 Parameter | Description | Required | Values | Default
@@ -57,20 +57,20 @@ Parameter | Description | Required | Values | Default
 inline | display inline code | optional | true, false | false
 scrollable | set a max height of 350px and provide a scroll bar. Not usable with inline="true".  | optional | true, false | false
 
-#### <a id="label"></a>Labels
+#### Labels
 	[label type="success"] … [/label]
 
-#### <a id="badge"></a>Badges
+#### Badges
 	[badge type="success"] … [/badge]
 
-#### <a id="well"></a>Wells
+#### Wells
 	[well] … [/well]
 
-#### <a id="icon"></a>Icons
+#### Icons
 	[icon type="arrow"]
 	[icon_white type="arrow"]
 
-#### <a id="grid"></a>Grid
+#### Grid
 	[row]
 	  [column medium="6"]
 	    …
@@ -88,10 +88,10 @@ md | size of column on medium screens (≥992px) | optional | 1-12 | false
 lg | size of column on large screens (≥1200px) | optional | 1-12 | false
 
 
-#### <a id="table"></a>Tables
+#### Tables
 	[table type="striped" cols="#,First Name, Last Name, Username" data="1, Filip, Stefansson, filipstefansson, 2, Victor, Meyer, Pudge, 3, Måns, Ketola-Backe, mossboll"]
 
-#### <a id="accordion"></a>Accordion
+#### Accordion
 	[collapsibles]
 	  [collapse title="Collapse 1" state="active"]
 	    …
@@ -104,7 +104,7 @@ lg | size of column on large screens (≥1200px) | optional | 1-12 | false
 	  [/collapse]
 	[/collapsibles]
 
-#### <a id="tab"></a>Tabs
+#### Tabs
 	[tabs]
 	  [tab title="Home"]
 	    …
