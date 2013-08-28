@@ -84,13 +84,18 @@ right | Whether the badge should align to the right of its container | optional 
 
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-size | Modifies the amount of padding inside the well | optional | small, large | normal
+size | Modifies the amount of padding inside the well | optional | sm, lg | normal
 
 [Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
 
 ### Icons
 	[icon type="arrow"]
-	[icon_white type="arrow"]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of icon you want to display | required | See Bootstrap docs | none
+
+[Bootstrap Glyphicons documentation](http://getbootstrap.com/components/#glyphicons)
 
 ### Grid
 	[row]

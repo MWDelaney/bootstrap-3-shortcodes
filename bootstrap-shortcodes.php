@@ -265,7 +265,7 @@ class BoostrapShortcodes {
     *
     * @author Filip Stefansson
     * @since 1.0
-    *  //DW Mod to add icon sizing
+    *
     *-------------------------------------------------------------------------------------*/
   function bs_icon( $atts, $content = null ) {
     extract(shortcode_atts(array(
@@ -331,13 +331,7 @@ class BoostrapShortcodes {
       ), $atts));
 
       if($size) {
-        if($size == "large") {
-          $size = ' well-lg';
-        } elseif($size == "small") {
-          $size = ' well-sm';
-        } else {
-          $size = '';
-        }
+        $size = ' well-'.$size;
       }
 
       return '<div class="well' . $size . '">' . do_shortcode( $content ) . '</div>';
