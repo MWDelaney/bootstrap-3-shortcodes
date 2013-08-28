@@ -36,6 +36,7 @@ Parameter | Description | Required | Values | Default
 type | The type of the button | optional | default, primary, success, info, warning, danger, link | default
 size | The size of the button | optional | xs, sm, lg | none
 xclass | Any extra classes you want to add | optional | Any text | none
+link | The url you want the button to link to | optional | any valid link | none
 
 [Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
 
@@ -62,6 +63,10 @@ scrollable | set a max height of 350px and provide a scroll bar. Not usable with
 
 ### Labels
 	[label type="success"] … [/label]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | the type of label to display | optional | default, primary, success, info, warning, danger | default
 
 ### Badges
 	[badge type="success"] … [/badge]

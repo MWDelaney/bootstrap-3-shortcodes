@@ -195,7 +195,7 @@ class BoostrapShortcodes {
     *
     * @author Simon Yeldon
     * @since 1.0
-    *
+    * @todo pull and offset
     *-------------------------------------------------------------------------------------*/
   function bs_column( $atts, $content = null ) {
     extract(shortcode_atts(array(
@@ -229,7 +229,7 @@ class BoostrapShortcodes {
     *-------------------------------------------------------------------------------------*/
   function bs_label( $atts, $content = null ) {
     extract(shortcode_atts(array(
-      "type" => 'type'
+      "type" => 'default'
     ), $atts));
 
     return '<span class="label label-' . $type . '">' . do_shortcode( $content ) . '</span>';
