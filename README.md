@@ -40,6 +40,8 @@ type | The type of the button | optional | default, primary, success, info, warn
 size | The size of the button | optional | xs, sm, lg | none
 xclass | Any extra classes you want to add | optional | Any text | none
 
+[Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
+
 #### Alerts
 	[alert type="success"] … [/alert]
 
@@ -49,6 +51,8 @@ type | The type of the alert | required | success, info, warning, danger | succe
 dismissable | If the alert should be dismissable | optional | true, false | false
 strong | Text to display in bold at the beginning | optional | Any text | false
 
+[Bootstrap alert documentation](http://getbootstrap.com/components/#alerts)
+
 #### Code
 	[code] … [/code]
 
@@ -56,6 +60,8 @@ Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 inline | display inline code | optional | true, false | false
 scrollable | set a max height of 350px and provide a scroll bar. Not usable with inline="true".  | optional | true, false | false
+
+[Bootstrap code documentation](http://getbootstrap.com/css/#code)
 
 #### Labels
 	[label type="success"] … [/label]
@@ -87,6 +93,7 @@ sm | size of column on small screens (≥768px) | optional | 1-12 | false
 md | size of column on medium screens (≥992px) | optional | 1-12 | false
 lg | size of column on large screens (≥1200px) | optional | 1-12 | false
 
+[Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
 
 #### Tables
 	[table type="striped" cols="#,First Name, Last Name, Username" data="1, Filip, Stefansson, filipstefansson, 2, Victor, Meyer, Pudge, 3, Måns, Ketola-Backe, mossboll"]
