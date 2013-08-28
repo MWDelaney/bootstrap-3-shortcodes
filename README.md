@@ -72,13 +72,21 @@ scrollable | set a max height of 350px and provide a scroll bar. Not usable with
 
 #### Grid
 	[row]
-	  [span size="6"]
+	  [column medium="6"]
 	    …
-	  [/span]
-	  [span size="6"]
+	  [/column]
+	  [column medium="6"]
 	    …
-	  [/span]
+	  [/column]
 	[/row]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xs | size of column on extra small screens (<768px) | optional | 1-12 | false
+sm | size of column on small screens (≥768px) | optional | 1-12 | false
+md | size of column on medium screens (≥992px) | optional | 1-12 | false
+lg | size of column on large screens (≥1200px) | optional | 1-12 | false
+
 
 #### Tables
 	[table type="striped" cols="#,First Name, Last Name, Username" data="1, Filip, Stefansson, filipstefansson, 2, Victor, Meyer, Pudge, 3, Måns, Ketola-Backe, mossboll"]

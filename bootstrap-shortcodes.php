@@ -157,7 +157,8 @@ class BoostrapShortcodes {
     *
     * @author Filip Stefansson
     * @since 1.0
-    *
+    * @depricated Bootstrap 3 uses col-[xs|sm|md|lg]-[1-12]
+    * @see bs_column
     *-------------------------------------------------------------------------------------*/
   function bs_span( $atts, $content = null ) {
     extract(shortcode_atts(array(
@@ -181,7 +182,7 @@ class BoostrapShortcodes {
     *-------------------------------------------------------------------------------------*/
   function bs_row( $atts, $content = null ) {
 
-    return '<div class="row-fluid">' . do_shortcode( $content ) . '</div>';
+    return '<div class="row">' . do_shortcode( $content ) . '</div>';
 
   }
 
@@ -192,19 +193,27 @@ class BoostrapShortcodes {
     *
     * bs_column
     *
-    * @author Filip Stefansson
+    * @author Simon Yeldon
     * @since 1.0
     *
     *-------------------------------------------------------------------------------------*/
   function bs_column( $atts, $content = null ) {
     extract(shortcode_atts(array(
-      "large" => '0',
-      "medium" => '0',
-      "small" => '0',
-      "offset" => '0',
+      "large" => false,
+      "medium" => false,
+      "small" => false,
+      "xsmall" => false,
+      "offset" => false,
+      "pull" => false,
     ), $atts));
-    return '<div class="">' . do_shortcode( $content ) . '</div>';
+    $return  =  '<div class="';
+    $return .= ($large) ? 'col-lg-' . $large . ' ' : '';
+    $return .= ($medium) ? 'col-md-' . $medium . ' ' : '';
+    $return .= ($small) ? 'col-sm-' . $small . ' ' : '';
+    $return .= ($xsmall) ? 'col-xs-' . $xsmall . ' ' : '';
+    $return .= '">' . do_shortcode( $content ) . '</div>';
 
+    return $return;
   }
 
 
