@@ -26,6 +26,8 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 * [List Groups](#list-groups)
 * [Tabs](#tabs)
 * [Wells](#wells)
+* [Panels](#panels)
+
 
 ## Usage
 
@@ -98,7 +100,7 @@ type | The type of the panel | optional | default, primary, success, info, warni
 title | The panel title | required | Any text | none
 footer | The panel footer text if desired | optional | Any text | none
 
-[Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
+[Bootstrap wells documentation](http://getbootstrap.com/components/#panels)
 
 ### Icons
 	[icon type="arrow"]
