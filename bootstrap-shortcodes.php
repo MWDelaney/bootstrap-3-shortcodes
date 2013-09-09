@@ -514,22 +514,7 @@ class BoostrapShortcodes {
     if (!empty($state))
       $state = 'in';
 
-    return '
-    <div class="panel">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['collapsibles_count'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">
-                ' . $title . '
-            </a>
-        </h3>
-      </div>
-      <div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="panel-collapse collapse ' . $state . '">
-        <div class="panel-body">
-          ' . do_shortcode($content) . ' 
-        </div>
-      </div>
-    </div>
-    ';
+    return '<div class="panel"><div class="panel-heading"><h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['collapsibles_count'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">' . $title . '</a></h3></div><div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="panel-collapse collapse ' . $state . '"><div class="panel-body">' . do_shortcode($content) . ' </div></div></div>';
   }
 
   function bs_tooltip( $atts, $content = null ) {
