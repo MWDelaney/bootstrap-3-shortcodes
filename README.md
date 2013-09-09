@@ -23,7 +23,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 * [Badges](#badges)
 * [Icons](#icons)
 * [Tables](#tables)
-* [Accordion](#accordion)
+* [Collapse (Accordion)](#collapse)
 * [List Groups](#list-groups)
 * [Tabs](#tabs)
 * [Wells](#wells)
@@ -31,6 +31,25 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 
 
 ## Usage
+
+### Grid
+	[row]
+	  [column medium="6"]
+	    …
+	  [/column]
+	  [column medium="6"]
+	    …
+	  [/column]
+	[/row]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xs | size of column on extra small screens (less than 768px) | optional | 1-12 | false
+sm | size of column on small screens (greater than 768px) | optional | 1-12 | false
+md | size of column on medium screens (greater than 992px) | optional | 1-12 | false
+lg | size of column on large screens (greater than 1200px) | optional | 1-12 | false
+
+[Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
 
 ### Buttons
 	[button type="success" size="lg" link="#"] … [/button]
@@ -92,26 +111,6 @@ right | Whether the badge should align to the right of its container | optional 
 
 [Bootstrap badges documentation](http://getbootstrap.com/components/#badges)
 
-### Wells
-	[well size="small"] … [/well]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-size | Modifies the amount of padding inside the well | optional | sm, lg | normal
-
-[Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
-
-### Panels
-	[panel type="info" title="Panel Title" footer="Footer text"] … [/panel]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
-title | The panel title | required | Any text | none
-footer | The panel footer text if desired | optional | Any text | none
-
-[Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
-
 ### Icons
 	[icon type="arrow"]
 
@@ -121,29 +120,12 @@ type | The type of icon you want to display | required | See Bootstrap docs | no
 
 [Bootstrap Glyphicons documentation](http://getbootstrap.com/components/#glyphicons)
 
-### Grid
-	[row]
-	  [column medium="6"]
-	    …
-	  [/column]
-	  [column medium="6"]
-	    …
-	  [/column]
-	[/row]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-xs | size of column on extra small screens (<768px) | optional | 1-12 | false
-sm | size of column on small screens (≥768px) | optional | 1-12 | false
-md | size of column on medium screens (≥992px) | optional | 1-12 | false
-lg | size of column on large screens (≥1200px) | optional | 1-12 | false
-
-[Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
-
 ### Tables
 	[table type="striped" cols="#,First Name, Last Name, Username" data="1, Filip, Stefansson, filipstefansson, 2, Victor, Meyer, Pudge, 3, Måns, Ketola-Backe, mossboll"]
 
-### Accordion
+[Bootstrap table documentation](http://getbootstrap.com/css/#tables)
+
+### Collapse (Accordion)
 	[collapsibles]
 	  [collapse title="Collapse 1" state="active"]
 	    …
@@ -156,6 +138,8 @@ lg | size of column on large screens (≥1200px) | optional | 1-12 | false
 	  [/collapse]
 	[/collapsibles]
     
+[Bootstrap collapse documentation](http://getbootstrap.com/javascript/#collapse)
+
 ### List Groups
 	[list-group]
 	  [list-group-item]
@@ -183,3 +167,25 @@ lg | size of column on large screens (≥1200px) | optional | 1-12 | false
 	    …
 	  [/tab]
 	[/tabs]
+
+[Bootstrap list groups documentation](http://getbootstrap.com/javascript/#tabs)
+
+### Wells
+	[well size="small"] … [/well]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+size | Modifies the amount of padding inside the well | optional | sm, lg | normal
+
+[Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
+
+### Panels
+	[panel type="info" title="Panel Title" footer="Footer text"] … [/panel]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
+title | The panel title | required | Any text | none
+footer | The panel footer text if desired | optional | Any text | none
+
+[Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
