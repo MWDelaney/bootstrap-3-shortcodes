@@ -57,6 +57,8 @@ class BoostrapShortcodes {
     add_shortcode('row', array( $this, 'bs_row' ));
     add_shortcode('column', array( $this, 'bs_column' ));
     add_shortcode('label', array( $this, 'bs_label' ));
+    add_shortcode('list-group', array( $this, 'bs_list_group' ));
+    add_shortcode('list-group-item', array( $this, 'bs_list_group_item' ));
     add_shortcode('badge', array( $this, 'bs_badge' ));
     add_shortcode('icon', array( $this, 'bs_icon' ));
     add_shortcode('icon_white', array( $this, 'bs_icon_white' ));
@@ -216,8 +218,31 @@ class BoostrapShortcodes {
     return $return;
   }
 
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_list_group
+    *
+    * @author M. W. Delaney
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_list_group( $atts, $content = null ) {
 
+    return '<ul class="list-group">' . do_shortcode( $content ) . '</ul>';
 
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_list_group_item
+    *
+    * @author M. W. Delaney
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_list_group_item( $atts, $content = null ) {
+
+    return '<li class="list-group-item">' . do_shortcode( $content ) . '</li>';
+
+  }
 
   /*--------------------------------------------------------------------------------------
     *
@@ -454,7 +479,7 @@ class BoostrapShortcodes {
     $output = '';
 
     if( count($tab_titles) ){
-      $output .= '<div class="accordion" id="accordion-' . $GLOBALS['collapsibles_count'] . '">';
+      $output .= '<div class="panel-group" id="accordion-' . $GLOBALS['collapsibles_count'] . '">';
       $output .= do_shortcode( $content );
       $output .= '</div>';
     } else {
@@ -490,15 +515,17 @@ class BoostrapShortcodes {
       $state = 'in';
 
     return '
-    <div class="accordion-group">
-      <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['collapsibles_count'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">
-          ' . $title . '
-        </a>
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['collapsibles_count'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">
+                ' . $title . '
+            </a>
+        </h3>
       </div>
-      <div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="accordion-body collapse ' . $state . '">
-        <div class="accordion-inner">
-          ' . $content . '
+      <div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="panel-collapse collapse ' . $state . '">
+        <div class="panel-body">
+          ' . do_shortcode($content) . ' 
         </div>
       </div>
     </div>
