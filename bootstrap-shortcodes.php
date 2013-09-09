@@ -4,7 +4,7 @@ Plugin Name: Bootstrap Shortcodes
 Plugin URI: http://wp-snippets.com/freebies/bootstrap-shortcodes or https://github.com/filipstefansson/bootstrap-shortcodes
 Description: The plugin adds a shortcodes for all Bootstrap elements.
 Version: 1.0
-Author: Filip Stefansson and Michael W. Delaney
+Author: Filip Stefansson
 Author URI: http://wp-snippets.com
 Modified by: TwItCh AKA Dustin Crisman twitch@twitch.es
 Modified URI: https://github.com/TwItChDW/bootstrap-shortcodes/
@@ -66,11 +66,7 @@ class BoostrapShortcodes {
     add_shortcode('well', array( $this, 'bs_well' ));
     add_shortcode('tabs', array( $this, 'bs_tabs' ));
     add_shortcode('tab', array( $this, 'bs_tab' ));
-<<<<<<< HEAD
-    add_shortcode('lead', array( $this, 'bs_lead' ));
-=======
     add_shortcode('tooltip', array( $this, 'bs_tooltip' ));
->>>>>>> 789b19ae2cc453d9b06482ec5eeda839b3ee3fab
 
   }
 
@@ -153,22 +149,6 @@ class BoostrapShortcodes {
   }
 
 
-  /*--------------------------------------------------------------------------------------
-    *
-    * bs_lead
-    *
-    * @author Michael W. Delaney
-    * @since 1.0
-    * 
-    *-------------------------------------------------------------------------------------*/
-  function bs_lead( $atts, $content = null ) {
-    extract(shortcode_atts(array(
-      "xclass" => ''
-    ), $atts));
-
-    return '<p class="lead ' . $xclass . '">' . do_shortcode( $content ) . '</p>';
-
-  }
 
 
   /*--------------------------------------------------------------------------------------
@@ -182,12 +162,10 @@ class BoostrapShortcodes {
     *-------------------------------------------------------------------------------------*/
   function bs_span( $atts, $content = null ) {
     extract(shortcode_atts(array(
-      "size" => 'size',
-      "offset" => '',
-      "xclass" => ''
+      "size" => 'size'
     ), $atts));
 
-    return '<div class="span' . $size . ' offset' . $offset . ' ' . $xclass . '">' . do_shortcode( $content ) . '</div>';
+    return '<div class="span' . $size . '">' . do_shortcode( $content ) . '</div>';
 
   }
 
@@ -520,11 +498,7 @@ class BoostrapShortcodes {
       </div>
       <div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="accordion-body collapse ' . $state . '">
         <div class="accordion-inner">
-<<<<<<< HEAD
-          ' . do_shortcode($content) . ' 
-=======
           ' . $content . '
->>>>>>> 789b19ae2cc453d9b06482ec5eeda839b3ee3fab
         </div>
       </div>
     </div>
