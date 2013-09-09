@@ -69,6 +69,7 @@ class BoostrapShortcodes {
     add_shortcode('tabs', array( $this, 'bs_tabs' ));
     add_shortcode('tab', array( $this, 'bs_tab' ));
     add_shortcode('tooltip', array( $this, 'bs_tooltip' ));
+    add_shortcode('panel', array( $this, 'bs_panel' ));
 
   }
 
@@ -362,7 +363,26 @@ class BoostrapShortcodes {
       return '<div class="well' . $size . '">' . do_shortcode( $content ) . '</div>';
     }
 
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_panel
+    *
+    * @author Filip Stefansson
+    * @since 1.0
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_panel( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+      "title" => '',
+      "type" => 'default',
+      "footer" => ''
+    ), $atts));
+    if($footer != '') {
+        $footer = '<div class="panel-footer">' . $footer . '</div>';
+      }
+    return '<div class="panel panel-' . $type . '"><div class="panel-heading"><h3 class="panel-title">' . $title . '</h3></div><div class="panel-body">' . do_shortcode( $content ) . '</div>' . $footer . '</div>';
 
+  }
 
   /*--------------------------------------------------------------------------------------
     *

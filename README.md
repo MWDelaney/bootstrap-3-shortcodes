@@ -89,6 +89,17 @@ size | Modifies the amount of padding inside the well | optional | sm, lg | norm
 
 [Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
 
+### Panels
+	[panel type="info" title="Panel Title" footer="Footer text"] … [/panel]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
+title | The panel title | required | Any text | none
+footer | The panel footer text if desired | optional | Any text | none
+
+[Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
+
 ### Icons
 	[icon type="arrow"]
 
