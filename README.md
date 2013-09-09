@@ -23,6 +23,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 * [Icons](#icons)
 * [Tables](#tables)
 * [Accordion](#accordion)
+* [List Groups](#list-groups)
 * [Tabs](#tabs)
 * [Wells](#wells)
 
@@ -131,6 +132,19 @@ lg | size of column on large screens (≥1200px) | optional | 1-12 | false
 	    …
 	  [/collapse]
 	[/collapsibles]
+    
+### List Groups
+	[list-group]
+	  [list-group-item]
+	    …
+	  [/list-group-item]
+	  [list-group-item]
+	    …
+	  [/list-group-item]
+	  [list-group-item]
+	    …
+	  [/list-group-item]
+	[/list-group]
 
 ### Tabs
 	[tabs]
