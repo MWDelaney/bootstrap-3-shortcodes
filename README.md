@@ -23,6 +23,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 * [Icons](#icons)
 * [Tables](#tables)
 * [Accordion](#accordion)
+* [List Groups](#list-groups)
 * [Tabs](#tabs)
 * [Wells](#wells)
 
@@ -101,13 +102,8 @@ type | The type of icon you want to display | required | See Bootstrap docs | no
 	[row]
 	  [column medium="6"]
 	    …
-<<<<<<< HEAD
-	  [/span]
-	  [span size="4" offset="2"]
-=======
 	  [/column]
 	  [column medium="6"]
->>>>>>> 789b19ae2cc453d9b06482ec5eeda839b3ee3fab
 	    …
 	  [/column]
 	[/row]
@@ -136,6 +132,19 @@ lg | size of column on large screens (≥1200px) | optional | 1-12 | false
 	    …
 	  [/collapse]
 	[/collapsibles]
+    
+### List Groups
+	[list-group]
+	  [list-group-item]
+	    …
+	  [/list-group-item]
+	  [list-group-item]
+	    …
+	  [/list-group-item]
+	  [list-group-item]
+	    …
+	  [/list-group-item]
+	[/list-group]
 
 ### Tabs
 	[tabs]
