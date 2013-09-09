@@ -51,6 +51,7 @@ class BoostrapShortcodes {
   function add_shortcodes() {
 
     add_shortcode('button', array( $this, 'bs_button' ));
+    add_shortcode('button-group', array( $this, 'bs_button_group' ));
     add_shortcode('alert', array( $this, 'bs_alert' ));
     add_shortcode('code', array( $this, 'bs_code' ));
     add_shortcode('span', array( $this, 'bs_span' ));
@@ -100,7 +101,18 @@ class BoostrapShortcodes {
      return $return;
   }
 
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_button_group
+    *
+    * @author M. W. Delaney
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_button_group( $atts, $content = null ) {
 
+    return '<div class="button-group">' . do_shortcode( $content ) . '</div>';
+
+  }
 
   /*--------------------------------------------------------------------------------------
     *
@@ -367,7 +379,7 @@ class BoostrapShortcodes {
     *
     * bs_panel
     *
-    * @author Filip Stefansson
+    * @author M. W. Delaney
     * @since 1.0
     *
     *-------------------------------------------------------------------------------------*/

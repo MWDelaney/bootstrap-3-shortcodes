@@ -16,6 +16,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 
 * [Grid](#grid)
 * [Buttons](#buttons)
+* [Button Groups](#button-groups)
 * [Alerts](#alerts)
 * [Code](#code)
 * [Labels](#labels)
@@ -42,6 +43,15 @@ xclass | Any extra classes you want to add | optional | Any text | none
 link | The url you want the button to link to | optional | any valid link | none
 
 [Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
+
+### Button Groups
+	[button-group]
+        [button link="#"] … [/button]
+        [button link="#"] … [/button]
+        [button link="#"] … [/button]
+	[/button-group]
+
+[Bootstrap button groups documentation](http://getbootstrap.com/css/#btn-groups)
 
 ### Alerts
 	[alert type="success"] … [/alert]
@@ -100,7 +110,7 @@ type | The type of the panel | optional | default, primary, success, info, warni
 title | The panel title | required | Any text | none
 footer | The panel footer text if desired | optional | Any text | none
 
-[Bootstrap wells documentation](http://getbootstrap.com/components/#panels)
+[Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
 
 ### Icons
 	[icon type="arrow"]
@@ -158,6 +168,8 @@ lg | size of column on large screens (≥1200px) | optional | 1-12 | false
 	    …
 	  [/list-group-item]
 	[/list-group]
+
+[Bootstrap list groups documentation](http://getbootstrap.com/components/#list-group)
 
 ### Tabs
 	[tabs]
