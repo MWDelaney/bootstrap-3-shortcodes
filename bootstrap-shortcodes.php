@@ -244,10 +244,10 @@ class BoostrapShortcodes {
     $return .= ($pull-md) ? 'col-md-pull-' . $pull-md . ' ' : '';
     $return .= ($pull-sm) ? 'col-sm-pull-' . $pull-sm . ' ' : '';
     $return .= ($pull-xs) ? 'col-xs-pull-' . $pull-xs . ' ' : '';
-    $return .= ($push-lg) ? 'col-lg-pull-' . $push-lg . ' ' : '';
-    $return .= ($push-md) ? 'col-md-pull-' . $push-md . ' ' : '';
-    $return .= ($push-sm) ? 'col-sm-pull-' . $push-sm . ' ' : '';
-    $return .= ($push-xs) ? 'col-xs-pull-' . $push-xs . ' ' : '';
+    $return .= ($push-lg) ? 'col-lg-push-' . $push-lg . ' ' : '';
+    $return .= ($push-md) ? 'col-md-push-' . $push-md . ' ' : '';
+    $return .= ($push-sm) ? 'col-sm-push-' . $push-sm . ' ' : '';
+    $return .= ($push-xs) ? 'col-xs-push-' . $push-xs . ' ' : '';
     $return .= '">' . do_shortcode( $content ) . '</div>';
 
     return $return;
