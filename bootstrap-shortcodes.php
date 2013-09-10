@@ -28,9 +28,12 @@ License: GPL2
 */
 
 /* ============================================================= */
+define('BOOTSTRAP_SHORTCODES_PLUGIN_PATH', dirname(__FILE__) . '/');
 
+// Begin TinyMCE Buttons
+require_once ( BOOTSTRAP_SHORTCODES_PLUGIN_PATH . '/includes/tinymce-buttons.php' );
 
-
+// Begin Shortcodes 
 class BoostrapShortcodes {
 
   function __construct() {
@@ -561,17 +564,28 @@ class BoostrapShortcodes {
     else
       $GLOBALS['current_collapse']++;
 
+    extract(shortcode_atts(array(
+      "title" => '',
+      "state" => false
+    ), $atts));
 
-    $defaults = array( 'title' => 'Tab', 'state' => '');
-    extract( shortcode_atts( $defaults, $atts ) );
-
-    if (!empty($state))
-      $state = '';
+    if ($state == "active")
+      $state = 'in';
 
     return '<div class="panel"><div class="panel-heading"><h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['collapsibles_count'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">' . $title . '</a></h3></div><div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="panel-collapse collapse ' . $state . '"><div class="panel-body">' . do_shortcode($content) . ' </div></div></div>';
   }
 
-  function bs_tooltip( $atts, $content = null ) {
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_tooltip
+    *
+    * @author
+    * @since 1.0
+    *
+    *-------------------------------------------------------------------------------------*/
+
+function bs_tooltip( $atts, $content = null ) {
 
     $defaults = array(
 	'title' => '',
