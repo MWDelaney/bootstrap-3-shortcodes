@@ -34,10 +34,10 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 
 ### Grid
 	[row]
-	  [column medium="6"]
+	  [column md="6"]
 	    …
 	  [/column]
-	  [column medium="6"]
+	  [column md="6"]
 	    …
 	  [/column]
 	[/row]
