@@ -409,9 +409,9 @@ class BoostrapShortcodes {
     extract(shortcode_atts(array(
       "title" => '',
       "type" => 'default',
-      "footer" => ''
+      "footer" => false
     ), $atts));
-    if($footer != '') {
+    if($footer) {
         $footer = '<div class="panel-footer">' . $footer . '</div>';
       }
     return '<div class="panel panel-' . $type . '"><div class="panel-heading"><h3 class="panel-title">' . $title . '</h3></div><div class="panel-body">' . do_shortcode( $content ) . '</div>' . $footer . '</div>';
