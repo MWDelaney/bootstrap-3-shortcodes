@@ -214,18 +214,40 @@ class BoostrapShortcodes {
     *-------------------------------------------------------------------------------------*/
   function bs_column( $atts, $content = null ) {
     extract(shortcode_atts(array(
-      "large" => false,
-      "medium" => false,
-      "small" => false,
-      "xsmall" => false,
-      "offset" => false,
-      "pull" => false,
+      "lg" => false,
+      "md" => false,
+      "sm" => false,
+      "xs" => false,
+      "offset-lg" => false,
+      "offset-md" => false,
+      "offset-sm" => false,
+      "offset-xs" => false,
+      "pull-lg" => false,
+      "pull-md" => false,
+      "pull-sm" => false,
+      "pull-xs" => false,
+      "push-lg" => false,
+      "push-md" => false,
+      "push-sm" => false,
+      "push-xs" => false,
     ), $atts));
     $return  =  '<div class="';
-    $return .= ($large) ? 'col-lg-' . $large . ' ' : '';
-    $return .= ($medium) ? 'col-md-' . $medium . ' ' : '';
-    $return .= ($small) ? 'col-sm-' . $small . ' ' : '';
-    $return .= ($xsmall) ? 'col-xs-' . $xsmall . ' ' : '';
+    $return .= ($lg) ? 'col-lg-' . $lg . ' ' : '';
+    $return .= ($md) ? 'col-md-' . $md . ' ' : '';
+    $return .= ($sm) ? 'col-sm-' . $sm . ' ' : '';
+    $return .= ($xs) ? 'col-xs-' . $xs . ' ' : '';
+    $return .= ($offset-lg) ? 'col-lg-offset-' . $offset-lg . ' ' : '';
+    $return .= ($offset-md) ? 'col-md-offset-' . $offset-md . ' ' : '';
+    $return .= ($offset-sm) ? 'col-sm-offset-' . $offset-sm . ' ' : '';
+    $return .= ($offset-xs) ? 'col-xs-offset-' . $offset-xs . ' ' : '';
+    $return .= ($pull-lg) ? 'col-lg-pull-' . $pull-lg . ' ' : '';
+    $return .= ($pull-md) ? 'col-md-pull-' . $pull-md . ' ' : '';
+    $return .= ($pull-sm) ? 'col-sm-pull-' . $pull-sm . ' ' : '';
+    $return .= ($pull-xs) ? 'col-xs-pull-' . $pull-xs . ' ' : '';
+    $return .= ($push-lg) ? 'col-lg-pull-' . $push-lg . ' ' : '';
+    $return .= ($push-md) ? 'col-md-pull-' . $push-md . ' ' : '';
+    $return .= ($push-sm) ? 'col-sm-pull-' . $push-sm . ' ' : '';
+    $return .= ($push-xs) ? 'col-xs-pull-' . $push-xs . ' ' : '';
     $return .= '">' . do_shortcode( $content ) . '</div>';
 
     return $return;
