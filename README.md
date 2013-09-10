@@ -44,22 +44,22 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-xs | size of column on extra small screens (less than 768px) | optional | 1-12 | false
-sm | size of column on small screens (greater than 768px) | optional | 1-12 | false
-md | size of column on medium screens (greater than 992px) | optional | 1-12 | false
-lg | size of column on large screens (greater than 1200px) | optional | 1-12 | false
-offset-xs | offset on extra small screens | optional | 1-12 | false
-offset-sm | offset on small screens | optional | 1-12 | false
-offset-md | offset on column on medium screens | optional | 1-12 | false
-offset-lg | offset on column on large screens | optional | 1-12 | false
-pull-xs | pull on extra small screens | optional | 1-12 | false
-pull-sm | pull on small screens | optional | 1-12 | false
-pull-md | pull on column on medium screens | optional | 1-12 | false
-pull-lg | pull on column on large screens | optional | 1-12 | false
-push-xs | push on extra small screens | optional | 1-12 | false
-push-sm | push on small screens | optional | 1-12 | false
-push-md | push on column on medium screens | optional | 1-12 | false
-push-lg | push on column on large screens | optional | 1-12 | false
+xs | Size of column on extra small screens (less than 768px) | optional | 1-12 | false
+sm | Size of column on small screens (greater than 768px) | optional | 1-12 | false
+md | Size of column on medium screens (greater than 992px) | optional | 1-12 | false
+lg | Size of column on large screens (greater than 1200px) | optional | 1-12 | false
+offset-xs | Offset on extra small screens | optional | 1-12 | false
+offset-sm | Offset on small screens | optional | 1-12 | false
+offset-md | Offset on column on medium screens | optional | 1-12 | false
+offset-lg | Offset on column on large screens | optional | 1-12 | false
+pull-xs | Pull on extra small screens | optional | 1-12 | false
+pull-sm | Pull on small screens | optional | 1-12 | false
+pull-md | Pull on column on medium screens | optional | 1-12 | false
+pull-lg | Pull on column on large screens | optional | 1-12 | false
+push-xs | Push on extra small screens | optional | 1-12 | false
+push-sm | Push on small screens | optional | 1-12 | false
+push-md | Push on column on medium screens | optional | 1-12 | false
+push-lg | Push on column on large screens | optional | 1-12 | false
 
 [Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
 
@@ -100,8 +100,8 @@ strong | Text to display in bold at the beginning | optional | Any text | false
 
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-inline | display inline code | optional | true, false | false
-scrollable | set a max height of 350px and provide a scroll bar. Not usable with inline="true".  | optional | true, false | false
+inline | Display inline code | optional | true, false | false
+scrollable | Set a max height of 350px and provide a scroll bar. Not usable with inline="true".  | optional | true, false | false
 
 [Bootstrap code documentation](http://getbootstrap.com/css/#code)
 
@@ -110,7 +110,7 @@ scrollable | set a max height of 350px and provide a scroll bar. Not usable with
 
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-type | the type of label to display | optional | default, primary, success, info, warning, danger | default
+type | The type of label to display | optional | default, primary, success, info, warning, danger | default
 
 [Bootstrap label documentation](http://getbootstrap.com/components/#labels)
 
