@@ -466,7 +466,7 @@ class BoostrapShortcodes {
         $output .= '</ul>';
         $output .= '<div class="tab-content">';
         $output .= do_shortcode( $content );
-        $output .= '</div></div>';
+        $output .= '</div>';
     } else {
       $output .= do_shortcode( $content );
     }
