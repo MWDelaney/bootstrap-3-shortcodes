@@ -28,9 +28,12 @@ License: GPL2
 */
 
 /* ============================================================= */
+define('BOOTSTRAP_SHORTCODES_PLUGIN_PATH', dirname(__FILE__) . '/');
 
+// Begin TinyMCE Buttons
+require_once ( BOOTSTRAP_SHORTCODES_PLUGIN_PATH . '/includes/tinymce-buttons.php' );
 
-
+// Begin Shortcodes 
 class BoostrapShortcodes {
 
   function __construct() {
@@ -51,6 +54,7 @@ class BoostrapShortcodes {
   function add_shortcodes() {
 
     add_shortcode('button', array( $this, 'bs_button' ));
+    add_shortcode('button-group', array( $this, 'bs_button_group' ));
     add_shortcode('alert', array( $this, 'bs_alert' ));
     add_shortcode('code', array( $this, 'bs_code' ));
     add_shortcode('span', array( $this, 'bs_span' ));
@@ -69,6 +73,7 @@ class BoostrapShortcodes {
     add_shortcode('tabs', array( $this, 'bs_tabs' ));
     add_shortcode('tab', array( $this, 'bs_tab' ));
     add_shortcode('tooltip', array( $this, 'bs_tooltip' ));
+    add_shortcode('panel', array( $this, 'bs_panel' ));
 
   }
 
@@ -99,7 +104,18 @@ class BoostrapShortcodes {
      return $return;
   }
 
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_button_group
+    *
+    * @author M. W. Delaney
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_button_group( $atts, $content = null ) {
 
+    return '<div class="button-group">' . do_shortcode( $content ) . '</div>';
+
+  }
 
   /*--------------------------------------------------------------------------------------
     *
@@ -201,18 +217,40 @@ class BoostrapShortcodes {
     *-------------------------------------------------------------------------------------*/
   function bs_column( $atts, $content = null ) {
     extract(shortcode_atts(array(
-      "large" => false,
-      "medium" => false,
-      "small" => false,
-      "xsmall" => false,
-      "offset" => false,
-      "pull" => false,
+      "lg" => false,
+      "md" => false,
+      "sm" => false,
+      "xs" => false,
+      "offset-lg" => false,
+      "offset-md" => false,
+      "offset-sm" => false,
+      "offset-xs" => false,
+      "pull-lg" => false,
+      "pull-md" => false,
+      "pull-sm" => false,
+      "pull-xs" => false,
+      "push-lg" => false,
+      "push-md" => false,
+      "push-sm" => false,
+      "push-xs" => false,
     ), $atts));
     $return  =  '<div class="';
-    $return .= ($large) ? 'col-lg-' . $large . ' ' : '';
-    $return .= ($medium) ? 'col-md-' . $medium . ' ' : '';
-    $return .= ($small) ? 'col-sm-' . $small . ' ' : '';
-    $return .= ($xsmall) ? 'col-xs-' . $xsmall . ' ' : '';
+    $return .= ($lg) ? 'col-lg-' . $lg . ' ' : '';
+    $return .= ($md) ? 'col-md-' . $md . ' ' : '';
+    $return .= ($sm) ? 'col-sm-' . $sm . ' ' : '';
+    $return .= ($xs) ? 'col-xs-' . $xs . ' ' : '';
+    $return .= ($offset-lg) ? 'col-lg-offset-' . $offset-lg . ' ' : '';
+    $return .= ($offset-md) ? 'col-md-offset-' . $offset-md . ' ' : '';
+    $return .= ($offset-sm) ? 'col-sm-offset-' . $offset-sm . ' ' : '';
+    $return .= ($offset-xs) ? 'col-xs-offset-' . $offset-xs . ' ' : '';
+    $return .= ($pull-lg) ? 'col-lg-pull-' . $pull-lg . ' ' : '';
+    $return .= ($pull-md) ? 'col-md-pull-' . $pull-md . ' ' : '';
+    $return .= ($pull-sm) ? 'col-sm-pull-' . $pull-sm . ' ' : '';
+    $return .= ($pull-xs) ? 'col-xs-pull-' . $pull-xs . ' ' : '';
+    $return .= ($push-lg) ? 'col-lg-push-' . $push-lg . ' ' : '';
+    $return .= ($push-md) ? 'col-md-push-' . $push-md . ' ' : '';
+    $return .= ($push-sm) ? 'col-sm-push-' . $push-sm . ' ' : '';
+    $return .= ($push-xs) ? 'col-xs-push-' . $push-xs . ' ' : '';
     $return .= '">' . do_shortcode( $content ) . '</div>';
 
     return $return;
@@ -362,7 +400,26 @@ class BoostrapShortcodes {
       return '<div class="well' . $size . '">' . do_shortcode( $content ) . '</div>';
     }
 
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_panel
+    *
+    * @author M. W. Delaney
+    * @since 1.0
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_panel( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+      "title" => '',
+      "type" => 'default',
+      "footer" => false
+    ), $atts));
+    if($footer) {
+        $footer = '<div class="panel-footer">' . $footer . '</div>';
+      }
+    return '<div class="panel panel-' . $type . '"><div class="panel-heading"><h3 class="panel-title">' . $title . '</h3></div><div class="panel-body">' . do_shortcode( $content ) . '</div>' . $footer . '</div>';
 
+  }
 
   /*--------------------------------------------------------------------------------------
     *
@@ -507,17 +564,28 @@ class BoostrapShortcodes {
     else
       $GLOBALS['current_collapse']++;
 
+    extract(shortcode_atts(array(
+      "title" => '',
+      "state" => false
+    ), $atts));
 
-    $defaults = array( 'title' => 'Tab', 'state' => '');
-    extract( shortcode_atts( $defaults, $atts ) );
-
-    if (!empty($state))
-      $state = '';
+    if ($state == "active")
+      $state = 'in';
 
     return '<div class="panel"><div class="panel-heading"><h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['collapsibles_count'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">' . $title . '</a></h3></div><div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="panel-collapse collapse ' . $state . '"><div class="panel-body">' . do_shortcode($content) . ' </div></div></div>';
   }
 
-  function bs_tooltip( $atts, $content = null ) {
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_tooltip
+    *
+    * @author
+    * @since 1.0
+    *
+    *-------------------------------------------------------------------------------------*/
+
+function bs_tooltip( $atts, $content = null ) {
 
     $defaults = array(
 	'title' => '',

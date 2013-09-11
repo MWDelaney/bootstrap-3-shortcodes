@@ -16,18 +16,52 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 
 * [Grid](#grid)
 * [Buttons](#buttons)
+* [Button Groups](#button-groups)
 * [Alerts](#alerts)
 * [Code](#code)
 * [Labels](#labels)
 * [Badges](#badges)
 * [Icons](#icons)
 * [Tables](#tables)
-* [Accordion](#accordion)
+* [Collapse (Accordion)](#collapse)
 * [List Groups](#list-groups)
 * [Tabs](#tabs)
 * [Wells](#wells)
+* [Panels](#panels)
+
 
 ## Usage
+
+### Grid
+	[row]
+	  [column md="6"]
+	    …
+	  [/column]
+	  [column md="6"]
+	    …
+	  [/column]
+	[/row]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xs | Size of column on extra small screens (less than 768px) | optional | 1-12 | false
+sm | Size of column on small screens (greater than 768px) | optional | 1-12 | false
+md | Size of column on medium screens (greater than 992px) | optional | 1-12 | false
+lg | Size of column on large screens (greater than 1200px) | optional | 1-12 | false
+offset-xs | Offset on extra small screens | optional | 1-12 | false
+offset-sm | Offset on small screens | optional | 1-12 | false
+offset-md | Offset on column on medium screens | optional | 1-12 | false
+offset-lg | Offset on column on large screens | optional | 1-12 | false
+pull-xs | Pull on extra small screens | optional | 1-12 | false
+pull-sm | Pull on small screens | optional | 1-12 | false
+pull-md | Pull on column on medium screens | optional | 1-12 | false
+pull-lg | Pull on column on large screens | optional | 1-12 | false
+push-xs | Push on extra small screens | optional | 1-12 | false
+push-sm | Push on small screens | optional | 1-12 | false
+push-md | Push on column on medium screens | optional | 1-12 | false
+push-lg | Push on column on large screens | optional | 1-12 | false
+
+[Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
 
 ### Buttons
 	[button type="success" size="lg" link="#"] … [/button]
@@ -40,6 +74,15 @@ xclass | Any extra classes you want to add | optional | Any text | none
 link | The url you want the button to link to | optional | any valid link | none
 
 [Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
+
+### Button Groups
+	[button-group]
+        [button link="#"] … [/button]
+        [button link="#"] … [/button]
+        [button link="#"] … [/button]
+	[/button-group]
+
+[Bootstrap button groups documentation](http://getbootstrap.com/css/#btn-groups)
 
 ### Alerts
 	[alert type="success"] … [/alert]
@@ -57,8 +100,8 @@ strong | Text to display in bold at the beginning | optional | Any text | false
 
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-inline | display inline code | optional | true, false | false
-scrollable | set a max height of 350px and provide a scroll bar. Not usable with inline="true".  | optional | true, false | false
+inline | Display inline code | optional | true, false | false
+scrollable | Set a max height of 350px and provide a scroll bar. Not usable with inline="true".  | optional | true, false | false
 
 [Bootstrap code documentation](http://getbootstrap.com/css/#code)
 
@@ -67,7 +110,7 @@ scrollable | set a max height of 350px and provide a scroll bar. Not usable with
 
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-type | the type of label to display | optional | default, primary, success, info, warning, danger | default
+type | The type of label to display | optional | default, primary, success, info, warning, danger | default
 
 [Bootstrap label documentation](http://getbootstrap.com/components/#labels)
 
@@ -80,15 +123,6 @@ right | Whether the badge should align to the right of its container | optional 
 
 [Bootstrap badges documentation](http://getbootstrap.com/components/#badges)
 
-### Wells
-	[well size="small"] … [/well]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-size | Modifies the amount of padding inside the well | optional | sm, lg | normal
-
-[Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
-
 ### Icons
 	[icon type="arrow"]
 
@@ -98,29 +132,12 @@ type | The type of icon you want to display | required | See Bootstrap docs | no
 
 [Bootstrap Glyphicons documentation](http://getbootstrap.com/components/#glyphicons)
 
-### Grid
-	[row]
-	  [column medium="6"]
-	    …
-	  [/column]
-	  [column medium="6"]
-	    …
-	  [/column]
-	[/row]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-xsmall | size of column on extra small screens (<768px) | optional | 1-12 | false
-small | size of column on small screens (≥768px) | optional | 1-12 | false
-medium | size of column on medium screens (≥992px) | optional | 1-12 | false
-large | size of column on large screens (≥1200px) | optional | 1-12 | false
-
-[Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
-
 ### Tables
 	[table type="striped" cols="#,First Name, Last Name, Username" data="1, Filip, Stefansson, filipstefansson, 2, Victor, Meyer, Pudge, 3, Måns, Ketola-Backe, mossboll"]
 
-### Accordion
+[Bootstrap table documentation](http://getbootstrap.com/css/#tables)
+
+### Collapse (Accordion)
 	[collapsibles]
 	  [collapse title="Collapse 1" state="active"]
 	    …
@@ -133,6 +150,8 @@ large | size of column on large screens (≥1200px) | optional | 1-12 | false
 	  [/collapse]
 	[/collapsibles]
     
+[Bootstrap collapse documentation](http://getbootstrap.com/javascript/#collapse)
+
 ### List Groups
 	[list-group]
 	  [list-group-item]
@@ -146,6 +165,8 @@ large | size of column on large screens (≥1200px) | optional | 1-12 | false
 	  [/list-group-item]
 	[/list-group]
 
+[Bootstrap list groups documentation](http://getbootstrap.com/components/#list-group)
+
 ### Tabs
 	[tabs]
 	  [tab title="Home"]
@@ -158,3 +179,25 @@ large | size of column on large screens (≥1200px) | optional | 1-12 | false
 	    …
 	  [/tab]
 	[/tabs]
+
+[Bootstrap list groups documentation](http://getbootstrap.com/javascript/#tabs)
+
+### Wells
+	[well size="small"] … [/well]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+size | Modifies the amount of padding inside the well | optional | sm, lg | normal
+
+[Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
+
+### Panels
+	[panel type="info" title="Panel Title" footer="Footer text"] … [/panel]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
+title | The panel title | required | Any text | none
+footer | The panel footer text if desired | optional | Any text | none
+
+[Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
