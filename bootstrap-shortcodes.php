@@ -33,10 +33,10 @@ define('BOOTSTRAP_SHORTCODES_PLUGIN_PATH', dirname(__FILE__) . '/');
 // Begin TinyMCE Buttons
 require_once ( BOOTSTRAP_SHORTCODES_PLUGIN_PATH . '/includes/tinymce-buttons.php' );
 
-function wpex_fix_shortcodes($content){   
+function wpex_fix_shortcodes($content){
     $array = array (
-        '<p>[' => '[', 
-        ']</p>' => ']', 
+        '<p>[' => '[',
+        ']</p>' => ']',
         ']<br />' => ']'
     );
 
@@ -45,7 +45,7 @@ function wpex_fix_shortcodes($content){
 }
 add_filter('the_content', 'wpex_fix_shortcodes');
 
-// Begin Shortcodes 
+// Begin Shortcodes
 class BoostrapShortcodes {
 
   function __construct() {
@@ -278,7 +278,7 @@ class BoostrapShortcodes {
     return '<ul class="list-group">' . do_shortcode( $content ) . '</ul>';
 
   }
-    
+
   /*--------------------------------------------------------------------------------------
     *
     * bs_list_group_item
@@ -612,6 +612,4 @@ function bs_tooltip( $atts, $content = null ) {
 
 }
 
-new BoostrapShortcodes()
-
-?>
+new BoostrapShortcodes();
