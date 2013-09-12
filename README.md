@@ -76,11 +76,17 @@ link | The url you want the button to link to | optional | any valid link | none
 [Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
 
 ### Button Groups
-	[button-group]
+	[button-group size="lg" justified="" vertical=""]
         [button link="#"] … [/button]
         [button link="#"] … [/button]
         [button link="#"] … [/button]
 	[/button-group]
+	
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+size | The size of the button group | optional | xs, sm, lg | none
+justified | Whether button group is justified | optional | true, false | false
+vertical | Whether button group is vertical | optional | true, false | false
 
 [Bootstrap button groups documentation](http://getbootstrap.com/css/#btn-groups)
 
