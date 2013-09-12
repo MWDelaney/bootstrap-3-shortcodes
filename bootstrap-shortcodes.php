@@ -122,8 +122,21 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_button_group( $atts, $content = null ) {
-
-    return '<div class="button-group">' . do_shortcode( $content ) . '</div>';
+     extract(shortcode_atts(array(
+        "size" => false,
+        "vertical" => false,
+        "justified" => false
+     ), $atts));
+      if($size) {
+        $classes .= ' btn-group-'.$size;
+      }
+       if($vertical) {
+        $classes .= ' btn-group-vertical';
+      } 
+       if($justified) {
+        $classes .= ' btn-group-justified';
+      }
+    return '<div class="button-group '.$classes.'">' . do_shortcode( $content ) . '</div>';
 
   }
 
