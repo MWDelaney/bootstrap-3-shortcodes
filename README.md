@@ -70,7 +70,7 @@ Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of the button | optional | default, primary, success, info, warning, danger, link | default
 size | The size of the button | optional | xs, sm, lg | none
-xclass | Any extra classes you want to add | optional | Any text | none
+xclass | Any extra classes you want to add | optional | any text | none
 link | The url you want the button to link to | optional | any valid link | none
 
 [Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
@@ -91,7 +91,7 @@ Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of the alert | required | success, info, warning, danger | success
 dismissable | If the alert should be dismissable | optional | true, false | false
-strong | Text to display in bold at the beginning | optional | Any text | false
+strong | Text to display in bold at the beginning | optional | any text | false
 
 [Bootstrap alert documentation](http://getbootstrap.com/components/#alerts)
 
@@ -149,7 +149,12 @@ type | The type of icon you want to display | required | See Bootstrap docs | no
 	    …
 	  [/collapse]
 	[/collapsibles]
-    
+	
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+title | The title of the collapsible, visible when collapsed | required | any text | false
+active | Whether the tab is expanded at load time | optional | active | false
+
 [Bootstrap collapse documentation](http://getbootstrap.com/javascript/#collapse)
 
 ### List Groups
@@ -180,6 +185,10 @@ type | The type of icon you want to display | required | See Bootstrap docs | no
 	  [/tab]
 	[/tabs]
 
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+title | The title of the tab | required | any text | false
+
 [Bootstrap list groups documentation](http://getbootstrap.com/javascript/#tabs)
 
 ### Wells
@@ -197,7 +206,7 @@ size | Modifies the amount of padding inside the well | optional | sm, lg | norm
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
-title | The panel title | required | Any text | none
-footer | The panel footer text if desired | optional | Any text | none
+title | The panel title | required | any text | none
+footer | The panel footer text if desired | optional | any text | none
 
 [Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
