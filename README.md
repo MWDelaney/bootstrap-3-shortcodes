@@ -218,9 +218,13 @@ footer | The panel footer text if desired | optional | any text | none
 [Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
 
 ### Media Objects
-	[media]
-        [media-object pull="right"] … [/media-object]
-        [media-body title="Testing"] … [/media-body]
+    [media]
+	  [media-object pull="right"]
+	    …
+	  [/media-object]
+	  [media-body title="Testing"]
+	    …
+	  [/media-body]
     [/media]
 
 Parameter | Description | Required | Values | Default
@@ -230,4 +234,4 @@ title | The object title | required | Any text | none
 
 __NOTE: media-object should contain an image, or linked image, inserted using the WordPress TinyMCE editor__
 
-[Bootstrap media objects documentation](http://getbootstrap.com/components/#media)
+[Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
