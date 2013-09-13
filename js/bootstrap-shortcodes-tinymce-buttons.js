@@ -49,7 +49,7 @@
 
                     tinymce.execCommand('mceInsertContent', false, content);
                 });
-                ed.addButton('bootstrap_shortcodes_button', {title : 'Button', cmd : 'bootstrap_shortcodes_insert_button', image: url + '/icons/button.svg' });
+                ed.addButton('bootstrap_shortcodes_button', {text : 'Button', cmd : 'bootstrap_shortcodes_insert_button', image: url + '/icons/button.svg' });
 
             
             /*
@@ -177,6 +177,7 @@ tinymce.create('tinymce.plugins.bs_columns', {
                     onselect : function(v) {
                         /* simpler right? */
                         tinyMCE.activeEditor.selection.setContent('[row]<br>'+v+'[/row]');
+                        return false;
                     }
                 });
 
@@ -195,5 +196,34 @@ tinymce.create('tinymce.plugins.bs_columns', {
     }
 });
 tinymce.PluginManager.add('bs_columns', tinymce.plugins.bs_columns);  
+
+tinymce.create('tinymce.plugins.bs_list_group', {
+    createControl: function(n, cm) {
+        switch (n) {
+            case 'bootstrap_shortcodes_list_group':
+                var mlb = cm.createListBox('list_group', {
+                    title : 'List Group',
+                    onselect : function(v) {
+                        /* simpler right? */
+                        tinyMCE.activeEditor.selection.setContent('[list-group]<br>'+v+'[/list-group]');
+                        return false;
+                    }
+                });
+
+                // Add some values to the list box
+                mlb.add('Two Items', '[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>');
+                mlb.add('Three Items', '[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>');
+                mlb.add('Four Items', '[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>');
+                mlb.add('Five Items', '[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>');
+                mlb.add('Six Items', '[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>[list-group-item] [/list-group-item]<br>');
+
+            // Return the new listbox instance
+            return mlb;
+
+        }
+        return null;
+    }
+});
+tinymce.PluginManager.add('bs_list_group', tinymce.plugins.bs_list_group);  
     
 })();

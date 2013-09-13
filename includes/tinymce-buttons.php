@@ -13,6 +13,7 @@ function bs_shortcodes_buttons() {
 function bs_shortcodes_add_buttons( $plugin_array ) {
     $plugin_array['bs_shortcodes'] = plugins_url( '/bootstrap-shortcodes/js/bootstrap-shortcodes-tinymce-buttons.js' );
     $plugin_array['bs_columns'] = plugins_url( '/bootstrap-shortcodes/js/bootstrap-shortcodes-tinymce-buttons.js' );
+    $plugin_array['bs_list_group'] = plugins_url( '/bootstrap-shortcodes/js/bootstrap-shortcodes-tinymce-buttons.js' );
 
     return $plugin_array;
 }
@@ -24,7 +25,8 @@ function bs_shortcodes_register_buttons( $buttons ) {
                'bootstrap_shortcodes_label',
                'bootstrap_shortcodes_badge',
                'bootstrap_shortcodes_icon',
-               'bootstrap_shortcodes_panel'
+               'bootstrap_shortcodes_panel',
+               'bootstrap_shortcodes_list_group'
               );
     return $buttons;
 }
