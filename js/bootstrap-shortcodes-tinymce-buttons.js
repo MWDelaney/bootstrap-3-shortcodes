@@ -225,5 +225,63 @@ tinymce.create('tinymce.plugins.bs_list_group', {
     }
 });
 tinymce.PluginManager.add('bs_list_group', tinymce.plugins.bs_list_group);  
-    
+
+tinymce.create('tinymce.plugins.bs_tabs', {
+    createControl: function(n, cm) {
+        switch (n) {
+            case 'bootstrap_shortcodes_tabs':
+                var mlb = cm.createListBox('tabs', {
+                    title : 'Tabs',
+                    onselect : function(v) {
+                        /* simpler right? */
+                        tinyMCE.activeEditor.selection.setContent('[tabs]<br>'+v+'[/tabs]');
+                        return false;
+                    }
+                });
+
+                // Add some values to the list box
+                mlb.add('Two Tabs', '[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>');
+                mlb.add('Three Tabs', '[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>');
+                mlb.add('Four Tabs', '[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>');
+                mlb.add('Five Tabs', '[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>');
+                mlb.add('Six Tabs', '[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>[tab title=""] [/tab]<br>');
+
+            // Return the new listbox instance
+            return mlb;
+
+        }
+        return null;
+    }
+});
+tinymce.PluginManager.add('bs_tabs', tinymce.plugins.bs_tabs);
+
+tinymce.create('tinymce.plugins.bs_collapse', {
+    createControl: function(n, cm) {
+        switch (n) {
+            case 'bootstrap_shortcodes_collapse':
+                var mlb = cm.createListBox('collapse', {
+                    title : 'Accordions',
+                    onselect : function(v) {
+                        /* simpler right? */
+                        tinyMCE.activeEditor.selection.setContent('[collapsibles]<br>'+v+'[/collapsibles]');
+                        return false;
+                    }
+                });
+
+                // Add some values to the list box
+                mlb.add('Two Items', '[collapse title="" state="active"] [/collapse]<br>[collapse title=""] [/collapse]<br>');
+                mlb.add('Three Items', '[collapse title="" state="active"] [/collapse]<br>[collapse title=""] [/collapse]<br>[collapse title=""] [/collapse]<br>');
+                mlb.add('Four Items', '[collapse title="" state="active"] [/collapse]<br>[collapse title=""] [/collapse]<br>[collapse title=""] [/collapse]<br>[collapse title=""] [/collapse]<br>');
+                mlb.add('Five Items', '[collapse title="" state="active"] [/collapse]<br>[collapse title=""] [/collapse]<br>[collapse title=""] [/collapse]<br>[collapse title=""] [/collapse]<br>[collapse title=""] [/collapse]<br>');
+                mlb.add('Six Items', '[collapse title="" state="active"] [/collapse]<br>[collapse title=""] [/collapse]<br>[collapse title=""] [/collapse]<br>[collapse title=""] [/collapse]<br>[collapse title=""] [/collapse]<br>[collapse title=""] [/collapse]<br>');
+
+            // Return the new listbox instance
+            return mlb;
+
+        }
+        return null;
+    }
+});
+tinymce.PluginManager.add('bs_collapse', tinymce.plugins.bs_collapse);  
+
 })();
