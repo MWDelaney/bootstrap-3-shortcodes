@@ -610,10 +610,10 @@ class BoostrapShortcodes {
 function bs_tooltip( $atts, $content = null ) {
 
     $defaults = array(
-	'title' => '',
-	'placement' => 'top',
-	'animation' => 'true',
-	'html' => 'false'
+	   'title' => '',
+	   'placement' => 'top',
+	   'animation' => 'true',
+	   'html' => 'false'
     );
     extract( shortcode_atts( $defaults, $atts ) );
 
@@ -635,7 +635,7 @@ function bs_tooltip( $atts, $content = null ) {
 function bs_media( $atts, $content = null ) {
     
     $defaults = array(
-	'title' => false,
+	   'title' => false,
     );
     extract( shortcode_atts( $defaults, $atts ) );
     return '<div class="media">' . do_shortcode( $content ) . '</div>';
@@ -644,7 +644,7 @@ function bs_media( $atts, $content = null ) {
 function bs_media_object( $atts, $content = null ) {
 
     $defaults = array(
-	'pull' => "left",
+	   'pull' => "left",
     );
     extract( shortcode_atts( $defaults, $atts ) );
     
@@ -662,7 +662,7 @@ function bs_media_object( $atts, $content = null ) {
 function bs_media_body( $atts, $content = null ) {
     
     $defaults = array(
-	'title' => false,
+	   'title' => false,
     );
     extract( shortcode_atts( $defaults, $atts ) );
     $return .= '<div class="meda-body">';
