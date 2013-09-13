@@ -21,16 +21,16 @@ function bs_shortcodes_add_buttons( $plugin_array ) {
 }
 function bs_shortcodes_register_buttons( $buttons ) {
     array_push( $buttons, 
-            'bootstrap_shortcodes_columns',              
+            'bootstrap_shortcodes_columns',
+            'bootstrap_shortcodes_list_group',
+            'bootstrap_shortcodes_tabs',
+            'bootstrap_shortcodes_collapse',
             'bootstrap_shortcodes_button', 
             'bootstrap_shortcodes_alert', 
             'bootstrap_shortcodes_label',
             'bootstrap_shortcodes_badge',
             'bootstrap_shortcodes_icon',
-            'bootstrap_shortcodes_panel',
-            'bootstrap_shortcodes_list_group',
-            'bootstrap_shortcodes_tabs',
-            'bootstrap_shortcodes_collapse'
+            'bootstrap_shortcodes_panel'
           );
     return $buttons;
 }
