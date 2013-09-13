@@ -81,7 +81,9 @@ class BoostrapShortcodes {
     add_shortcode('tab', array( $this, 'bs_tab' ));
     add_shortcode('tooltip', array( $this, 'bs_tooltip' ));
     add_shortcode('panel', array( $this, 'bs_panel' ));
-
+    add_shortcode('media', array( $this, 'bs_media' ));
+    add_shortcode('media-object', array( $this, 'bs_media_object' ));
+    add_shortcode('media-body', array( $this, 'bs_media_body' ));
   }
 
 
@@ -618,6 +620,57 @@ function bs_tooltip( $atts, $content = null ) {
     wp_enqueue_script( 'bootsrap-shortcodes-tooltip', plugins_url( 'js/bootstrap-shortcodes-tooltip.js', __FILE__ ), array( 'jquery' ), false, true );
 
     return '<a href="#" class="bs-tooltip" data-toggle="tooltip" title="' . $title . '" data-placement="' . $placement . '" data-animation="' . $animation . '" data-html="' . $html . '">' . $content . '</a>';
+  }
+
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_media
+    *
+    * @author
+    * @since 1.0
+    *
+    *-------------------------------------------------------------------------------------*/
+    
+function bs_media( $atts, $content = null ) {
+    
+    $defaults = array(
+	'title' => false,
+    );
+    extract( shortcode_atts( $defaults, $atts ) );
+    return '<div class="media">' . do_shortcode( $content ) . '</div>';
+  }
+
+function bs_media_object( $atts, $content = null ) {
+
+    $defaults = array(
+	'pull' => "left",
+    );
+    extract( shortcode_atts( $defaults, $atts ) );
+    
+    $classes = "media-object";
+    if ( preg_match('/<img.*? class=".*?" \/>/', $content) ) { 
+         $return = preg_replace('/(<img.*? class=".*?)(".*?>)/', '$1 ' . $classes . '$2', $content); 
+    } 
+    else { 
+         $return = preg_replace('/(<img.*?)>/', '$1 class="' . $classes . '" >', $content);
+    }
+    $return = '<span class="pull-'. $pull . '">' . $return . '</span>';
+    return $return;
+  }
+
+function bs_media_body( $atts, $content = null ) {
+    
+    $defaults = array(
+	'title' => false,
+    );
+    extract( shortcode_atts( $defaults, $atts ) );
+    $return .= '<div class="meda-body">';
+    if($title) {
+        $return .= '<h4 class="media-heading">' . $title . '</h4>';
+    }
+    $return .= $content . '</div>';
+    return $return;
   }
 
 }
