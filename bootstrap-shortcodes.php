@@ -30,9 +30,6 @@ License: GPL2
 /* ============================================================= */
 define('BOOTSTRAP_SHORTCODES_PLUGIN_PATH', dirname(__FILE__) . '/');
 
-// Begin TinyMCE Buttons
-require_once ( BOOTSTRAP_SHORTCODES_PLUGIN_PATH . '/includes/tinymce-buttons.php' );
-
 function wpex_fix_shortcodes($content){   
     $array = array (
         '<p>[' => '[', 
