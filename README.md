@@ -28,7 +28,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 * [Tabs](#tabs)
 * [Wells](#wells)
 * [Panels](#panels)
-
+* [Media Objects](#media-objects)
 
 ## Usage
 
@@ -214,5 +214,24 @@ Parameter | Description | Required | Values | Default
 type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
 title | The panel title | required | any text | none
 footer | The panel footer text if desired | optional | any text | none
+
+[Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
+
+### Media Objects
+    [media]
+	  [media-object pull="right"]
+	    …
+	  [/media-object]
+	  [media-body title="Testing"]
+	    …
+	  [/media-body]
+    [/media]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+pull | Whether the image pulls to the left or right | optional | left, right | right
+title | The object title | required | Any text | none
+
+__NOTE: media-object should contain an image, or linked image, inserted using the WordPress TinyMCE editor__
 
 [Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
