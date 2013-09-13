@@ -162,24 +162,38 @@
         createControl : function(n, cm) {
             return null;
         },
-
-        /**
-         * Returns information about the plugin as a name/value array.
-         * The current keys are longname, author, authorurl, infourl and version.
-         *
-         * @return {Object} Name/value array containing information about the plugin.
-         */
-        getInfo : function() {
-            return {
-                    longname : 'WPTuts Buttons',
-                    author : 'Lee',
-                    authorurl : 'http://wp.tutsplus.com/author/leepham',
-                    infourl : 'http://wiki.moxiecode.com/index.php/tinyMCE:Plugins/example',
-                    version : "0.1"
-            };
-        }
     });
 
     // Register plugin
     tinymce.PluginManager.add('bs_shortcodes', tinymce.plugins.bs_shortcodes);
+
+// Creates a new plugin class and a custom listbox
+tinymce.create('tinymce.plugins.bs_columns', {
+    createControl: function(n, cm) {
+        switch (n) {
+            case 'bootstrap_shortcodes_columns':
+                var mlb = cm.createListBox('columns', {
+                    title : 'Columns',
+                    onselect : function(v) {
+                        /* simpler right? */
+                        tinyMCE.activeEditor.selection.setContent('[row]<br>'+v+'[/row]');
+                    }
+                });
+
+                // Add some values to the list box
+                mlb.add('Two', '[column md="6"] [/column]<br>[column md="6"] [/column]</br>');
+                mlb.add('Three', '[column md="4"] [/column]<br>[column md="4"] [/column]</br>[column md="4"] [/column]<br>');
+                mlb.add('Four', '[column md="3"] [/column]<br>[column md="3"] [/column]</br>[column md="3"] [/column]</br>[column md="3"] [/column]<br>');
+                mlb.add('Six', '[column md="2"] [/column]<br>[column md="2"] [/column]</br>[column md="2"] [/column]</br>[column md="2"] [/column]<br>[column md="2"] [/column]</br>[column md="2"] [/column]</br>');
+                mlb.add('Twelve', '[column md="1"] [/column]<br>[column md="1"] [/column]</br>[column md="1"] [/column]</br>[column md="1"] [/column]<br>[column md="1"] [/column]</br>[column md="1"] [/column]</br>[column md="1"] [/column]<br>[column md="1"] [/column]</br>[column md="1"] [/column]</br>[column md="1"] [/column]<br>[column md="1"] [/column]</br>[column md="1"] [/column]</br>');
+
+            // Return the new listbox instance
+            return mlb;
+
+        }
+        return null;
+    }
+});
+tinymce.PluginManager.add('bs_columns', tinymce.plugins.bs_columns);  
+    
 })();
