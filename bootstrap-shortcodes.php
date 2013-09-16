@@ -75,7 +75,6 @@ class BoostrapShortcodes {
     add_shortcode('media', array( $this, 'bs_media' ));
     add_shortcode('media-object', array( $this, 'bs_media_object' ));
     add_shortcode('media-body', array( $this, 'bs_media_body' ));
-    add_shortcode('jumbotron', array( $this, 'bs_jumbotron' ));
   }
 
 
@@ -663,22 +662,6 @@ function bs_media_body( $atts, $content = null ) {
     }
     $return .= $content . '</div>';
     return $return;
-  }
-
-  /*--------------------------------------------------------------------------------------
-    *
-    * bs_jumbotron
-    *
-    * @since 1.0
-    *
-    *-------------------------------------------------------------------------------------*/
-  function bs_jumbotron( $atts, $content = null ) {
-    extract(shortcode_atts(array(
-      "title" => false
-    ), $atts));
-
-    return '<div class="jumbotron"><h1>' . $title . '</h1>' . do_shortcode( $content ) . '</div>';
-
   }
 
 }
