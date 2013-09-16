@@ -9,9 +9,10 @@ function retitle($match) {
     return "<$h3 id='$id'>$title</$h3>";
 }
 
+$thisfile = realpath(dirname(__FILE__));
 # Install PSR-0-compatible class autoloader
 spl_autoload_register(function($class){
-	require 'php_markdown/' . preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
+	require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
 });
 
 # Get Markdown class
@@ -25,7 +26,7 @@ $html = MarkdownExtra::defaultTransform($text);
 <html>
     <head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-        
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 

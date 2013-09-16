@@ -28,19 +28,10 @@ License: GPL2
 */
 
 /* ============================================================= */
-define('BOOTSTRAP_SHORTCODES_PLUGIN_PATH', dirname(__FILE__) . '/');
 
-function wpex_fix_shortcodes($content){   
-    $array = array (
-        '<p>[' => '[',
-        ']</p>' => ']',
-        ']<br />' => ']'
-    );
-
-    $content = strtr($content, $array);
-    return $content;
-}
-add_filter('the_content', 'wpex_fix_shortcodes');
+require_once(dirname(__FILE__) . '/includes/defaults.php');
+require_once(dirname(__FILE__) . '/includes/functions.php');
+require_once(dirname(__FILE__) . '/includes/actions-filters.php');
 
 // Begin Shortcodes
 class BoostrapShortcodes {
@@ -619,7 +610,7 @@ function bs_tooltip( $atts, $content = null ) {
     );
     extract( shortcode_atts( $defaults, $atts ) );
 
-    wp_enqueue_script( 'bootsrap-shortcodes-tooltip', plugins_url( 'js/bootstrap-shortcodes-tooltip.js', __FILE__ ), array( 'jquery' ), false, true );
+    wp_enqueue_script( 'bootsrap-shortcodes-tooltip', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-tooltip.js', array( 'jquery' ), false, true );
 
     return '<a href="#" class="bs-tooltip" data-toggle="tooltip" title="' . $title . '" data-placement="' . $placement . '" data-animation="' . $animation . '" data-html="' . $html . '">' . $content . '</a>';
   }
