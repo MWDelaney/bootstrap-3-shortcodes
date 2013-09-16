@@ -242,6 +242,6 @@ __NOTE: media-object should contain an image, or linked image, inserted using th
 
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-title | The jumbotron title | required | Any text | none
+title | The jumbotron title | optionals | Any text | none
 
 [Bootstrap jumbotron documentation](http://getbootstrap.com/components/#jumbotron)
