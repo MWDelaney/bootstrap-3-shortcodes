@@ -24,6 +24,8 @@ $html = MarkdownExtra::defaultTransform($text);
 <!DOCTYPE html>
 <html>
     <head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 
@@ -32,7 +34,23 @@ $html = MarkdownExtra::defaultTransform($text);
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <title>PHP Markdown Lib - Readme</title>
+<script>
+    $(document).ready(function() {
+        $(".insert-code").click(function() {
+            var example = $( this ).parent().prev().find("code").text();
+            var lines = example.split('\n');
+            var paras = '';
+            $.each(lines, function(i, line) {
+                if (line) {
+                    paras += line + '<br>';
+                }
+            });
+            var win = window.dialogArguments || opener || parent || top;
+            win.send_to_editor(paras);
+        });
+    });
+</script>
+        <title>Bootstrap Shortcodes Documentation</title>
     </head>
     <body>
         <div class="container">
@@ -40,6 +58,7 @@ $html = MarkdownExtra::defaultTransform($text);
 			# Put HTML content in the document
             $html = str_replace('<table>', '<table class="table table-striped">', $html);
             $html = preg_replace_callback("#<(h[1-6])>(.*?)</\\1>#", "retitle", $html);
+            $html = str_replace('</pre>', '</pre><p><input type="button" class="button-primary insert-code" value="Insert Example" /></p>', $html);
             echo $html;
 		?>
         </div>
