@@ -668,9 +668,7 @@ function bs_media_body( $atts, $content = null ) {
     );
     extract( shortcode_atts( $defaults, $atts ) );
     $return .= '<div class="meda-body">';
-    if($title) {
-        $return .= '<h4 class="media-heading">' . $title . '</h4>';
-    }
+    $return .= ($title) ? '<h4 class="media-heading">' . $title . '</h4>' : '';
     $return .= $content . '</div>';
     return $return;
   }
@@ -686,8 +684,10 @@ function bs_media_body( $atts, $content = null ) {
       "title" => false
     ), $atts));
 
-    return '<div class="jumbotron"><h1>' . $title . '</h1>' . do_shortcode( $content ) . '</div>';
-
+    $return .='<div class="jumbotron">';
+    $return .= ($title) ? '<h1>' . $title . '</h1>' : '';
+    $return .= do_shortcode( $content ) . '</div>';
+    return $return;
   }
 
   /*--------------------------------------------------------------------------------------
