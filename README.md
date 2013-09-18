@@ -18,6 +18,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 * [Buttons](#buttons)
 * [Button Groups](#button-groups)
 * [Lead body copy](#lead-body-copy)
+* [Emphasis classes](#emphasis-classes)
 * [Alerts](#alerts)
 * [Code](#code)
 * [Labels](#labels)
@@ -97,6 +98,15 @@ vertical | Whether button group is vertical | optional | true, false | false
 	[lead] … [/lead]
 
 [Bootstrap body copy documentation](http://getbootstrap.com/css/#type-body-copy)
+
+### Emphasis classes
+	[emphasis type="success"] … [/emphasis]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of label to display | required | muted, primary, success, info, warning, danger | muted
+
+[Bootstrap emphasis classes documentation](http://getbootstrap.com/css/#type-emphasis)
 
 ### Alerts
 	[alert type="success"] … [/alert]

@@ -77,6 +77,7 @@ class BoostrapShortcodes {
     add_shortcode('media-body', array( $this, 'bs_media_body' ));
     add_shortcode('jumbotron', array( $this, 'bs_jumbotron' ));
     add_shortcode('lead', array( $this, 'bs_lead' ));
+    add_shortcode('emphasis', array( $this, 'bs_emphasis' ));
     add_shortcode('thumbnail', array( $this, 'bs_thumbnail' ));
   }
 
@@ -690,6 +691,20 @@ function bs_media_body( $atts, $content = null ) {
     *-------------------------------------------------------------------------------------*/
   function bs_lead( $atts, $content = null ) {
     return '<p class="lead">' . do_shortcode( $content ) . '</p>';
+
+  }
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_emphasis
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_emphasis( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+      "type" => 'muted'
+    ), $atts));
+    return '<p class="text-' . $type . '">' . do_shortcode( $content ) . '</p>';
 
   }
 
