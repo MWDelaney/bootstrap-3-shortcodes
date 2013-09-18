@@ -1,5 +1,5 @@
 <?php
-add_filter('the_content', 'wpex_fix_shortcodes');
+add_filter('the_content', 'bs_fix_shortcodes');
 
 // Create a Media Button for the help file
 //add a button to the content editor, next to the media button
