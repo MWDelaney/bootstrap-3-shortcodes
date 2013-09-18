@@ -56,6 +56,7 @@ $html = MarkdownExtra::defaultTransform($text);
         <div class="container">
 		<?php
 			# Put HTML content in the document
+            $html = preg_replace('/(<a href="http:[^"]+")>/is','\\1 target="_blank">',$html);
             $html = str_replace('<table>', '<table class="table table-striped">', $html);
             $html = preg_replace_callback("#<(h[1-6])>(.*?)</\\1>#", "retitle", $html);
             $html = str_replace('</pre>', '</pre><p><button class="btn btn-primary btn-sm insert-code">Insert Example <i class="glyphicon glyphicon-share-alt"></i></button></p>', $html);
