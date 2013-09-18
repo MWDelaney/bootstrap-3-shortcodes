@@ -31,6 +31,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 * [Panels](#panels)
 * [Media Objects](#media-objects)
 * [Jumbotron](#jumbotron)
+* [Thumbnails](#thumbnails)
 
 ## Usage
 
@@ -251,3 +252,10 @@ Parameter | Description | Required | Values | Default
 title | The jumbotron title | optional | Any text | none
 
 [Bootstrap jumbotron documentation](http://getbootstrap.com/components/#jumbotron)
+
+### Thumbnails
+    [thumbnail] … [/thumbnail]
+    [thumbnail] … [/thumbnail]
+    [thumbnail] … [/thumbnail]
+    
+[Bootstrap thumbnails documentation](http://getbootstrap.com/components/#thumbnails)

@@ -77,6 +77,7 @@ class BoostrapShortcodes {
     add_shortcode('media-body', array( $this, 'bs_media_body' ));
     add_shortcode('jumbotron', array( $this, 'bs_jumbotron' ));
     add_shortcode('lead', array( $this, 'bs_lead' ));
+    add_shortcode('thumbnail', array( $this, 'bs_thumbnail' ));
   }
 
 
@@ -689,6 +690,27 @@ function bs_media_body( $atts, $content = null ) {
     *-------------------------------------------------------------------------------------*/
   function bs_lead( $atts, $content = null ) {
     return '<p class="lead">' . do_shortcode( $content ) . '</p>';
+
+  }
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_thumbnail
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_thumbnail( $atts, $content = null ) {
+    $classes = "thumbnail";
+    if ( preg_match('/<a.*? class=".*?" \/>/', $content) ) { 
+         $return = preg_replace('/(<a.*? class=".*?)(".*?>)/', '$1 ' . $classes . '$2', $content); 
+    } 
+    elseif ( preg_match('/<a.*? \/>/', $content) ) {
+         $return = preg_replace('/(<a.*?)>/', '$1 class="' . $classes . '" >', $content);
+    }
+    else {
+          $return = '<div class="thumbnail">' . $content . '</div>';
+    }
+    return $return;
 
   }
 
