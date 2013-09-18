@@ -33,6 +33,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 * [Media Objects](#media-objects)
 * [Jumbotron](#jumbotron)
 * [Thumbnails](#thumbnails)
+* [Responsive utilities](#responsive-utilities)
 
 ## Usage
 
@@ -269,3 +270,13 @@ title | The jumbotron title | optional | Any text | none
     [thumbnail] … [/thumbnail]
     
 [Bootstrap thumbnails documentation](http://getbootstrap.com/components/#thumbnails)
+
+### Responsive Utilities
+	[responsive visible="sm xs" hidden="lg"] … [/responsive]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+visible | Sizes at which this element is visible (separated by spaces) | optional | xs, sm, md, lg  | false
+hidden | Sizes at which this element is hidden (separated by spaces) | optional | xs, sm, md, lg  | false
+
+[Bootstrap emphasis classes documentation](http://getbootstrap.com/css/#type-emphasis)

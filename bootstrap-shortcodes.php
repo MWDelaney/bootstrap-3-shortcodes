@@ -79,6 +79,8 @@ class BoostrapShortcodes {
     add_shortcode('lead', array( $this, 'bs_lead' ));
     add_shortcode('emphasis', array( $this, 'bs_emphasis' ));
     add_shortcode('thumbnail', array( $this, 'bs_thumbnail' ));
+    add_shortcode('responsive', array( $this, 'bs_responsive' ));
+
   }
 
 
@@ -724,6 +726,39 @@ function bs_media_body( $atts, $content = null ) {
     }
     else {
           $return = '<div class="thumbnail">' . $content . '</div>';
+    }
+    return $return;
+
+  }
+    
+    /*--------------------------------------------------------------------------------------
+    *
+    * bs_responsive
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_responsive( $atts, $content = null ) {
+      extract( shortcode_atts( array(
+          'visible' => '',
+          'hidden' => '',
+      ), $atts ) );
+      if($visible) { 
+          $visible = explode(' ',$visible);
+          foreach($visible as $v):
+            $classes .= 'visible-'.$v.' ';
+          endforeach;
+      }
+      if($hidden) { 
+          $hidden = explode(' ',$hidden);
+          foreach($hidden as $h):
+            $classes .= 'hidden-'.$h.' ';
+          endforeach;
+      }
+    if ( preg_match('/<.*? class=".*?" \/>/', $content) ) { 
+         $return = preg_replace('/(<.*? class=".*?)(".*?>)/', '$1 ' . $classes . '$2', $content); 
+    } 
+    else {
+         $return = preg_replace('/(<.*?)>/', '$1 class="' . $classes . '" >', $content);
     }
     return $return;
 
