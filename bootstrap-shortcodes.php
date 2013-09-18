@@ -757,8 +757,11 @@ function bs_media_body( $atts, $content = null ) {
     if ( preg_match('/<.*? class=".*?" \/>/', $content) ) { 
          $return = preg_replace('/(<.*? class=".*?)(".*?>)/', '$1 ' . $classes . '$2', $content); 
     } 
-    else {
+    elseif ( preg_match('/<.*? \/>/', $content) ) {
          $return = preg_replace('/(<.*?)>/', '$1 class="' . $classes . '" >', $content);
+    }
+    else {
+        $return = '<p class="' . $classes . '">' . $content . '</p>';
     }
     return $return;
 
