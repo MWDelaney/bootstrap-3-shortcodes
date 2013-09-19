@@ -103,6 +103,7 @@ class BoostrapShortcodes {
         "type" => false,
         "size" => false,
         "link" => '',
+        "target" => false,
         "xclass" => false,
         "title" => false,
         "data" => false
@@ -115,6 +116,7 @@ class BoostrapShortcodes {
           endforeach;
       }
      $return  =  '<a href="' . $link . '" class="btn';
+     $return .= ($target) ? ' target=' . $target : '';
      $return .= ($type) ? ' btn-' . $type : ' btn-default';
      $return .= ($size) ? ' btn-' . $size : '';
      $return .= ($xclass) ? ' ' . $xclass : '';

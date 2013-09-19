@@ -78,6 +78,7 @@ type | The type of the button | optional | default, primary, success, info, warn
 size | The size of the button | optional | xs, sm, lg | none
 xclass | Any extra classes you want to add | optional | any text | none
 link | The url you want the button to link to | optional | any valid link | none
+target | Target for the link | optional | any valid target | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example below). | optional | any text | none
 
 	[button link="#" data="toggle,popover|content,This is the popover content" title="A lovely title"]Some text[/button]
