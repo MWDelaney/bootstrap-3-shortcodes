@@ -78,9 +78,9 @@ type | The type of the button | optional | default, primary, success, info, warn
 size | The size of the button | optional | xs, sm, lg | none
 xclass | Any extra classes you want to add | optional | any text | none
 link | The url you want the button to link to | optional | any valid link | none
-data | Data attribute and value pairs with a comma between the values, pairs separated by spaces see example below | optional | any text | none
+data | Data attribute and value pairs with a comma between the values, pairs separated by pipes (see example below) | optional | any text | none
 
-	[button type="success" size="lg" link="#" data="dismiss,modal toggle,tooltip"] … [/button]
+	[button link="#" data="toggle,popover|content,This is the popover content" title="A lovely title"]Some text[/button]
 
 [Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
 

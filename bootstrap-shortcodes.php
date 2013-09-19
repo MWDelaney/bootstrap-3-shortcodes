@@ -33,6 +33,8 @@ require_once(dirname(__FILE__) . '/includes/defaults.php');
 require_once(dirname(__FILE__) . '/includes/functions.php');
 require_once(dirname(__FILE__) . '/includes/actions-filters.php');
 
+wp_enqueue_script( 'bootsrap-shortcodes-tooltip', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-popover.js', array( 'jquery' ), false, true );
+
 // Begin Shortcodes
 class BoostrapShortcodes {
 
@@ -102,10 +104,11 @@ class BoostrapShortcodes {
         "size" => false,
         "link" => '',
         "xclass" => false,
+        "title" => false,
         "data" => false
      ), $atts));
       if($data) { 
-          $data = explode(' ',$data);
+          $data = explode('|',$data);
           foreach($data as $d):
             $d = explode(',',$d);    
                 $data_props .= 'data-'.$d[0]. '="'.$d[1].'" ';
@@ -116,6 +119,7 @@ class BoostrapShortcodes {
      $return .= ($size) ? ' btn-' . $size : '';
      $return .= ($xclass) ? ' ' . $xclass : '';
      $return .= '"';
+     $return .= ($title) ? ' title="' . $title . '"' : '';
      $return .= ($data_props) ? ' ' . $data_props : '';
      $return .= '>' . do_shortcode( $content ) . '</a>';
 
@@ -625,9 +629,8 @@ function bs_tooltip( $atts, $content = null ) {
 	   'html' => 'false'
     );
     extract( shortcode_atts( $defaults, $atts ) );
-
     wp_enqueue_script( 'bootsrap-shortcodes-tooltip', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-tooltip.js', array( 'jquery' ), false, true );
-
+    
     return '<a href="#" class="bs-tooltip" data-toggle="tooltip" title="' . $title . '" data-placement="' . $placement . '" data-animation="' . $animation . '" data-html="' . $html . '">' . $content . '</a>';
   }
 
