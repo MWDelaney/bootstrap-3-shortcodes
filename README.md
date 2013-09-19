@@ -33,6 +33,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 * [Media Objects](#media-objects)
 * [Jumbotron](#jumbotron)
 * [Thumbnails](#thumbnails)
+* [Modals](#modals)
 * [Responsive utilities](#responsive-utilities)
 
 ## Usage
@@ -77,6 +78,9 @@ type | The type of the button | optional | default, primary, success, info, warn
 size | The size of the button | optional | xs, sm, lg | none
 xclass | Any extra classes you want to add | optional | any text | none
 link | The url you want the button to link to | optional | any valid link | none
+data | Data attribute and value pairs with a comma between the values, pairs separated by spaces see example below | optional | any text | none
+
+	[button type="success" size="lg" link="#" data="dismiss,modal toggle,tooltip"] … [/button]
 
 [Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
 
@@ -280,3 +284,20 @@ visible | Sizes at which this element is visible (separated by spaces) | optiona
 hidden | Sizes at which this element is hidden (separated by spaces) | optional | xs, sm, md, lg  | false
 
 [Bootstrap emphasis classes documentation](http://getbootstrap.com/css/#type-emphasis)
+
+### Modals
+    [modal text="This is my modal" title="Modal Title Goes Here" xclass="btn btn-primary btn-large"]
+        …
+        [modal-footer]
+            [button type="primary" link="#" data="dismiss,modal"]Dismiss[/button]
+        [/modal-footer]
+    [/modal]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+text | Text of the modal trigger link | required | any text  | none
+title | Title of the modal popup | required | any text | none
+xclass | Any extra classes you want to add | optional | any text | none
+
+[Bootstrap modal documentation](http://getbootstrap.com/javascript/#modals)
+

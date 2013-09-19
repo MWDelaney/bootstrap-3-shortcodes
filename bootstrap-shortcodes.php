@@ -80,6 +80,9 @@ class BoostrapShortcodes {
     add_shortcode('emphasis', array( $this, 'bs_emphasis' ));
     add_shortcode('thumbnail', array( $this, 'bs_thumbnail' ));
     add_shortcode('responsive', array( $this, 'bs_responsive' ));
+    add_shortcode('modal', array( $this, 'bs_modal' ));
+    add_shortcode('modal-footer', array( $this, 'bs_modal_footer' ));
+
 
   }
 
@@ -98,14 +101,23 @@ class BoostrapShortcodes {
         "type" => false,
         "size" => false,
         "link" => '',
-        "xclass" => false
+        "xclass" => false,
+        "data" => false
      ), $atts));
-
+      if($data) { 
+          $data = explode(' ',$data);
+          foreach($data as $d):
+            $d = explode(',',$d);    
+                $data_props .= 'data-'.$d[0]. '="'.$d[1].'" ';
+          endforeach;
+      }
      $return  =  '<a href="' . $link . '" class="btn';
      $return .= ($type) ? ' btn-' . $type : ' btn-default';
      $return .= ($size) ? ' btn-' . $size : '';
      $return .= ($xclass) ? ' ' . $xclass : '';
-     $return .= '">' . do_shortcode( $content ) . '</a>';
+     $return .= '"';
+     $return .= ($data_props) ? ' ' . $data_props : '';
+     $return .= '>' . do_shortcode( $content ) . '</a>';
 
      return $return;
   }
@@ -764,6 +776,52 @@ function bs_media_body( $atts, $content = null ) {
         $return = '<p class="' . $classes . '">' . $content . '</p>';
     }
     return $return;
+
+  }
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_modal
+    *
+    * @author M. W. Delaney
+    * @since 1.0
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_modal( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+      "text" => '',
+      "title" => '',
+      "xclass" => ''
+    ), $atts));
+    $sani_title = 'modal'. sanitize_title( $title );
+    $return .='<a data-toggle="modal" href="#'. $sani_title .'" class="'. $xclass .'">'. $text .'</a>';
+    $return .='<div class="modal fade" id="'. $sani_title .'" tabindex="-1" role="dialog" aria-hidden="true">';
+    $return .='<div class="modal-dialog">';
+    $return .='<div class="modal-content">';
+    $return .='<div class="modal-header">';
+    $return .='<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+    $return .='<h4 class="modal-title">'. $title .'</h4>';
+    $return .='</div>';
+    $return .='<div class="modal-body">';
+    $return .= do_shortcode($content);
+    $return .='</div>';
+    $return .='</div><!-- /.modal-content -->';
+    $return .='</div><!-- /.modal-dialog -->';
+    $return .='</div><!-- /.modal -->';  
+    return $return;
+
+  }
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_modal_footer
+    *
+    * @author M. W. Delaney
+    * @since 1.0
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_modal_footer( $atts, $content = null ) {
+    return '<div class="modal-footer">' . do_shortcode( $content ) . '</div>';
 
   }
 
