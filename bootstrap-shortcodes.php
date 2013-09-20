@@ -33,7 +33,8 @@ require_once(dirname(__FILE__) . '/includes/defaults.php');
 require_once(dirname(__FILE__) . '/includes/functions.php');
 require_once(dirname(__FILE__) . '/includes/actions-filters.php');
 
-wp_enqueue_script( 'bootsrap-shortcodes-tooltip', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-popover.js', array( 'jquery' ), false, true );
+wp_enqueue_script( 'bootsrap-shortcodes-tooltip', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-tooltip.js', array( 'jquery' ), false, true );
+wp_enqueue_script( 'bootsrap-shortcodes-popover', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-popover.js', array( 'jquery' ), false, true );
 
 // Begin Shortcodes
 class BoostrapShortcodes {
@@ -631,9 +632,28 @@ function bs_tooltip( $atts, $content = null ) {
 	   'html' => 'false'
     );
     extract( shortcode_atts( $defaults, $atts ) );
-    wp_enqueue_script( 'bootsrap-shortcodes-tooltip', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-tooltip.js', array( 'jquery' ), false, true );
+    $classes = 'bs-tooltip';
+    $data .= ' title="' . $title . '" ';
+    $data .= ' data-toggle="tooltip" ';
+    $data .= ($animation) ? 'data-animation="' . $animation . '" ' : '';
+    $data .= ($placement) ? 'data-placement="' . $placement . '" ' : '';
+    $data .= ($html) ? 'data-html="' . $html . '" ' : '';
     
-    return '<a href="#" class="bs-tooltip" data-toggle="tooltip" title="' . $title . '" data-placement="' . $placement . '" data-animation="' . $animation . '" data-html="' . $html . '">' . $content . '</a>';
+    $dom = new DOMDocument;
+    $dom->loadXML($content);
+    if(!$dom->documentElement) {
+        $element = $dom->createElement('span', $content);
+        $dom->appendChild($element);
+    }
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+    $dom->documentElement->setAttribute('title', $title );
+    if($animation) { $dom->documentElement->setAttribute('data-animation', $animation ); }
+    if($placement) { $dom->documentElement->setAttribute('data-placement', $placement ); }
+    if($html) { $dom->documentElement->setAttribute('data-html', $html ); }
+
+    $return = $dom->saveXML();
+    
+    return $return;
   }
 
 
@@ -663,12 +683,10 @@ function bs_media_object( $atts, $content = null ) {
     extract( shortcode_atts( $defaults, $atts ) );
     
     $classes = "media-object";
-    if ( preg_match('/<img.*? class=".*?" \/>/', $content) ) { 
-         $return = preg_replace('/(<img.*? class=".*?)(".*?>)/', '$1 ' . $classes . '$2', $content); 
-    } 
-    else { 
-         $return = preg_replace('/(<img.*?)>/', '$1 class="' . $classes . '" >', $content);
-    }
+    $dom = new DOMDocument;
+    $dom->loadXML($content);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+    $return = $dom->saveXML();
     $return = '<span class="pull-'. $pull . '">' . $return . '</span>';
     return $return;
   }
@@ -735,15 +753,16 @@ function bs_media_body( $atts, $content = null ) {
     *-------------------------------------------------------------------------------------*/
   function bs_thumbnail( $atts, $content = null ) {
     $classes = "thumbnail";
-    if ( preg_match('/<a.*? class=".*?" \/>/', $content) ) { 
-         $return = preg_replace('/(<a.*? class=".*?)(".*?>)/', '$1 ' . $classes . '$2', $content); 
-    } 
-    elseif ( preg_match('/<a.*? \/>/', $content) ) {
-         $return = preg_replace('/(<a.*?)>/', '$1 class="' . $classes . '" >', $content);
+    $dom = new DOMDocument;
+    $dom->loadXML($content);
+    if(!$dom->documentElement) {
+        $element = $dom->createElement('div', $content);
+        $dom->appendChild($element);
     }
-    else {
-          $return = '<div class="thumbnail">' . $content . '</div>';
-    }
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+
+    $return = $dom->saveXML();
+    
     return $return;
 
   }
@@ -771,15 +790,16 @@ function bs_media_body( $atts, $content = null ) {
             $classes .= 'hidden-'.$h.' ';
           endforeach;
       }
-    if ( preg_match('/<.*? class=".*?" \/>/', $content) ) { 
-         $return = preg_replace('/(<.*? class=".*?)(".*?>)/', '$1 ' . $classes . '$2', $content); 
-    } 
-    elseif ( preg_match('/<.*? \/>/', $content) ) {
-         $return = preg_replace('/(<.*?)>/', '$1 class="' . $classes . '" >', $content);
+    $dom = new DOMDocument;
+    $dom->loadXML($content);
+    if(!$dom->documentElement) {
+        $element = $dom->createElement('p', $content);
+        $dom->appendChild($element);
     }
-    else {
-        $return = '<p class="' . $classes . '">' . $content . '</p>';
-    }
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+
+    $return = $dom->saveXML();
+    
     return $return;
 
   }

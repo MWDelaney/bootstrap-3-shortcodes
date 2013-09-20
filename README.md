@@ -14,29 +14,38 @@ To install this plugin, just download it, and drop the folder in the ```wp-conte
 ## Supported shortcodes
 The plugin doesn't support all Bootstrap elements yet, but most of them.
 
+### CSS
 * [Grid](#grid)
-* [Buttons](#buttons)
-* [Button Groups](#button-groups)
 * [Lead body copy](#lead-body-copy)
 * [Emphasis classes](#emphasis-classes)
-* [Alerts](#alerts)
 * [Code](#code)
-* [Labels](#labels)
-* [Badges](#badges)
-* [Icons](#icons)
 * [Tables](#tables)
-* [Collapse (Accordion)](#collapse)
-* [List Groups](#list-groups)
-* [Tabs](#tabs)
-* [Wells](#wells)
-* [Panels](#panels)
-* [Media Objects](#media-objects)
-* [Jumbotron](#jumbotron)
-* [Thumbnails](#thumbnails)
-* [Modals](#modals)
+* [Buttons](#buttons)
 * [Responsive utilities](#responsive-utilities)
 
-## Usage
+### Components
+* [Icons](#icons)
+* [Button Groups](#button-groups)
+* [Labels](#labels)
+* [Badges](#badges)
+* [Jumbotron](#jumbotron)
+* [Thumbnails](#thumbnails)
+* [Alerts](#alerts)
+* [Media Objects](#media-objects)
+* [List Groups](#list-groups)
+* [Panels](#panels)
+* [Wells](#wells)
+
+### JavaScript
+* [Tabs](#tabs)
+* [Tooltip](#tooltip)
+* [Collapse (Accordion)](#collapse)
+* [Modals](#modals)
+
+
+# Usage
+
+## CSS
 
 ### Grid
 	[row]
@@ -48,6 +57,11 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 	  [/column]
 	[/row]
 
+
+#### [row] parameters
+None
+
+#### [column] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 xs | Size of column on extra small screens (less than 768px) | optional | 1-12 | false
@@ -69,6 +83,35 @@ push-lg | Push on column on large screens | optional | 1-12 | false
 
 [Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
 
+### Lead body copy
+	[lead] … [/lead]
+
+[Bootstrap body copy documentation](http://getbootstrap.com/css/#type-body-copy)
+
+### Emphasis classes
+	[emphasis type="success"] … [/emphasis]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of label to display | required | muted, primary, success, info, warning, danger | muted
+
+[Bootstrap emphasis classes documentation](http://getbootstrap.com/css/#type-emphasis)
+
+### Code
+	[code] … [/code]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+inline | Display inline code | optional | true, false | false
+scrollable | Set a max height of 350px and provide a scroll bar. Not usable with inline="true".  | optional | true, false | false
+
+[Bootstrap code documentation](http://getbootstrap.com/css/#code)
+
+### Tables
+	[table type="striped" cols="#,First Name, Last Name, Username" data="1, Filip, Stefansson, filipstefansson, 2, Victor, Meyer, Pudge, 3, Måns, Ketola-Backe, mossboll"]
+
+[Bootstrap table documentation](http://getbootstrap.com/css/#tables)
+
 ### Buttons
 	[button type="success" size="lg" link="#"] … [/button]
 
@@ -85,6 +128,27 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
 
+### Responsive Utilities
+	[responsive visible="sm xs" hidden="lg"] … [/responsive]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+visible | Sizes at which this element is visible (separated by spaces) | optional | xs, sm, md, lg  | false
+hidden | Sizes at which this element is hidden (separated by spaces) | optional | xs, sm, md, lg  | false
+
+[Bootstrap emphasis classes documentation](http://getbootstrap.com/css/#type-emphasis)
+
+## Components
+
+### Icons
+	[icon type="arrow"]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of icon you want to display | required | See Bootstrap docs | none
+
+[Bootstrap Glyphicons documentation](http://getbootstrap.com/components/#glyphicons)
+
 ### Button Groups
 	[button-group size="lg" justified="" vertical=""]
         [button link="#"] … [/button]
@@ -99,41 +163,6 @@ justified | Whether button group is justified | optional | true, false | false
 vertical | Whether button group is vertical | optional | true, false | false
 
 [Bootstrap button groups documentation](http://getbootstrap.com/css/#btn-groups)
-
-### Lead body copy
-	[lead] … [/lead]
-
-[Bootstrap body copy documentation](http://getbootstrap.com/css/#type-body-copy)
-
-### Emphasis classes
-	[emphasis type="success"] … [/emphasis]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-type | The type of label to display | required | muted, primary, success, info, warning, danger | muted
-
-[Bootstrap emphasis classes documentation](http://getbootstrap.com/css/#type-emphasis)
-
-### Alerts
-	[alert type="success"] … [/alert]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-type | The type of the alert | required | success, info, warning, danger | success
-dismissable | If the alert should be dismissable | optional | true, false | false
-strong | Text to display in bold at the beginning | optional | any text | false
-
-[Bootstrap alert documentation](http://getbootstrap.com/components/#alerts)
-
-### Code
-	[code] … [/code]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-inline | Display inline code | optional | true, false | false
-scrollable | Set a max height of 350px and provide a scroll bar. Not usable with inline="true".  | optional | true, false | false
-
-[Bootstrap code documentation](http://getbootstrap.com/css/#code)
 
 ### Labels
 	[label type="success"] … [/label]
@@ -153,19 +182,119 @@ right | Whether the badge should align to the right of its container | optional 
 
 [Bootstrap badges documentation](http://getbootstrap.com/components/#badges)
 
-### Icons
-	[icon type="arrow"]
+### Jumbotron
+    [jumbotron title="My Jumbotron"] … [/jumbotron]
 
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-type | The type of icon you want to display | required | See Bootstrap docs | none
+title | The jumbotron title | optional | Any text | none
 
-[Bootstrap Glyphicons documentation](http://getbootstrap.com/components/#glyphicons)
+[Bootstrap jumbotron documentation](http://getbootstrap.com/components/#jumbotron)
 
-### Tables
-	[table type="striped" cols="#,First Name, Last Name, Username" data="1, Filip, Stefansson, filipstefansson, 2, Victor, Meyer, Pudge, 3, Måns, Ketola-Backe, mossboll"]
+### Thumbnails
+    [thumbnail] … [/thumbnail]
+    [thumbnail] … [/thumbnail]
+    [thumbnail] … [/thumbnail]
+    
+[Bootstrap thumbnails documentation](http://getbootstrap.com/components/#thumbnails)
 
-[Bootstrap table documentation](http://getbootstrap.com/css/#tables)
+### Alerts
+	[alert type="success"] … [/alert]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of the alert | required | success, info, warning, danger | success
+dismissable | If the alert should be dismissable | optional | true, false | false
+strong | Text to display in bold at the beginning | optional | any text | false
+
+[Bootstrap alert documentation](http://getbootstrap.com/components/#alerts)
+
+### Media Objects
+    [media]
+	  [media-object pull="right"]
+	    …
+	  [/media-object]
+	  [media-body title="Testing"]
+	    …
+	  [/media-body]
+    [/media]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+pull | Whether the image pulls to the left or right | optional | left, right | right
+title | The object title | required | Any text | none
+
+__NOTE: media-object should contain an image, or linked image, inserted using the WordPress TinyMCE editor__
+
+[Bootstrap media objects documentation](http://getbootstrap.com/components/#media)
+
+### List Groups
+	[list-group]
+	  [list-group-item]
+	    …
+	  [/list-group-item]
+	  [list-group-item]
+	    …
+	  [/list-group-item]
+	  [list-group-item]
+	    …
+	  [/list-group-item]
+	[/list-group]
+
+[Bootstrap list groups documentation](http://getbootstrap.com/components/#list-group)
+
+### Panels
+	[panel type="info" title="Panel Title" footer="Footer text"] … [/panel]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
+title | The panel title | required | any text | none
+footer | The panel footer text if desired | optional | any text | none
+
+[Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
+
+### Wells
+	[well size="small"] … [/well]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+size | Modifies the amount of padding inside the well | optional | sm, lg | normal
+
+[Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
+
+## Components
+
+### Tabs
+	[tabs]
+	  [tab title="Home"]
+	    …
+	  [/tab]
+	  [tab title="Profile"]
+	    …
+	  [/tab]
+	  [tab title="Messages"]
+	    …
+	  [/tab]
+	[/tabs]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+title | The title of the tab | required | any text | false
+
+[Bootstrap tabs documentation](http://getbootstrap.com/javascript/#tabs)
+
+### Tooltip
+	[tooltip title="I'm the title" placement="right"] … [/tooltip]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+title | The text of the tooltip | required | any text | none
+placement | The placement of the tooltip | optional | left, top, bottom, right | top
+animation | apply a CSS fade transition to the tooltip | optional | any text | none
+html | Insert HTML into the tooltip | optional | true, false | false
+
+[Bootstrap tooltip documentation](http://getbootstrap.com/javascript/#tooltips)
 
 ### Collapse (Accordion)
 	[collapsibles]
@@ -186,105 +315,6 @@ title | The title of the collapsible, visible when collapsed | required | any te
 active | Whether the tab is expanded at load time | optional | active | false
 
 [Bootstrap collapse documentation](http://getbootstrap.com/javascript/#collapse)
-
-### List Groups
-	[list-group]
-	  [list-group-item]
-	    …
-	  [/list-group-item]
-	  [list-group-item]
-	    …
-	  [/list-group-item]
-	  [list-group-item]
-	    …
-	  [/list-group-item]
-	[/list-group]
-
-[Bootstrap list groups documentation](http://getbootstrap.com/components/#list-group)
-
-### Tabs
-	[tabs]
-	  [tab title="Home"]
-	    …
-	  [/tab]
-	  [tab title="Profile"]
-	    …
-	  [/tab]
-	  [tab title="Messages"]
-	    …
-	  [/tab]
-	[/tabs]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-title | The title of the tab | required | any text | false
-
-[Bootstrap list groups documentation](http://getbootstrap.com/javascript/#tabs)
-
-### Wells
-	[well size="small"] … [/well]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-size | Modifies the amount of padding inside the well | optional | sm, lg | normal
-
-[Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
-
-### Panels
-	[panel type="info" title="Panel Title" footer="Footer text"] … [/panel]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
-title | The panel title | required | any text | none
-footer | The panel footer text if desired | optional | any text | none
-
-[Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
-
-### Media Objects
-    [media]
-	  [media-object pull="right"]
-	    …
-	  [/media-object]
-	  [media-body title="Testing"]
-	    …
-	  [/media-body]
-    [/media]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-pull | Whether the image pulls to the left or right | optional | left, right | right
-title | The object title | required | Any text | none
-
-__NOTE: media-object should contain an image, or linked image, inserted using the WordPress TinyMCE editor__
-
-[Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
-
-### Jumbotron
-    [jumbotron title="My Jumbotron"] … [/jumbotron]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-title | The jumbotron title | optional | Any text | none
-
-[Bootstrap jumbotron documentation](http://getbootstrap.com/components/#jumbotron)
-
-### Thumbnails
-    [thumbnail] … [/thumbnail]
-    [thumbnail] … [/thumbnail]
-    [thumbnail] … [/thumbnail]
-    
-[Bootstrap thumbnails documentation](http://getbootstrap.com/components/#thumbnails)
-
-### Responsive Utilities
-	[responsive visible="sm xs" hidden="lg"] … [/responsive]
-
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-visible | Sizes at which this element is visible (separated by spaces) | optional | xs, sm, md, lg  | false
-hidden | Sizes at which this element is hidden (separated by spaces) | optional | xs, sm, md, lg  | false
-
-[Bootstrap emphasis classes documentation](http://getbootstrap.com/css/#type-emphasis)
 
 ### Modals
     [modal text="This is my modal" title="Modal Title Goes Here" xclass="btn btn-primary btn-large"]
