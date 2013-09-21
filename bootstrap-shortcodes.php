@@ -74,6 +74,7 @@ class BoostrapShortcodes {
     add_shortcode('tabs', array( $this, 'bs_tabs' ));
     add_shortcode('tab', array( $this, 'bs_tab' ));
     add_shortcode('tooltip', array( $this, 'bs_tooltip' ));
+    add_shortcode('popover', array( $this, 'bs_popover' ));
     add_shortcode('panel', array( $this, 'bs_panel' ));
     add_shortcode('media', array( $this, 'bs_media' ));
     add_shortcode('media-object', array( $this, 'bs_media_object' ));
@@ -85,7 +86,6 @@ class BoostrapShortcodes {
     add_shortcode('responsive', array( $this, 'bs_responsive' ));
     add_shortcode('modal', array( $this, 'bs_modal' ));
     add_shortcode('modal-footer', array( $this, 'bs_modal_footer' ));
-
 
   }
 
@@ -632,13 +632,8 @@ function bs_tooltip( $atts, $content = null ) {
 	   'html' => 'false'
     );
     extract( shortcode_atts( $defaults, $atts ) );
-    $classes = 'bs-tooltip';
-    $data .= ' title="' . $title . '" ';
-    $data .= ' data-toggle="tooltip" ';
-    $data .= ($animation) ? 'data-animation="' . $animation . '" ' : '';
-    $data .= ($placement) ? 'data-placement="' . $placement . '" ' : '';
-    $data .= ($html) ? 'data-html="' . $html . '" ' : '';
-    
+    $classes = 'bs-tooltip';    
+
     $dom = new DOMDocument;
     $dom->loadXML($content);
     if(!$dom->documentElement) {
@@ -647,6 +642,43 @@ function bs_tooltip( $atts, $content = null ) {
     }
     $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
     $dom->documentElement->setAttribute('title', $title );
+    if($animation) { $dom->documentElement->setAttribute('data-animation', $animation ); }
+    if($placement) { $dom->documentElement->setAttribute('data-placement', $placement ); }
+    if($html) { $dom->documentElement->setAttribute('data-html', $html ); }
+
+    $return = $dom->saveXML();
+    
+    return $return;
+  }
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_popover
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+
+function bs_popover( $atts, $content = null ) {
+
+    $defaults = array(
+	   'title' => false,
+        'content' => '',
+	   'placement' => 'top',
+	   'animation' => 'true',
+	   'html' => 'false'
+    );
+    extract( shortcode_atts( $defaults, $atts ) );
+    $classes = 'bs-popover';
+    
+    $dom = new DOMDocument;
+    $dom->loadXML($content);
+    if(!$dom->documentElement) {
+        $element = $dom->createElement('span', $content);
+        $dom->appendChild($element);
+    }
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+    if($title) { $dom->documentElement->setAttribute('data-original-title', $title ); }
+    $dom->documentElement->setAttribute('data-content', $content );
     if($animation) { $dom->documentElement->setAttribute('data-animation', $animation ); }
     if($placement) { $dom->documentElement->setAttribute('data-placement', $placement ); }
     if($html) { $dom->documentElement->setAttribute('data-html', $html ); }

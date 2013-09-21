@@ -39,8 +39,9 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 ### JavaScript
 * [Tabs](#tabs)
 * [Tooltip](#tooltip)
+* [Popover](#popover)
 * [Collapse (Accordion)](#collapse)
-* [Modals](#modals)
+* [Modal](#modal)
 
 
 # Usage
@@ -263,7 +264,7 @@ size | Modifies the amount of padding inside the well | optional | sm, lg | norm
 
 [Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
 
-## Components
+## Javascript
 
 ### Tabs
 	[tabs]
@@ -296,6 +297,19 @@ html | Insert HTML into the tooltip | optional | true, false | false
 
 [Bootstrap tooltip documentation](http://getbootstrap.com/javascript/#tooltips)
 
+### Popover
+	[popover title="I'm the title" content="And here's some amazing content. It's very engaging. right?" placement="right"] … [/popover]
+
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+title | The title of the popover | optional | any text | none
+content | The text of the popover | required | any text | none
+placement | The placement of the popover | optional | left, top, bottom, right | top
+animation | apply a CSS fade transition to the tooltip | optional | any text | none
+html | Insert HTML into the tooltip | optional | true, false | false
+
+[Bootstrap popover documentation](http://getbootstrap.com/javascript/#popovers)
+
 ### Collapse (Accordion)
 	[collapsibles]
 	  [collapse title="Collapse 1" state="active"]
@@ -316,7 +330,7 @@ active | Whether the tab is expanded at load time | optional | active | false
 
 [Bootstrap collapse documentation](http://getbootstrap.com/javascript/#collapse)
 
-### Modals
+### Modal
     [modal text="This is my modal" title="Modal Title Goes Here" xclass="btn btn-primary btn-large"]
         …
         [modal-footer]
@@ -331,4 +345,3 @@ title | Title of the modal popup | required | any text | none
 xclass | Any extra classes you want to add to the trigger link | optional | any text | none
 
 [Bootstrap modal documentation](http://getbootstrap.com/javascript/#modals)
-
