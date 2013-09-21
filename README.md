@@ -59,10 +59,10 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 	[/row]
 
 
-###### [row] parameters
+#### [row] parameters
 None
 
-###### [column] parameters
+#### [column] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 xs | Size of column on extra small screens (less than 768px) | optional | 1-12 | false
@@ -87,7 +87,7 @@ push-lg | Push on column on large screens | optional | 1-12 | false
 ### Lead body copy
 	[lead] … [/lead]
 
-###### [lead] parameters
+#### [lead] parameters
 None
 
 [Bootstrap body copy documentation](http://getbootstrap.com/css/#type-body-copy)
@@ -95,7 +95,7 @@ None
 ### Emphasis classes
 	[emphasis type="success"] … [/emphasis]
 
-###### [emphasis] parameters
+#### [emphasis] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of label to display | required | muted, primary, success, info, warning, danger | muted
@@ -105,7 +105,7 @@ type | The type of label to display | required | muted, primary, success, info, 
 ### Code
 	[code] … [/code]
 
-##### [code] parameters
+#### [code] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 inline | Display inline code | optional | true, false | false
@@ -116,14 +116,14 @@ scrollable | Set a max height of 350px and provide a scroll bar. Not usable with
 ### Tables
 	[table type="striped" cols="#,First Name, Last Name, Username" data="1, Filip, Stefansson, filipstefansson, 2, Victor, Meyer, Pudge, 3, Måns, Ketola-Backe, mossboll"]
 
-##### [table] parameters
+#### [table] parameters
 
 [Bootstrap table documentation](http://getbootstrap.com/css/#tables)
 
 ### Buttons
 	[button type="success" size="lg" link="#"] … [/button]
 
-##### [button] parameters
+#### [button] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of the button | optional | default, primary, success, info, warning, danger, link | default
@@ -138,7 +138,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 ### Responsive Utilities
 	[responsive visible="sm xs" hidden="lg"] … [/responsive]
 
-##### [reponsive] parameters
+#### [reponsive] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 visible | Sizes at which this element is visible (separated by spaces) | optional | xs, sm, md, lg  | false
@@ -151,7 +151,7 @@ hidden | Sizes at which this element is hidden (separated by spaces) | optional 
 ### Icons
 	[icon type="arrow"]
 
-##### [icon] parameters
+#### [icon] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of icon you want to display | required | See Bootstrap docs | none
@@ -165,7 +165,7 @@ type | The type of icon you want to display | required | See Bootstrap docs | no
         [button link="#"] … [/button]
 	[/button-group]
 
-##### [button-group] parameters
+#### [button-group] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 size | The size of the button group | optional | xs, sm, lg | none
@@ -177,7 +177,7 @@ vertical | Whether button group is vertical | optional | true, false | false
 ### Labels
 	[label type="success"] … [/label]
 
-##### [label] parameters
+#### [label] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of label to display | optional | default, primary, success, info, warning, danger | default
@@ -187,7 +187,7 @@ type | The type of label to display | optional | default, primary, success, info
 ### Badges
 	[badge right="true"] … [/badge]
 
-##### [badge] parameters
+#### [badge] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 right | Whether the badge should align to the right of its container | optional | true, false | false
@@ -197,7 +197,7 @@ right | Whether the badge should align to the right of its container | optional 
 ### Jumbotron
     [jumbotron title="My Jumbotron"] … [/jumbotron]
 
-##### [jumbotron] parameters
+#### [jumbotron] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 title | The jumbotron title | optional | Any text | none
@@ -209,7 +209,7 @@ title | The jumbotron title | optional | Any text | none
     [thumbnail] … [/thumbnail]
     [thumbnail] … [/thumbnail]
 
-##### [thumbnail] parameters
+#### [thumbnail] parameters
 None
 
 [Bootstrap thumbnails documentation](http://getbootstrap.com/components/#thumbnails)
@@ -217,7 +217,7 @@ None
 ### Alerts
 	[alert type="success"] … [/alert]
 
-##### [alert] parameters
+#### [alert] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of the alert | required | success, info, warning, danger | success
@@ -236,15 +236,15 @@ strong | Text to display in bold at the beginning | optional | any text | false
 	  [/media-body]
     [/media]
 
-##### [media] parameters
+#### [media] parameters
 None
 
-##### [media-object] parameters
+#### [media-object] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 pull | Whether the image pulls to the left or right | optional | left, right | right
 
-##### [media-body] parameters
+#### [media-body] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 title | The object title | required | Any text | none
@@ -266,7 +266,7 @@ __NOTE: media-object should contain an image, or linked image, inserted using th
 	  [/list-group-item]
 	[/list-group]
 
-##### [list-group] parameters
+#### [list-group] parameters
 None
 
 [Bootstrap list groups documentation](http://getbootstrap.com/components/#list-group)
@@ -274,7 +274,7 @@ None
 ### Panels
 	[panel type="info" title="Panel Title" footer="Footer text"] … [/panel]
 
-##### [panel] parameters
+#### [panel] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
@@ -286,7 +286,7 @@ footer | The panel footer text if desired | optional | any text | none
 ### Wells
 	[well size="small"] … [/well]
 
-##### [well] parameters
+#### [well] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 size | Modifies the amount of padding inside the well | optional | sm, lg | normal
@@ -308,10 +308,10 @@ size | Modifies the amount of padding inside the well | optional | sm, lg | norm
 	  [/tab]
 	[/tabs]
 
-##### [tabs] parameters
+#### [tabs] parameters
 None
 
-##### [tab] parameters
+#### [tab] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 title | The title of the tab | required | any text | false
@@ -321,7 +321,7 @@ title | The title of the tab | required | any text | false
 ### Tooltip
 	[tooltip title="I'm the title" placement="right"] … [/tooltip]
 
-##### [tooltip] parameters
+#### [tooltip] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 title | The text of the tooltip | required | any text | none
@@ -334,7 +334,7 @@ html | Insert HTML into the tooltip | optional | true, false | false
 ### Popover
 	[popover title="I'm the title" content="And here's some amazing content. It's very engaging. right?" placement="right"] … [/popover]
 
-##### [popover] parameters
+#### [popover] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 title | The title of the popover | optional | any text | none
@@ -358,10 +358,10 @@ html | Insert HTML into the tooltip | optional | true, false | false
 	  [/collapse]
 	[/collapsibles]
 
-##### [collapsibles] parameters
+#### [collapsibles] parameters
 None
 
-##### [collapse] parameters
+#### [collapse] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 title | The title of the collapsible, visible when collapsed | required | any text | false
@@ -377,14 +377,14 @@ active | Whether the tab is expanded at load time | optional | active | false
         [/modal-footer]
     [/modal]
 
-##### [modal] parameters
+#### [modal] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 text | Text of the modal trigger link | required | any text  | none
 title | Title of the modal popup | required | any text | none
 xclass | Any extra classes you want to add to the trigger link | optional | any text | none
 
-##### [modal-footer] parameters
+#### [modal-footer] parameters
 None
 
 [Bootstrap modal documentation](http://getbootstrap.com/javascript/#modals)
