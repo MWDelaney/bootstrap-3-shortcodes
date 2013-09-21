@@ -133,8 +133,6 @@ link | The url you want the button to link to | optional | any valid link | none
 target | Target for the link | optional | any valid target | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example below). | optional | any text | none
 
-	[button link="#" data="toggle,popover|content,This is the popover content" title="A lovely title"]Some text[/button]
-
 [Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
 
 ### Responsive Utilities
