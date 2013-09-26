@@ -1,13 +1,11 @@
 <?php
 /*
-Plugin Name: Bootstrap Shortcodes
+Plugin Name: Bootstrap 3 Shortcodes
 Plugin URI: http://wp-snippets.com/freebies/bootstrap-shortcodes or https://github.com/filipstefansson/bootstrap-shortcodes
 Description: The plugin adds a shortcodes for all Bootstrap elements.
-Version: 1.0
-Author: Filip Stefansson
-Author URI: http://wp-snippets.com
-Modified by: TwItCh AKA Dustin Crisman twitch@twitch.es
-Modified URI: https://github.com/TwItChDW/bootstrap-shortcodes/
+Version: 0.1
+Author: Filip Stefansson and Michael W. Delaney
+Author URI: 
 License: GPL2
 */
 
