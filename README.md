@@ -14,7 +14,7 @@ The plugin is tested to work with ```Bootstrap version 3.0.0``` and ```WordPress
 
 Go to ```wp-content/plugins/``` and enter:
 
-	$ git clone git@github.com:filipstefansson/bootstrap-shortcodes.git
+	$ git clone git@github.com:filipstefansson/bootstrap-shortcodes.git
 	$ cd bootstrap-shortcodes/
 	$ git submodule init
 	$ git submodule update
