@@ -115,11 +115,11 @@ class BoostrapShortcodes {
           endforeach;
       }
      $return  =  '<a href="' . $link . '" class="btn';
-     $return .= ($target) ? ' target=' . $target : '';
      $return .= ($type) ? ' btn-' . $type : ' btn-default';
      $return .= ($size) ? ' btn-' . $size : '';
      $return .= ($xclass) ? ' ' . $xclass : '';
      $return .= '"';
+     $return .= ($target) ? ' target=' . $target : '';
      $return .= ($title) ? ' title="' . $title . '"' : '';
      $return .= ($data_props) ? ' ' . $data_props : '';
      $return .= '>' . do_shortcode( $content ) . '</a>';
