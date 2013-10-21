@@ -727,7 +727,7 @@ function bs_media_body( $atts, $content = null ) {
 	   'title' => false,
     );
     extract( shortcode_atts( $defaults, $atts ) );
-    $return .= '<div class="meda-body">';
+    $return .= '<div class="media-body">';
     $return .= ($title) ? '<h4 class="media-heading">' . $title . '</h4>' : '';
     $return .= $content . '</div>';
     return $return;
