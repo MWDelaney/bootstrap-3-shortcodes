@@ -668,7 +668,7 @@ function bs_popover( $atts, $content = null ) {
 
     $defaults = array(
 	   'title' => false,
-        'content' => '',
+       'text' => '',
 	   'placement' => 'top',
 	   'animation' => 'true',
 	   'html' => 'false'
@@ -683,8 +683,9 @@ function bs_popover( $atts, $content = null ) {
         $dom->appendChild($element);
     }
     $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+    $dom->documentElement->setAttribute('data-toggle', 'popover' );
     if($title) { $dom->documentElement->setAttribute('data-original-title', $title ); }
-    $dom->documentElement->setAttribute('data-content', $content );
+    $dom->documentElement->setAttribute('data-content', $text );
     if($animation) { $dom->documentElement->setAttribute('data-animation', $animation ); }
     if($placement) { $dom->documentElement->setAttribute('data-placement', $placement ); }
     if($html) { $dom->documentElement->setAttribute('data-html', $html ); }

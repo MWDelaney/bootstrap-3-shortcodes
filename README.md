@@ -351,7 +351,7 @@ html | Insert HTML into the tooltip | optional | true, false | false
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 title | The title of the popover | optional | any text | none
-content | The text of the popover | required | any text | none
+text | The text of the popover | required | any text | none
 placement | The placement of the popover | optional | left, top, bottom, right | top
 animation | apply a CSS fade transition to the tooltip | optional | any text | none
 html | Insert HTML into the tooltip | optional | true, false | false
