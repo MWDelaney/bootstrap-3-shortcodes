@@ -1,0 +1,116 @@
+.header-image {
+	height: auto;
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+.jumbotron {
+    background: #6c49ad;
+    color: #fff;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    font-size: 90px;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin: 0 0 5px;
+}
+
+.jumbotron h2 {
+	font-size: 30px;
+    font-family: proxima-nova-sc-osf,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    line-height: 1.3;
+    font-weight: lighter;
+    margin: 0;
+}
+.jumbotron .btn {
+    color: #fff;
+    margin: 30px auto 0 auto;
+    font-size: 24px;
+    padding: 17px 30px;
+    border-color: #c7e7dc;
+    background-color: transparent;
+}
+.jumbotron .btn:hover {
+    background-color: #f4faf8;
+    border-color: #f4faf8;
+    color: #6c49ad;
+    text-shadow: 0 -1px 0 #fff;
+}
+.credits {
+    margin-top: 22px;
+    font-size: 14px;
+    line-height: 1.428571429;
+}
+.credits a {
+    color: #b4a9ca;
+    border-bottom: dotted 1px #b4a9ca;
+}
+.credits a:hover, 
+.credits a:focus {
+    text-decoration: none;
+    color: #fff;
+    border-bottom: solid 1px #fff;
+}
+.featurette-divider {
+	margin: 40px 0;
+}
+.screenshot {
+-webkit-box-shadow: 0 0 10px #333;
+        box-shadow: 0 0 10px #333;
+}
+p {
+    font-size: 16px;
+}
+
+footer {
+	margin: 50px 0;
+}
+
+/* RESPONSIVE CSS */
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 991px) {
+.screenshot { margin: 0 auto; }
+.featurette-divider {margin: 40px 0;}
+
+}
+
+@media (max-width: 768px) {
+
+
+.container {margin: 0 15px;}
+.featurette-divider {margin: 40px 0;}
+
+}
+
+
+@media (max-width: 668px) {
+
+.jumbotron h1 {font-size: 70px;}
+.jumbotron h2 {font-size: 32px;}
+.featurette-divider {margin: 30px 0;}
+
+}
+
+@media (max-width: 640px) {
+
+.headline {padding: 75px 0 25px 0;}
+.jumbotron h1 {font-size: 50px;}
+.jumbotron h2 {font-size: 20px;}
+.jumbotron .fa-stack {
+        font-size: 6em;
+}
+}
+
+@media (max-width: 375px) {
+
+.featurette-divider {margin: 10px 0;}
+
+}
