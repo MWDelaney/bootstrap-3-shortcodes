@@ -3,8 +3,8 @@
 Plugin Name: Bootstrap 3 Shortcodes
 Plugin URI: http://wp-snippets.com/freebies/bootstrap-shortcodes or https://github.com/filipstefansson/bootstrap-shortcodes
 Description: The plugin adds a shortcodes for all Bootstrap elements.
-Version: 1.0
-Author: Filip Stefansson and Michael W. Delaney
+Version: 3.0
+Author: Filip Stefansson, Simon Yeldon, and Michael W. Delaney
 Author URI: 
 License: GPL2
 */
