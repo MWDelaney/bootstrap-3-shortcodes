@@ -8,22 +8,6 @@ This plugin won't do anything if you don't have website built with the [Twitter 
 
 The plugin is tested to work with ```Bootstrap version 3.0.0``` and ```WordPress 3.6```.
 
-## Installation
-
-### Using the command-line
-
-Go to ```wp-content/plugins/``` and enter:
-
-	$ git clone git@github.com:filipstefansson/bootstrap-shortcodes.git
-	$ cd bootstrap-shortcodes/
-	$ git submodule init
-	$ git submodule update
-
-### Manually
-To install this plugin, just download it, and drop the folder in the ```wp-content/plugins/```. Then login to WordPress and activate the plugin.
-
-You'll also have to include the [php-markdown framework](https://github.com/michelf/php-markdown) in the ```bootstrap-shortcodes/php_markdown``` folder. 
-
 ## Supported shortcodes
 The plugin doesn't support all Bootstrap elements yet, but most of them.
 
