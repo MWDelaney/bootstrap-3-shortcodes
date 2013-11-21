@@ -157,7 +157,7 @@ class BoostrapShortcodes {
        if($justified) {
         $classes .= ' btn-group-justified';
       }
-    return '<div class="button-group '.$classes.'">' . do_shortcode( $content ) . '</div>';
+    return '<div class="btn-group '.$classes.'">' . do_shortcode( $content ) . '</div>';
 
   }
 
