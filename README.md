@@ -362,6 +362,7 @@ None
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 title | The title of the collapsible, visible when collapsed | required | any text | false
+type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
 active | Whether the tab is expanded at load time | optional | active | false
 
 [Bootstrap collapse documentation](http://getbootstrap.com/javascript/#collapse)
