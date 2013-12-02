@@ -66,18 +66,18 @@ xs | Size of column on extra small screens (less than 768px) | optional | 1-12 |
 sm | Size of column on small screens (greater than 768px) | optional | 1-12 | false
 md | Size of column on medium screens (greater than 992px) | optional | 1-12 | false
 lg | Size of column on large screens (greater than 1200px) | optional | 1-12 | false
-offset-xs | Offset on extra small screens | optional | 1-12 | false
-offset-sm | Offset on small screens | optional | 1-12 | false
-offset-md | Offset on column on medium screens | optional | 1-12 | false
-offset-lg | Offset on column on large screens | optional | 1-12 | false
-pull-xs | Pull on extra small screens | optional | 1-12 | false
-pull-sm | Pull on small screens | optional | 1-12 | false
-pull-md | Pull on column on medium screens | optional | 1-12 | false
-pull-lg | Pull on column on large screens | optional | 1-12 | false
-push-xs | Push on extra small screens | optional | 1-12 | false
-push-sm | Push on small screens | optional | 1-12 | false
-push-md | Push on column on medium screens | optional | 1-12 | false
-push-lg | Push on column on large screens | optional | 1-12 | false
+offset_xs | Offset on extra small screens | optional | 1-12 | false
+offset_sm | Offset on small screens | optional | 1-12 | false
+offset_md | Offset on column on medium screens | optional | 1-12 | false
+offset_lg | Offset on column on large screens | optional | 1-12 | false
+pull_xs | Pull on extra small screens | optional | 1-12 | false
+pull_sm | Pull on small screens | optional | 1-12 | false
+pull_md | Pull on column on medium screens | optional | 1-12 | false
+pull_lg | Pull on column on large screens | optional | 1-12 | false
+push_xs | Push on extra small screens | optional | 1-12 | false
+push_sm | Push on small screens | optional | 1-12 | false
+push_md | Push on column on medium screens | optional | 1-12 | false
+push_lg | Push on column on large screens | optional | 1-12 | false
 
 [Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
 
