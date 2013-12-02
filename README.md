@@ -125,6 +125,7 @@ Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of the button | optional | default, primary, success, info, warning, danger, link | default
 size | The size of the button | optional | xs, sm, lg | none
+block | Whether the button should be a block-level button | optional | true, false | false
 xclass | Any extra classes you want to add | optional | any text | none
 link | The url you want the button to link to | optional | any valid link | none
 target | Target for the link | optional | any valid target | none
