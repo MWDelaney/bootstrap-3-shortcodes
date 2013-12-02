@@ -281,7 +281,7 @@ footer | The panel footer text if desired | optional | any text | none
 [Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
 
 ### Wells
-	[well size="small"] … [/well]
+	[well size="sm"] … [/well]
 
 #### [well] parameters
 Parameter | Description | Required | Values | Default
