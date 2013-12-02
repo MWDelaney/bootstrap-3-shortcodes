@@ -109,6 +109,7 @@ class BoostrapShortcodes {
      extract(shortcode_atts(array(
         "type" => false,
         "size" => false,
+        "block" => false,
         "link" => '',
         "target" => false,
         "xclass" => false,
@@ -125,9 +126,10 @@ class BoostrapShortcodes {
      $return  =  '<a href="' . $link . '" class="btn';
      $return .= ($type) ? ' btn-' . $type : ' btn-default';
      $return .= ($size) ? ' btn-' . $size : '';
+     $return .= ($block) ? ' btn-block' : '';
      $return .= ($xclass) ? ' ' . $xclass : '';
      $return .= '"';
-     $return .= ($target) ? ' target=' . $target : '';
+     $return .= ($target) ? ' target="' . $target . '"' : '';
      $return .= ($title) ? ' title="' . $title . '"' : '';
      $return .= ($data_props) ? ' ' . $data_props : '';
      $return .= '>' . do_shortcode( $content ) . '</a>';
