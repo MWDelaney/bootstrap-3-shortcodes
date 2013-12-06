@@ -397,27 +397,34 @@ class BoostrapShortcodes {
       extract( shortcode_atts( array(
           'cols' => 'none',
           'data' => 'none',
-          'type' => 'type'
+          'bordered' => 'false',
+          'striped' => 'false',
+          'hover' => 'false',
+          'condensed' => 'false',
       ), $atts ) );
       $cols = explode(',',$cols);
       $data = explode(',',$data);
       $total = count($cols);
-      $output = '';
-      $output .= '<table class="table table-'. $type .' table-bordered"><tr>';
+      $return  = '<table class="table ';
+      $return .= ($bordered) ? 'table-bordered ' : '';
+      $return .= ($striped) ? 'table-striped ' : '';
+      $return .= ($hover) ? 'table-hover ' : '';
+      $return .= ($condensed) ? 'table-condensed ' : '';
+      $return .='"><tr>';
       foreach($cols as $col):
-          $output .= '<th>'.$col.'</th>';
+          $return .= '<th>'.$col.'</th>';
       endforeach;
       $output .= '</tr><tr>';
       $counter = 1;
       foreach($data as $datum):
-          $output .= '<td>'.$datum.'</td>';
+          $return .= '<td>'.$datum.'</td>';
           if($counter%$total==0):
-              $output .= '</tr>';
+              $return .= '</tr>';
           endif;
           $counter++;
       endforeach;
-          $output .= '</table>';
-      return $output;
+          $return .= '</table>';
+      return $return;
   }
 
 
