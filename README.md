@@ -111,9 +111,18 @@ scrollable | Set a max height of 350px and provide a scroll bar. Not usable with
 [Bootstrap code documentation](http://getbootstrap.com/css/#code)
 
 ### Tables
-	[table type="striped" cols="#,First Name, Last Name, Username" data="1, Filip, Stefansson, filipstefansson, 2, Victor, Meyer, Pudge, 3, Måns, Ketola-Backe, mossboll"]
+	[table bordered="true" striped="true" cols="#,First Name, Last Name, Username" data="1, Filip, Stefansson, filipstefansson, 2, Victor, Meyer, Pudge, 3, Måns, Ketola-Backe, mossboll"]
 
 #### [table] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+bordered | Set "bordered" table style (see Bootstrap documentation) | optional | true, false | false
+striped | Set "striped" table style (see Bootstrap documentation) | optional | true, false | false
+hover | Set "hover" table style (see Bootstrap documentation) | optional | true, false | false
+condensed | Set "condensed" table style (see Bootstrap documentation) | optional | true, false | false
+cols | Define table columns | required | comma separated text values | none
+data | Define table data | required | comma separated text values | none
+
 
 [Bootstrap table documentation](http://getbootstrap.com/css/#tables)
 
