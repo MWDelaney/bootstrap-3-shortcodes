@@ -397,10 +397,10 @@ class BoostrapShortcodes {
       extract( shortcode_atts( array(
           'cols' => 'none',
           'data' => 'none',
-          'bordered' => 'false',
-          'striped' => 'false',
-          'hover' => 'false',
-          'condensed' => 'false',
+          'bordered' => false,
+          'striped' => false,
+          'hover' => false,
+          'condensed' => false,
       ), $atts ) );
       $cols = explode(',',$cols);
       $data = explode(',',$data);
