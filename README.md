@@ -111,18 +111,40 @@ scrollable | Set a max height of 350px and provide a scroll bar. Not usable with
 [Bootstrap code documentation](http://getbootstrap.com/css/#code)
 
 ### Tables
-	[table bordered="true" striped="true" cols="#,First Name, Last Name, Username" data="1, Filip, Stefansson, filipstefansson, 2, Victor, Meyer, Pudge, 3, Måns, Ketola-Backe, mossboll"]
+	[table-wrap bordered="true" striped="true"]
+        <table>
+            <tbody>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                </tr>
+                <tr>
+                    <td>Data 3</td>
+                    <td>Data 4</td>
+                </tr>
+                <tr>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                </tr>
+                <tr>
+                    <td>Data 7</td>
+                    <td>Data 8</td>
+                </tr>
+            </tbody>
+        </table>
+    [/table-wrap]
 
-#### [table] parameters
+#### [table-wrap] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 bordered | Set "bordered" table style (see Bootstrap documentation) | optional | true, false | false
 striped | Set "striped" table style (see Bootstrap documentation) | optional | true, false | false
 hover | Set "hover" table style (see Bootstrap documentation) | optional | true, false | false
 condensed | Set "condensed" table style (see Bootstrap documentation) | optional | true, false | false
-cols | Define table columns | required | comma separated text values | none
-data | Define table data | required | comma separated text values | none
-
 
 [Bootstrap table documentation](http://getbootstrap.com/css/#tables)
 

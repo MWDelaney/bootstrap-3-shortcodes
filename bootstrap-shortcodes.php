@@ -74,6 +74,7 @@ class BoostrapShortcodes {
     add_shortcode('icon', array( $this, 'bs_icon' ));
     add_shortcode('icon_white', array( $this, 'bs_icon_white' ));
     add_shortcode('table', array( $this, 'bs_table' ));
+    add_shortcode('table-wrap', array( $this, 'bs_table_wrap' ));
     add_shortcode('collapsibles', array( $this, 'bs_collapsibles' ));
     add_shortcode('collapse', array( $this, 'bs_collapse' ));
     add_shortcode('well', array( $this, 'bs_well' ));
@@ -392,7 +393,7 @@ class BoostrapShortcodes {
     * @author Filip Stefansson
     * @since 1.0
     *
-    *-------------------------------------------------------------------------------------*/
+    *-------------------------------------------------------------------------------------
   function bs_table( $atts ) {
       extract( shortcode_atts( array(
           'cols' => 'none',
@@ -426,8 +427,34 @@ class BoostrapShortcodes {
           $return .= '</table>';
       return $return;
   }
+  */
 
-
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_table_wrap
+    *
+    * @author Filip Stefansson
+    * @since 1.0
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_table_wrap( $atts, $content = null ) {
+      extract( shortcode_atts( array(
+          'bordered' => false,
+          'striped' => false,
+          'hover' => false,
+          'condensed' => false,
+      ), $atts ) );
+    $classes  = 'table';
+    $classes .= ($bordered) ? ' table-bordered' : '';
+    $classes .= ($striped) ? ' table-striped' : '';
+    $classes .= ($hover) ? ' table-hover' : '';
+    $classes .= ($condensed) ? ' table-condensed' : '';    
+    $dom = new DOMDocument;
+    $dom->loadXML($content);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+    $return = $dom->saveXML();
+    return $return;
+  }
 
 
   /*--------------------------------------------------------------------------------------
