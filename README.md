@@ -6,7 +6,7 @@ This is a plugin for WordPress that adds shortcodes for easier use of the Bootst
 ## Requirements
 This plugin won't do anything if you don't have website built with the [Twitter Bootstrap framework](http://getbootstrap.com/). **The plugin does not include the Bootstrap framework**.
 
-The plugin is tested to work with ```Bootstrap version 3.0.0``` and ```WordPress 3.6```.
+The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.7+```.
 
 ## Supported shortcodes
 The plugin doesn't support all Bootstrap elements yet, but most of them.
