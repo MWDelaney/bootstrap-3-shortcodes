@@ -37,7 +37,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 * [Tabs](#tabs)
 * [Tooltip](#tooltip)
 * [Popover](#popover)
-* [Collapse (Accordion)](#collapse)
+* [Collapse (Accordion)](#collapse-accordion)
 * [Modal](#modal)
 
 
