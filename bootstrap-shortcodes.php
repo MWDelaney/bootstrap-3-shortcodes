@@ -123,7 +123,7 @@ class BoostrapShortcodes {
             $d = explode(',',$d);    
                 $data_props .= 'data-'.$d[0]. '="'.$d[1].'" ';
           endforeach;
-      }
+      } else { $data_props = false; }
      $return  =  '<a href="' . $link . '" class="btn';
      $return .= ($type) ? ' btn-' . $type : ' btn-default';
      $return .= ($size) ? ' btn-' . $size : '';
