@@ -37,7 +37,7 @@ The plugin doesn't support all Bootstrap elements yet, but most of them.
 * [Tabs](#tabs)
 * [Tooltip](#tooltip)
 * [Popover](#popover)
-* [Collapse (Accordion)](#collapse-accordion)
+* [Collapse (Accordion)](#collapse-(accordion))
 * [Modal](#modal)
 
 
@@ -379,10 +379,10 @@ html | Insert HTML into the tooltip | optional | true, false | false
 	  [collapse title="Collapse 1" state="active"]
 	    …
 	  [/collapse]
-	  [collapse title="Copllapse 2"]
+	  [collapse title="Collapse 2"]
 	    …
 	  [/collapse]
-	  [collapse title="Copllapse 3"]
+	  [collapse title="Collapse 3"]
 	    …
 	  [/collapse]
 	[/collapsibles]
