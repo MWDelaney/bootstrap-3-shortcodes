@@ -4,12 +4,11 @@ Bootstrap Shortcodes for WordPress
 This is a plugin for WordPress that adds shortcodes for easier use of the Bootstrap elements in your content.
 
 ## Requirements
-This plugin won't do anything if you don't have website built with the [Twitter Bootstrap framework](http://getbootstrap.com/). **The plugin does not include the Bootstrap framework**.
+This plugin won't do anything if you don't have WordPress theme built with the [Bootstrap](http://getbootstrap.com/) framework. **This plugin does not include the Bootstrap framework**.
 
-The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.7+```.
+The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
 
 ## Supported shortcodes
-The plugin doesn't support all Bootstrap elements yet, but most of them.
 
 ### CSS
 * [Grid](#grid)
