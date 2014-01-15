@@ -22,13 +22,6 @@ use \Michelf\MarkdownExtra;
 $text = file_get_contents(dirname(__FILE__) . '/../README.md');
 $html = MarkdownExtra::defaultTransform($text);
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-<!-- Latest compiled and minified CSS -->
-<script src="/wp-includes/js/jquery/jquery.js"></script>
-
-<link rel="stylesheet" href="help/css/bootstrap.min.css">
 
 <script>
     jQuery(document).ready(function() {
@@ -46,10 +39,8 @@ $html = MarkdownExtra::defaultTransform($text);
         });
     });
 </script>
-        <title>Bootstrap Shortcodes Documentation</title>
-    </head>
-    <body>
-        <div class="container">
+
+        <div id="bootstrap-shortcodes-help">
 		<?php
 			# Put HTML content in the document
             $html = preg_replace('/(<a href="http:[^"]+")>/is','\\1 target="_blank">',$html);
@@ -59,5 +50,3 @@ $html = MarkdownExtra::defaultTransform($text);
             echo $html;
 		?>
         </div>
-    </body>
-</html>

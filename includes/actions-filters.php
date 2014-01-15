@@ -1,5 +1,5 @@
 <?php
-    
+
 add_filter('the_content', 'bs_fix_shortcodes');
 
 // Create a Media Button for the help file
@@ -14,16 +14,23 @@ function add_bootstrap_button($context) {
   $img = BS_SHORTCODES_URL . 'images/Twitter_Boostrap_logo.svg';
   
   //the id of the container I want to show in the popup
-  $popup_url = BS_SHORTCODES_URL . 'bootstrap-shortcodes-help.php';
+  $popup_url = 'bootstrap-shortcodes-help';
   
   //our popup's title
   $title = 'Bootstrap Shortcodes Help';
 
   //append the icon
   $context .= "<a title='{$title}'
-    href='{$popup_url}?TB_iframe=true&width=450' class='thickbox button add_media' style='padding-left: 0px; padding-right: 0px;' title='Bootstrap Shortcodes Help'>
+    href='#TB_inline?inlineId={$popup_url}&width=640&height=550' class='thickbox button add_media' style='padding-left: 0px; padding-right: 0px;' title='Bootstrap Shortcodes Help'>
     <img src='{$img}' style='height: 20px; position: relative; top: -2px;'></a>";
   
   return $context;
 }
+
+function boostrap_shortcodes_help() {
+    include('bootstrap-shortcodes-help.php');
+}
+add_action( 'admin_footer', 'boostrap_shortcodes_help' );
+
+
 ?>
