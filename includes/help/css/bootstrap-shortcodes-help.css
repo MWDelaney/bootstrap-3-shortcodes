@@ -1,0 +1,5959 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+#bootstrap-shortcodes-help {
+  /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+}
+#bootstrap-shortcodes-help article,
+#bootstrap-shortcodes-help aside,
+#bootstrap-shortcodes-help details,
+#bootstrap-shortcodes-help figcaption,
+#bootstrap-shortcodes-help figure,
+#bootstrap-shortcodes-help footer,
+#bootstrap-shortcodes-help header,
+#bootstrap-shortcodes-help hgroup,
+#bootstrap-shortcodes-help main,
+#bootstrap-shortcodes-help nav,
+#bootstrap-shortcodes-help section,
+#bootstrap-shortcodes-help summary {
+  display: block;
+}
+#bootstrap-shortcodes-help audio,
+#bootstrap-shortcodes-help canvas,
+#bootstrap-shortcodes-help video {
+  display: inline-block;
+}
+#bootstrap-shortcodes-help audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+#bootstrap-shortcodes-help [hidden],
+#bootstrap-shortcodes-help template {
+  display: none;
+}
+#bootstrap-shortcodes-help html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+#bootstrap-shortcodes-help body {
+  margin: 0;
+}
+#bootstrap-shortcodes-help a {
+  background: transparent;
+}
+#bootstrap-shortcodes-help a:focus {
+  outline: thin dotted;
+}
+#bootstrap-shortcodes-help a:active,
+#bootstrap-shortcodes-help a:hover {
+  outline: 0;
+}
+#bootstrap-shortcodes-help h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+#bootstrap-shortcodes-help abbr[title] {
+  border-bottom: 1px dotted;
+}
+#bootstrap-shortcodes-help b,
+#bootstrap-shortcodes-help strong {
+  font-weight: bold;
+}
+#bootstrap-shortcodes-help dfn {
+  font-style: italic;
+}
+#bootstrap-shortcodes-help hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+#bootstrap-shortcodes-help mark {
+  background: #ff0;
+  color: #000;
+}
+#bootstrap-shortcodes-help code,
+#bootstrap-shortcodes-help kbd,
+#bootstrap-shortcodes-help pre,
+#bootstrap-shortcodes-help samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+#bootstrap-shortcodes-help pre {
+  white-space: pre-wrap;
+}
+#bootstrap-shortcodes-help q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+#bootstrap-shortcodes-help small {
+  font-size: 80%;
+}
+#bootstrap-shortcodes-help sub,
+#bootstrap-shortcodes-help sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+#bootstrap-shortcodes-help sup {
+  top: -0.5em;
+}
+#bootstrap-shortcodes-help sub {
+  bottom: -0.25em;
+}
+#bootstrap-shortcodes-help img {
+  border: 0;
+}
+#bootstrap-shortcodes-help svg:not(:root) {
+  overflow: hidden;
+}
+#bootstrap-shortcodes-help figure {
+  margin: 0;
+}
+#bootstrap-shortcodes-help fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+#bootstrap-shortcodes-help legend {
+  border: 0;
+  padding: 0;
+}
+#bootstrap-shortcodes-help button,
+#bootstrap-shortcodes-help input,
+#bootstrap-shortcodes-help select,
+#bootstrap-shortcodes-help textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+#bootstrap-shortcodes-help button,
+#bootstrap-shortcodes-help input {
+  line-height: normal;
+}
+#bootstrap-shortcodes-help button,
+#bootstrap-shortcodes-help select {
+  text-transform: none;
+}
+#bootstrap-shortcodes-help button,
+#bootstrap-shortcodes-help html input[type="button"],
+#bootstrap-shortcodes-help input[type="reset"],
+#bootstrap-shortcodes-help input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+#bootstrap-shortcodes-help button[disabled],
+#bootstrap-shortcodes-help html input[disabled] {
+  cursor: default;
+}
+#bootstrap-shortcodes-help input[type="checkbox"],
+#bootstrap-shortcodes-help input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+#bootstrap-shortcodes-help input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+#bootstrap-shortcodes-help input[type="search"]::-webkit-search-cancel-button,
+#bootstrap-shortcodes-help input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+#bootstrap-shortcodes-help button::-moz-focus-inner,
+#bootstrap-shortcodes-help input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+#bootstrap-shortcodes-help textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+#bootstrap-shortcodes-help table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+@media print {
+  #bootstrap-shortcodes-help * {
+    text-shadow: none !important;
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  #bootstrap-shortcodes-help a,
+  #bootstrap-shortcodes-help a:visited {
+    text-decoration: underline;
+  }
+  #bootstrap-shortcodes-help a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  #bootstrap-shortcodes-help abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  #bootstrap-shortcodes-help a[href^="javascript:"]:after,
+  #bootstrap-shortcodes-help a[href^="#"]:after {
+    content: "";
+  }
+  #bootstrap-shortcodes-help pre,
+  #bootstrap-shortcodes-help blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  #bootstrap-shortcodes-help thead {
+    display: table-header-group;
+  }
+  #bootstrap-shortcodes-help tr,
+  #bootstrap-shortcodes-help img {
+    page-break-inside: avoid;
+  }
+  #bootstrap-shortcodes-help img {
+    max-width: 100% !important;
+  }
+  @page {
+    margin: 2cm .5cm;
+  }
+  #bootstrap-shortcodes-help p,
+  #bootstrap-shortcodes-help h2,
+  #bootstrap-shortcodes-help h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  #bootstrap-shortcodes-help h2,
+  #bootstrap-shortcodes-help h3 {
+    page-break-after: avoid;
+  }
+  #bootstrap-shortcodes-help select {
+    background: #fff !important;
+  }
+  #bootstrap-shortcodes-help .navbar {
+    display: none;
+  }
+  #bootstrap-shortcodes-help .table td,
+  #bootstrap-shortcodes-help .table th {
+    background-color: #fff !important;
+  }
+  #bootstrap-shortcodes-help .btn > .caret,
+  #bootstrap-shortcodes-help .dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
+  #bootstrap-shortcodes-help .label {
+    border: 1px solid #000;
+  }
+  #bootstrap-shortcodes-help .table {
+    border-collapse: collapse !important;
+  }
+  #bootstrap-shortcodes-help .table-bordered th,
+  #bootstrap-shortcodes-help .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+}
+#bootstrap-shortcodes-help *,
+#bootstrap-shortcodes-help *:before,
+#bootstrap-shortcodes-help *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#bootstrap-shortcodes-help html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+#bootstrap-shortcodes-help body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333333;
+  background-color: #ffffff;
+}
+#bootstrap-shortcodes-help input,
+#bootstrap-shortcodes-help button,
+#bootstrap-shortcodes-help select,
+#bootstrap-shortcodes-help textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+#bootstrap-shortcodes-help a {
+  color: #428bca;
+  text-decoration: none;
+}
+#bootstrap-shortcodes-help a:hover,
+#bootstrap-shortcodes-help a:focus {
+  color: #2a6496;
+  text-decoration: underline;
+}
+#bootstrap-shortcodes-help a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#bootstrap-shortcodes-help img {
+  vertical-align: middle;
+}
+#bootstrap-shortcodes-help .img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+#bootstrap-shortcodes-help .img-rounded {
+  border-radius: 6px;
+}
+#bootstrap-shortcodes-help .img-thumbnail {
+  padding: 4px;
+  line-height: 1.428571429;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+#bootstrap-shortcodes-help .img-circle {
+  border-radius: 50%;
+}
+#bootstrap-shortcodes-help hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+#bootstrap-shortcodes-help .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+#bootstrap-shortcodes-help h1,
+#bootstrap-shortcodes-help h2,
+#bootstrap-shortcodes-help h3,
+#bootstrap-shortcodes-help h4,
+#bootstrap-shortcodes-help h5,
+#bootstrap-shortcodes-help h6,
+#bootstrap-shortcodes-help .h1,
+#bootstrap-shortcodes-help .h2,
+#bootstrap-shortcodes-help .h3,
+#bootstrap-shortcodes-help .h4,
+#bootstrap-shortcodes-help .h5,
+#bootstrap-shortcodes-help .h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+#bootstrap-shortcodes-help h1 small,
+#bootstrap-shortcodes-help h2 small,
+#bootstrap-shortcodes-help h3 small,
+#bootstrap-shortcodes-help h4 small,
+#bootstrap-shortcodes-help h5 small,
+#bootstrap-shortcodes-help h6 small,
+#bootstrap-shortcodes-help .h1 small,
+#bootstrap-shortcodes-help .h2 small,
+#bootstrap-shortcodes-help .h3 small,
+#bootstrap-shortcodes-help .h4 small,
+#bootstrap-shortcodes-help .h5 small,
+#bootstrap-shortcodes-help .h6 small,
+#bootstrap-shortcodes-help h1 .small,
+#bootstrap-shortcodes-help h2 .small,
+#bootstrap-shortcodes-help h3 .small,
+#bootstrap-shortcodes-help h4 .small,
+#bootstrap-shortcodes-help h5 .small,
+#bootstrap-shortcodes-help h6 .small,
+#bootstrap-shortcodes-help .h1 .small,
+#bootstrap-shortcodes-help .h2 .small,
+#bootstrap-shortcodes-help .h3 .small,
+#bootstrap-shortcodes-help .h4 .small,
+#bootstrap-shortcodes-help .h5 .small,
+#bootstrap-shortcodes-help .h6 .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+#bootstrap-shortcodes-help h1,
+#bootstrap-shortcodes-help h2,
+#bootstrap-shortcodes-help h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+#bootstrap-shortcodes-help h1 small,
+#bootstrap-shortcodes-help h2 small,
+#bootstrap-shortcodes-help h3 small,
+#bootstrap-shortcodes-help h1 .small,
+#bootstrap-shortcodes-help h2 .small,
+#bootstrap-shortcodes-help h3 .small {
+  font-size: 65%;
+}
+#bootstrap-shortcodes-help h4,
+#bootstrap-shortcodes-help h5,
+#bootstrap-shortcodes-help h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#bootstrap-shortcodes-help h4 small,
+#bootstrap-shortcodes-help h5 small,
+#bootstrap-shortcodes-help h6 small,
+#bootstrap-shortcodes-help h4 .small,
+#bootstrap-shortcodes-help h5 .small,
+#bootstrap-shortcodes-help h6 .small {
+  font-size: 75%;
+}
+#bootstrap-shortcodes-help h1,
+#bootstrap-shortcodes-help .h1 {
+  font-size: 36px;
+}
+#bootstrap-shortcodes-help h2,
+#bootstrap-shortcodes-help .h2 {
+  font-size: 30px;
+}
+#bootstrap-shortcodes-help h3,
+#bootstrap-shortcodes-help .h3 {
+  font-size: 24px;
+}
+#bootstrap-shortcodes-help h4,
+#bootstrap-shortcodes-help .h4 {
+  font-size: 18px;
+}
+#bootstrap-shortcodes-help h5,
+#bootstrap-shortcodes-help .h5 {
+  font-size: 14px;
+}
+#bootstrap-shortcodes-help h6,
+#bootstrap-shortcodes-help .h6 {
+  font-size: 12px;
+}
+#bootstrap-shortcodes-help p {
+  margin: 0 0 10px;
+}
+#bootstrap-shortcodes-help .lead {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.4;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .lead {
+    font-size: 21px;
+  }
+}
+#bootstrap-shortcodes-help small,
+#bootstrap-shortcodes-help .small {
+  font-size: 85%;
+}
+#bootstrap-shortcodes-help cite {
+  font-style: normal;
+}
+#bootstrap-shortcodes-help .text-muted {
+  color: #999999;
+}
+#bootstrap-shortcodes-help .text-primary {
+  color: #428bca;
+}
+#bootstrap-shortcodes-help .text-primary:hover {
+  color: #3071a9;
+}
+#bootstrap-shortcodes-help .text-warning {
+  color: #8a6d3b;
+}
+#bootstrap-shortcodes-help .text-warning:hover {
+  color: #66512c;
+}
+#bootstrap-shortcodes-help .text-danger {
+  color: #a94442;
+}
+#bootstrap-shortcodes-help .text-danger:hover {
+  color: #843534;
+}
+#bootstrap-shortcodes-help .text-success {
+  color: #3c763d;
+}
+#bootstrap-shortcodes-help .text-success:hover {
+  color: #2b542c;
+}
+#bootstrap-shortcodes-help .text-info {
+  color: #31708f;
+}
+#bootstrap-shortcodes-help .text-info:hover {
+  color: #245269;
+}
+#bootstrap-shortcodes-help .text-left {
+  text-align: left;
+}
+#bootstrap-shortcodes-help .text-right {
+  text-align: right;
+}
+#bootstrap-shortcodes-help .text-center {
+  text-align: center;
+}
+#bootstrap-shortcodes-help .page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+#bootstrap-shortcodes-help ul,
+#bootstrap-shortcodes-help ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+#bootstrap-shortcodes-help ul ul,
+#bootstrap-shortcodes-help ol ul,
+#bootstrap-shortcodes-help ul ol,
+#bootstrap-shortcodes-help ol ol {
+  margin-bottom: 0;
+}
+#bootstrap-shortcodes-help .list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+#bootstrap-shortcodes-help .list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+#bootstrap-shortcodes-help .list-inline > li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#bootstrap-shortcodes-help .list-inline > li:first-child {
+  padding-left: 0;
+}
+#bootstrap-shortcodes-help dl {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+#bootstrap-shortcodes-help dt,
+#bootstrap-shortcodes-help dd {
+  line-height: 1.428571429;
+}
+#bootstrap-shortcodes-help dt {
+  font-weight: bold;
+}
+#bootstrap-shortcodes-help dd {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  #bootstrap-shortcodes-help .dl-horizontal dd {
+    margin-left: 180px;
+  }
+  #bootstrap-shortcodes-help .dl-horizontal dd:before,
+  #bootstrap-shortcodes-help .dl-horizontal dd:after {
+    content: " ";
+    display: table;
+  }
+  #bootstrap-shortcodes-help .dl-horizontal dd:after {
+    clear: both;
+  }
+  #bootstrap-shortcodes-help .dl-horizontal dd:before,
+  #bootstrap-shortcodes-help .dl-horizontal dd:after {
+    content: " ";
+    display: table;
+  }
+  #bootstrap-shortcodes-help .dl-horizontal dd:after {
+    clear: both;
+  }
+}
+#bootstrap-shortcodes-help abbr[title],
+#bootstrap-shortcodes-help abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #999999;
+}
+#bootstrap-shortcodes-help .initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+#bootstrap-shortcodes-help blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  border-left: 5px solid #eeeeee;
+}
+#bootstrap-shortcodes-help blockquote p {
+  font-size: 17.5px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+#bootstrap-shortcodes-help blockquote p:last-child {
+  margin-bottom: 0;
+}
+#bootstrap-shortcodes-help blockquote small,
+#bootstrap-shortcodes-help blockquote .small {
+  display: block;
+  line-height: 1.428571429;
+  color: #999999;
+}
+#bootstrap-shortcodes-help blockquote small:before,
+#bootstrap-shortcodes-help blockquote .small:before {
+  content: '\2014 \00A0';
+}
+#bootstrap-shortcodes-help blockquote.pull-right {
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid #eeeeee;
+  border-left: 0;
+}
+#bootstrap-shortcodes-help blockquote.pull-right p,
+#bootstrap-shortcodes-help blockquote.pull-right small,
+#bootstrap-shortcodes-help blockquote.pull-right .small {
+  text-align: right;
+}
+#bootstrap-shortcodes-help blockquote.pull-right small:before,
+#bootstrap-shortcodes-help blockquote.pull-right .small:before {
+  content: '';
+}
+#bootstrap-shortcodes-help blockquote.pull-right small:after,
+#bootstrap-shortcodes-help blockquote.pull-right .small:after {
+  content: '\00A0 \2014';
+}
+#bootstrap-shortcodes-help blockquote:before,
+#bootstrap-shortcodes-help blockquote:after {
+  content: "";
+}
+#bootstrap-shortcodes-help address {
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 1.428571429;
+}
+#bootstrap-shortcodes-help code,
+#bootstrap-shortcodes-help kbd,
+#bootstrap-shortcodes-help pre,
+#bootstrap-shortcodes-help samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+#bootstrap-shortcodes-help code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+#bootstrap-shortcodes-help pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.428571429;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333333;
+  background-color: #f5f5f5;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+#bootstrap-shortcodes-help pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+#bootstrap-shortcodes-help .pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+#bootstrap-shortcodes-help .container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#bootstrap-shortcodes-help .container:before,
+#bootstrap-shortcodes-help .container:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .container:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .container:before,
+#bootstrap-shortcodes-help .container:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .container:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  #bootstrap-shortcodes-help .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  #bootstrap-shortcodes-help .container {
+    width: 1170px;
+  }
+}
+#bootstrap-shortcodes-help .row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+#bootstrap-shortcodes-help .row:before,
+#bootstrap-shortcodes-help .row:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .row:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .row:before,
+#bootstrap-shortcodes-help .row:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .row:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#bootstrap-shortcodes-help .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+  float: left;
+}
+#bootstrap-shortcodes-help .col-xs-12 {
+  width: 100%;
+}
+#bootstrap-shortcodes-help .col-xs-11 {
+  width: 91.66666666666666%;
+}
+#bootstrap-shortcodes-help .col-xs-10 {
+  width: 83.33333333333334%;
+}
+#bootstrap-shortcodes-help .col-xs-9 {
+  width: 75%;
+}
+#bootstrap-shortcodes-help .col-xs-8 {
+  width: 66.66666666666666%;
+}
+#bootstrap-shortcodes-help .col-xs-7 {
+  width: 58.333333333333336%;
+}
+#bootstrap-shortcodes-help .col-xs-6 {
+  width: 50%;
+}
+#bootstrap-shortcodes-help .col-xs-5 {
+  width: 41.66666666666667%;
+}
+#bootstrap-shortcodes-help .col-xs-4 {
+  width: 33.33333333333333%;
+}
+#bootstrap-shortcodes-help .col-xs-3 {
+  width: 25%;
+}
+#bootstrap-shortcodes-help .col-xs-2 {
+  width: 16.666666666666664%;
+}
+#bootstrap-shortcodes-help .col-xs-1 {
+  width: 8.333333333333332%;
+}
+#bootstrap-shortcodes-help .col-xs-pull-12 {
+  right: 100%;
+}
+#bootstrap-shortcodes-help .col-xs-pull-11 {
+  right: 91.66666666666666%;
+}
+#bootstrap-shortcodes-help .col-xs-pull-10 {
+  right: 83.33333333333334%;
+}
+#bootstrap-shortcodes-help .col-xs-pull-9 {
+  right: 75%;
+}
+#bootstrap-shortcodes-help .col-xs-pull-8 {
+  right: 66.66666666666666%;
+}
+#bootstrap-shortcodes-help .col-xs-pull-7 {
+  right: 58.333333333333336%;
+}
+#bootstrap-shortcodes-help .col-xs-pull-6 {
+  right: 50%;
+}
+#bootstrap-shortcodes-help .col-xs-pull-5 {
+  right: 41.66666666666667%;
+}
+#bootstrap-shortcodes-help .col-xs-pull-4 {
+  right: 33.33333333333333%;
+}
+#bootstrap-shortcodes-help .col-xs-pull-3 {
+  right: 25%;
+}
+#bootstrap-shortcodes-help .col-xs-pull-2 {
+  right: 16.666666666666664%;
+}
+#bootstrap-shortcodes-help .col-xs-pull-1 {
+  right: 8.333333333333332%;
+}
+#bootstrap-shortcodes-help .col-xs-pull-0 {
+  right: 0%;
+}
+#bootstrap-shortcodes-help .col-xs-push-12 {
+  left: 100%;
+}
+#bootstrap-shortcodes-help .col-xs-push-11 {
+  left: 91.66666666666666%;
+}
+#bootstrap-shortcodes-help .col-xs-push-10 {
+  left: 83.33333333333334%;
+}
+#bootstrap-shortcodes-help .col-xs-push-9 {
+  left: 75%;
+}
+#bootstrap-shortcodes-help .col-xs-push-8 {
+  left: 66.66666666666666%;
+}
+#bootstrap-shortcodes-help .col-xs-push-7 {
+  left: 58.333333333333336%;
+}
+#bootstrap-shortcodes-help .col-xs-push-6 {
+  left: 50%;
+}
+#bootstrap-shortcodes-help .col-xs-push-5 {
+  left: 41.66666666666667%;
+}
+#bootstrap-shortcodes-help .col-xs-push-4 {
+  left: 33.33333333333333%;
+}
+#bootstrap-shortcodes-help .col-xs-push-3 {
+  left: 25%;
+}
+#bootstrap-shortcodes-help .col-xs-push-2 {
+  left: 16.666666666666664%;
+}
+#bootstrap-shortcodes-help .col-xs-push-1 {
+  left: 8.333333333333332%;
+}
+#bootstrap-shortcodes-help .col-xs-push-0 {
+  left: 0%;
+}
+#bootstrap-shortcodes-help .col-xs-offset-12 {
+  margin-left: 100%;
+}
+#bootstrap-shortcodes-help .col-xs-offset-11 {
+  margin-left: 91.66666666666666%;
+}
+#bootstrap-shortcodes-help .col-xs-offset-10 {
+  margin-left: 83.33333333333334%;
+}
+#bootstrap-shortcodes-help .col-xs-offset-9 {
+  margin-left: 75%;
+}
+#bootstrap-shortcodes-help .col-xs-offset-8 {
+  margin-left: 66.66666666666666%;
+}
+#bootstrap-shortcodes-help .col-xs-offset-7 {
+  margin-left: 58.333333333333336%;
+}
+#bootstrap-shortcodes-help .col-xs-offset-6 {
+  margin-left: 50%;
+}
+#bootstrap-shortcodes-help .col-xs-offset-5 {
+  margin-left: 41.66666666666667%;
+}
+#bootstrap-shortcodes-help .col-xs-offset-4 {
+  margin-left: 33.33333333333333%;
+}
+#bootstrap-shortcodes-help .col-xs-offset-3 {
+  margin-left: 25%;
+}
+#bootstrap-shortcodes-help .col-xs-offset-2 {
+  margin-left: 16.666666666666664%;
+}
+#bootstrap-shortcodes-help .col-xs-offset-1 {
+  margin-left: 8.333333333333332%;
+}
+#bootstrap-shortcodes-help .col-xs-offset-0 {
+  margin-left: 0%;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    float: left;
+  }
+  #bootstrap-shortcodes-help .col-sm-12 {
+    width: 100%;
+  }
+  #bootstrap-shortcodes-help .col-sm-11 {
+    width: 91.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-sm-10 {
+    width: 83.33333333333334%;
+  }
+  #bootstrap-shortcodes-help .col-sm-9 {
+    width: 75%;
+  }
+  #bootstrap-shortcodes-help .col-sm-8 {
+    width: 66.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-sm-7 {
+    width: 58.333333333333336%;
+  }
+  #bootstrap-shortcodes-help .col-sm-6 {
+    width: 50%;
+  }
+  #bootstrap-shortcodes-help .col-sm-5 {
+    width: 41.66666666666667%;
+  }
+  #bootstrap-shortcodes-help .col-sm-4 {
+    width: 33.33333333333333%;
+  }
+  #bootstrap-shortcodes-help .col-sm-3 {
+    width: 25%;
+  }
+  #bootstrap-shortcodes-help .col-sm-2 {
+    width: 16.666666666666664%;
+  }
+  #bootstrap-shortcodes-help .col-sm-1 {
+    width: 8.333333333333332%;
+  }
+  #bootstrap-shortcodes-help .col-sm-pull-12 {
+    right: 100%;
+  }
+  #bootstrap-shortcodes-help .col-sm-pull-11 {
+    right: 91.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-sm-pull-10 {
+    right: 83.33333333333334%;
+  }
+  #bootstrap-shortcodes-help .col-sm-pull-9 {
+    right: 75%;
+  }
+  #bootstrap-shortcodes-help .col-sm-pull-8 {
+    right: 66.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-sm-pull-7 {
+    right: 58.333333333333336%;
+  }
+  #bootstrap-shortcodes-help .col-sm-pull-6 {
+    right: 50%;
+  }
+  #bootstrap-shortcodes-help .col-sm-pull-5 {
+    right: 41.66666666666667%;
+  }
+  #bootstrap-shortcodes-help .col-sm-pull-4 {
+    right: 33.33333333333333%;
+  }
+  #bootstrap-shortcodes-help .col-sm-pull-3 {
+    right: 25%;
+  }
+  #bootstrap-shortcodes-help .col-sm-pull-2 {
+    right: 16.666666666666664%;
+  }
+  #bootstrap-shortcodes-help .col-sm-pull-1 {
+    right: 8.333333333333332%;
+  }
+  #bootstrap-shortcodes-help .col-sm-pull-0 {
+    right: 0%;
+  }
+  #bootstrap-shortcodes-help .col-sm-push-12 {
+    left: 100%;
+  }
+  #bootstrap-shortcodes-help .col-sm-push-11 {
+    left: 91.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-sm-push-10 {
+    left: 83.33333333333334%;
+  }
+  #bootstrap-shortcodes-help .col-sm-push-9 {
+    left: 75%;
+  }
+  #bootstrap-shortcodes-help .col-sm-push-8 {
+    left: 66.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-sm-push-7 {
+    left: 58.333333333333336%;
+  }
+  #bootstrap-shortcodes-help .col-sm-push-6 {
+    left: 50%;
+  }
+  #bootstrap-shortcodes-help .col-sm-push-5 {
+    left: 41.66666666666667%;
+  }
+  #bootstrap-shortcodes-help .col-sm-push-4 {
+    left: 33.33333333333333%;
+  }
+  #bootstrap-shortcodes-help .col-sm-push-3 {
+    left: 25%;
+  }
+  #bootstrap-shortcodes-help .col-sm-push-2 {
+    left: 16.666666666666664%;
+  }
+  #bootstrap-shortcodes-help .col-sm-push-1 {
+    left: 8.333333333333332%;
+  }
+  #bootstrap-shortcodes-help .col-sm-push-0 {
+    left: 0%;
+  }
+  #bootstrap-shortcodes-help .col-sm-offset-12 {
+    margin-left: 100%;
+  }
+  #bootstrap-shortcodes-help .col-sm-offset-11 {
+    margin-left: 91.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-sm-offset-10 {
+    margin-left: 83.33333333333334%;
+  }
+  #bootstrap-shortcodes-help .col-sm-offset-9 {
+    margin-left: 75%;
+  }
+  #bootstrap-shortcodes-help .col-sm-offset-8 {
+    margin-left: 66.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-sm-offset-7 {
+    margin-left: 58.333333333333336%;
+  }
+  #bootstrap-shortcodes-help .col-sm-offset-6 {
+    margin-left: 50%;
+  }
+  #bootstrap-shortcodes-help .col-sm-offset-5 {
+    margin-left: 41.66666666666667%;
+  }
+  #bootstrap-shortcodes-help .col-sm-offset-4 {
+    margin-left: 33.33333333333333%;
+  }
+  #bootstrap-shortcodes-help .col-sm-offset-3 {
+    margin-left: 25%;
+  }
+  #bootstrap-shortcodes-help .col-sm-offset-2 {
+    margin-left: 16.666666666666664%;
+  }
+  #bootstrap-shortcodes-help .col-sm-offset-1 {
+    margin-left: 8.333333333333332%;
+  }
+  #bootstrap-shortcodes-help .col-sm-offset-0 {
+    margin-left: 0%;
+  }
+}
+@media (min-width: 992px) {
+  #bootstrap-shortcodes-help .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+  }
+  #bootstrap-shortcodes-help .col-md-12 {
+    width: 100%;
+  }
+  #bootstrap-shortcodes-help .col-md-11 {
+    width: 91.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-md-10 {
+    width: 83.33333333333334%;
+  }
+  #bootstrap-shortcodes-help .col-md-9 {
+    width: 75%;
+  }
+  #bootstrap-shortcodes-help .col-md-8 {
+    width: 66.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-md-7 {
+    width: 58.333333333333336%;
+  }
+  #bootstrap-shortcodes-help .col-md-6 {
+    width: 50%;
+  }
+  #bootstrap-shortcodes-help .col-md-5 {
+    width: 41.66666666666667%;
+  }
+  #bootstrap-shortcodes-help .col-md-4 {
+    width: 33.33333333333333%;
+  }
+  #bootstrap-shortcodes-help .col-md-3 {
+    width: 25%;
+  }
+  #bootstrap-shortcodes-help .col-md-2 {
+    width: 16.666666666666664%;
+  }
+  #bootstrap-shortcodes-help .col-md-1 {
+    width: 8.333333333333332%;
+  }
+  #bootstrap-shortcodes-help .col-md-pull-12 {
+    right: 100%;
+  }
+  #bootstrap-shortcodes-help .col-md-pull-11 {
+    right: 91.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-md-pull-10 {
+    right: 83.33333333333334%;
+  }
+  #bootstrap-shortcodes-help .col-md-pull-9 {
+    right: 75%;
+  }
+  #bootstrap-shortcodes-help .col-md-pull-8 {
+    right: 66.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-md-pull-7 {
+    right: 58.333333333333336%;
+  }
+  #bootstrap-shortcodes-help .col-md-pull-6 {
+    right: 50%;
+  }
+  #bootstrap-shortcodes-help .col-md-pull-5 {
+    right: 41.66666666666667%;
+  }
+  #bootstrap-shortcodes-help .col-md-pull-4 {
+    right: 33.33333333333333%;
+  }
+  #bootstrap-shortcodes-help .col-md-pull-3 {
+    right: 25%;
+  }
+  #bootstrap-shortcodes-help .col-md-pull-2 {
+    right: 16.666666666666664%;
+  }
+  #bootstrap-shortcodes-help .col-md-pull-1 {
+    right: 8.333333333333332%;
+  }
+  #bootstrap-shortcodes-help .col-md-pull-0 {
+    right: 0%;
+  }
+  #bootstrap-shortcodes-help .col-md-push-12 {
+    left: 100%;
+  }
+  #bootstrap-shortcodes-help .col-md-push-11 {
+    left: 91.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-md-push-10 {
+    left: 83.33333333333334%;
+  }
+  #bootstrap-shortcodes-help .col-md-push-9 {
+    left: 75%;
+  }
+  #bootstrap-shortcodes-help .col-md-push-8 {
+    left: 66.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-md-push-7 {
+    left: 58.333333333333336%;
+  }
+  #bootstrap-shortcodes-help .col-md-push-6 {
+    left: 50%;
+  }
+  #bootstrap-shortcodes-help .col-md-push-5 {
+    left: 41.66666666666667%;
+  }
+  #bootstrap-shortcodes-help .col-md-push-4 {
+    left: 33.33333333333333%;
+  }
+  #bootstrap-shortcodes-help .col-md-push-3 {
+    left: 25%;
+  }
+  #bootstrap-shortcodes-help .col-md-push-2 {
+    left: 16.666666666666664%;
+  }
+  #bootstrap-shortcodes-help .col-md-push-1 {
+    left: 8.333333333333332%;
+  }
+  #bootstrap-shortcodes-help .col-md-push-0 {
+    left: 0%;
+  }
+  #bootstrap-shortcodes-help .col-md-offset-12 {
+    margin-left: 100%;
+  }
+  #bootstrap-shortcodes-help .col-md-offset-11 {
+    margin-left: 91.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-md-offset-10 {
+    margin-left: 83.33333333333334%;
+  }
+  #bootstrap-shortcodes-help .col-md-offset-9 {
+    margin-left: 75%;
+  }
+  #bootstrap-shortcodes-help .col-md-offset-8 {
+    margin-left: 66.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-md-offset-7 {
+    margin-left: 58.333333333333336%;
+  }
+  #bootstrap-shortcodes-help .col-md-offset-6 {
+    margin-left: 50%;
+  }
+  #bootstrap-shortcodes-help .col-md-offset-5 {
+    margin-left: 41.66666666666667%;
+  }
+  #bootstrap-shortcodes-help .col-md-offset-4 {
+    margin-left: 33.33333333333333%;
+  }
+  #bootstrap-shortcodes-help .col-md-offset-3 {
+    margin-left: 25%;
+  }
+  #bootstrap-shortcodes-help .col-md-offset-2 {
+    margin-left: 16.666666666666664%;
+  }
+  #bootstrap-shortcodes-help .col-md-offset-1 {
+    margin-left: 8.333333333333332%;
+  }
+  #bootstrap-shortcodes-help .col-md-offset-0 {
+    margin-left: 0%;
+  }
+}
+@media (min-width: 1200px) {
+  #bootstrap-shortcodes-help .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: left;
+  }
+  #bootstrap-shortcodes-help .col-lg-12 {
+    width: 100%;
+  }
+  #bootstrap-shortcodes-help .col-lg-11 {
+    width: 91.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-lg-10 {
+    width: 83.33333333333334%;
+  }
+  #bootstrap-shortcodes-help .col-lg-9 {
+    width: 75%;
+  }
+  #bootstrap-shortcodes-help .col-lg-8 {
+    width: 66.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-lg-7 {
+    width: 58.333333333333336%;
+  }
+  #bootstrap-shortcodes-help .col-lg-6 {
+    width: 50%;
+  }
+  #bootstrap-shortcodes-help .col-lg-5 {
+    width: 41.66666666666667%;
+  }
+  #bootstrap-shortcodes-help .col-lg-4 {
+    width: 33.33333333333333%;
+  }
+  #bootstrap-shortcodes-help .col-lg-3 {
+    width: 25%;
+  }
+  #bootstrap-shortcodes-help .col-lg-2 {
+    width: 16.666666666666664%;
+  }
+  #bootstrap-shortcodes-help .col-lg-1 {
+    width: 8.333333333333332%;
+  }
+  #bootstrap-shortcodes-help .col-lg-pull-12 {
+    right: 100%;
+  }
+  #bootstrap-shortcodes-help .col-lg-pull-11 {
+    right: 91.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-lg-pull-10 {
+    right: 83.33333333333334%;
+  }
+  #bootstrap-shortcodes-help .col-lg-pull-9 {
+    right: 75%;
+  }
+  #bootstrap-shortcodes-help .col-lg-pull-8 {
+    right: 66.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-lg-pull-7 {
+    right: 58.333333333333336%;
+  }
+  #bootstrap-shortcodes-help .col-lg-pull-6 {
+    right: 50%;
+  }
+  #bootstrap-shortcodes-help .col-lg-pull-5 {
+    right: 41.66666666666667%;
+  }
+  #bootstrap-shortcodes-help .col-lg-pull-4 {
+    right: 33.33333333333333%;
+  }
+  #bootstrap-shortcodes-help .col-lg-pull-3 {
+    right: 25%;
+  }
+  #bootstrap-shortcodes-help .col-lg-pull-2 {
+    right: 16.666666666666664%;
+  }
+  #bootstrap-shortcodes-help .col-lg-pull-1 {
+    right: 8.333333333333332%;
+  }
+  #bootstrap-shortcodes-help .col-lg-pull-0 {
+    right: 0%;
+  }
+  #bootstrap-shortcodes-help .col-lg-push-12 {
+    left: 100%;
+  }
+  #bootstrap-shortcodes-help .col-lg-push-11 {
+    left: 91.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-lg-push-10 {
+    left: 83.33333333333334%;
+  }
+  #bootstrap-shortcodes-help .col-lg-push-9 {
+    left: 75%;
+  }
+  #bootstrap-shortcodes-help .col-lg-push-8 {
+    left: 66.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-lg-push-7 {
+    left: 58.333333333333336%;
+  }
+  #bootstrap-shortcodes-help .col-lg-push-6 {
+    left: 50%;
+  }
+  #bootstrap-shortcodes-help .col-lg-push-5 {
+    left: 41.66666666666667%;
+  }
+  #bootstrap-shortcodes-help .col-lg-push-4 {
+    left: 33.33333333333333%;
+  }
+  #bootstrap-shortcodes-help .col-lg-push-3 {
+    left: 25%;
+  }
+  #bootstrap-shortcodes-help .col-lg-push-2 {
+    left: 16.666666666666664%;
+  }
+  #bootstrap-shortcodes-help .col-lg-push-1 {
+    left: 8.333333333333332%;
+  }
+  #bootstrap-shortcodes-help .col-lg-push-0 {
+    left: 0%;
+  }
+  #bootstrap-shortcodes-help .col-lg-offset-12 {
+    margin-left: 100%;
+  }
+  #bootstrap-shortcodes-help .col-lg-offset-11 {
+    margin-left: 91.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-lg-offset-10 {
+    margin-left: 83.33333333333334%;
+  }
+  #bootstrap-shortcodes-help .col-lg-offset-9 {
+    margin-left: 75%;
+  }
+  #bootstrap-shortcodes-help .col-lg-offset-8 {
+    margin-left: 66.66666666666666%;
+  }
+  #bootstrap-shortcodes-help .col-lg-offset-7 {
+    margin-left: 58.333333333333336%;
+  }
+  #bootstrap-shortcodes-help .col-lg-offset-6 {
+    margin-left: 50%;
+  }
+  #bootstrap-shortcodes-help .col-lg-offset-5 {
+    margin-left: 41.66666666666667%;
+  }
+  #bootstrap-shortcodes-help .col-lg-offset-4 {
+    margin-left: 33.33333333333333%;
+  }
+  #bootstrap-shortcodes-help .col-lg-offset-3 {
+    margin-left: 25%;
+  }
+  #bootstrap-shortcodes-help .col-lg-offset-2 {
+    margin-left: 16.666666666666664%;
+  }
+  #bootstrap-shortcodes-help .col-lg-offset-1 {
+    margin-left: 8.333333333333332%;
+  }
+  #bootstrap-shortcodes-help .col-lg-offset-0 {
+    margin-left: 0%;
+  }
+}
+#bootstrap-shortcodes-help table {
+  max-width: 100%;
+  background-color: transparent;
+}
+#bootstrap-shortcodes-help th {
+  text-align: left;
+}
+#bootstrap-shortcodes-help .table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#bootstrap-shortcodes-help .table > thead > tr > th,
+#bootstrap-shortcodes-help .table > tbody > tr > th,
+#bootstrap-shortcodes-help .table > tfoot > tr > th,
+#bootstrap-shortcodes-help .table > thead > tr > td,
+#bootstrap-shortcodes-help .table > tbody > tr > td,
+#bootstrap-shortcodes-help .table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.428571429;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+#bootstrap-shortcodes-help .table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+#bootstrap-shortcodes-help .table > caption + thead > tr:first-child > th,
+#bootstrap-shortcodes-help .table > colgroup + thead > tr:first-child > th,
+#bootstrap-shortcodes-help .table > thead:first-child > tr:first-child > th,
+#bootstrap-shortcodes-help .table > caption + thead > tr:first-child > td,
+#bootstrap-shortcodes-help .table > colgroup + thead > tr:first-child > td,
+#bootstrap-shortcodes-help .table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+#bootstrap-shortcodes-help .table > tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+#bootstrap-shortcodes-help .table .table {
+  background-color: #ffffff;
+}
+#bootstrap-shortcodes-help .table-condensed > thead > tr > th,
+#bootstrap-shortcodes-help .table-condensed > tbody > tr > th,
+#bootstrap-shortcodes-help .table-condensed > tfoot > tr > th,
+#bootstrap-shortcodes-help .table-condensed > thead > tr > td,
+#bootstrap-shortcodes-help .table-condensed > tbody > tr > td,
+#bootstrap-shortcodes-help .table-condensed > tfoot > tr > td {
+  padding: 5px;
+}
+#bootstrap-shortcodes-help .table-bordered {
+  border: 1px solid #dddddd;
+}
+#bootstrap-shortcodes-help .table-bordered > thead > tr > th,
+#bootstrap-shortcodes-help .table-bordered > tbody > tr > th,
+#bootstrap-shortcodes-help .table-bordered > tfoot > tr > th,
+#bootstrap-shortcodes-help .table-bordered > thead > tr > td,
+#bootstrap-shortcodes-help .table-bordered > tbody > tr > td,
+#bootstrap-shortcodes-help .table-bordered > tfoot > tr > td {
+  border: 1px solid #dddddd;
+}
+#bootstrap-shortcodes-help .table-bordered > thead > tr > th,
+#bootstrap-shortcodes-help .table-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+}
+#bootstrap-shortcodes-help .table-striped > tbody > tr:nth-child(odd) > td,
+#bootstrap-shortcodes-help .table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+#bootstrap-shortcodes-help .table-hover > tbody > tr:hover > td,
+#bootstrap-shortcodes-help .table-hover > tbody > tr:hover > th {
+  background-color: #f5f5f5;
+}
+#bootstrap-shortcodes-help table col[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-column;
+}
+#bootstrap-shortcodes-help table td[class*="col-"],
+#bootstrap-shortcodes-help table th[class*="col-"] {
+  float: none;
+  display: table-cell;
+}
+#bootstrap-shortcodes-help .table > thead > tr > .active,
+#bootstrap-shortcodes-help .table > tbody > tr > .active,
+#bootstrap-shortcodes-help .table > tfoot > tr > .active,
+#bootstrap-shortcodes-help .table > thead > .active > td,
+#bootstrap-shortcodes-help .table > tbody > .active > td,
+#bootstrap-shortcodes-help .table > tfoot > .active > td,
+#bootstrap-shortcodes-help .table > thead > .active > th,
+#bootstrap-shortcodes-help .table > tbody > .active > th,
+#bootstrap-shortcodes-help .table > tfoot > .active > th {
+  background-color: #f5f5f5;
+}
+#bootstrap-shortcodes-help .table-hover > tbody > tr > .active:hover,
+#bootstrap-shortcodes-help .table-hover > tbody > .active:hover > td,
+#bootstrap-shortcodes-help .table-hover > tbody > .active:hover > th {
+  background-color: #e8e8e8;
+}
+#bootstrap-shortcodes-help .table > thead > tr > .success,
+#bootstrap-shortcodes-help .table > tbody > tr > .success,
+#bootstrap-shortcodes-help .table > tfoot > tr > .success,
+#bootstrap-shortcodes-help .table > thead > .success > td,
+#bootstrap-shortcodes-help .table > tbody > .success > td,
+#bootstrap-shortcodes-help .table > tfoot > .success > td,
+#bootstrap-shortcodes-help .table > thead > .success > th,
+#bootstrap-shortcodes-help .table > tbody > .success > th,
+#bootstrap-shortcodes-help .table > tfoot > .success > th {
+  background-color: #dff0d8;
+}
+#bootstrap-shortcodes-help .table-hover > tbody > tr > .success:hover,
+#bootstrap-shortcodes-help .table-hover > tbody > .success:hover > td,
+#bootstrap-shortcodes-help .table-hover > tbody > .success:hover > th {
+  background-color: #d0e9c6;
+}
+#bootstrap-shortcodes-help .table > thead > tr > .danger,
+#bootstrap-shortcodes-help .table > tbody > tr > .danger,
+#bootstrap-shortcodes-help .table > tfoot > tr > .danger,
+#bootstrap-shortcodes-help .table > thead > .danger > td,
+#bootstrap-shortcodes-help .table > tbody > .danger > td,
+#bootstrap-shortcodes-help .table > tfoot > .danger > td,
+#bootstrap-shortcodes-help .table > thead > .danger > th,
+#bootstrap-shortcodes-help .table > tbody > .danger > th,
+#bootstrap-shortcodes-help .table > tfoot > .danger > th {
+  background-color: #f2dede;
+}
+#bootstrap-shortcodes-help .table-hover > tbody > tr > .danger:hover,
+#bootstrap-shortcodes-help .table-hover > tbody > .danger:hover > td,
+#bootstrap-shortcodes-help .table-hover > tbody > .danger:hover > th {
+  background-color: #ebcccc;
+}
+#bootstrap-shortcodes-help .table > thead > tr > .warning,
+#bootstrap-shortcodes-help .table > tbody > tr > .warning,
+#bootstrap-shortcodes-help .table > tfoot > tr > .warning,
+#bootstrap-shortcodes-help .table > thead > .warning > td,
+#bootstrap-shortcodes-help .table > tbody > .warning > td,
+#bootstrap-shortcodes-help .table > tfoot > .warning > td,
+#bootstrap-shortcodes-help .table > thead > .warning > th,
+#bootstrap-shortcodes-help .table > tbody > .warning > th,
+#bootstrap-shortcodes-help .table > tfoot > .warning > th {
+  background-color: #fcf8e3;
+}
+#bootstrap-shortcodes-help .table-hover > tbody > tr > .warning:hover,
+#bootstrap-shortcodes-help .table-hover > tbody > .warning:hover > td,
+#bootstrap-shortcodes-help .table-hover > tbody > .warning:hover > th {
+  background-color: #faf2cc;
+}
+@media (max-width: 767px) {
+  #bootstrap-shortcodes-help .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #dddddd;
+    -webkit-overflow-scrolling: touch;
+  }
+  #bootstrap-shortcodes-help .table-responsive > .table {
+    margin-bottom: 0;
+  }
+  #bootstrap-shortcodes-help .table-responsive > .table > thead > tr > th,
+  #bootstrap-shortcodes-help .table-responsive > .table > tbody > tr > th,
+  #bootstrap-shortcodes-help .table-responsive > .table > tfoot > tr > th,
+  #bootstrap-shortcodes-help .table-responsive > .table > thead > tr > td,
+  #bootstrap-shortcodes-help .table-responsive > .table > tbody > tr > td,
+  #bootstrap-shortcodes-help .table-responsive > .table > tfoot > tr > td {
+    white-space: nowrap;
+  }
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered {
+    border: 0;
+  }
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > thead > tr > th:first-child,
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > tbody > tr > th:first-child,
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > thead > tr > td:first-child,
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > tbody > tr > td:first-child,
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+    border-left: 0;
+  }
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > thead > tr > th:last-child,
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > tbody > tr > th:last-child,
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > thead > tr > td:last-child,
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > tbody > tr > td:last-child,
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+    border-right: 0;
+  }
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > tbody > tr:last-child > th,
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > tbody > tr:last-child > td,
+  #bootstrap-shortcodes-help .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+    border-bottom: 0;
+  }
+}
+#bootstrap-shortcodes-help fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+#bootstrap-shortcodes-help legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+#bootstrap-shortcodes-help label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+#bootstrap-shortcodes-help input[type="search"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#bootstrap-shortcodes-help input[type="radio"],
+#bootstrap-shortcodes-help input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  /* IE8-9 */
+  line-height: normal;
+}
+#bootstrap-shortcodes-help input[type="file"] {
+  display: block;
+}
+#bootstrap-shortcodes-help select[multiple],
+#bootstrap-shortcodes-help select[size] {
+  height: auto;
+}
+#bootstrap-shortcodes-help select optgroup {
+  font-size: inherit;
+  font-style: inherit;
+  font-family: inherit;
+}
+#bootstrap-shortcodes-help input[type="file"]:focus,
+#bootstrap-shortcodes-help input[type="radio"]:focus,
+#bootstrap-shortcodes-help input[type="checkbox"]:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#bootstrap-shortcodes-help input[type="number"]::-webkit-outer-spin-button,
+#bootstrap-shortcodes-help input[type="number"]::-webkit-inner-spin-button {
+  height: auto;
+}
+#bootstrap-shortcodes-help output {
+  display: block;
+  padding-top: 7px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+}
+#bootstrap-shortcodes-help .form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+#bootstrap-shortcodes-help .form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+#bootstrap-shortcodes-help .form-control:-moz-placeholder {
+  color: #999999;
+}
+#bootstrap-shortcodes-help .form-control::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+#bootstrap-shortcodes-help .form-control:-ms-input-placeholder {
+  color: #999999;
+}
+#bootstrap-shortcodes-help .form-control::-webkit-input-placeholder {
+  color: #999999;
+}
+#bootstrap-shortcodes-help .form-control[disabled],
+#bootstrap-shortcodes-help .form-control[readonly],
+fieldset[disabled] #bootstrap-shortcodes-help .form-control {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+}
+textarea#bootstrap-shortcodes-help .form-control {
+  height: auto;
+}
+#bootstrap-shortcodes-help .form-group {
+  margin-bottom: 15px;
+}
+#bootstrap-shortcodes-help .radio,
+#bootstrap-shortcodes-help .checkbox {
+  display: block;
+  min-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  vertical-align: middle;
+}
+#bootstrap-shortcodes-help .radio label,
+#bootstrap-shortcodes-help .checkbox label {
+  display: inline;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+#bootstrap-shortcodes-help .radio input[type="radio"],
+#bootstrap-shortcodes-help .radio-inline input[type="radio"],
+#bootstrap-shortcodes-help .checkbox input[type="checkbox"],
+#bootstrap-shortcodes-help .checkbox-inline input[type="checkbox"] {
+  float: left;
+  margin-left: -20px;
+}
+#bootstrap-shortcodes-help .radio + .radio,
+#bootstrap-shortcodes-help .checkbox + .checkbox {
+  margin-top: -5px;
+}
+#bootstrap-shortcodes-help .radio-inline,
+#bootstrap-shortcodes-help .checkbox-inline {
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+}
+#bootstrap-shortcodes-help .radio-inline + .radio-inline,
+#bootstrap-shortcodes-help .checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 10px;
+}
+#bootstrap-shortcodes-help input[type="radio"][disabled],
+#bootstrap-shortcodes-help input[type="checkbox"][disabled],
+#bootstrap-shortcodes-help .radio[disabled],
+#bootstrap-shortcodes-help .radio-inline[disabled],
+#bootstrap-shortcodes-help .checkbox[disabled],
+#bootstrap-shortcodes-help .checkbox-inline[disabled],
+fieldset[disabled] #bootstrap-shortcodes-help input[type="radio"],
+fieldset[disabled] #bootstrap-shortcodes-help input[type="checkbox"],
+fieldset[disabled] #bootstrap-shortcodes-help .radio,
+fieldset[disabled] #bootstrap-shortcodes-help .radio-inline,
+fieldset[disabled] #bootstrap-shortcodes-help .checkbox,
+fieldset[disabled] #bootstrap-shortcodes-help .checkbox-inline {
+  cursor: not-allowed;
+}
+#bootstrap-shortcodes-help .input-sm {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+select#bootstrap-shortcodes-help .input-sm {
+  height: 30px;
+  line-height: 30px;
+}
+textarea#bootstrap-shortcodes-help .input-sm {
+  height: auto;
+}
+#bootstrap-shortcodes-help .input-lg {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+select#bootstrap-shortcodes-help .input-lg {
+  height: 46px;
+  line-height: 46px;
+}
+textarea#bootstrap-shortcodes-help .input-lg {
+  height: auto;
+}
+#bootstrap-shortcodes-help .has-warning .help-block,
+#bootstrap-shortcodes-help .has-warning .control-label,
+#bootstrap-shortcodes-help .has-warning .radio,
+#bootstrap-shortcodes-help .has-warning .checkbox,
+#bootstrap-shortcodes-help .has-warning .radio-inline,
+#bootstrap-shortcodes-help .has-warning .checkbox-inline {
+  color: #8a6d3b;
+}
+#bootstrap-shortcodes-help .has-warning .form-control {
+  border-color: #8a6d3b;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+#bootstrap-shortcodes-help .has-warning .form-control:focus {
+  border-color: #66512c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+}
+#bootstrap-shortcodes-help .has-warning .input-group-addon {
+  color: #8a6d3b;
+  border-color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+#bootstrap-shortcodes-help .has-error .help-block,
+#bootstrap-shortcodes-help .has-error .control-label,
+#bootstrap-shortcodes-help .has-error .radio,
+#bootstrap-shortcodes-help .has-error .checkbox,
+#bootstrap-shortcodes-help .has-error .radio-inline,
+#bootstrap-shortcodes-help .has-error .checkbox-inline {
+  color: #a94442;
+}
+#bootstrap-shortcodes-help .has-error .form-control {
+  border-color: #a94442;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+#bootstrap-shortcodes-help .has-error .form-control:focus {
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+#bootstrap-shortcodes-help .has-error .input-group-addon {
+  color: #a94442;
+  border-color: #a94442;
+  background-color: #f2dede;
+}
+#bootstrap-shortcodes-help .has-success .help-block,
+#bootstrap-shortcodes-help .has-success .control-label,
+#bootstrap-shortcodes-help .has-success .radio,
+#bootstrap-shortcodes-help .has-success .checkbox,
+#bootstrap-shortcodes-help .has-success .radio-inline,
+#bootstrap-shortcodes-help .has-success .checkbox-inline {
+  color: #3c763d;
+}
+#bootstrap-shortcodes-help .has-success .form-control {
+  border-color: #3c763d;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+#bootstrap-shortcodes-help .has-success .form-control:focus {
+  border-color: #2b542c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+}
+#bootstrap-shortcodes-help .has-success .input-group-addon {
+  color: #3c763d;
+  border-color: #3c763d;
+  background-color: #dff0d8;
+}
+#bootstrap-shortcodes-help .form-control-static {
+  margin-bottom: 0;
+}
+#bootstrap-shortcodes-help .help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  #bootstrap-shortcodes-help .form-inline .form-control {
+    display: inline-block;
+  }
+  #bootstrap-shortcodes-help .form-inline select.form-control {
+    width: auto;
+  }
+  #bootstrap-shortcodes-help .form-inline .radio,
+  #bootstrap-shortcodes-help .form-inline .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  #bootstrap-shortcodes-help .form-inline .radio input[type="radio"],
+  #bootstrap-shortcodes-help .form-inline .checkbox input[type="checkbox"] {
+    float: none;
+    margin-left: 0;
+  }
+}
+#bootstrap-shortcodes-help .form-horizontal .control-label,
+#bootstrap-shortcodes-help .form-horizontal .radio,
+#bootstrap-shortcodes-help .form-horizontal .checkbox,
+#bootstrap-shortcodes-help .form-horizontal .radio-inline,
+#bootstrap-shortcodes-help .form-horizontal .checkbox-inline {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 7px;
+}
+#bootstrap-shortcodes-help .form-horizontal .radio,
+#bootstrap-shortcodes-help .form-horizontal .checkbox {
+  min-height: 27px;
+}
+#bootstrap-shortcodes-help .form-horizontal .form-group {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+#bootstrap-shortcodes-help .form-horizontal .form-group:before,
+#bootstrap-shortcodes-help .form-horizontal .form-group:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .form-horizontal .form-group:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .form-horizontal .form-group:before,
+#bootstrap-shortcodes-help .form-horizontal .form-group:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .form-horizontal .form-group:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .form-horizontal .form-control-static {
+  padding-top: 7px;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .form-horizontal .control-label {
+    text-align: right;
+  }
+}
+#bootstrap-shortcodes-help .btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+#bootstrap-shortcodes-help .btn:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#bootstrap-shortcodes-help .btn:hover,
+#bootstrap-shortcodes-help .btn:focus {
+  color: #333333;
+  text-decoration: none;
+}
+#bootstrap-shortcodes-help .btn:active,
+#bootstrap-shortcodes-help .btn.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+#bootstrap-shortcodes-help .btn.disabled,
+#bootstrap-shortcodes-help .btn[disabled],
+fieldset[disabled] #bootstrap-shortcodes-help .btn {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#bootstrap-shortcodes-help .btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+#bootstrap-shortcodes-help .btn-default:hover,
+#bootstrap-shortcodes-help .btn-default:focus,
+#bootstrap-shortcodes-help .btn-default:active,
+#bootstrap-shortcodes-help .btn-default.active,
+.open .dropdown-toggle#bootstrap-shortcodes-help .btn-default {
+  color: #333333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+#bootstrap-shortcodes-help .btn-default:active,
+#bootstrap-shortcodes-help .btn-default.active,
+.open .dropdown-toggle#bootstrap-shortcodes-help .btn-default {
+  background-image: none;
+}
+#bootstrap-shortcodes-help .btn-default.disabled,
+#bootstrap-shortcodes-help .btn-default[disabled],
+fieldset[disabled] #bootstrap-shortcodes-help .btn-default,
+#bootstrap-shortcodes-help .btn-default.disabled:hover,
+#bootstrap-shortcodes-help .btn-default[disabled]:hover,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-default:hover,
+#bootstrap-shortcodes-help .btn-default.disabled:focus,
+#bootstrap-shortcodes-help .btn-default[disabled]:focus,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-default:focus,
+#bootstrap-shortcodes-help .btn-default.disabled:active,
+#bootstrap-shortcodes-help .btn-default[disabled]:active,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-default:active,
+#bootstrap-shortcodes-help .btn-default.disabled.active,
+#bootstrap-shortcodes-help .btn-default[disabled].active,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-default.active {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+#bootstrap-shortcodes-help .btn-default .badge {
+  color: #ffffff;
+  background-color: #fff;
+}
+#bootstrap-shortcodes-help .btn-primary {
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+#bootstrap-shortcodes-help .btn-primary:hover,
+#bootstrap-shortcodes-help .btn-primary:focus,
+#bootstrap-shortcodes-help .btn-primary:active,
+#bootstrap-shortcodes-help .btn-primary.active,
+.open .dropdown-toggle#bootstrap-shortcodes-help .btn-primary {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+#bootstrap-shortcodes-help .btn-primary:active,
+#bootstrap-shortcodes-help .btn-primary.active,
+.open .dropdown-toggle#bootstrap-shortcodes-help .btn-primary {
+  background-image: none;
+}
+#bootstrap-shortcodes-help .btn-primary.disabled,
+#bootstrap-shortcodes-help .btn-primary[disabled],
+fieldset[disabled] #bootstrap-shortcodes-help .btn-primary,
+#bootstrap-shortcodes-help .btn-primary.disabled:hover,
+#bootstrap-shortcodes-help .btn-primary[disabled]:hover,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-primary:hover,
+#bootstrap-shortcodes-help .btn-primary.disabled:focus,
+#bootstrap-shortcodes-help .btn-primary[disabled]:focus,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-primary:focus,
+#bootstrap-shortcodes-help .btn-primary.disabled:active,
+#bootstrap-shortcodes-help .btn-primary[disabled]:active,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-primary:active,
+#bootstrap-shortcodes-help .btn-primary.disabled.active,
+#bootstrap-shortcodes-help .btn-primary[disabled].active,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-primary.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+#bootstrap-shortcodes-help .btn-primary .badge {
+  color: #428bca;
+  background-color: #fff;
+}
+#bootstrap-shortcodes-help .btn-warning {
+  color: #ffffff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+#bootstrap-shortcodes-help .btn-warning:hover,
+#bootstrap-shortcodes-help .btn-warning:focus,
+#bootstrap-shortcodes-help .btn-warning:active,
+#bootstrap-shortcodes-help .btn-warning.active,
+.open .dropdown-toggle#bootstrap-shortcodes-help .btn-warning {
+  color: #ffffff;
+  background-color: #ed9c28;
+  border-color: #d58512;
+}
+#bootstrap-shortcodes-help .btn-warning:active,
+#bootstrap-shortcodes-help .btn-warning.active,
+.open .dropdown-toggle#bootstrap-shortcodes-help .btn-warning {
+  background-image: none;
+}
+#bootstrap-shortcodes-help .btn-warning.disabled,
+#bootstrap-shortcodes-help .btn-warning[disabled],
+fieldset[disabled] #bootstrap-shortcodes-help .btn-warning,
+#bootstrap-shortcodes-help .btn-warning.disabled:hover,
+#bootstrap-shortcodes-help .btn-warning[disabled]:hover,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-warning:hover,
+#bootstrap-shortcodes-help .btn-warning.disabled:focus,
+#bootstrap-shortcodes-help .btn-warning[disabled]:focus,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-warning:focus,
+#bootstrap-shortcodes-help .btn-warning.disabled:active,
+#bootstrap-shortcodes-help .btn-warning[disabled]:active,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-warning:active,
+#bootstrap-shortcodes-help .btn-warning.disabled.active,
+#bootstrap-shortcodes-help .btn-warning[disabled].active,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-warning.active {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+#bootstrap-shortcodes-help .btn-warning .badge {
+  color: #f0ad4e;
+  background-color: #fff;
+}
+#bootstrap-shortcodes-help .btn-danger {
+  color: #ffffff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+#bootstrap-shortcodes-help .btn-danger:hover,
+#bootstrap-shortcodes-help .btn-danger:focus,
+#bootstrap-shortcodes-help .btn-danger:active,
+#bootstrap-shortcodes-help .btn-danger.active,
+.open .dropdown-toggle#bootstrap-shortcodes-help .btn-danger {
+  color: #ffffff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+#bootstrap-shortcodes-help .btn-danger:active,
+#bootstrap-shortcodes-help .btn-danger.active,
+.open .dropdown-toggle#bootstrap-shortcodes-help .btn-danger {
+  background-image: none;
+}
+#bootstrap-shortcodes-help .btn-danger.disabled,
+#bootstrap-shortcodes-help .btn-danger[disabled],
+fieldset[disabled] #bootstrap-shortcodes-help .btn-danger,
+#bootstrap-shortcodes-help .btn-danger.disabled:hover,
+#bootstrap-shortcodes-help .btn-danger[disabled]:hover,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-danger:hover,
+#bootstrap-shortcodes-help .btn-danger.disabled:focus,
+#bootstrap-shortcodes-help .btn-danger[disabled]:focus,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-danger:focus,
+#bootstrap-shortcodes-help .btn-danger.disabled:active,
+#bootstrap-shortcodes-help .btn-danger[disabled]:active,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-danger:active,
+#bootstrap-shortcodes-help .btn-danger.disabled.active,
+#bootstrap-shortcodes-help .btn-danger[disabled].active,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-danger.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+#bootstrap-shortcodes-help .btn-danger .badge {
+  color: #d9534f;
+  background-color: #fff;
+}
+#bootstrap-shortcodes-help .btn-success {
+  color: #ffffff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+#bootstrap-shortcodes-help .btn-success:hover,
+#bootstrap-shortcodes-help .btn-success:focus,
+#bootstrap-shortcodes-help .btn-success:active,
+#bootstrap-shortcodes-help .btn-success.active,
+.open .dropdown-toggle#bootstrap-shortcodes-help .btn-success {
+  color: #ffffff;
+  background-color: #47a447;
+  border-color: #398439;
+}
+#bootstrap-shortcodes-help .btn-success:active,
+#bootstrap-shortcodes-help .btn-success.active,
+.open .dropdown-toggle#bootstrap-shortcodes-help .btn-success {
+  background-image: none;
+}
+#bootstrap-shortcodes-help .btn-success.disabled,
+#bootstrap-shortcodes-help .btn-success[disabled],
+fieldset[disabled] #bootstrap-shortcodes-help .btn-success,
+#bootstrap-shortcodes-help .btn-success.disabled:hover,
+#bootstrap-shortcodes-help .btn-success[disabled]:hover,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-success:hover,
+#bootstrap-shortcodes-help .btn-success.disabled:focus,
+#bootstrap-shortcodes-help .btn-success[disabled]:focus,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-success:focus,
+#bootstrap-shortcodes-help .btn-success.disabled:active,
+#bootstrap-shortcodes-help .btn-success[disabled]:active,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-success:active,
+#bootstrap-shortcodes-help .btn-success.disabled.active,
+#bootstrap-shortcodes-help .btn-success[disabled].active,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-success.active {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+#bootstrap-shortcodes-help .btn-success .badge {
+  color: #5cb85c;
+  background-color: #fff;
+}
+#bootstrap-shortcodes-help .btn-info {
+  color: #ffffff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+#bootstrap-shortcodes-help .btn-info:hover,
+#bootstrap-shortcodes-help .btn-info:focus,
+#bootstrap-shortcodes-help .btn-info:active,
+#bootstrap-shortcodes-help .btn-info.active,
+.open .dropdown-toggle#bootstrap-shortcodes-help .btn-info {
+  color: #ffffff;
+  background-color: #39b3d7;
+  border-color: #269abc;
+}
+#bootstrap-shortcodes-help .btn-info:active,
+#bootstrap-shortcodes-help .btn-info.active,
+.open .dropdown-toggle#bootstrap-shortcodes-help .btn-info {
+  background-image: none;
+}
+#bootstrap-shortcodes-help .btn-info.disabled,
+#bootstrap-shortcodes-help .btn-info[disabled],
+fieldset[disabled] #bootstrap-shortcodes-help .btn-info,
+#bootstrap-shortcodes-help .btn-info.disabled:hover,
+#bootstrap-shortcodes-help .btn-info[disabled]:hover,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-info:hover,
+#bootstrap-shortcodes-help .btn-info.disabled:focus,
+#bootstrap-shortcodes-help .btn-info[disabled]:focus,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-info:focus,
+#bootstrap-shortcodes-help .btn-info.disabled:active,
+#bootstrap-shortcodes-help .btn-info[disabled]:active,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-info:active,
+#bootstrap-shortcodes-help .btn-info.disabled.active,
+#bootstrap-shortcodes-help .btn-info[disabled].active,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-info.active {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+#bootstrap-shortcodes-help .btn-info .badge {
+  color: #5bc0de;
+  background-color: #fff;
+}
+#bootstrap-shortcodes-help .btn-link {
+  color: #428bca;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+}
+#bootstrap-shortcodes-help .btn-link,
+#bootstrap-shortcodes-help .btn-link:active,
+#bootstrap-shortcodes-help .btn-link[disabled],
+fieldset[disabled] #bootstrap-shortcodes-help .btn-link {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#bootstrap-shortcodes-help .btn-link,
+#bootstrap-shortcodes-help .btn-link:hover,
+#bootstrap-shortcodes-help .btn-link:focus,
+#bootstrap-shortcodes-help .btn-link:active {
+  border-color: transparent;
+}
+#bootstrap-shortcodes-help .btn-link:hover,
+#bootstrap-shortcodes-help .btn-link:focus {
+  color: #2a6496;
+  text-decoration: underline;
+  background-color: transparent;
+}
+#bootstrap-shortcodes-help .btn-link[disabled]:hover,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-link:hover,
+#bootstrap-shortcodes-help .btn-link[disabled]:focus,
+fieldset[disabled] #bootstrap-shortcodes-help .btn-link:focus {
+  color: #999999;
+  text-decoration: none;
+}
+#bootstrap-shortcodes-help .btn-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+#bootstrap-shortcodes-help .btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+#bootstrap-shortcodes-help .btn-xs {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+#bootstrap-shortcodes-help .btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+#bootstrap-shortcodes-help .btn-block + .btn-block {
+  margin-top: 5px;
+}
+#bootstrap-shortcodes-help input[type="submit"].btn-block,
+#bootstrap-shortcodes-help input[type="reset"].btn-block,
+#bootstrap-shortcodes-help input[type="button"].btn-block {
+  width: 100%;
+}
+#bootstrap-shortcodes-help .fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+#bootstrap-shortcodes-help .fade.in {
+  opacity: 1;
+}
+#bootstrap-shortcodes-help .collapse {
+  display: none;
+}
+#bootstrap-shortcodes-help .collapse.in {
+  display: block;
+}
+#bootstrap-shortcodes-help .collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.35s ease;
+  transition: height 0.35s ease;
+}
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+#bootstrap-shortcodes-help .glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#bootstrap-shortcodes-help .glyphicon:empty {
+  width: 1em;
+}
+#bootstrap-shortcodes-help .glyphicon-asterisk:before {
+  content: "\2a";
+}
+#bootstrap-shortcodes-help .glyphicon-plus:before {
+  content: "\2b";
+}
+#bootstrap-shortcodes-help .glyphicon-euro:before {
+  content: "\20ac";
+}
+#bootstrap-shortcodes-help .glyphicon-minus:before {
+  content: "\2212";
+}
+#bootstrap-shortcodes-help .glyphicon-cloud:before {
+  content: "\2601";
+}
+#bootstrap-shortcodes-help .glyphicon-envelope:before {
+  content: "\2709";
+}
+#bootstrap-shortcodes-help .glyphicon-pencil:before {
+  content: "\270f";
+}
+#bootstrap-shortcodes-help .glyphicon-glass:before {
+  content: "\e001";
+}
+#bootstrap-shortcodes-help .glyphicon-music:before {
+  content: "\e002";
+}
+#bootstrap-shortcodes-help .glyphicon-search:before {
+  content: "\e003";
+}
+#bootstrap-shortcodes-help .glyphicon-heart:before {
+  content: "\e005";
+}
+#bootstrap-shortcodes-help .glyphicon-star:before {
+  content: "\e006";
+}
+#bootstrap-shortcodes-help .glyphicon-star-empty:before {
+  content: "\e007";
+}
+#bootstrap-shortcodes-help .glyphicon-user:before {
+  content: "\e008";
+}
+#bootstrap-shortcodes-help .glyphicon-film:before {
+  content: "\e009";
+}
+#bootstrap-shortcodes-help .glyphicon-th-large:before {
+  content: "\e010";
+}
+#bootstrap-shortcodes-help .glyphicon-th:before {
+  content: "\e011";
+}
+#bootstrap-shortcodes-help .glyphicon-th-list:before {
+  content: "\e012";
+}
+#bootstrap-shortcodes-help .glyphicon-ok:before {
+  content: "\e013";
+}
+#bootstrap-shortcodes-help .glyphicon-remove:before {
+  content: "\e014";
+}
+#bootstrap-shortcodes-help .glyphicon-zoom-in:before {
+  content: "\e015";
+}
+#bootstrap-shortcodes-help .glyphicon-zoom-out:before {
+  content: "\e016";
+}
+#bootstrap-shortcodes-help .glyphicon-off:before {
+  content: "\e017";
+}
+#bootstrap-shortcodes-help .glyphicon-signal:before {
+  content: "\e018";
+}
+#bootstrap-shortcodes-help .glyphicon-cog:before {
+  content: "\e019";
+}
+#bootstrap-shortcodes-help .glyphicon-trash:before {
+  content: "\e020";
+}
+#bootstrap-shortcodes-help .glyphicon-home:before {
+  content: "\e021";
+}
+#bootstrap-shortcodes-help .glyphicon-file:before {
+  content: "\e022";
+}
+#bootstrap-shortcodes-help .glyphicon-time:before {
+  content: "\e023";
+}
+#bootstrap-shortcodes-help .glyphicon-road:before {
+  content: "\e024";
+}
+#bootstrap-shortcodes-help .glyphicon-download-alt:before {
+  content: "\e025";
+}
+#bootstrap-shortcodes-help .glyphicon-download:before {
+  content: "\e026";
+}
+#bootstrap-shortcodes-help .glyphicon-upload:before {
+  content: "\e027";
+}
+#bootstrap-shortcodes-help .glyphicon-inbox:before {
+  content: "\e028";
+}
+#bootstrap-shortcodes-help .glyphicon-play-circle:before {
+  content: "\e029";
+}
+#bootstrap-shortcodes-help .glyphicon-repeat:before {
+  content: "\e030";
+}
+#bootstrap-shortcodes-help .glyphicon-refresh:before {
+  content: "\e031";
+}
+#bootstrap-shortcodes-help .glyphicon-list-alt:before {
+  content: "\e032";
+}
+#bootstrap-shortcodes-help .glyphicon-lock:before {
+  content: "\e033";
+}
+#bootstrap-shortcodes-help .glyphicon-flag:before {
+  content: "\e034";
+}
+#bootstrap-shortcodes-help .glyphicon-headphones:before {
+  content: "\e035";
+}
+#bootstrap-shortcodes-help .glyphicon-volume-off:before {
+  content: "\e036";
+}
+#bootstrap-shortcodes-help .glyphicon-volume-down:before {
+  content: "\e037";
+}
+#bootstrap-shortcodes-help .glyphicon-volume-up:before {
+  content: "\e038";
+}
+#bootstrap-shortcodes-help .glyphicon-qrcode:before {
+  content: "\e039";
+}
+#bootstrap-shortcodes-help .glyphicon-barcode:before {
+  content: "\e040";
+}
+#bootstrap-shortcodes-help .glyphicon-tag:before {
+  content: "\e041";
+}
+#bootstrap-shortcodes-help .glyphicon-tags:before {
+  content: "\e042";
+}
+#bootstrap-shortcodes-help .glyphicon-book:before {
+  content: "\e043";
+}
+#bootstrap-shortcodes-help .glyphicon-bookmark:before {
+  content: "\e044";
+}
+#bootstrap-shortcodes-help .glyphicon-print:before {
+  content: "\e045";
+}
+#bootstrap-shortcodes-help .glyphicon-camera:before {
+  content: "\e046";
+}
+#bootstrap-shortcodes-help .glyphicon-font:before {
+  content: "\e047";
+}
+#bootstrap-shortcodes-help .glyphicon-bold:before {
+  content: "\e048";
+}
+#bootstrap-shortcodes-help .glyphicon-italic:before {
+  content: "\e049";
+}
+#bootstrap-shortcodes-help .glyphicon-text-height:before {
+  content: "\e050";
+}
+#bootstrap-shortcodes-help .glyphicon-text-width:before {
+  content: "\e051";
+}
+#bootstrap-shortcodes-help .glyphicon-align-left:before {
+  content: "\e052";
+}
+#bootstrap-shortcodes-help .glyphicon-align-center:before {
+  content: "\e053";
+}
+#bootstrap-shortcodes-help .glyphicon-align-right:before {
+  content: "\e054";
+}
+#bootstrap-shortcodes-help .glyphicon-align-justify:before {
+  content: "\e055";
+}
+#bootstrap-shortcodes-help .glyphicon-list:before {
+  content: "\e056";
+}
+#bootstrap-shortcodes-help .glyphicon-indent-left:before {
+  content: "\e057";
+}
+#bootstrap-shortcodes-help .glyphicon-indent-right:before {
+  content: "\e058";
+}
+#bootstrap-shortcodes-help .glyphicon-facetime-video:before {
+  content: "\e059";
+}
+#bootstrap-shortcodes-help .glyphicon-picture:before {
+  content: "\e060";
+}
+#bootstrap-shortcodes-help .glyphicon-map-marker:before {
+  content: "\e062";
+}
+#bootstrap-shortcodes-help .glyphicon-adjust:before {
+  content: "\e063";
+}
+#bootstrap-shortcodes-help .glyphicon-tint:before {
+  content: "\e064";
+}
+#bootstrap-shortcodes-help .glyphicon-edit:before {
+  content: "\e065";
+}
+#bootstrap-shortcodes-help .glyphicon-share:before {
+  content: "\e066";
+}
+#bootstrap-shortcodes-help .glyphicon-check:before {
+  content: "\e067";
+}
+#bootstrap-shortcodes-help .glyphicon-move:before {
+  content: "\e068";
+}
+#bootstrap-shortcodes-help .glyphicon-step-backward:before {
+  content: "\e069";
+}
+#bootstrap-shortcodes-help .glyphicon-fast-backward:before {
+  content: "\e070";
+}
+#bootstrap-shortcodes-help .glyphicon-backward:before {
+  content: "\e071";
+}
+#bootstrap-shortcodes-help .glyphicon-play:before {
+  content: "\e072";
+}
+#bootstrap-shortcodes-help .glyphicon-pause:before {
+  content: "\e073";
+}
+#bootstrap-shortcodes-help .glyphicon-stop:before {
+  content: "\e074";
+}
+#bootstrap-shortcodes-help .glyphicon-forward:before {
+  content: "\e075";
+}
+#bootstrap-shortcodes-help .glyphicon-fast-forward:before {
+  content: "\e076";
+}
+#bootstrap-shortcodes-help .glyphicon-step-forward:before {
+  content: "\e077";
+}
+#bootstrap-shortcodes-help .glyphicon-eject:before {
+  content: "\e078";
+}
+#bootstrap-shortcodes-help .glyphicon-chevron-left:before {
+  content: "\e079";
+}
+#bootstrap-shortcodes-help .glyphicon-chevron-right:before {
+  content: "\e080";
+}
+#bootstrap-shortcodes-help .glyphicon-plus-sign:before {
+  content: "\e081";
+}
+#bootstrap-shortcodes-help .glyphicon-minus-sign:before {
+  content: "\e082";
+}
+#bootstrap-shortcodes-help .glyphicon-remove-sign:before {
+  content: "\e083";
+}
+#bootstrap-shortcodes-help .glyphicon-ok-sign:before {
+  content: "\e084";
+}
+#bootstrap-shortcodes-help .glyphicon-question-sign:before {
+  content: "\e085";
+}
+#bootstrap-shortcodes-help .glyphicon-info-sign:before {
+  content: "\e086";
+}
+#bootstrap-shortcodes-help .glyphicon-screenshot:before {
+  content: "\e087";
+}
+#bootstrap-shortcodes-help .glyphicon-remove-circle:before {
+  content: "\e088";
+}
+#bootstrap-shortcodes-help .glyphicon-ok-circle:before {
+  content: "\e089";
+}
+#bootstrap-shortcodes-help .glyphicon-ban-circle:before {
+  content: "\e090";
+}
+#bootstrap-shortcodes-help .glyphicon-arrow-left:before {
+  content: "\e091";
+}
+#bootstrap-shortcodes-help .glyphicon-arrow-right:before {
+  content: "\e092";
+}
+#bootstrap-shortcodes-help .glyphicon-arrow-up:before {
+  content: "\e093";
+}
+#bootstrap-shortcodes-help .glyphicon-arrow-down:before {
+  content: "\e094";
+}
+#bootstrap-shortcodes-help .glyphicon-share-alt:before {
+  content: "\e095";
+}
+#bootstrap-shortcodes-help .glyphicon-resize-full:before {
+  content: "\e096";
+}
+#bootstrap-shortcodes-help .glyphicon-resize-small:before {
+  content: "\e097";
+}
+#bootstrap-shortcodes-help .glyphicon-exclamation-sign:before {
+  content: "\e101";
+}
+#bootstrap-shortcodes-help .glyphicon-gift:before {
+  content: "\e102";
+}
+#bootstrap-shortcodes-help .glyphicon-leaf:before {
+  content: "\e103";
+}
+#bootstrap-shortcodes-help .glyphicon-fire:before {
+  content: "\e104";
+}
+#bootstrap-shortcodes-help .glyphicon-eye-open:before {
+  content: "\e105";
+}
+#bootstrap-shortcodes-help .glyphicon-eye-close:before {
+  content: "\e106";
+}
+#bootstrap-shortcodes-help .glyphicon-warning-sign:before {
+  content: "\e107";
+}
+#bootstrap-shortcodes-help .glyphicon-plane:before {
+  content: "\e108";
+}
+#bootstrap-shortcodes-help .glyphicon-calendar:before {
+  content: "\e109";
+}
+#bootstrap-shortcodes-help .glyphicon-random:before {
+  content: "\e110";
+}
+#bootstrap-shortcodes-help .glyphicon-comment:before {
+  content: "\e111";
+}
+#bootstrap-shortcodes-help .glyphicon-magnet:before {
+  content: "\e112";
+}
+#bootstrap-shortcodes-help .glyphicon-chevron-up:before {
+  content: "\e113";
+}
+#bootstrap-shortcodes-help .glyphicon-chevron-down:before {
+  content: "\e114";
+}
+#bootstrap-shortcodes-help .glyphicon-retweet:before {
+  content: "\e115";
+}
+#bootstrap-shortcodes-help .glyphicon-shopping-cart:before {
+  content: "\e116";
+}
+#bootstrap-shortcodes-help .glyphicon-folder-close:before {
+  content: "\e117";
+}
+#bootstrap-shortcodes-help .glyphicon-folder-open:before {
+  content: "\e118";
+}
+#bootstrap-shortcodes-help .glyphicon-resize-vertical:before {
+  content: "\e119";
+}
+#bootstrap-shortcodes-help .glyphicon-resize-horizontal:before {
+  content: "\e120";
+}
+#bootstrap-shortcodes-help .glyphicon-hdd:before {
+  content: "\e121";
+}
+#bootstrap-shortcodes-help .glyphicon-bullhorn:before {
+  content: "\e122";
+}
+#bootstrap-shortcodes-help .glyphicon-bell:before {
+  content: "\e123";
+}
+#bootstrap-shortcodes-help .glyphicon-certificate:before {
+  content: "\e124";
+}
+#bootstrap-shortcodes-help .glyphicon-thumbs-up:before {
+  content: "\e125";
+}
+#bootstrap-shortcodes-help .glyphicon-thumbs-down:before {
+  content: "\e126";
+}
+#bootstrap-shortcodes-help .glyphicon-hand-right:before {
+  content: "\e127";
+}
+#bootstrap-shortcodes-help .glyphicon-hand-left:before {
+  content: "\e128";
+}
+#bootstrap-shortcodes-help .glyphicon-hand-up:before {
+  content: "\e129";
+}
+#bootstrap-shortcodes-help .glyphicon-hand-down:before {
+  content: "\e130";
+}
+#bootstrap-shortcodes-help .glyphicon-circle-arrow-right:before {
+  content: "\e131";
+}
+#bootstrap-shortcodes-help .glyphicon-circle-arrow-left:before {
+  content: "\e132";
+}
+#bootstrap-shortcodes-help .glyphicon-circle-arrow-up:before {
+  content: "\e133";
+}
+#bootstrap-shortcodes-help .glyphicon-circle-arrow-down:before {
+  content: "\e134";
+}
+#bootstrap-shortcodes-help .glyphicon-globe:before {
+  content: "\e135";
+}
+#bootstrap-shortcodes-help .glyphicon-wrench:before {
+  content: "\e136";
+}
+#bootstrap-shortcodes-help .glyphicon-tasks:before {
+  content: "\e137";
+}
+#bootstrap-shortcodes-help .glyphicon-filter:before {
+  content: "\e138";
+}
+#bootstrap-shortcodes-help .glyphicon-briefcase:before {
+  content: "\e139";
+}
+#bootstrap-shortcodes-help .glyphicon-fullscreen:before {
+  content: "\e140";
+}
+#bootstrap-shortcodes-help .glyphicon-dashboard:before {
+  content: "\e141";
+}
+#bootstrap-shortcodes-help .glyphicon-paperclip:before {
+  content: "\e142";
+}
+#bootstrap-shortcodes-help .glyphicon-heart-empty:before {
+  content: "\e143";
+}
+#bootstrap-shortcodes-help .glyphicon-link:before {
+  content: "\e144";
+}
+#bootstrap-shortcodes-help .glyphicon-phone:before {
+  content: "\e145";
+}
+#bootstrap-shortcodes-help .glyphicon-pushpin:before {
+  content: "\e146";
+}
+#bootstrap-shortcodes-help .glyphicon-usd:before {
+  content: "\e148";
+}
+#bootstrap-shortcodes-help .glyphicon-gbp:before {
+  content: "\e149";
+}
+#bootstrap-shortcodes-help .glyphicon-sort:before {
+  content: "\e150";
+}
+#bootstrap-shortcodes-help .glyphicon-sort-by-alphabet:before {
+  content: "\e151";
+}
+#bootstrap-shortcodes-help .glyphicon-sort-by-alphabet-alt:before {
+  content: "\e152";
+}
+#bootstrap-shortcodes-help .glyphicon-sort-by-order:before {
+  content: "\e153";
+}
+#bootstrap-shortcodes-help .glyphicon-sort-by-order-alt:before {
+  content: "\e154";
+}
+#bootstrap-shortcodes-help .glyphicon-sort-by-attributes:before {
+  content: "\e155";
+}
+#bootstrap-shortcodes-help .glyphicon-sort-by-attributes-alt:before {
+  content: "\e156";
+}
+#bootstrap-shortcodes-help .glyphicon-unchecked:before {
+  content: "\e157";
+}
+#bootstrap-shortcodes-help .glyphicon-expand:before {
+  content: "\e158";
+}
+#bootstrap-shortcodes-help .glyphicon-collapse-down:before {
+  content: "\e159";
+}
+#bootstrap-shortcodes-help .glyphicon-collapse-up:before {
+  content: "\e160";
+}
+#bootstrap-shortcodes-help .glyphicon-log-in:before {
+  content: "\e161";
+}
+#bootstrap-shortcodes-help .glyphicon-flash:before {
+  content: "\e162";
+}
+#bootstrap-shortcodes-help .glyphicon-log-out:before {
+  content: "\e163";
+}
+#bootstrap-shortcodes-help .glyphicon-new-window:before {
+  content: "\e164";
+}
+#bootstrap-shortcodes-help .glyphicon-record:before {
+  content: "\e165";
+}
+#bootstrap-shortcodes-help .glyphicon-save:before {
+  content: "\e166";
+}
+#bootstrap-shortcodes-help .glyphicon-open:before {
+  content: "\e167";
+}
+#bootstrap-shortcodes-help .glyphicon-saved:before {
+  content: "\e168";
+}
+#bootstrap-shortcodes-help .glyphicon-import:before {
+  content: "\e169";
+}
+#bootstrap-shortcodes-help .glyphicon-export:before {
+  content: "\e170";
+}
+#bootstrap-shortcodes-help .glyphicon-send:before {
+  content: "\e171";
+}
+#bootstrap-shortcodes-help .glyphicon-floppy-disk:before {
+  content: "\e172";
+}
+#bootstrap-shortcodes-help .glyphicon-floppy-saved:before {
+  content: "\e173";
+}
+#bootstrap-shortcodes-help .glyphicon-floppy-remove:before {
+  content: "\e174";
+}
+#bootstrap-shortcodes-help .glyphicon-floppy-save:before {
+  content: "\e175";
+}
+#bootstrap-shortcodes-help .glyphicon-floppy-open:before {
+  content: "\e176";
+}
+#bootstrap-shortcodes-help .glyphicon-credit-card:before {
+  content: "\e177";
+}
+#bootstrap-shortcodes-help .glyphicon-transfer:before {
+  content: "\e178";
+}
+#bootstrap-shortcodes-help .glyphicon-cutlery:before {
+  content: "\e179";
+}
+#bootstrap-shortcodes-help .glyphicon-header:before {
+  content: "\e180";
+}
+#bootstrap-shortcodes-help .glyphicon-compressed:before {
+  content: "\e181";
+}
+#bootstrap-shortcodes-help .glyphicon-earphone:before {
+  content: "\e182";
+}
+#bootstrap-shortcodes-help .glyphicon-phone-alt:before {
+  content: "\e183";
+}
+#bootstrap-shortcodes-help .glyphicon-tower:before {
+  content: "\e184";
+}
+#bootstrap-shortcodes-help .glyphicon-stats:before {
+  content: "\e185";
+}
+#bootstrap-shortcodes-help .glyphicon-sd-video:before {
+  content: "\e186";
+}
+#bootstrap-shortcodes-help .glyphicon-hd-video:before {
+  content: "\e187";
+}
+#bootstrap-shortcodes-help .glyphicon-subtitles:before {
+  content: "\e188";
+}
+#bootstrap-shortcodes-help .glyphicon-sound-stereo:before {
+  content: "\e189";
+}
+#bootstrap-shortcodes-help .glyphicon-sound-dolby:before {
+  content: "\e190";
+}
+#bootstrap-shortcodes-help .glyphicon-sound-5-1:before {
+  content: "\e191";
+}
+#bootstrap-shortcodes-help .glyphicon-sound-6-1:before {
+  content: "\e192";
+}
+#bootstrap-shortcodes-help .glyphicon-sound-7-1:before {
+  content: "\e193";
+}
+#bootstrap-shortcodes-help .glyphicon-copyright-mark:before {
+  content: "\e194";
+}
+#bootstrap-shortcodes-help .glyphicon-registration-mark:before {
+  content: "\e195";
+}
+#bootstrap-shortcodes-help .glyphicon-cloud-download:before {
+  content: "\e197";
+}
+#bootstrap-shortcodes-help .glyphicon-cloud-upload:before {
+  content: "\e198";
+}
+#bootstrap-shortcodes-help .glyphicon-tree-conifer:before {
+  content: "\e199";
+}
+#bootstrap-shortcodes-help .glyphicon-tree-deciduous:before {
+  content: "\e200";
+}
+#bootstrap-shortcodes-help .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+#bootstrap-shortcodes-help .dropdown {
+  position: relative;
+}
+#bootstrap-shortcodes-help .dropdown-toggle:focus {
+  outline: 0;
+}
+#bootstrap-shortcodes-help .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+#bootstrap-shortcodes-help .dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+#bootstrap-shortcodes-help .dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+#bootstrap-shortcodes-help .dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333333;
+  white-space: nowrap;
+}
+#bootstrap-shortcodes-help .dropdown-menu > li > a:hover,
+#bootstrap-shortcodes-help .dropdown-menu > li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: #f5f5f5;
+}
+#bootstrap-shortcodes-help .dropdown-menu > .active > a,
+#bootstrap-shortcodes-help .dropdown-menu > .active > a:hover,
+#bootstrap-shortcodes-help .dropdown-menu > .active > a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  outline: 0;
+  background-color: #428bca;
+}
+#bootstrap-shortcodes-help .dropdown-menu > .disabled > a,
+#bootstrap-shortcodes-help .dropdown-menu > .disabled > a:hover,
+#bootstrap-shortcodes-help .dropdown-menu > .disabled > a:focus {
+  color: #999999;
+}
+#bootstrap-shortcodes-help .dropdown-menu > .disabled > a:hover,
+#bootstrap-shortcodes-help .dropdown-menu > .disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: not-allowed;
+}
+#bootstrap-shortcodes-help .open > .dropdown-menu {
+  display: block;
+}
+#bootstrap-shortcodes-help .open > a {
+  outline: 0;
+}
+#bootstrap-shortcodes-help .dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.428571429;
+  color: #999999;
+}
+#bootstrap-shortcodes-help .dropdown-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 990;
+}
+#bootstrap-shortcodes-help .pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+#bootstrap-shortcodes-help .dropup .caret,
+#bootstrap-shortcodes-help .navbar-fixed-bottom .dropdown .caret {
+  border-top: 0;
+  border-bottom: 4px solid;
+  content: "";
+}
+#bootstrap-shortcodes-help .dropup .dropdown-menu,
+#bootstrap-shortcodes-help .navbar-fixed-bottom .dropdown .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 1px;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .navbar-right .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+}
+#bootstrap-shortcodes-help .btn-group,
+#bootstrap-shortcodes-help .btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+#bootstrap-shortcodes-help .btn-group > .btn,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn {
+  position: relative;
+  float: left;
+}
+#bootstrap-shortcodes-help .btn-group > .btn:hover,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn:hover,
+#bootstrap-shortcodes-help .btn-group > .btn:focus,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn:focus,
+#bootstrap-shortcodes-help .btn-group > .btn:active,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn:active,
+#bootstrap-shortcodes-help .btn-group > .btn.active,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn.active {
+  z-index: 2;
+}
+#bootstrap-shortcodes-help .btn-group > .btn:focus,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn:focus {
+  outline: none;
+}
+#bootstrap-shortcodes-help .btn-group .btn + .btn,
+#bootstrap-shortcodes-help .btn-group .btn + .btn-group,
+#bootstrap-shortcodes-help .btn-group .btn-group + .btn,
+#bootstrap-shortcodes-help .btn-group .btn-group + .btn-group {
+  margin-left: -1px;
+}
+#bootstrap-shortcodes-help .btn-toolbar:before,
+#bootstrap-shortcodes-help .btn-toolbar:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .btn-toolbar:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .btn-toolbar:before,
+#bootstrap-shortcodes-help .btn-toolbar:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .btn-toolbar:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .btn-toolbar .btn-group {
+  float: left;
+}
+#bootstrap-shortcodes-help .btn-toolbar > .btn + .btn,
+#bootstrap-shortcodes-help .btn-toolbar > .btn-group + .btn,
+#bootstrap-shortcodes-help .btn-toolbar > .btn + .btn-group,
+#bootstrap-shortcodes-help .btn-toolbar > .btn-group + .btn-group {
+  margin-left: 5px;
+}
+#bootstrap-shortcodes-help .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+#bootstrap-shortcodes-help .btn-group > .btn:first-child {
+  margin-left: 0;
+}
+#bootstrap-shortcodes-help .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+#bootstrap-shortcodes-help .btn-group > .btn:last-child:not(:first-child),
+#bootstrap-shortcodes-help .btn-group > .dropdown-toggle:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+#bootstrap-shortcodes-help .btn-group > .btn-group {
+  float: left;
+}
+#bootstrap-shortcodes-help .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+#bootstrap-shortcodes-help .btn-group > .btn-group:first-child > .btn:last-child,
+#bootstrap-shortcodes-help .btn-group > .btn-group:first-child > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+#bootstrap-shortcodes-help .btn-group > .btn-group:last-child > .btn:first-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+#bootstrap-shortcodes-help .btn-group .dropdown-toggle:active,
+#bootstrap-shortcodes-help .btn-group.open .dropdown-toggle {
+  outline: 0;
+}
+#bootstrap-shortcodes-help .btn-group-xs > .btn {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+#bootstrap-shortcodes-help .btn-group-sm > .btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+#bootstrap-shortcodes-help .btn-group-lg > .btn {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+#bootstrap-shortcodes-help .btn-group > .btn + .dropdown-toggle {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+#bootstrap-shortcodes-help .btn-group > .btn-lg + .dropdown-toggle {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+#bootstrap-shortcodes-help .btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+#bootstrap-shortcodes-help .btn-group.open .dropdown-toggle.btn-link {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#bootstrap-shortcodes-help .btn .caret {
+  margin-left: 0;
+}
+#bootstrap-shortcodes-help .btn-lg .caret {
+  border-width: 5px 5px 0;
+  border-bottom-width: 0;
+}
+#bootstrap-shortcodes-help .dropup .btn-lg .caret {
+  border-width: 0 5px 5px;
+}
+#bootstrap-shortcodes-help .btn-group-vertical > .btn,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group:before,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group:before,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group > .btn {
+  float: none;
+}
+#bootstrap-shortcodes-help .btn-group-vertical > .btn + .btn,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn + .btn-group,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group + .btn,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group + .btn-group {
+  margin-top: -1px;
+  margin-left: 0;
+}
+#bootstrap-shortcodes-help .btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+#bootstrap-shortcodes-help .btn-group-vertical > .btn:first-child:not(:last-child) {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#bootstrap-shortcodes-help .btn-group-vertical > .btn:last-child:not(:first-child) {
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group:first-child > .btn:last-child,
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group:first-child > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#bootstrap-shortcodes-help .btn-group-vertical > .btn-group:last-child > .btn:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+#bootstrap-shortcodes-help .btn-group-justified {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+}
+#bootstrap-shortcodes-help .btn-group-justified > .btn,
+#bootstrap-shortcodes-help .btn-group-justified > .btn-group {
+  float: none;
+  display: table-cell;
+  width: 1%;
+}
+#bootstrap-shortcodes-help .btn-group-justified > .btn-group .btn {
+  width: 100%;
+}
+#bootstrap-shortcodes-help [data-toggle="buttons"] > .btn > input[type="radio"],
+#bootstrap-shortcodes-help [data-toggle="buttons"] > .btn > input[type="checkbox"] {
+  display: none;
+}
+#bootstrap-shortcodes-help .input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+#bootstrap-shortcodes-help .input-group[class*="col-"] {
+  float: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+#bootstrap-shortcodes-help .input-group .form-control {
+  width: 100%;
+  margin-bottom: 0;
+}
+#bootstrap-shortcodes-help .input-group-lg > .form-control,
+#bootstrap-shortcodes-help .input-group-lg > .input-group-addon,
+#bootstrap-shortcodes-help .input-group-lg > .input-group-btn > .btn {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+select#bootstrap-shortcodes-help .input-group-lg > .form-control,
+select#bootstrap-shortcodes-help .input-group-lg > .input-group-addon,
+select#bootstrap-shortcodes-help .input-group-lg > .input-group-btn > .btn {
+  height: 46px;
+  line-height: 46px;
+}
+textarea#bootstrap-shortcodes-help .input-group-lg > .form-control,
+textarea#bootstrap-shortcodes-help .input-group-lg > .input-group-addon,
+textarea#bootstrap-shortcodes-help .input-group-lg > .input-group-btn > .btn {
+  height: auto;
+}
+#bootstrap-shortcodes-help .input-group-sm > .form-control,
+#bootstrap-shortcodes-help .input-group-sm > .input-group-addon,
+#bootstrap-shortcodes-help .input-group-sm > .input-group-btn > .btn {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+select#bootstrap-shortcodes-help .input-group-sm > .form-control,
+select#bootstrap-shortcodes-help .input-group-sm > .input-group-addon,
+select#bootstrap-shortcodes-help .input-group-sm > .input-group-btn > .btn {
+  height: 30px;
+  line-height: 30px;
+}
+textarea#bootstrap-shortcodes-help .input-group-sm > .form-control,
+textarea#bootstrap-shortcodes-help .input-group-sm > .input-group-addon,
+textarea#bootstrap-shortcodes-help .input-group-sm > .input-group-btn > .btn {
+  height: auto;
+}
+#bootstrap-shortcodes-help .input-group-addon,
+#bootstrap-shortcodes-help .input-group-btn,
+#bootstrap-shortcodes-help .input-group .form-control {
+  display: table-cell;
+}
+#bootstrap-shortcodes-help .input-group-addon:not(:first-child):not(:last-child),
+#bootstrap-shortcodes-help .input-group-btn:not(:first-child):not(:last-child),
+#bootstrap-shortcodes-help .input-group .form-control:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+#bootstrap-shortcodes-help .input-group-addon,
+#bootstrap-shortcodes-help .input-group-btn {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+#bootstrap-shortcodes-help .input-group-addon {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555555;
+  text-align: center;
+  background-color: #eeeeee;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+#bootstrap-shortcodes-help .input-group-addon.input-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+#bootstrap-shortcodes-help .input-group-addon.input-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+#bootstrap-shortcodes-help .input-group-addon input[type="radio"],
+#bootstrap-shortcodes-help .input-group-addon input[type="checkbox"] {
+  margin-top: 0;
+}
+#bootstrap-shortcodes-help .input-group .form-control:first-child,
+#bootstrap-shortcodes-help .input-group-addon:first-child,
+#bootstrap-shortcodes-help .input-group-btn:first-child > .btn,
+#bootstrap-shortcodes-help .input-group-btn:first-child > .dropdown-toggle,
+#bootstrap-shortcodes-help .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+#bootstrap-shortcodes-help .input-group-addon:first-child {
+  border-right: 0;
+}
+#bootstrap-shortcodes-help .input-group .form-control:last-child,
+#bootstrap-shortcodes-help .input-group-addon:last-child,
+#bootstrap-shortcodes-help .input-group-btn:last-child > .btn,
+#bootstrap-shortcodes-help .input-group-btn:last-child > .dropdown-toggle,
+#bootstrap-shortcodes-help .input-group-btn:first-child > .btn:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+#bootstrap-shortcodes-help .input-group-addon:last-child {
+  border-left: 0;
+}
+#bootstrap-shortcodes-help .input-group-btn {
+  position: relative;
+  white-space: nowrap;
+}
+#bootstrap-shortcodes-help .input-group-btn:first-child > .btn {
+  margin-right: -1px;
+}
+#bootstrap-shortcodes-help .input-group-btn:last-child > .btn {
+  margin-left: -1px;
+}
+#bootstrap-shortcodes-help .input-group-btn > .btn {
+  position: relative;
+}
+#bootstrap-shortcodes-help .input-group-btn > .btn + .btn {
+  margin-left: -4px;
+}
+#bootstrap-shortcodes-help .input-group-btn > .btn:hover,
+#bootstrap-shortcodes-help .input-group-btn > .btn:active {
+  z-index: 2;
+}
+#bootstrap-shortcodes-help .nav {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+#bootstrap-shortcodes-help .nav:before,
+#bootstrap-shortcodes-help .nav:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .nav:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .nav:before,
+#bootstrap-shortcodes-help .nav:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .nav:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .nav > li {
+  position: relative;
+  display: block;
+}
+#bootstrap-shortcodes-help .nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+#bootstrap-shortcodes-help .nav > li > a:hover,
+#bootstrap-shortcodes-help .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+#bootstrap-shortcodes-help .nav > li.disabled > a {
+  color: #999999;
+}
+#bootstrap-shortcodes-help .nav > li.disabled > a:hover,
+#bootstrap-shortcodes-help .nav > li.disabled > a:focus {
+  color: #999999;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: not-allowed;
+}
+#bootstrap-shortcodes-help .nav .open > a,
+#bootstrap-shortcodes-help .nav .open > a:hover,
+#bootstrap-shortcodes-help .nav .open > a:focus {
+  background-color: #eeeeee;
+  border-color: #428bca;
+}
+#bootstrap-shortcodes-help .nav .nav-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+#bootstrap-shortcodes-help .nav > li > a > img {
+  max-width: none;
+}
+#bootstrap-shortcodes-help .nav-tabs {
+  border-bottom: 1px solid #dddddd;
+}
+#bootstrap-shortcodes-help .nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+#bootstrap-shortcodes-help .nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.428571429;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+#bootstrap-shortcodes-help .nav-tabs > li > a:hover {
+  border-color: #eeeeee #eeeeee #dddddd;
+}
+#bootstrap-shortcodes-help .nav-tabs > li.active > a,
+#bootstrap-shortcodes-help .nav-tabs > li.active > a:hover,
+#bootstrap-shortcodes-help .nav-tabs > li.active > a:focus {
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+#bootstrap-shortcodes-help .nav-tabs.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+#bootstrap-shortcodes-help .nav-tabs.nav-justified > li {
+  float: none;
+}
+#bootstrap-shortcodes-help .nav-tabs.nav-justified > li > a {
+  text-align: center;
+  margin-bottom: 5px;
+}
+#bootstrap-shortcodes-help .nav-tabs.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  #bootstrap-shortcodes-help .nav-tabs.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+#bootstrap-shortcodes-help .nav-tabs.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+#bootstrap-shortcodes-help .nav-tabs.nav-justified > .active > a,
+#bootstrap-shortcodes-help .nav-tabs.nav-justified > .active > a:hover,
+#bootstrap-shortcodes-help .nav-tabs.nav-justified > .active > a:focus {
+  border: 1px solid #dddddd;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .nav-tabs.nav-justified > li > a {
+    border-bottom: 1px solid #dddddd;
+    border-radius: 4px 4px 0 0;
+  }
+  #bootstrap-shortcodes-help .nav-tabs.nav-justified > .active > a,
+  #bootstrap-shortcodes-help .nav-tabs.nav-justified > .active > a:hover,
+  #bootstrap-shortcodes-help .nav-tabs.nav-justified > .active > a:focus {
+    border-bottom-color: #ffffff;
+  }
+}
+#bootstrap-shortcodes-help .nav-pills > li {
+  float: left;
+}
+#bootstrap-shortcodes-help .nav-pills > li > a {
+  border-radius: 4px;
+}
+#bootstrap-shortcodes-help .nav-pills > li + li {
+  margin-left: 2px;
+}
+#bootstrap-shortcodes-help .nav-pills > li.active > a,
+#bootstrap-shortcodes-help .nav-pills > li.active > a:hover,
+#bootstrap-shortcodes-help .nav-pills > li.active > a:focus {
+  color: #ffffff;
+  background-color: #428bca;
+}
+#bootstrap-shortcodes-help .nav-stacked > li {
+  float: none;
+}
+#bootstrap-shortcodes-help .nav-stacked > li + li {
+  margin-top: 2px;
+  margin-left: 0;
+}
+#bootstrap-shortcodes-help .nav-justified {
+  width: 100%;
+}
+#bootstrap-shortcodes-help .nav-justified > li {
+  float: none;
+}
+#bootstrap-shortcodes-help .nav-justified > li > a {
+  text-align: center;
+  margin-bottom: 5px;
+}
+#bootstrap-shortcodes-help .nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  #bootstrap-shortcodes-help .nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+#bootstrap-shortcodes-help .nav-tabs-justified {
+  border-bottom: 0;
+}
+#bootstrap-shortcodes-help .nav-tabs-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+#bootstrap-shortcodes-help .nav-tabs-justified > .active > a,
+#bootstrap-shortcodes-help .nav-tabs-justified > .active > a:hover,
+#bootstrap-shortcodes-help .nav-tabs-justified > .active > a:focus {
+  border: 1px solid #dddddd;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .nav-tabs-justified > li > a {
+    border-bottom: 1px solid #dddddd;
+    border-radius: 4px 4px 0 0;
+  }
+  #bootstrap-shortcodes-help .nav-tabs-justified > .active > a,
+  #bootstrap-shortcodes-help .nav-tabs-justified > .active > a:hover,
+  #bootstrap-shortcodes-help .nav-tabs-justified > .active > a:focus {
+    border-bottom-color: #ffffff;
+  }
+}
+#bootstrap-shortcodes-help .tab-content > .tab-pane {
+  display: none;
+}
+#bootstrap-shortcodes-help .tab-content > .active {
+  display: block;
+}
+#bootstrap-shortcodes-help .nav-tabs .dropdown-menu {
+  margin-top: -1px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+#bootstrap-shortcodes-help .navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+#bootstrap-shortcodes-help .navbar:before,
+#bootstrap-shortcodes-help .navbar:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .navbar:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .navbar:before,
+#bootstrap-shortcodes-help .navbar:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .navbar:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .navbar {
+    border-radius: 4px;
+  }
+}
+#bootstrap-shortcodes-help .navbar-header:before,
+#bootstrap-shortcodes-help .navbar-header:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .navbar-header:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .navbar-header:before,
+#bootstrap-shortcodes-help .navbar-header:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .navbar-header:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .navbar-header {
+    float: left;
+  }
+}
+#bootstrap-shortcodes-help .navbar-collapse {
+  max-height: 340px;
+  overflow-x: visible;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-top: 1px solid transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  -webkit-overflow-scrolling: touch;
+}
+#bootstrap-shortcodes-help .navbar-collapse:before,
+#bootstrap-shortcodes-help .navbar-collapse:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .navbar-collapse:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .navbar-collapse:before,
+#bootstrap-shortcodes-help .navbar-collapse:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .navbar-collapse:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .navbar-collapse.in {
+  overflow-y: auto;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .navbar-collapse {
+    width: auto;
+    border-top: 0;
+    box-shadow: none;
+  }
+  #bootstrap-shortcodes-help .navbar-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+  }
+  #bootstrap-shortcodes-help .navbar-collapse.in {
+    overflow-y: visible;
+  }
+  .navbar-fixed-top #bootstrap-shortcodes-help .navbar-collapse,
+  .navbar-static-top #bootstrap-shortcodes-help .navbar-collapse,
+  .navbar-fixed-bottom #bootstrap-shortcodes-help .navbar-collapse {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+#bootstrap-shortcodes-help .container > .navbar-header,
+#bootstrap-shortcodes-help .container > .navbar-collapse {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .container > .navbar-header,
+  #bootstrap-shortcodes-help .container > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+#bootstrap-shortcodes-help .navbar-static-top {
+  z-index: 1000;
+  border-width: 0 0 1px;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .navbar-static-top {
+    border-radius: 0;
+  }
+}
+#bootstrap-shortcodes-help .navbar-fixed-top,
+#bootstrap-shortcodes-help .navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .navbar-fixed-top,
+  #bootstrap-shortcodes-help .navbar-fixed-bottom {
+    border-radius: 0;
+  }
+}
+#bootstrap-shortcodes-help .navbar-fixed-top {
+  top: 0;
+  border-width: 0 0 1px;
+}
+#bootstrap-shortcodes-help .navbar-fixed-bottom {
+  bottom: 0;
+  margin-bottom: 0;
+  border-width: 1px 0 0;
+}
+#bootstrap-shortcodes-help .navbar-brand {
+  float: left;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+#bootstrap-shortcodes-help .navbar-brand:hover,
+#bootstrap-shortcodes-help .navbar-brand:focus {
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  .navbar > .container #bootstrap-shortcodes-help .navbar-brand {
+    margin-left: -15px;
+  }
+}
+#bootstrap-shortcodes-help .navbar-toggle {
+  position: relative;
+  float: right;
+  margin-right: 15px;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+#bootstrap-shortcodes-help .navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+#bootstrap-shortcodes-help .navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .navbar-toggle {
+    display: none;
+  }
+}
+#bootstrap-shortcodes-help .navbar-nav {
+  margin: 7.5px -15px;
+}
+#bootstrap-shortcodes-help .navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+@media (max-width: 767px) {
+  #bootstrap-shortcodes-help .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  #bootstrap-shortcodes-help .navbar-nav .open .dropdown-menu > li > a,
+  #bootstrap-shortcodes-help .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: 5px 15px 5px 25px;
+  }
+  #bootstrap-shortcodes-help .navbar-nav .open .dropdown-menu > li > a {
+    line-height: 20px;
+  }
+  #bootstrap-shortcodes-help .navbar-nav .open .dropdown-menu > li > a:hover,
+  #bootstrap-shortcodes-help .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-image: none;
+  }
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .navbar-nav {
+    float: left;
+    margin: 0;
+  }
+  #bootstrap-shortcodes-help .navbar-nav > li {
+    float: left;
+  }
+  #bootstrap-shortcodes-help .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  #bootstrap-shortcodes-help .navbar-nav.navbar-right:last-child {
+    margin-right: -15px;
+  }
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .navbar-left {
+    float: left !important;
+  }
+  #bootstrap-shortcodes-help .navbar-right {
+    float: right !important;
+  }
+}
+#bootstrap-shortcodes-help .navbar-form {
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 10px 15px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .navbar-form .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  #bootstrap-shortcodes-help .navbar-form .form-control {
+    display: inline-block;
+  }
+  #bootstrap-shortcodes-help .navbar-form select.form-control {
+    width: auto;
+  }
+  #bootstrap-shortcodes-help .navbar-form .radio,
+  #bootstrap-shortcodes-help .navbar-form .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  #bootstrap-shortcodes-help .navbar-form .radio input[type="radio"],
+  #bootstrap-shortcodes-help .navbar-form .checkbox input[type="checkbox"] {
+    float: none;
+    margin-left: 0;
+  }
+}
+@media (max-width: 767px) {
+  #bootstrap-shortcodes-help .navbar-form .form-group {
+    margin-bottom: 5px;
+  }
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .navbar-form {
+    width: auto;
+    border: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  #bootstrap-shortcodes-help .navbar-form.navbar-right:last-child {
+    margin-right: -15px;
+  }
+}
+#bootstrap-shortcodes-help .navbar-nav > li > .dropdown-menu {
+  margin-top: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+#bootstrap-shortcodes-help .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#bootstrap-shortcodes-help .navbar-nav.pull-right > li > .dropdown-menu,
+#bootstrap-shortcodes-help .navbar-nav > li > .dropdown-menu.pull-right {
+  left: auto;
+  right: 0;
+}
+#bootstrap-shortcodes-help .navbar-btn {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+#bootstrap-shortcodes-help .navbar-btn.btn-sm {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#bootstrap-shortcodes-help .navbar-btn.btn-xs {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+#bootstrap-shortcodes-help .navbar-text {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  #bootstrap-shortcodes-help .navbar-text {
+    float: left;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  #bootstrap-shortcodes-help .navbar-text.navbar-right:last-child {
+    margin-right: 0;
+  }
+}
+#bootstrap-shortcodes-help .navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-brand {
+  color: #777777;
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-brand:hover,
+#bootstrap-shortcodes-help .navbar-default .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-text {
+  color: #777777;
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-nav > li > a {
+  color: #777777;
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-nav > li > a:hover,
+#bootstrap-shortcodes-help .navbar-default .navbar-nav > li > a:focus {
+  color: #333333;
+  background-color: transparent;
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-nav > .active > a,
+#bootstrap-shortcodes-help .navbar-default .navbar-nav > .active > a:hover,
+#bootstrap-shortcodes-help .navbar-default .navbar-nav > .active > a:focus {
+  color: #555555;
+  background-color: #e7e7e7;
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-nav > .disabled > a,
+#bootstrap-shortcodes-help .navbar-default .navbar-nav > .disabled > a:hover,
+#bootstrap-shortcodes-help .navbar-default .navbar-nav > .disabled > a:focus {
+  color: #cccccc;
+  background-color: transparent;
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-toggle {
+  border-color: #dddddd;
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-toggle:hover,
+#bootstrap-shortcodes-help .navbar-default .navbar-toggle:focus {
+  background-color: #dddddd;
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-toggle .icon-bar {
+  background-color: #cccccc;
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-collapse,
+#bootstrap-shortcodes-help .navbar-default .navbar-form {
+  border-color: #e7e7e7;
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-nav > .open > a,
+#bootstrap-shortcodes-help .navbar-default .navbar-nav > .open > a:hover,
+#bootstrap-shortcodes-help .navbar-default .navbar-nav > .open > a:focus {
+  background-color: #e7e7e7;
+  color: #555555;
+}
+@media (max-width: 767px) {
+  #bootstrap-shortcodes-help .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #777777;
+  }
+  #bootstrap-shortcodes-help .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  #bootstrap-shortcodes-help .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333333;
+    background-color: transparent;
+  }
+  #bootstrap-shortcodes-help .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  #bootstrap-shortcodes-help .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  #bootstrap-shortcodes-help .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555555;
+    background-color: #e7e7e7;
+  }
+  #bootstrap-shortcodes-help .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
+  #bootstrap-shortcodes-help .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  #bootstrap-shortcodes-help .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #cccccc;
+    background-color: transparent;
+  }
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-link {
+  color: #777777;
+}
+#bootstrap-shortcodes-help .navbar-default .navbar-link:hover {
+  color: #333333;
+}
+#bootstrap-shortcodes-help .navbar-inverse {
+  background-color: #222222;
+  border-color: #080808;
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-brand {
+  color: #999999;
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-brand:hover,
+#bootstrap-shortcodes-help .navbar-inverse .navbar-brand:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-text {
+  color: #999999;
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-nav > li > a {
+  color: #999999;
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-nav > li > a:hover,
+#bootstrap-shortcodes-help .navbar-inverse .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-nav > .active > a,
+#bootstrap-shortcodes-help .navbar-inverse .navbar-nav > .active > a:hover,
+#bootstrap-shortcodes-help .navbar-inverse .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #080808;
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-nav > .disabled > a,
+#bootstrap-shortcodes-help .navbar-inverse .navbar-nav > .disabled > a:hover,
+#bootstrap-shortcodes-help .navbar-inverse .navbar-nav > .disabled > a:focus {
+  color: #444444;
+  background-color: transparent;
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-toggle {
+  border-color: #333333;
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-toggle:hover,
+#bootstrap-shortcodes-help .navbar-inverse .navbar-toggle:focus {
+  background-color: #333333;
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-collapse,
+#bootstrap-shortcodes-help .navbar-inverse .navbar-form {
+  border-color: #101010;
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-nav > .open > a,
+#bootstrap-shortcodes-help .navbar-inverse .navbar-nav > .open > a:hover,
+#bootstrap-shortcodes-help .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #080808;
+  color: #ffffff;
+}
+@media (max-width: 767px) {
+  #bootstrap-shortcodes-help .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
+    border-color: #080808;
+  }
+  #bootstrap-shortcodes-help .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+    background-color: #080808;
+  }
+  #bootstrap-shortcodes-help .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #999999;
+  }
+  #bootstrap-shortcodes-help .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
+  #bootstrap-shortcodes-help .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+    background-color: transparent;
+  }
+  #bootstrap-shortcodes-help .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
+  #bootstrap-shortcodes-help .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
+  #bootstrap-shortcodes-help .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #080808;
+  }
+  #bootstrap-shortcodes-help .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
+  #bootstrap-shortcodes-help .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  #bootstrap-shortcodes-help .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #444444;
+    background-color: transparent;
+  }
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-link {
+  color: #999999;
+}
+#bootstrap-shortcodes-help .navbar-inverse .navbar-link:hover {
+  color: #ffffff;
+}
+#bootstrap-shortcodes-help .breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+#bootstrap-shortcodes-help .breadcrumb > li {
+  display: inline-block;
+}
+#bootstrap-shortcodes-help .breadcrumb > li + li:before {
+  content: "/\00a0";
+  padding: 0 5px;
+  color: #cccccc;
+}
+#bootstrap-shortcodes-help .breadcrumb > .active {
+  color: #999999;
+}
+#bootstrap-shortcodes-help .pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+#bootstrap-shortcodes-help .pagination > li {
+  display: inline;
+}
+#bootstrap-shortcodes-help .pagination > li > a,
+#bootstrap-shortcodes-help .pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.428571429;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  margin-left: -1px;
+}
+#bootstrap-shortcodes-help .pagination > li:first-child > a,
+#bootstrap-shortcodes-help .pagination > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+#bootstrap-shortcodes-help .pagination > li:last-child > a,
+#bootstrap-shortcodes-help .pagination > li:last-child > span {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+#bootstrap-shortcodes-help .pagination > li > a:hover,
+#bootstrap-shortcodes-help .pagination > li > span:hover,
+#bootstrap-shortcodes-help .pagination > li > a:focus,
+#bootstrap-shortcodes-help .pagination > li > span:focus {
+  background-color: #eeeeee;
+}
+#bootstrap-shortcodes-help .pagination > .active > a,
+#bootstrap-shortcodes-help .pagination > .active > span,
+#bootstrap-shortcodes-help .pagination > .active > a:hover,
+#bootstrap-shortcodes-help .pagination > .active > span:hover,
+#bootstrap-shortcodes-help .pagination > .active > a:focus,
+#bootstrap-shortcodes-help .pagination > .active > span:focus {
+  z-index: 2;
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #428bca;
+  cursor: default;
+}
+#bootstrap-shortcodes-help .pagination > .disabled > span,
+#bootstrap-shortcodes-help .pagination > .disabled > span:hover,
+#bootstrap-shortcodes-help .pagination > .disabled > span:focus,
+#bootstrap-shortcodes-help .pagination > .disabled > a,
+#bootstrap-shortcodes-help .pagination > .disabled > a:hover,
+#bootstrap-shortcodes-help .pagination > .disabled > a:focus {
+  color: #999999;
+  background-color: #ffffff;
+  border-color: #dddddd;
+  cursor: not-allowed;
+}
+#bootstrap-shortcodes-help .pagination-lg > li > a,
+#bootstrap-shortcodes-help .pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+}
+#bootstrap-shortcodes-help .pagination-lg > li:first-child > a,
+#bootstrap-shortcodes-help .pagination-lg > li:first-child > span {
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+}
+#bootstrap-shortcodes-help .pagination-lg > li:last-child > a,
+#bootstrap-shortcodes-help .pagination-lg > li:last-child > span {
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+#bootstrap-shortcodes-help .pagination-sm > li > a,
+#bootstrap-shortcodes-help .pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+#bootstrap-shortcodes-help .pagination-sm > li:first-child > a,
+#bootstrap-shortcodes-help .pagination-sm > li:first-child > span {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+#bootstrap-shortcodes-help .pagination-sm > li:last-child > a,
+#bootstrap-shortcodes-help .pagination-sm > li:last-child > span {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+#bootstrap-shortcodes-help .pager {
+  padding-left: 0;
+  margin: 20px 0;
+  list-style: none;
+  text-align: center;
+}
+#bootstrap-shortcodes-help .pager:before,
+#bootstrap-shortcodes-help .pager:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .pager:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .pager:before,
+#bootstrap-shortcodes-help .pager:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .pager:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .pager li {
+  display: inline;
+}
+#bootstrap-shortcodes-help .pager li > a,
+#bootstrap-shortcodes-help .pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+}
+#bootstrap-shortcodes-help .pager li > a:hover,
+#bootstrap-shortcodes-help .pager li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+#bootstrap-shortcodes-help .pager .next > a,
+#bootstrap-shortcodes-help .pager .next > span {
+  float: right;
+}
+#bootstrap-shortcodes-help .pager .previous > a,
+#bootstrap-shortcodes-help .pager .previous > span {
+  float: left;
+}
+#bootstrap-shortcodes-help .pager .disabled > a,
+#bootstrap-shortcodes-help .pager .disabled > a:hover,
+#bootstrap-shortcodes-help .pager .disabled > a:focus,
+#bootstrap-shortcodes-help .pager .disabled > span {
+  color: #999999;
+  background-color: #ffffff;
+  cursor: not-allowed;
+}
+#bootstrap-shortcodes-help .label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+#bootstrap-shortcodes-help .label[href]:hover,
+#bootstrap-shortcodes-help .label[href]:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+#bootstrap-shortcodes-help .label:empty {
+  display: none;
+}
+.btn #bootstrap-shortcodes-help .label {
+  position: relative;
+  top: -1px;
+}
+#bootstrap-shortcodes-help .label-default {
+  background-color: #999999;
+}
+#bootstrap-shortcodes-help .label-default[href]:hover,
+#bootstrap-shortcodes-help .label-default[href]:focus {
+  background-color: #808080;
+}
+#bootstrap-shortcodes-help .label-primary {
+  background-color: #428bca;
+}
+#bootstrap-shortcodes-help .label-primary[href]:hover,
+#bootstrap-shortcodes-help .label-primary[href]:focus {
+  background-color: #3071a9;
+}
+#bootstrap-shortcodes-help .label-success {
+  background-color: #5cb85c;
+}
+#bootstrap-shortcodes-help .label-success[href]:hover,
+#bootstrap-shortcodes-help .label-success[href]:focus {
+  background-color: #449d44;
+}
+#bootstrap-shortcodes-help .label-info {
+  background-color: #5bc0de;
+}
+#bootstrap-shortcodes-help .label-info[href]:hover,
+#bootstrap-shortcodes-help .label-info[href]:focus {
+  background-color: #31b0d5;
+}
+#bootstrap-shortcodes-help .label-warning {
+  background-color: #f0ad4e;
+}
+#bootstrap-shortcodes-help .label-warning[href]:hover,
+#bootstrap-shortcodes-help .label-warning[href]:focus {
+  background-color: #ec971f;
+}
+#bootstrap-shortcodes-help .label-danger {
+  background-color: #d9534f;
+}
+#bootstrap-shortcodes-help .label-danger[href]:hover,
+#bootstrap-shortcodes-help .label-danger[href]:focus {
+  background-color: #c9302c;
+}
+#bootstrap-shortcodes-help .badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  background-color: #999999;
+  border-radius: 10px;
+}
+#bootstrap-shortcodes-help .badge:empty {
+  display: none;
+}
+.btn #bootstrap-shortcodes-help .badge {
+  position: relative;
+  top: -1px;
+}
+#bootstrap-shortcodes-help a.badge:hover,
+#bootstrap-shortcodes-help a.badge:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+#bootstrap-shortcodes-help a.list-group-item.active > .badge,
+#bootstrap-shortcodes-help .nav-pills > .active > a > .badge {
+  color: #428bca;
+  background-color: #ffffff;
+}
+#bootstrap-shortcodes-help .nav-pills > li > a > .badge {
+  margin-left: 3px;
+}
+#bootstrap-shortcodes-help .jumbotron {
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #eeeeee;
+}
+#bootstrap-shortcodes-help .jumbotron h1,
+#bootstrap-shortcodes-help .jumbotron .h1 {
+  line-height: 1;
+  color: inherit;
+}
+#bootstrap-shortcodes-help .jumbotron p {
+  line-height: 1.4;
+}
+.container #bootstrap-shortcodes-help .jumbotron {
+  border-radius: 6px;
+}
+#bootstrap-shortcodes-help .jumbotron .container {
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  #bootstrap-shortcodes-help .jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container #bootstrap-shortcodes-help .jumbotron {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  #bootstrap-shortcodes-help .jumbotron h1,
+  #bootstrap-shortcodes-help .jumbotron .h1 {
+    font-size: 63px;
+  }
+}
+#bootstrap-shortcodes-help .thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.428571429;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+#bootstrap-shortcodes-help .thumbnail > img,
+#bootstrap-shortcodes-help .thumbnail a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+a#bootstrap-shortcodes-help .thumbnail:hover,
+a#bootstrap-shortcodes-help .thumbnail:focus,
+a#bootstrap-shortcodes-help .thumbnail.active {
+  border-color: #428bca;
+}
+#bootstrap-shortcodes-help .thumbnail .caption {
+  padding: 9px;
+  color: #333333;
+}
+#bootstrap-shortcodes-help .alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+#bootstrap-shortcodes-help .alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+#bootstrap-shortcodes-help .alert .alert-link {
+  font-weight: bold;
+}
+#bootstrap-shortcodes-help .alert > p,
+#bootstrap-shortcodes-help .alert > ul {
+  margin-bottom: 0;
+}
+#bootstrap-shortcodes-help .alert > p + p {
+  margin-top: 5px;
+}
+#bootstrap-shortcodes-help .alert-dismissable {
+  padding-right: 35px;
+}
+#bootstrap-shortcodes-help .alert-dismissable .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+#bootstrap-shortcodes-help .alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+#bootstrap-shortcodes-help .alert-success hr {
+  border-top-color: #c9e2b3;
+}
+#bootstrap-shortcodes-help .alert-success .alert-link {
+  color: #2b542c;
+}
+#bootstrap-shortcodes-help .alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+}
+#bootstrap-shortcodes-help .alert-info hr {
+  border-top-color: #a6e1ec;
+}
+#bootstrap-shortcodes-help .alert-info .alert-link {
+  color: #245269;
+}
+#bootstrap-shortcodes-help .alert-warning {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+#bootstrap-shortcodes-help .alert-warning hr {
+  border-top-color: #f7e1b5;
+}
+#bootstrap-shortcodes-help .alert-warning .alert-link {
+  color: #66512c;
+}
+#bootstrap-shortcodes-help .alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+#bootstrap-shortcodes-help .alert-danger hr {
+  border-top-color: #e4b9c0;
+}
+#bootstrap-shortcodes-help .alert-danger .alert-link {
+  color: #843534;
+}
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+#bootstrap-shortcodes-help .progress {
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+#bootstrap-shortcodes-help .progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #428bca;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+}
+#bootstrap-shortcodes-help .progress-striped .progress-bar {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+#bootstrap-shortcodes-help .progress.active .progress-bar {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+#bootstrap-shortcodes-help .progress-bar-success {
+  background-color: #5cb85c;
+}
+.progress-striped #bootstrap-shortcodes-help .progress-bar-success {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+#bootstrap-shortcodes-help .progress-bar-info {
+  background-color: #5bc0de;
+}
+.progress-striped #bootstrap-shortcodes-help .progress-bar-info {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+#bootstrap-shortcodes-help .progress-bar-warning {
+  background-color: #f0ad4e;
+}
+.progress-striped #bootstrap-shortcodes-help .progress-bar-warning {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+#bootstrap-shortcodes-help .progress-bar-danger {
+  background-color: #d9534f;
+}
+.progress-striped #bootstrap-shortcodes-help .progress-bar-danger {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+#bootstrap-shortcodes-help .media,
+#bootstrap-shortcodes-help .media-body {
+  overflow: hidden;
+  zoom: 1;
+}
+#bootstrap-shortcodes-help .media,
+#bootstrap-shortcodes-help .media .media {
+  margin-top: 15px;
+}
+#bootstrap-shortcodes-help .media:first-child {
+  margin-top: 0;
+}
+#bootstrap-shortcodes-help .media-object {
+  display: block;
+}
+#bootstrap-shortcodes-help .media-heading {
+  margin: 0 0 5px;
+}
+#bootstrap-shortcodes-help .media > .pull-left {
+  margin-right: 10px;
+}
+#bootstrap-shortcodes-help .media > .pull-right {
+  margin-left: 10px;
+}
+#bootstrap-shortcodes-help .media-list {
+  padding-left: 0;
+  list-style: none;
+}
+#bootstrap-shortcodes-help .list-group {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+#bootstrap-shortcodes-help .list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+}
+#bootstrap-shortcodes-help .list-group-item:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+#bootstrap-shortcodes-help .list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+#bootstrap-shortcodes-help .list-group-item > .badge {
+  float: right;
+}
+#bootstrap-shortcodes-help .list-group-item > .badge + .badge {
+  margin-right: 5px;
+}
+#bootstrap-shortcodes-help a.list-group-item {
+  color: #555555;
+}
+#bootstrap-shortcodes-help a.list-group-item .list-group-item-heading {
+  color: #333333;
+}
+#bootstrap-shortcodes-help a.list-group-item:hover,
+#bootstrap-shortcodes-help a.list-group-item:focus {
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+#bootstrap-shortcodes-help a.list-group-item.active,
+#bootstrap-shortcodes-help a.list-group-item.active:hover,
+#bootstrap-shortcodes-help a.list-group-item.active:focus {
+  z-index: 2;
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+#bootstrap-shortcodes-help a.list-group-item.active .list-group-item-heading,
+#bootstrap-shortcodes-help a.list-group-item.active:hover .list-group-item-heading,
+#bootstrap-shortcodes-help a.list-group-item.active:focus .list-group-item-heading {
+  color: inherit;
+}
+#bootstrap-shortcodes-help a.list-group-item.active .list-group-item-text,
+#bootstrap-shortcodes-help a.list-group-item.active:hover .list-group-item-text,
+#bootstrap-shortcodes-help a.list-group-item.active:focus .list-group-item-text {
+  color: #e1edf7;
+}
+#bootstrap-shortcodes-help .list-group-item-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+#bootstrap-shortcodes-help .list-group-item-text {
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+#bootstrap-shortcodes-help .panel {
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+#bootstrap-shortcodes-help .panel-body {
+  padding: 15px;
+}
+#bootstrap-shortcodes-help .panel-body:before,
+#bootstrap-shortcodes-help .panel-body:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .panel-body:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .panel-body:before,
+#bootstrap-shortcodes-help .panel-body:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .panel-body:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .panel > .list-group {
+  margin-bottom: 0;
+}
+#bootstrap-shortcodes-help .panel > .list-group .list-group-item {
+  border-width: 1px 0;
+}
+#bootstrap-shortcodes-help .panel > .list-group .list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+#bootstrap-shortcodes-help .panel > .list-group .list-group-item:last-child {
+  border-bottom: 0;
+}
+#bootstrap-shortcodes-help .panel-heading + .list-group .list-group-item:first-child {
+  border-top-width: 0;
+}
+#bootstrap-shortcodes-help .panel > .table,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table {
+  margin-bottom: 0;
+}
+#bootstrap-shortcodes-help .panel > .panel-body + .table,
+#bootstrap-shortcodes-help .panel > .panel-body + .table-responsive {
+  border-top: 1px solid #dddddd;
+}
+#bootstrap-shortcodes-help .panel > .table > tbody:first-child th,
+#bootstrap-shortcodes-help .panel > .table > tbody:first-child td {
+  border-top: 0;
+}
+#bootstrap-shortcodes-help .panel > .table-bordered,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered {
+  border: 0;
+}
+#bootstrap-shortcodes-help .panel > .table-bordered > thead > tr > th:first-child,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
+#bootstrap-shortcodes-help .panel > .table-bordered > tbody > tr > th:first-child,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+#bootstrap-shortcodes-help .panel > .table-bordered > tfoot > tr > th:first-child,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+#bootstrap-shortcodes-help .panel > .table-bordered > thead > tr > td:first-child,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
+#bootstrap-shortcodes-help .panel > .table-bordered > tbody > tr > td:first-child,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+#bootstrap-shortcodes-help .panel > .table-bordered > tfoot > tr > td:first-child,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+  border-left: 0;
+}
+#bootstrap-shortcodes-help .panel > .table-bordered > thead > tr > th:last-child,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
+#bootstrap-shortcodes-help .panel > .table-bordered > tbody > tr > th:last-child,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+#bootstrap-shortcodes-help .panel > .table-bordered > tfoot > tr > th:last-child,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+#bootstrap-shortcodes-help .panel > .table-bordered > thead > tr > td:last-child,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
+#bootstrap-shortcodes-help .panel > .table-bordered > tbody > tr > td:last-child,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+#bootstrap-shortcodes-help .panel > .table-bordered > tfoot > tr > td:last-child,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+  border-right: 0;
+}
+#bootstrap-shortcodes-help .panel > .table-bordered > thead > tr:last-child > th,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > thead > tr:last-child > th,
+#bootstrap-shortcodes-help .panel > .table-bordered > tbody > tr:last-child > th,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+#bootstrap-shortcodes-help .panel > .table-bordered > tfoot > tr:last-child > th,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+#bootstrap-shortcodes-help .panel > .table-bordered > thead > tr:last-child > td,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > thead > tr:last-child > td,
+#bootstrap-shortcodes-help .panel > .table-bordered > tbody > tr:last-child > td,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+#bootstrap-shortcodes-help .panel > .table-bordered > tfoot > tr:last-child > td,
+#bootstrap-shortcodes-help .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+  border-bottom: 0;
+}
+#bootstrap-shortcodes-help .panel > .table-responsive {
+  border: 0;
+  margin-bottom: 0;
+}
+#bootstrap-shortcodes-help .panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+#bootstrap-shortcodes-help .panel-heading > .dropdown .dropdown-toggle {
+  color: inherit;
+}
+#bootstrap-shortcodes-help .panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
+}
+#bootstrap-shortcodes-help .panel-title > a {
+  color: inherit;
+}
+#bootstrap-shortcodes-help .panel-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #dddddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+#bootstrap-shortcodes-help .panel-group .panel {
+  margin-bottom: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+#bootstrap-shortcodes-help .panel-group .panel + .panel {
+  margin-top: 5px;
+}
+#bootstrap-shortcodes-help .panel-group .panel-heading {
+  border-bottom: 0;
+}
+#bootstrap-shortcodes-help .panel-group .panel-heading + .panel-collapse .panel-body {
+  border-top: 1px solid #dddddd;
+}
+#bootstrap-shortcodes-help .panel-group .panel-footer {
+  border-top: 0;
+}
+#bootstrap-shortcodes-help .panel-group .panel-footer + .panel-collapse .panel-body {
+  border-bottom: 1px solid #dddddd;
+}
+#bootstrap-shortcodes-help .panel-default {
+  border-color: #dddddd;
+}
+#bootstrap-shortcodes-help .panel-default > .panel-heading {
+  color: #333333;
+  background-color: #f5f5f5;
+  border-color: #dddddd;
+}
+#bootstrap-shortcodes-help .panel-default > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #dddddd;
+}
+#bootstrap-shortcodes-help .panel-default > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #dddddd;
+}
+#bootstrap-shortcodes-help .panel-primary {
+  border-color: #428bca;
+}
+#bootstrap-shortcodes-help .panel-primary > .panel-heading {
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+#bootstrap-shortcodes-help .panel-primary > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #428bca;
+}
+#bootstrap-shortcodes-help .panel-primary > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #428bca;
+}
+#bootstrap-shortcodes-help .panel-success {
+  border-color: #d6e9c6;
+}
+#bootstrap-shortcodes-help .panel-success > .panel-heading {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+#bootstrap-shortcodes-help .panel-success > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #d6e9c6;
+}
+#bootstrap-shortcodes-help .panel-success > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #d6e9c6;
+}
+#bootstrap-shortcodes-help .panel-warning {
+  border-color: #faebcc;
+}
+#bootstrap-shortcodes-help .panel-warning > .panel-heading {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+#bootstrap-shortcodes-help .panel-warning > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #faebcc;
+}
+#bootstrap-shortcodes-help .panel-warning > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #faebcc;
+}
+#bootstrap-shortcodes-help .panel-danger {
+  border-color: #ebccd1;
+}
+#bootstrap-shortcodes-help .panel-danger > .panel-heading {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+#bootstrap-shortcodes-help .panel-danger > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #ebccd1;
+}
+#bootstrap-shortcodes-help .panel-danger > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #ebccd1;
+}
+#bootstrap-shortcodes-help .panel-info {
+  border-color: #bce8f1;
+}
+#bootstrap-shortcodes-help .panel-info > .panel-heading {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+#bootstrap-shortcodes-help .panel-info > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #bce8f1;
+}
+#bootstrap-shortcodes-help .panel-info > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #bce8f1;
+}
+#bootstrap-shortcodes-help .well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+#bootstrap-shortcodes-help .well blockquote {
+  border-color: #ddd;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+#bootstrap-shortcodes-help .well-lg {
+  padding: 24px;
+  border-radius: 6px;
+}
+#bootstrap-shortcodes-help .well-sm {
+  padding: 9px;
+  border-radius: 3px;
+}
+#bootstrap-shortcodes-help .close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+#bootstrap-shortcodes-help .close:hover,
+#bootstrap-shortcodes-help .close:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+button#bootstrap-shortcodes-help .close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+#bootstrap-shortcodes-help .modal-open {
+  overflow: hidden;
+}
+#bootstrap-shortcodes-help .modal {
+  display: none;
+  overflow: auto;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+}
+#bootstrap-shortcodes-help .modal.fade .modal-dialog {
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+#bootstrap-shortcodes-help .modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+#bootstrap-shortcodes-help .modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+  z-index: 1050;
+}
+#bootstrap-shortcodes-help .modal-content {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  outline: none;
+}
+#bootstrap-shortcodes-help .modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  background-color: #000000;
+}
+#bootstrap-shortcodes-help .modal-backdrop.fade {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+#bootstrap-shortcodes-help .modal-backdrop.in {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+#bootstrap-shortcodes-help .modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  min-height: 16.428571429px;
+}
+#bootstrap-shortcodes-help .modal-header .close {
+  margin-top: -2px;
+}
+#bootstrap-shortcodes-help .modal-title {
+  margin: 0;
+  line-height: 1.428571429;
+}
+#bootstrap-shortcodes-help .modal-body {
+  position: relative;
+  padding: 20px;
+}
+#bootstrap-shortcodes-help .modal-footer {
+  margin-top: 15px;
+  padding: 19px 20px 20px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+#bootstrap-shortcodes-help .modal-footer:before,
+#bootstrap-shortcodes-help .modal-footer:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .modal-footer:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .modal-footer:before,
+#bootstrap-shortcodes-help .modal-footer:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .modal-footer:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .modal-footer .btn + .btn {
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+#bootstrap-shortcodes-help .modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+#bootstrap-shortcodes-help .modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+@media screen and (min-width: 768px) {
+  #bootstrap-shortcodes-help .modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+  #bootstrap-shortcodes-help .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+#bootstrap-shortcodes-help .tooltip {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+  visibility: visible;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+#bootstrap-shortcodes-help .tooltip.in {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+#bootstrap-shortcodes-help .tooltip.top {
+  margin-top: -3px;
+  padding: 5px 0;
+}
+#bootstrap-shortcodes-help .tooltip.right {
+  margin-left: 3px;
+  padding: 0 5px;
+}
+#bootstrap-shortcodes-help .tooltip.bottom {
+  margin-top: 3px;
+  padding: 5px 0;
+}
+#bootstrap-shortcodes-help .tooltip.left {
+  margin-left: -3px;
+  padding: 0 5px;
+}
+#bootstrap-shortcodes-help .tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #000000;
+  border-radius: 4px;
+}
+#bootstrap-shortcodes-help .tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+#bootstrap-shortcodes-help .tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000000;
+}
+#bootstrap-shortcodes-help .tooltip.top-left .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000000;
+}
+#bootstrap-shortcodes-help .tooltip.top-right .tooltip-arrow {
+  bottom: 0;
+  right: 5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000000;
+}
+#bootstrap-shortcodes-help .tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000000;
+}
+#bootstrap-shortcodes-help .tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #000000;
+}
+#bootstrap-shortcodes-help .tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000000;
+}
+#bootstrap-shortcodes-help .tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000000;
+}
+#bootstrap-shortcodes-help .tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000000;
+}
+#bootstrap-shortcodes-help .popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  display: none;
+  max-width: 276px;
+  padding: 1px;
+  text-align: left;
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  white-space: normal;
+}
+#bootstrap-shortcodes-help .popover.top {
+  margin-top: -10px;
+}
+#bootstrap-shortcodes-help .popover.right {
+  margin-left: 10px;
+}
+#bootstrap-shortcodes-help .popover.bottom {
+  margin-top: 10px;
+}
+#bootstrap-shortcodes-help .popover.left {
+  margin-left: -10px;
+}
+#bootstrap-shortcodes-help .popover-title {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+}
+#bootstrap-shortcodes-help .popover-content {
+  padding: 9px 14px;
+}
+#bootstrap-shortcodes-help .popover .arrow,
+#bootstrap-shortcodes-help .popover .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+#bootstrap-shortcodes-help .popover .arrow {
+  border-width: 11px;
+}
+#bootstrap-shortcodes-help .popover .arrow:after {
+  border-width: 10px;
+  content: "";
+}
+#bootstrap-shortcodes-help .popover.top .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-bottom-width: 0;
+  border-top-color: #999999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  bottom: -11px;
+}
+#bootstrap-shortcodes-help .popover.top .arrow:after {
+  content: " ";
+  bottom: 1px;
+  margin-left: -10px;
+  border-bottom-width: 0;
+  border-top-color: #ffffff;
+}
+#bootstrap-shortcodes-help .popover.right .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-left-width: 0;
+  border-right-color: #999999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+}
+#bootstrap-shortcodes-help .popover.right .arrow:after {
+  content: " ";
+  left: 1px;
+  bottom: -10px;
+  border-left-width: 0;
+  border-right-color: #ffffff;
+}
+#bootstrap-shortcodes-help .popover.bottom .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  top: -11px;
+}
+#bootstrap-shortcodes-help .popover.bottom .arrow:after {
+  content: " ";
+  top: 1px;
+  margin-left: -10px;
+  border-top-width: 0;
+  border-bottom-color: #ffffff;
+}
+#bootstrap-shortcodes-help .popover.left .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #999999;
+  border-left-color: rgba(0, 0, 0, 0.25);
+}
+#bootstrap-shortcodes-help .popover.left .arrow:after {
+  content: " ";
+  right: 1px;
+  border-right-width: 0;
+  border-left-color: #ffffff;
+  bottom: -10px;
+}
+#bootstrap-shortcodes-help .carousel {
+  position: relative;
+}
+#bootstrap-shortcodes-help .carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+#bootstrap-shortcodes-help .carousel-inner > .item {
+  display: none;
+  position: relative;
+  -webkit-transition: 0.6s ease-in-out left;
+  transition: 0.6s ease-in-out left;
+}
+#bootstrap-shortcodes-help .carousel-inner > .item > img,
+#bootstrap-shortcodes-help .carousel-inner > .item > a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  line-height: 1;
+}
+#bootstrap-shortcodes-help .carousel-inner > .active,
+#bootstrap-shortcodes-help .carousel-inner > .next,
+#bootstrap-shortcodes-help .carousel-inner > .prev {
+  display: block;
+}
+#bootstrap-shortcodes-help .carousel-inner > .active {
+  left: 0;
+}
+#bootstrap-shortcodes-help .carousel-inner > .next,
+#bootstrap-shortcodes-help .carousel-inner > .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#bootstrap-shortcodes-help .carousel-inner > .next {
+  left: 100%;
+}
+#bootstrap-shortcodes-help .carousel-inner > .prev {
+  left: -100%;
+}
+#bootstrap-shortcodes-help .carousel-inner > .next.left,
+#bootstrap-shortcodes-help .carousel-inner > .prev.right {
+  left: 0;
+}
+#bootstrap-shortcodes-help .carousel-inner > .active.left {
+  left: -100%;
+}
+#bootstrap-shortcodes-help .carousel-inner > .active.right {
+  left: 100%;
+}
+#bootstrap-shortcodes-help .carousel-control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15%;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+#bootstrap-shortcodes-help .carousel-control.left {
+  background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.5) 0%), color-stop(rgba(0, 0, 0, 0.0001) 100%));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+}
+#bootstrap-shortcodes-help .carousel-control.right {
+  left: auto;
+  right: 0;
+  background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.0001) 0%), color-stop(rgba(0, 0, 0, 0.5) 100%));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+}
+#bootstrap-shortcodes-help .carousel-control:hover,
+#bootstrap-shortcodes-help .carousel-control:focus {
+  outline: none;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+#bootstrap-shortcodes-help .carousel-control .icon-prev,
+#bootstrap-shortcodes-help .carousel-control .icon-next,
+#bootstrap-shortcodes-help .carousel-control .glyphicon-chevron-left,
+#bootstrap-shortcodes-help .carousel-control .glyphicon-chevron-right {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+}
+#bootstrap-shortcodes-help .carousel-control .icon-prev,
+#bootstrap-shortcodes-help .carousel-control .glyphicon-chevron-left {
+  left: 50%;
+}
+#bootstrap-shortcodes-help .carousel-control .icon-next,
+#bootstrap-shortcodes-help .carousel-control .glyphicon-chevron-right {
+  right: 50%;
+}
+#bootstrap-shortcodes-help .carousel-control .icon-prev,
+#bootstrap-shortcodes-help .carousel-control .icon-next {
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  font-family: serif;
+}
+#bootstrap-shortcodes-help .carousel-control .icon-prev:before {
+  content: '\2039';
+}
+#bootstrap-shortcodes-help .carousel-control .icon-next:before {
+  content: '\203a';
+}
+#bootstrap-shortcodes-help .carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  margin-left: -30%;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+#bootstrap-shortcodes-help .carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #000 \9;
+  background-color: rgba(0, 0, 0, 0);
+}
+#bootstrap-shortcodes-help .carousel-indicators .active {
+  margin: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff;
+}
+#bootstrap-shortcodes-help .carousel-caption {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 20px;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+#bootstrap-shortcodes-help .carousel-caption .btn {
+  text-shadow: none;
+}
+@media screen and (min-width: 768px) {
+  #bootstrap-shortcodes-help .carousel-control .glyphicons-chevron-left,
+  #bootstrap-shortcodes-help .carousel-control .glyphicons-chevron-right,
+  #bootstrap-shortcodes-help .carousel-control .icon-prev,
+  #bootstrap-shortcodes-help .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+    font-size: 30px;
+  }
+  #bootstrap-shortcodes-help .carousel-caption {
+    left: 20%;
+    right: 20%;
+    padding-bottom: 30px;
+  }
+  #bootstrap-shortcodes-help .carousel-indicators {
+    bottom: 20px;
+  }
+}
+#bootstrap-shortcodes-help .clearfix:before,
+#bootstrap-shortcodes-help .clearfix:after {
+  content: " ";
+  display: table;
+}
+#bootstrap-shortcodes-help .clearfix:after {
+  clear: both;
+}
+#bootstrap-shortcodes-help .center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#bootstrap-shortcodes-help .pull-right {
+  float: right !important;
+}
+#bootstrap-shortcodes-help .pull-left {
+  float: left !important;
+}
+#bootstrap-shortcodes-help .hide {
+  display: none !important;
+}
+#bootstrap-shortcodes-help .show {
+  display: block !important;
+}
+#bootstrap-shortcodes-help .invisible {
+  visibility: hidden;
+}
+#bootstrap-shortcodes-help .text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+#bootstrap-shortcodes-help .hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+#bootstrap-shortcodes-help .affix {
+  position: fixed;
+}
+@-ms-viewport {
+  width: device-width;
+}
+#bootstrap-shortcodes-help .visible-xs,
+tr#bootstrap-shortcodes-help .visible-xs,
+th#bootstrap-shortcodes-help .visible-xs,
+td#bootstrap-shortcodes-help .visible-xs {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  #bootstrap-shortcodes-help .visible-xs {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-xs {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-xs {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-xs,
+  td#bootstrap-shortcodes-help .visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #bootstrap-shortcodes-help .visible-xs.visible-sm {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-xs.visible-sm {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-xs.visible-sm {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-xs.visible-sm,
+  td#bootstrap-shortcodes-help .visible-xs.visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #bootstrap-shortcodes-help .visible-xs.visible-md {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-xs.visible-md {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-xs.visible-md {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-xs.visible-md,
+  td#bootstrap-shortcodes-help .visible-xs.visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  #bootstrap-shortcodes-help .visible-xs.visible-lg {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-xs.visible-lg {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-xs.visible-lg {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-xs.visible-lg,
+  td#bootstrap-shortcodes-help .visible-xs.visible-lg {
+    display: table-cell !important;
+  }
+}
+#bootstrap-shortcodes-help .visible-sm,
+tr#bootstrap-shortcodes-help .visible-sm,
+th#bootstrap-shortcodes-help .visible-sm,
+td#bootstrap-shortcodes-help .visible-sm {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  #bootstrap-shortcodes-help .visible-sm.visible-xs {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-sm.visible-xs {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-sm.visible-xs {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-sm.visible-xs,
+  td#bootstrap-shortcodes-help .visible-sm.visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #bootstrap-shortcodes-help .visible-sm {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-sm {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-sm {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-sm,
+  td#bootstrap-shortcodes-help .visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #bootstrap-shortcodes-help .visible-sm.visible-md {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-sm.visible-md {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-sm.visible-md {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-sm.visible-md,
+  td#bootstrap-shortcodes-help .visible-sm.visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  #bootstrap-shortcodes-help .visible-sm.visible-lg {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-sm.visible-lg {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-sm.visible-lg {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-sm.visible-lg,
+  td#bootstrap-shortcodes-help .visible-sm.visible-lg {
+    display: table-cell !important;
+  }
+}
+#bootstrap-shortcodes-help .visible-md,
+tr#bootstrap-shortcodes-help .visible-md,
+th#bootstrap-shortcodes-help .visible-md,
+td#bootstrap-shortcodes-help .visible-md {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  #bootstrap-shortcodes-help .visible-md.visible-xs {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-md.visible-xs {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-md.visible-xs {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-md.visible-xs,
+  td#bootstrap-shortcodes-help .visible-md.visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #bootstrap-shortcodes-help .visible-md.visible-sm {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-md.visible-sm {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-md.visible-sm {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-md.visible-sm,
+  td#bootstrap-shortcodes-help .visible-md.visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #bootstrap-shortcodes-help .visible-md {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-md {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-md {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-md,
+  td#bootstrap-shortcodes-help .visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  #bootstrap-shortcodes-help .visible-md.visible-lg {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-md.visible-lg {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-md.visible-lg {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-md.visible-lg,
+  td#bootstrap-shortcodes-help .visible-md.visible-lg {
+    display: table-cell !important;
+  }
+}
+#bootstrap-shortcodes-help .visible-lg,
+tr#bootstrap-shortcodes-help .visible-lg,
+th#bootstrap-shortcodes-help .visible-lg,
+td#bootstrap-shortcodes-help .visible-lg {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  #bootstrap-shortcodes-help .visible-lg.visible-xs {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-lg.visible-xs {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-lg.visible-xs {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-lg.visible-xs,
+  td#bootstrap-shortcodes-help .visible-lg.visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #bootstrap-shortcodes-help .visible-lg.visible-sm {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-lg.visible-sm {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-lg.visible-sm {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-lg.visible-sm,
+  td#bootstrap-shortcodes-help .visible-lg.visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #bootstrap-shortcodes-help .visible-lg.visible-md {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-lg.visible-md {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-lg.visible-md {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-lg.visible-md,
+  td#bootstrap-shortcodes-help .visible-lg.visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  #bootstrap-shortcodes-help .visible-lg {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-lg {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-lg {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-lg,
+  td#bootstrap-shortcodes-help .visible-lg {
+    display: table-cell !important;
+  }
+}
+#bootstrap-shortcodes-help .hidden-xs {
+  display: block !important;
+}
+table#bootstrap-shortcodes-help .hidden-xs {
+  display: table;
+}
+tr#bootstrap-shortcodes-help .hidden-xs {
+  display: table-row !important;
+}
+th#bootstrap-shortcodes-help .hidden-xs,
+td#bootstrap-shortcodes-help .hidden-xs {
+  display: table-cell !important;
+}
+@media (max-width: 767px) {
+  #bootstrap-shortcodes-help .hidden-xs,
+  tr#bootstrap-shortcodes-help .hidden-xs,
+  th#bootstrap-shortcodes-help .hidden-xs,
+  td#bootstrap-shortcodes-help .hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #bootstrap-shortcodes-help .hidden-xs.hidden-sm,
+  tr#bootstrap-shortcodes-help .hidden-xs.hidden-sm,
+  th#bootstrap-shortcodes-help .hidden-xs.hidden-sm,
+  td#bootstrap-shortcodes-help .hidden-xs.hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #bootstrap-shortcodes-help .hidden-xs.hidden-md,
+  tr#bootstrap-shortcodes-help .hidden-xs.hidden-md,
+  th#bootstrap-shortcodes-help .hidden-xs.hidden-md,
+  td#bootstrap-shortcodes-help .hidden-xs.hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  #bootstrap-shortcodes-help .hidden-xs.hidden-lg,
+  tr#bootstrap-shortcodes-help .hidden-xs.hidden-lg,
+  th#bootstrap-shortcodes-help .hidden-xs.hidden-lg,
+  td#bootstrap-shortcodes-help .hidden-xs.hidden-lg {
+    display: none !important;
+  }
+}
+#bootstrap-shortcodes-help .hidden-sm {
+  display: block !important;
+}
+table#bootstrap-shortcodes-help .hidden-sm {
+  display: table;
+}
+tr#bootstrap-shortcodes-help .hidden-sm {
+  display: table-row !important;
+}
+th#bootstrap-shortcodes-help .hidden-sm,
+td#bootstrap-shortcodes-help .hidden-sm {
+  display: table-cell !important;
+}
+@media (max-width: 767px) {
+  #bootstrap-shortcodes-help .hidden-sm.hidden-xs,
+  tr#bootstrap-shortcodes-help .hidden-sm.hidden-xs,
+  th#bootstrap-shortcodes-help .hidden-sm.hidden-xs,
+  td#bootstrap-shortcodes-help .hidden-sm.hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #bootstrap-shortcodes-help .hidden-sm,
+  tr#bootstrap-shortcodes-help .hidden-sm,
+  th#bootstrap-shortcodes-help .hidden-sm,
+  td#bootstrap-shortcodes-help .hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #bootstrap-shortcodes-help .hidden-sm.hidden-md,
+  tr#bootstrap-shortcodes-help .hidden-sm.hidden-md,
+  th#bootstrap-shortcodes-help .hidden-sm.hidden-md,
+  td#bootstrap-shortcodes-help .hidden-sm.hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  #bootstrap-shortcodes-help .hidden-sm.hidden-lg,
+  tr#bootstrap-shortcodes-help .hidden-sm.hidden-lg,
+  th#bootstrap-shortcodes-help .hidden-sm.hidden-lg,
+  td#bootstrap-shortcodes-help .hidden-sm.hidden-lg {
+    display: none !important;
+  }
+}
+#bootstrap-shortcodes-help .hidden-md {
+  display: block !important;
+}
+table#bootstrap-shortcodes-help .hidden-md {
+  display: table;
+}
+tr#bootstrap-shortcodes-help .hidden-md {
+  display: table-row !important;
+}
+th#bootstrap-shortcodes-help .hidden-md,
+td#bootstrap-shortcodes-help .hidden-md {
+  display: table-cell !important;
+}
+@media (max-width: 767px) {
+  #bootstrap-shortcodes-help .hidden-md.hidden-xs,
+  tr#bootstrap-shortcodes-help .hidden-md.hidden-xs,
+  th#bootstrap-shortcodes-help .hidden-md.hidden-xs,
+  td#bootstrap-shortcodes-help .hidden-md.hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #bootstrap-shortcodes-help .hidden-md.hidden-sm,
+  tr#bootstrap-shortcodes-help .hidden-md.hidden-sm,
+  th#bootstrap-shortcodes-help .hidden-md.hidden-sm,
+  td#bootstrap-shortcodes-help .hidden-md.hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #bootstrap-shortcodes-help .hidden-md,
+  tr#bootstrap-shortcodes-help .hidden-md,
+  th#bootstrap-shortcodes-help .hidden-md,
+  td#bootstrap-shortcodes-help .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  #bootstrap-shortcodes-help .hidden-md.hidden-lg,
+  tr#bootstrap-shortcodes-help .hidden-md.hidden-lg,
+  th#bootstrap-shortcodes-help .hidden-md.hidden-lg,
+  td#bootstrap-shortcodes-help .hidden-md.hidden-lg {
+    display: none !important;
+  }
+}
+#bootstrap-shortcodes-help .hidden-lg {
+  display: block !important;
+}
+table#bootstrap-shortcodes-help .hidden-lg {
+  display: table;
+}
+tr#bootstrap-shortcodes-help .hidden-lg {
+  display: table-row !important;
+}
+th#bootstrap-shortcodes-help .hidden-lg,
+td#bootstrap-shortcodes-help .hidden-lg {
+  display: table-cell !important;
+}
+@media (max-width: 767px) {
+  #bootstrap-shortcodes-help .hidden-lg.hidden-xs,
+  tr#bootstrap-shortcodes-help .hidden-lg.hidden-xs,
+  th#bootstrap-shortcodes-help .hidden-lg.hidden-xs,
+  td#bootstrap-shortcodes-help .hidden-lg.hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #bootstrap-shortcodes-help .hidden-lg.hidden-sm,
+  tr#bootstrap-shortcodes-help .hidden-lg.hidden-sm,
+  th#bootstrap-shortcodes-help .hidden-lg.hidden-sm,
+  td#bootstrap-shortcodes-help .hidden-lg.hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #bootstrap-shortcodes-help .hidden-lg.hidden-md,
+  tr#bootstrap-shortcodes-help .hidden-lg.hidden-md,
+  th#bootstrap-shortcodes-help .hidden-lg.hidden-md,
+  td#bootstrap-shortcodes-help .hidden-lg.hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  #bootstrap-shortcodes-help .hidden-lg,
+  tr#bootstrap-shortcodes-help .hidden-lg,
+  th#bootstrap-shortcodes-help .hidden-lg,
+  td#bootstrap-shortcodes-help .hidden-lg {
+    display: none !important;
+  }
+}
+#bootstrap-shortcodes-help .visible-print,
+tr#bootstrap-shortcodes-help .visible-print,
+th#bootstrap-shortcodes-help .visible-print,
+td#bootstrap-shortcodes-help .visible-print {
+  display: none !important;
+}
+@media print {
+  #bootstrap-shortcodes-help .visible-print {
+    display: block !important;
+  }
+  table#bootstrap-shortcodes-help .visible-print {
+    display: table;
+  }
+  tr#bootstrap-shortcodes-help .visible-print {
+    display: table-row !important;
+  }
+  th#bootstrap-shortcodes-help .visible-print,
+  td#bootstrap-shortcodes-help .visible-print {
+    display: table-cell !important;
+  }
+  #bootstrap-shortcodes-help .hidden-print,
+  tr#bootstrap-shortcodes-help .hidden-print,
+  th#bootstrap-shortcodes-help .hidden-print,
+  td#bootstrap-shortcodes-help .hidden-print {
+    display: none !important;
+  }
+}

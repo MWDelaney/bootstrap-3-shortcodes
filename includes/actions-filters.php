@@ -1,4 +1,6 @@
 <?php
+	wp_register_style( 'bootstrap-shortcodes-help', plugins_url( 'bootstrap-3-shortcodes/includes/help/css/bootstrap-shortcodes-help.css' ) );
+	wp_enqueue_style( 'bootstrap-shortcodes-help' );
 
 add_filter('the_content', 'bs_fix_shortcodes');
 
@@ -14,7 +16,7 @@ function add_bootstrap_button($context) {
   $img = BS_SHORTCODES_URL . 'images/Twitter_Boostrap_logo.svg';
   
   //the id of the container I want to show in the popup
-  $popup_url = 'bootstrap-shortcodes-help';
+  $popup_url = 'bootstrap-shortcodes-help-popup';
   
   //our popup's title
   $title = 'Bootstrap Shortcodes Help';
