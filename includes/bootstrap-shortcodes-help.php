@@ -25,23 +25,18 @@ $html = MarkdownExtra::defaultTransform($text);
 <!DOCTYPE html>
 <html>
     <head>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<script src="/wp-includes/js/jquery/jquery.js"></script>
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="help/css/bootstrap.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $(".insert-code").click(function() {
-            var example = $( this ).parent().prev().find("code").text();
+    jQuery(document).ready(function() {
+        jQuery(".insert-code").click(function() {
+            var example = jQuery( this ).parent().prev().find("code").text();
             var lines = example.split('\n');
             var paras = '';
-            $.each(lines, function(i, line) {
+            jQuery.each(lines, function(i, line) {
                 if (line) {
                     paras += line + '<br>';
                 }
