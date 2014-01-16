@@ -111,30 +111,9 @@ scrollable | Set a max height of 350px and provide a scroll bar. Not usable with
 
 ### Tables
 	[table-wrap bordered="true" striped="true"]
-        <table>
-            <tbody>
-                <tr>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
-                </tr>
-                <tr>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                </tr>
-                <tr>
-                    <td>Data 3</td>
-                    <td>Data 4</td>
-                </tr>
-                <tr>
-                    <td>Data 5</td>
-                    <td>Data 6</td>
-                </tr>
-                <tr>
-                    <td>Data 7</td>
-                    <td>Data 8</td>
-                </tr>
-            </tbody>
-        </table>
+        
+        Standard HTML table code goes here.
+        
     [/table-wrap]
 
 #### [table-wrap] parameters
