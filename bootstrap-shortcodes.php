@@ -89,6 +89,7 @@ class BoostrapShortcodes {
     add_shortcode('jumbotron', array( $this, 'bs_jumbotron' ));
     add_shortcode('lead', array( $this, 'bs_lead' ));
     add_shortcode('emphasis', array( $this, 'bs_emphasis' ));
+    add_shortcode('img', array( $this, 'bs_img' ));
     add_shortcode('thumbnail', array( $this, 'bs_thumbnail' ));
     add_shortcode('responsive', array( $this, 'bs_responsive' ));
     add_shortcode('modal', array( $this, 'bs_modal' ));
@@ -820,7 +821,30 @@ function bs_media_body( $atts, $content = null ) {
     return '<p class="text-' . $type . '">' . do_shortcode( $content ) . '</p>';
 
   }
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_img
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+function bs_img( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+      "type" => false,
+      "responsive" => false,
+    ), $atts));
+    $classes .= ($type) ? 'img-' . $type . ' ' : '';
+    $classes .= ($responsive) ? ' img-responsive' : '';   
+    $dom = new DOMDocument;
+    $dom->loadXML($content);
+    foreach($dom->getElementsByTagName('img') as $image) { 
+        $image->setAttribute('class', $image->getAttribute('class') . ' ' . $classes);
+    } 
+    $return = $dom->saveXML();
+    
+    return $return;
 
+  }
+    
   /*--------------------------------------------------------------------------------------
     *
     * bs_thumbnail

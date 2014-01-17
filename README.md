@@ -17,6 +17,7 @@ The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
 * [Code](#code)
 * [Tables](#tables)
 * [Buttons](#buttons)
+* [Images](#images)
 * [Responsive utilities](#responsive-utilities)
 
 ### Components
@@ -141,6 +142,18 @@ target | Target for the link | optional | any valid target | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example below). | optional | any text | none
 
 [Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
+
+### Images
+	[img type="circle" responsive="true"] … [/img]
+
+Wrap any number of HTML image tags or images inserted via the WordPress media manager.
+#### [img] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The effect to apply to wrapped images | optional | rounded, circle, thumbnail | false
+responsive | Make the wrapped images responsive | optional | true, false | false
+
+[Bootstrap images documentation](http://getbootstrap.com/css/#images)
 
 ### Responsive Utilities
 	[responsive visible="sm xs" hidden="lg"] … [/responsive]
