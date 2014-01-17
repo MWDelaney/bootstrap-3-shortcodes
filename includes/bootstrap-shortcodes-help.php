@@ -45,8 +45,10 @@ $html = MarkdownExtra::defaultTransform($text);
                 # Put HTML content in the document
                 $html = preg_replace('/(<a href="http:[^"]+")>/is','\\1 target="_blank">',$html);
                 $html = str_replace('<table>', '<table class="table table-striped">', $html);
-                $html = str_replace('<ul>', '<ul class="list-group">', $html);
-                $html = str_replace('<li>', '<li class="list-group-item">', $html);
+                $html = str_replace('<ul>', '<div class="list-group">', $html);
+                $html = str_replace('</ul>', '</div">', $html);
+                $html = str_replace('<li><a ', '<a class="list-group-item" ', $html);
+                $html = str_replace('</li>', '', $html);
                 $html = preg_replace_callback("#<(h[1-6])>(.*?)</\\1>#", "retitle", $html);
                 $html = str_replace('</pre>', '</pre><p><button class="btn btn-primary btn-sm insert-code">Insert Example <i class="glyphicon glyphicon-share-alt"></i></button></p>', $html);
                 echo $html;

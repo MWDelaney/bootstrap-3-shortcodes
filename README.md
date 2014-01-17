@@ -26,6 +26,7 @@ The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
 * [Labels](#labels)
 * [Badges](#badges)
 * [Jumbotron](#jumbotron)
+* [Page Header](#page-header)
 * [Thumbnails](#thumbnails)
 * [Alerts](#alerts)
 * [Progress Bars](#progress-bars)
@@ -224,6 +225,15 @@ Parameter | Description | Required | Values | Default
 title | The jumbotron title | optional | Any text | none
 
 [Bootstrap jumbotron documentation](http://getbootstrap.com/components/#jumbotron)
+
+### Page Header
+    [page-header] … [/page-header]
+
+Automatically inserts H1 tag if not present
+#### [page-header] parameters
+None
+
+[Bootstrap page-header documentation](http://getbootstrap.com/components/#page-header)
 
 ### Thumbnails
     [thumbnail] … [/thumbnail]

@@ -89,6 +89,7 @@ class BoostrapShortcodes {
     add_shortcode('media-object', array( $this, 'bs_media_object' ));
     add_shortcode('media-body', array( $this, 'bs_media_body' ));
     add_shortcode('jumbotron', array( $this, 'bs_jumbotron' ));
+    add_shortcode('page-header', array( $this, 'bs_page_header' ));
     add_shortcode('lead', array( $this, 'bs_lead' ));
     add_shortcode('emphasis', array( $this, 'bs_emphasis' ));
     add_shortcode('img', array( $this, 'bs_img' ));
@@ -836,6 +837,40 @@ function bs_media_body( $atts, $content = null ) {
 
   /*--------------------------------------------------------------------------------------
     *
+    * bs_page_header
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_page_header( $atts, $content = null ) {
+    $classes = "page-header";
+    $dom = new DOMDocument;
+    $dom->loadXML($content);
+    $hasHeader = $dom->getElementsByTagName('h1'); 
+
+    if($hasHeader->length == 0) {
+        
+        $wrapper = $dom->createElement('div');
+        $dom->appendChild($wrapper);
+        
+        $header = $dom->createElement('h1', $content);
+        $wrapper->appendChild($header);
+
+    }
+    else {
+        $new_root = $dom->createElement('div');
+        $new_root->appendChild($dom->documentElement);
+        $dom->appendChild($new_root);
+    }
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+
+    $return = $dom->saveXML();
+    
+    return $return;
+
+  } 
+    
+  /*--------------------------------------------------------------------------------------
+    *
     * bs_lead
     *
     *
@@ -855,7 +890,7 @@ function bs_media_body( $atts, $content = null ) {
     extract(shortcode_atts(array(
       "type" => 'muted'
     ), $atts));
-    return '<p class="text-' . $type . '">' . do_shortcode( $content ) . '</p>';
+    return '<span class="text-' . $type . '">' . do_shortcode( $content ) . '</span>';
 
   }
   /*--------------------------------------------------------------------------------------
