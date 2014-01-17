@@ -28,6 +28,7 @@ The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
 * [Jumbotron](#jumbotron)
 * [Thumbnails](#thumbnails)
 * [Alerts](#alerts)
+* [Progress Bars](#progress-bars)
 * [Media Objects](#media-objects)
 * [List Groups](#list-groups)
 * [Panels](#panels)
@@ -245,6 +246,27 @@ dismissable | If the alert should be dismissable | optional | true, false | fals
 strong | Text to display in bold at the beginning | optional | any text | false
 
 [Bootstrap alert documentation](http://getbootstrap.com/components/#alerts)
+
+### Progress Bars
+	[progress striped="true"]
+        [progress-bar percent="50"]
+        [progress-bar percent="25" type="success"]
+    [/progress]
+
+#### [progress] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+striped | Whether enclosed progress bars will be striped | optional | true, false | false
+animated | Whether enclosed progress bars will be animated | optional | true, false | false
+
+#### [progress-bar] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+percent | The percentage amount to show in the progress bar | required | any number between 0 and 100 | false
+type | The type of the progress bar | optional | default, primary, success, info, warning, danger  | default
+
+[Bootstrap progress bars documentation](http://getbootstrap.com/components/#progress)
+
 
 ### Media Objects
     [media]

@@ -63,6 +63,8 @@ class BoostrapShortcodes {
     add_shortcode('button', array( $this, 'bs_button' ));
     add_shortcode('button-group', array( $this, 'bs_button_group' ));
     add_shortcode('alert', array( $this, 'bs_alert' ));
+    add_shortcode('progress', array( $this, 'bs_progress' ));
+    add_shortcode('progress-bar', array( $this, 'bs_progress_bar' ));
     add_shortcode('code', array( $this, 'bs_code' ));
     add_shortcode('span', array( $this, 'bs_span' ));
     add_shortcode('row', array( $this, 'bs_row' ));
@@ -188,8 +190,43 @@ class BoostrapShortcodes {
     return $return;
   }
 
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_progress
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_progress($atts, $content = null) {
+    extract(shortcode_atts(array(
+      "striped" => false,
+      "animated" => false,
+    ), $atts));
+    $return  =  '<div class="progress ';
+    $return .= ($striped) ? 'progress-striped ' : '';
+    $return .= ($animated) ? 'active' : '';
+    $return .= '">' . do_shortcode( $content ) . '</div>';
 
+    return $return;
+  }
 
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_progress_bar
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_progress_bar($atts, $content = null) {
+    extract(shortcode_atts(array(
+      "type" => false,
+      "percent" => false,
+    ), $atts));
+    $return  =  '<div class="progress-bar ';
+    $return .= ($type) ? ' progress-bar-' . $type : '';
+    $return .= '" role="progressbar" aria-valuenow="'. $percent .'" aria-valuemin="0" aria-valuemax="100" style="width: '. $percent .'%">
+                    <span class="sr-only">'. $percent .'% Complete</span>
+                </div>';
+    return $return;
+  }
 
   /*--------------------------------------------------------------------------------------
     *
