@@ -34,13 +34,13 @@ require_once(dirname(__FILE__) . '/includes/actions-filters.php');
 function bootsrap_shortcodes_scripts()  { 
 
   // Bootstrap tooltip js
-  wp_enqueue_script( 'bootsrap-shortcodes-tooltip', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-tooltip.js', array( 'jquery' ), false, true );
+  wp_enqueue_script( 'bootstrap-shortcodes-tooltip', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-tooltip.js', array( 'jquery' ), false, true );
   
   // Bootstrap popover js
-  wp_enqueue_script( 'bootsrap-shortcodes-popover', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-popover.js', array( 'jquery' ), false, true );
+  wp_enqueue_script( 'bootstrap-shortcodes-popover', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-popover.js', array( 'jquery' ), false, true );
 
 }
-add_action( 'wp_enqueue_scripts', 'bootsrap_shortcodes_scripts' ); // Register this fxn and allow Wordpress to call it automatcally in the header
+add_action( 'wp_enqueue_scripts', 'bootsrap_shortcodes_scripts', 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
 
 // Begin Shortcodes
 class BoostrapShortcodes {
