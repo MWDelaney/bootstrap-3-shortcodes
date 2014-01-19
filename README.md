@@ -24,6 +24,7 @@ The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
 * [Icons](#icons)
 * [Button Groups](#button-groups)
 * [Button Dropdowns](#button-dropdowns)
+* [Navs](#navs)
 * [Breadcrumbs](#breadcrumbs)
 * [Labels](#labels)
 * [Badges](#badges)
@@ -236,23 +237,23 @@ Button Dropdowns can be accomplished by combining the [button-group] shortcode, 
 
 #### Split button dropdowns
     [button-group]
-        [button link="#"]Test[/button]
+        [button link="#"] … [/button]
         [button dropdown="true" data="toggle,dropdown"][caret][/button]
         [dropdown]
-            [dropdown-item link="#"]Link #1[/dropdown-item]
+            [dropdown-item link="#"] … [/dropdown-item]
             [divider]
-            [dropdown-item link="#"]Link #2[/dropdown-item]
+            [dropdown-item link="#"] … [/dropdown-item]
         [/dropdown]
     [/button-group]
 
 #### Dropup variation
     [button-group dropup="true"]
-        [button link="#"]Test[/button]
+        [button link="#"] … [/button]
         [button dropdown="true" data="toggle,dropdown"][caret][/button]
         [dropdown]
-            [dropdown-item link="#"]Link #1[/dropdown-item]
+            [dropdown-item link="#"] … [/dropdown-item]
             [divider]
-            [dropdown-item link="#"]Link #2[/dropdown-item]
+            [dropdown-item link="#"] … [/dropdown-item]
         [/dropdown]
     [/button-group]  
 
@@ -271,6 +272,41 @@ None
 None
 
 [Bootstrap button dropdowns documentation](http://getbootstrap.com/components/#btn-dropdowns)
+
+### Navs
+    [nav type="pills"]
+        [nav-item link="#"] … [/nav-item]
+        [nav-item link="#"] … [/nav-item]
+        [nav-item link="#"] … [/nav-item]
+    [/nav]
+
+#### Nav with dropdowns
+    [nav type="pills"]
+        [nav-item link="#" active="true"] … [/nav-item]
+        [nav-item dropdown="true" link="#"] … [caret]
+            [dropdown]
+                [dropdown-item link="#"] … [/dropdown-item]
+                [dropdown-item link="#"] … [/dropdown-item]
+            [/dropdown]
+        [/nav-item]
+    [/nav]
+
+#### [nav] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of nav | required | tabs, pills | tabs
+stacked | Whether the nav is stacked (should be used with "pills" type | optional | true, false | false
+justified | Whether the nav is justified | optional | true, false | false
+
+#### [nav-item] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+link | The url you want the dropdown-item to link to | optional | any valid link | none
+active | Whether the item has the "active" style applied | optional | true, false | false
+disabled | Whether the item is disabled | optional | true, false | false
+
+[Bootstrap button navs documentation](http://getbootstrap.com/components/#nav)
+
 
 ### Breadcrumbs
 	[breadcrumb]
@@ -451,6 +487,7 @@ linked | Whether this is a linked list group, or a standard one | optional | tru
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 link | The url you want the list item to link to **Must correspond with the "linked" parameter in [list-group]** | optional | any text | false
+active | Whether the item has the "active" style applied | optional | true, false | false
 
 #### [list-group-item-heading] parameters
 None
@@ -555,7 +592,7 @@ Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 title | The title of the collapsible, visible when collapsed | required | any text | false
 type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
-state | Whether the tab is expanded at load time | optional | active | false
+active | Whether the tab is expanded at load time | optional | true, false | false
 
 [Bootstrap collapse documentation](http://getbootstrap.com/javascript/#collapse)
 

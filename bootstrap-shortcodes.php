@@ -66,6 +66,8 @@ class BoostrapShortcodes {
     add_shortcode('caret', array( $this, 'bs_caret' ));
     add_shortcode('dropdown', array( $this, 'bs_dropdown' ));
     add_shortcode('dropdown-item', array( $this, 'bs_dropdown_item' ));
+    add_shortcode('nav', array( $this, 'bs_nav' ));
+    add_shortcode('nav-item', array( $this, 'bs_nav_item' ));
     add_shortcode('divider', array( $this, 'bs_dropdown_divider' ));
     add_shortcode('alert', array( $this, 'bs_alert' ));
     add_shortcode('progress', array( $this, 'bs_progress' ));
@@ -237,7 +239,50 @@ class BoostrapShortcodes {
      $return = '<li class="divider">' . do_shortcode( $content ) . '</li>';
      return $return;
   }
-
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_nav
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_nav( $atts, $content = null ) {
+     extract(shortcode_atts(array(
+        "type" => 'tabs',
+        "stacked" => false,
+        "justified" => false,
+     ), $atts));
+     $classes = 'nav nav-' . $type;
+     $classes .= ($stacked) ? ' nav-stacked' : '';
+     $classes .= ($justified) ? ' nav-justified' : '';
+     $return = '<ul class="'.$classes.'">' . do_shortcode( $content ) . '</ul>';
+     return $return;
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_nav_item
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_nav_item( $atts, $content = null ) {
+     extract(shortcode_atts(array(
+        "link" => false,
+        "active" => false,
+        "disabled" => false,
+        "dropdown" => false,
+     ), $atts));
+     $return  =  '<li class="';
+     $return .= ($dropdown) ? ' dropdown' : '';
+     $return .= ($active) ? ' active' : '';
+     $return .= ($disabled) ? ' disabled' : '';
+     $return .= '"><a href="' . $link . '"';
+     $return .= ($dropdown) ? ' class="dropdown-toggle" data-toggle="dropdown"' : '';
+     $return .= ($dropdown) ? '">' . str_replace("<ul", "</a><ul", do_shortcode( $content )) : '">' . do_shortcode( $content ) . '</a>';
+     $return .= '</li>';
+     return $return;
+  }
+    
   /*--------------------------------------------------------------------------------------
     *
     * bs_alert
@@ -818,13 +863,13 @@ class BoostrapShortcodes {
     extract(shortcode_atts(array(
       "title" => '',
       "type" => 'default',
-      "state" => false
+      "active" => false
     ), $atts));
 
-    if ($state == "active")
-      $state = 'in';
+    if ($active)
+      $active = 'in';
 
-    $return = '<div class="panel panel-' . $type . '"><div class="panel-heading"><h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['collapsibles_count'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">' . $title . '</a></h3></div><div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="panel-collapse collapse ' . $state . '"><div class="panel-body">' . do_shortcode($content) . ' </div></div></div>';
+    $return = '<div class="panel panel-' . $type . '"><div class="panel-heading"><h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['collapsibles_count'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">' . $title . '</a></h3></div><div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="panel-collapse collapse ' . $active . '"><div class="panel-body">' . do_shortcode($content) . ' </div></div></div>';
     return $return;
   }
 
