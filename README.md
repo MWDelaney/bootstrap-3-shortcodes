@@ -382,7 +382,6 @@ Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of the alert | required | success, info, warning, danger | success
 dismissable | If the alert should be dismissable | optional | true, false | false
-strong | Text to display in bold at the beginning | optional | any text | false
 
 [Bootstrap alert documentation](http://getbootstrap.com/components/#alerts)
 

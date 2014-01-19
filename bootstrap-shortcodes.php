@@ -294,14 +294,12 @@ class BoostrapShortcodes {
   function bs_alert($atts, $content = null) {
     extract(shortcode_atts(array(
       "type" => 'success',
-      "strong" => false,
       "dismissable" => false
     ), $atts));
     $return  = '<div class="alert alert-' . $type;
     $return .= ($dismissable) ? ' alert-dismissable' : '';
     $return .= '">';
     $return .= ($dismissable) ? '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' : '';
-    $return .= ($strong) ? '<strong>'.$strong.'</strong>' : '';
     $return .= do_shortcode( $content ) . '</div>';
     return $return;
   }
