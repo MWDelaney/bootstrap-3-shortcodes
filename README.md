@@ -306,6 +306,8 @@ __NOTE: media-object should contain an image, or linked image, inserted using th
 [Bootstrap media objects documentation](http://getbootstrap.com/components/#media)
 
 ### List Groups
+
+#### Basic Example
 	[list-group]
 	  [list-group-item]
 	    …
@@ -318,7 +320,49 @@ __NOTE: media-object should contain an image, or linked image, inserted using th
 	  [/list-group-item]
 	[/list-group]
 
+#### Linked Items
+	[list-group linked="true"]
+	  [list-group-item link="#" active="true"]
+	    …
+	  [/list-group-item]
+	  [list-group-item link="#"]
+	    …
+	  [/list-group-item]
+	  [list-group-item link="#"]
+	    …
+	  [/list-group-item]
+	[/list-group]
+
+#### Custom Content
+	[list-group linked="true"]
+	  [list-group-item link="#" active="true"]
+	    [list-group-item-heading]…[/list-group-item-heading]
+        [list-group-item-text]…[/list-group-item-text]
+	  [/list-group-item]
+	  [list-group-item link="#"]
+	    [list-group-item-heading]…[/list-group-item-heading]
+        [list-group-item-text]…[/list-group-item-text]
+      [/list-group-item]
+	  [list-group-item link="#"]
+	    [list-group-item-heading]…[/list-group-item-heading]
+        [list-group-item-text]…[/list-group-item-text]
+	  [/list-group-item]
+	[/list-group]
+
 #### [list-group] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+linked | Whether this is a linked list group, or a standard one | optional | true, false | false
+
+#### [list-group-item] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+link | The url you want the list item to link to **Must correspond with the "linked" parameter in [list-group]** | optional | any text | false
+
+#### [list-group-item-heading] parameters
+None
+
+#### [list-group-item-text] parameters
 None
 
 [Bootstrap list groups documentation](http://getbootstrap.com/components/#list-group)

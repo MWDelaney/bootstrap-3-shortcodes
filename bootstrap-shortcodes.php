@@ -72,6 +72,8 @@ class BoostrapShortcodes {
     add_shortcode('label', array( $this, 'bs_label' ));
     add_shortcode('list-group', array( $this, 'bs_list_group' ));
     add_shortcode('list-group-item', array( $this, 'bs_list_group_item' ));
+    add_shortcode('list-group-item-heading', array( $this, 'bs_list_group_item_heading' ));
+    add_shortcode('list-group-item-text', array( $this, 'bs_list_group_item_text' ));
     add_shortcode('badge', array( $this, 'bs_badge' ));
     add_shortcode('icon', array( $this, 'bs_icon' ));
     add_shortcode('icon_white', array( $this, 'bs_icon_white' ));
@@ -350,8 +352,13 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_list_group( $atts, $content = null ) {
-
-    return '<ul class="list-group">' . do_shortcode( $content ) . '</ul>';
+    extract(shortcode_atts(array(
+      "linked" => false,
+    ), $atts));
+    $return = ($linked) ? ' <div class="list-group">' : '<ul class="list-group">';
+    $return .= do_shortcode( $content );
+    $return .= ($linked) ? ' </div>' : '</ul>';
+    return $return;
 
   }
 
@@ -363,9 +370,36 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_list_group_item( $atts, $content = null ) {
-
-    return '<li class="list-group-item">' . do_shortcode( $content ) . '</li>';
-
+    extract(shortcode_atts(array(
+      "link" => false,
+      "active" => false
+    ), $atts));
+    $return = ($link) ? '<a href="' . $link . '" ' : '<li ';
+    $return .= 'class="list-group-item ';
+    $return .= ($active) ? 'active' : '';
+    $return .= '">' . do_shortcode( $content );
+    $return .= ($link) ? '</a>' : '</li>';
+    return $return;
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_list_group_item_heading
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_list_group_item_heading( $atts, $content = null ) {
+    return '<h4 class="list-group-item-heading">' . do_shortcode( $content ) . '</h4>';
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_list_group_item_text
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_list_group_item_text( $atts, $content = null ) {
+    return '<p class="list-group-item-text">' . do_shortcode( $content ) . '</p>';
   }
 
   /*--------------------------------------------------------------------------------------
