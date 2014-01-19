@@ -73,6 +73,8 @@ class BoostrapShortcodes {
     add_shortcode('span', array( $this, 'bs_span' ));
     add_shortcode('row', array( $this, 'bs_row' ));
     add_shortcode('column', array( $this, 'bs_column' ));
+    add_shortcode('breadcrumb', array( $this, 'bs_breadcrumb' ));
+    add_shortcode('breadcrumb-item', array( $this, 'bs_breadcrumb_item' ));
     add_shortcode('label', array( $this, 'bs_label' ));
     add_shortcode('list-group', array( $this, 'bs_list_group' ));
     add_shortcode('list-group-item', array( $this, 'bs_list_group_item' ));
@@ -452,6 +454,33 @@ class BoostrapShortcodes {
     return '<p class="list-group-item-text">' . do_shortcode( $content ) . '</p>';
   }
 
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_breadcrumb
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_breadcrumb( $atts, $content = null ) {
+    $return = '<ol class="breadcrumb">'.do_shortcode( $content ).'</ol>';
+    return $return;
+  }    
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_breadcrumb_item
+    *
+    * @author M. W. Delaney
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_breadcrumb_item( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+      "link" => false,
+    ), $atts));
+    $return = '<li><a href="' . $link . '">'.do_shortcode( $content ).'</a></li>';
+    return $return;
+  }
+    
   /*--------------------------------------------------------------------------------------
     *
     * bs_label

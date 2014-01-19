@@ -24,6 +24,7 @@ The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
 * [Icons](#icons)
 * [Button Groups](#button-groups)
 * [Button Dropdowns](#button-dropdowns)
+* [Breadcrumbs](#breadcrumbs)
 * [Labels](#labels)
 * [Badges](#badges)
 * [Jumbotron](#jumbotron)
@@ -251,6 +252,22 @@ None
 
 [Bootstrap button dropdowns documentation](http://getbootstrap.com/components/#btn-dropdowns)
 
+### Breadcrumbs
+	[breadcrumb]
+        [breadcrumb-item link="#"] … [/breadcrumb-item]
+        [breadcrumb-item link="#"] … [/breadcrumb-item]
+        [breadcrumb-item link="#"] … [/breadcrumb-item]
+	[/breadcrumb]
+
+#### [breadcrumb] parameters
+None
+
+#### [breadcrumb-item] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+link | The url you want the breadcrumb-item to link to | optional | any valid link | none
+
+[Bootstrap breadcrumbs documentation](http://getbootstrap.com/components/#breadcrumbs)
 
 ### Labels
 	[label type="success"] … [/label]
