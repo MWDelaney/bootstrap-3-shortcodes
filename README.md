@@ -23,6 +23,7 @@ The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
 ### Components
 * [Icons](#icons)
 * [Button Groups](#button-groups)
+* [Button Dropdowns](#button-dropdowns)
 * [Labels](#labels)
 * [Badges](#badges)
 * [Jumbotron](#jumbotron)
