@@ -177,9 +177,8 @@ class BoostrapShortcodes {
 
   /*--------------------------------------------------------------------------------------
     *
-    * bs_dropdown
+    * bs_button_toolbar
     *
-    * @author M. W. Delaney
     *
     *-------------------------------------------------------------------------------------*/
   function bs_button_toolbar( $atts, $content = null ) {
