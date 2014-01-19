@@ -138,6 +138,7 @@ Parameter | Description | Required | Values | Default
 type | The type of the button | optional | default, primary, success, info, warning, danger, link | default
 size | The size of the button | optional | xs, sm, lg | none
 block | Whether the button should be a block-level button | optional | true, false | false
+dropdown | Whether the button triggers a dropdown menu (see [dropdowns](#dropdowns)) | optional | true, false | false
 xclass | Any extra classes you want to add | optional | any text | none
 link | The url you want the button to link to | optional | any valid link | none
 target | Target for the link | optional | any valid target | none
@@ -193,8 +194,62 @@ Parameter | Description | Required | Values | Default
 size | The size of the button group | optional | xs, sm, lg | none
 justified | Whether button group is justified | optional | true, false | false
 vertical | Whether button group is vertical | optional | true, false | false
+dropup | **Must correspond with the use of [dropdown]** | optional | true, false | false
+
 
 [Bootstrap button groups documentation](http://getbootstrap.com/css/#btn-groups)
+
+### Button Dropdowns
+Button Dropdowns can be accomplished by combining the [button-group] shortcode, the "data" parameters of the [button] shortcode, and [dropdown] shortcode as follows.
+
+#### Single button dropdowns
+    [button-group]
+        [button link="#" dropdown="true" data="toggle, dropdown"] … [caret][/button]
+        [dropdown]
+            [dropdown-item link="#"] … [/dropdown-item]
+            [divider]
+            [dropdown-item link="#"] … [/dropdown-item]
+        [/dropdown]
+    [/button-group]
+
+#### Split button dropdowns
+    [button-group]
+        [button link="#"]Test[/button]
+        [button  dropdown="true" data="toggle, dropdown"][caret][/button]
+        [dropdown]
+            [dropdown-item link="#"]Link #1[/dropdown-item]
+            [divider]
+            [dropdown-item link="#"]Link #2[/dropdown-item]
+        [/dropdown]
+    [/button-group]
+
+#### Dropup variation
+    [button-group dropup="true"]
+        [button link="#"]Test[/button]
+        [button  dropdown="true" data="toggle, dropdown"][caret][/button]
+        [dropdown]
+            [dropdown-item link="#"]Link #1[/dropdown-item]
+            [divider]
+            [dropdown-item link="#"]Link #2[/dropdown-item]
+        [/dropdown]
+    [/button-group]  
+
+#### [dropdown] parameters
+None
+
+#### [dropdown-item] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+link | The url you want the dropdown-item to link to | optional | any valid link | none
+
+#### [caret] parameters
+None
+
+#### [divider] parameters
+None
+
+[Bootstrap button dropdowns documentation](http://getbootstrap.com/components/#btn-dropdowns)
+
 
 ### Labels
 	[label type="success"] … [/label]

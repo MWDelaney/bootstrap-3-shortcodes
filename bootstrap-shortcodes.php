@@ -62,6 +62,10 @@ class BoostrapShortcodes {
 
     add_shortcode('button', array( $this, 'bs_button' ));
     add_shortcode('button-group', array( $this, 'bs_button_group' ));
+    add_shortcode('caret', array( $this, 'bs_caret' ));
+    add_shortcode('dropdown', array( $this, 'bs_dropdown' ));
+    add_shortcode('dropdown-item', array( $this, 'bs_dropdown_item' ));
+    add_shortcode('divider', array( $this, 'bs_dropdown_divider' ));
     add_shortcode('alert', array( $this, 'bs_alert' ));
     add_shortcode('progress', array( $this, 'bs_progress' ));
     add_shortcode('progress-bar', array( $this, 'bs_progress_bar' ));
@@ -117,6 +121,7 @@ class BoostrapShortcodes {
         "type" => false,
         "size" => false,
         "block" => false,
+        "dropdown" => false,
         "link" => '',
         "target" => false,
         "xclass" => false,
@@ -127,13 +132,14 @@ class BoostrapShortcodes {
           $data = explode('|',$data);
           foreach($data as $d):
             $d = explode(',',$d);    
-                $data_props .= 'data-'.$d[0]. '="'.$d[1].'" ';
+                $data_props .= 'data-'.$d[0]. '="'.trim($d[1]).'" ';
           endforeach;
       } else { $data_props = false; }
      $return  =  '<a href="' . $link . '" class="btn';
      $return .= ($type) ? ' btn-' . $type : ' btn-default';
      $return .= ($size) ? ' btn-' . $size : '';
      $return .= ($block) ? ' btn-block' : '';
+     $return .= ($dropdown) ? ' dropdown-toggle' : '';
      $return .= ($xclass) ? ' ' . $xclass : '';
      $return .= '"';
      $return .= ($target) ? ' target="' . $target . '"' : '';
@@ -155,19 +161,63 @@ class BoostrapShortcodes {
      extract(shortcode_atts(array(
         "size" => false,
         "vertical" => false,
-        "justified" => false
+        "justified" => false,
+        "dropup" => false
      ), $atts));
-      if($size) {
-        $classes .= ' btn-group-'.$size;
-      }
-       if($vertical) {
-        $classes .= ' btn-group-vertical';
-      } 
-       if($justified) {
-        $classes .= ' btn-group-justified';
-      }
-    return '<div class="btn-group '.$classes.'">' . do_shortcode( $content ) . '</div>';
+     $classes .= ($size) ? ' btn-group-' . $size : '';
+     $classes .= ($vertical) ? ' btn-group-vertical' : '';
+     $classes .= ($justified) ? ' btn-group-justified' : '';
+     $classes .= ($dropup) ? ' dropup' : '';
+     return '<div class="btn-group '.$classes.'">' . do_shortcode( $content ) . '</div>';
 
+  }
+
+ /*--------------------------------------------------------------------------------------
+    *
+    * bs_caret
+    *
+    * @author Filip Stefansson
+    * @since 1.0
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_caret( $atts, $content = null ) {
+    return '<span class="caret"></span>';
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_dropdown
+    *
+    * @author M. W. Delaney
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_dropdown( $atts, $content = null ) {
+     return '<ul class="dropdown-menu" role="menu">' . do_shortcode( $content ) . '</ul>';
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_dropdown_item
+    *
+    * @author M. W. Delaney
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_dropdown_item( $atts, $content = null ) {
+     extract(shortcode_atts(array(
+        "link" => false,
+     ), $atts));
+     return '<li><a href="'. $link .'">' . do_shortcode( $content ) . '</a></li>';
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_dropdown_divider
+    *
+    * @author M. W. Delaney
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_dropdown_divider( $atts, $content = null ) {
+     return '<li class="divider">' . do_shortcode( $content ) . '</li>';
   }
 
   /*--------------------------------------------------------------------------------------
