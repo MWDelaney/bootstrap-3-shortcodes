@@ -205,7 +205,7 @@ Button Dropdowns can be accomplished by combining the [button-group] shortcode, 
 
 #### Single button dropdowns
     [button-group]
-        [button link="#" dropdown="true" data="toggle, dropdown"] … [caret][/button]
+        [button link="#" dropdown="true" data="toggle,dropdown"] … [caret][/button]
         [dropdown]
             [dropdown-item link="#"] … [/dropdown-item]
             [divider]
@@ -216,7 +216,7 @@ Button Dropdowns can be accomplished by combining the [button-group] shortcode, 
 #### Split button dropdowns
     [button-group]
         [button link="#"]Test[/button]
-        [button  dropdown="true" data="toggle, dropdown"][caret][/button]
+        [button dropdown="true" data="toggle,dropdown"][caret][/button]
         [dropdown]
             [dropdown-item link="#"]Link #1[/dropdown-item]
             [divider]
@@ -227,7 +227,7 @@ Button Dropdowns can be accomplished by combining the [button-group] shortcode, 
 #### Dropup variation
     [button-group dropup="true"]
         [button link="#"]Test[/button]
-        [button  dropdown="true" data="toggle, dropdown"][caret][/button]
+        [button dropdown="true" data="toggle,dropdown"][caret][/button]
         [dropdown]
             [dropdown-item link="#"]Link #1[/dropdown-item]
             [divider]
