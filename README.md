@@ -184,11 +184,29 @@ type | The type of icon you want to display | required | See Bootstrap docs | no
 [Bootstrap Glyphicons documentation](http://getbootstrap.com/components/#glyphicons)
 
 ### Button Groups
+#### Basic example
 	[button-group size="lg" justified="" vertical=""]
         [button link="#"] … [/button]
         [button link="#"] … [/button]
         [button link="#"] … [/button]
 	[/button-group]
+    
+#### Button toolbar
+    [button-toolbar]
+    	[button-group]
+            [button link="#"] … [/button]
+            [button link="#"] … [/button]
+            [button link="#"] … [/button]
+    	[/button-group]
+    	[button-group]
+            [button link="#"] … [/button]
+            [button link="#"] … [/button]
+            [button link="#"] … [/button]
+    	[/button-group]
+    	[button-group]
+            [button link="#"] … [/button]
+    	[/button-group]
+    [/button-toolbar]
 
 #### [button-group] parameters
 Parameter | Description | Required | Values | Default
@@ -198,6 +216,8 @@ justified | Whether button group is justified | optional | true, false | false
 vertical | Whether button group is vertical | optional | true, false | false
 dropup | **Must correspond with the use of [dropdown]** | optional | true, false | false
 
+#### [button-toolbar] parameters
+None
 
 [Bootstrap button groups documentation](http://getbootstrap.com/css/#btn-groups)
 
