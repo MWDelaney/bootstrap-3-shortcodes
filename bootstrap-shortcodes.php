@@ -431,6 +431,7 @@ class BoostrapShortcodes {
       "push_md" => false,
       "push_sm" => false,
       "push_xs" => false,
+      "xclass" => false
     ), $atts));
     $return  =  '<div class="';
     $return .= ($lg) ? 'col-lg-' . $lg . ' ' : '';
@@ -449,6 +450,7 @@ class BoostrapShortcodes {
     $return .= ($push_md) ? 'col-md-push-' . $push_md . ' ' : '';
     $return .= ($push_sm) ? 'col-sm-push-' . $push_sm . ' ' : '';
     $return .= ($push_xs) ? 'col-xs-push-' . $push_xs . ' ' : '';
+    $return .= ($xclass) ? $xclass : '';
     $return .= '">' . do_shortcode( $content ) . '</div>';
 
     return $return;

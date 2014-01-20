@@ -83,6 +83,7 @@ push_xs | Push on extra small screens | optional | 1-12 | false
 push_sm | Push on small screens | optional | 1-12 | false
 push_md | Push on column on medium screens | optional | 1-12 | false
 push_lg | Push on column on large screens | optional | 1-12 | false
+xclass | Any extra classes you want to add | optional | any text | none
 
 [Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
 
