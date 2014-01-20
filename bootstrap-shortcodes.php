@@ -62,14 +62,27 @@ class BoostrapShortcodes {
 
     add_shortcode('button', array( $this, 'bs_button' ));
     add_shortcode('button-group', array( $this, 'bs_button_group' ));
+    add_shortcode('button-toolbar', array( $this, 'bs_button_toolbar' ));
+    add_shortcode('caret', array( $this, 'bs_caret' ));
+    add_shortcode('dropdown', array( $this, 'bs_dropdown' ));
+    add_shortcode('dropdown-item', array( $this, 'bs_dropdown_item' ));
+    add_shortcode('nav', array( $this, 'bs_nav' ));
+    add_shortcode('nav-item', array( $this, 'bs_nav_item' ));
+    add_shortcode('divider', array( $this, 'bs_dropdown_divider' ));
     add_shortcode('alert', array( $this, 'bs_alert' ));
+    add_shortcode('progress', array( $this, 'bs_progress' ));
+    add_shortcode('progress-bar', array( $this, 'bs_progress_bar' ));
     add_shortcode('code', array( $this, 'bs_code' ));
     add_shortcode('span', array( $this, 'bs_span' ));
     add_shortcode('row', array( $this, 'bs_row' ));
     add_shortcode('column', array( $this, 'bs_column' ));
+    add_shortcode('breadcrumb', array( $this, 'bs_breadcrumb' ));
+    add_shortcode('breadcrumb-item', array( $this, 'bs_breadcrumb_item' ));
     add_shortcode('label', array( $this, 'bs_label' ));
     add_shortcode('list-group', array( $this, 'bs_list_group' ));
     add_shortcode('list-group-item', array( $this, 'bs_list_group_item' ));
+    add_shortcode('list-group-item-heading', array( $this, 'bs_list_group_item_heading' ));
+    add_shortcode('list-group-item-text', array( $this, 'bs_list_group_item_text' ));
     add_shortcode('badge', array( $this, 'bs_badge' ));
     add_shortcode('icon', array( $this, 'bs_icon' ));
     add_shortcode('icon_white', array( $this, 'bs_icon_white' ));
@@ -87,8 +100,10 @@ class BoostrapShortcodes {
     add_shortcode('media-object', array( $this, 'bs_media_object' ));
     add_shortcode('media-body', array( $this, 'bs_media_body' ));
     add_shortcode('jumbotron', array( $this, 'bs_jumbotron' ));
+    add_shortcode('page-header', array( $this, 'bs_page_header' ));
     add_shortcode('lead', array( $this, 'bs_lead' ));
     add_shortcode('emphasis', array( $this, 'bs_emphasis' ));
+    add_shortcode('img', array( $this, 'bs_img' ));
     add_shortcode('thumbnail', array( $this, 'bs_thumbnail' ));
     add_shortcode('responsive', array( $this, 'bs_responsive' ));
     add_shortcode('modal', array( $this, 'bs_modal' ));
@@ -111,6 +126,7 @@ class BoostrapShortcodes {
         "type" => false,
         "size" => false,
         "block" => false,
+        "dropdown" => false,
         "link" => '',
         "target" => false,
         "xclass" => false,
@@ -121,13 +137,14 @@ class BoostrapShortcodes {
           $data = explode('|',$data);
           foreach($data as $d):
             $d = explode(',',$d);    
-                $data_props .= 'data-'.$d[0]. '="'.$d[1].'" ';
+                $data_props .= 'data-'.$d[0]. '="'.trim($d[1]).'" ';
           endforeach;
       } else { $data_props = false; }
      $return  =  '<a href="' . $link . '" class="btn';
      $return .= ($type) ? ' btn-' . $type : ' btn-default';
      $return .= ($size) ? ' btn-' . $size : '';
      $return .= ($block) ? ' btn-block' : '';
+     $return .= ($dropdown) ? ' dropdown-toggle' : '';
      $return .= ($xclass) ? ' ' . $xclass : '';
      $return .= '"';
      $return .= ($target) ? ' target="' . $target . '"' : '';
@@ -149,21 +166,123 @@ class BoostrapShortcodes {
      extract(shortcode_atts(array(
         "size" => false,
         "vertical" => false,
-        "justified" => false
+        "justified" => false,
+        "dropup" => false
      ), $atts));
-      if($size) {
-        $classes .= ' btn-group-'.$size;
-      }
-       if($vertical) {
-        $classes .= ' btn-group-vertical';
-      } 
-       if($justified) {
-        $classes .= ' btn-group-justified';
-      }
-    return '<div class="btn-group '.$classes.'">' . do_shortcode( $content ) . '</div>';
-
+     $classes .= ($size) ? ' btn-group-' . $size : '';
+     $classes .= ($vertical) ? ' btn-group-vertical' : '';
+     $classes .= ($justified) ? ' btn-group-justified' : '';
+     $classes .= ($dropup) ? ' dropup' : '';
+     $return = '<div class="btn-group '.$classes.'">' . do_shortcode( $content ) . '</div>';
+      return $return;
   }
 
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_button_toolbar
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_button_toolbar( $atts, $content = null ) {
+     $return = '<div class="btn-toolbar" role="toolbar">' . do_shortcode( $content ) . '</div>';
+     return $return;
+  }    
+    
+ /*--------------------------------------------------------------------------------------
+    *
+    * bs_caret
+    *
+    * @author Filip Stefansson
+    * @since 1.0
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_caret( $atts, $content = null ) {
+    $return = '<span class="caret"></span>';
+    return $return;
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_dropdown
+    *
+    * @author M. W. Delaney
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_dropdown( $atts, $content = null ) {
+     $return = '<ul class="dropdown-menu" role="menu">' . do_shortcode( $content ) . '</ul>';
+     return $return;
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_dropdown_item
+    *
+    * @author M. W. Delaney
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_dropdown_item( $atts, $content = null ) {
+     extract(shortcode_atts(array(
+        "link" => false,
+     ), $atts));
+     $return = '<li><a href="'. $link .'">' . do_shortcode( $content ) . '</a></li>';
+     return $return;
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_dropdown_divider
+    *
+    * @author M. W. Delaney
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_dropdown_divider( $atts, $content = null ) {
+     $return = '<li class="divider">' . do_shortcode( $content ) . '</li>';
+     return $return;
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_nav
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_nav( $atts, $content = null ) {
+     extract(shortcode_atts(array(
+        "type" => 'tabs',
+        "stacked" => false,
+        "justified" => false,
+     ), $atts));
+     $classes = 'nav nav-' . $type;
+     $classes .= ($stacked) ? ' nav-stacked' : '';
+     $classes .= ($justified) ? ' nav-justified' : '';
+     $return = '<ul class="'.$classes.'">' . do_shortcode( $content ) . '</ul>';
+     return $return;
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_nav_item
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_nav_item( $atts, $content = null ) {
+     extract(shortcode_atts(array(
+        "link" => false,
+        "active" => false,
+        "disabled" => false,
+        "dropdown" => false,
+     ), $atts));
+     $return  =  '<li class="';
+     $return .= ($dropdown) ? ' dropdown' : '';
+     $return .= ($active) ? ' active' : '';
+     $return .= ($disabled) ? ' disabled' : '';
+     $return .= '"><a href="' . $link . '"';
+     $return .= ($dropdown) ? ' class="dropdown-toggle" data-toggle="dropdown"' : '';
+     $return .= ($dropdown) ? '">' . str_replace("<ul", "</a><ul", do_shortcode( $content )) : '">' . do_shortcode( $content ) . '</a>';
+     $return .= '</li>';
+     return $return;
+  }
+    
   /*--------------------------------------------------------------------------------------
     *
     * bs_alert
@@ -175,20 +294,52 @@ class BoostrapShortcodes {
   function bs_alert($atts, $content = null) {
     extract(shortcode_atts(array(
       "type" => 'success',
-      "strong" => false,
       "dismissable" => false
     ), $atts));
     $return  = '<div class="alert alert-' . $type;
     $return .= ($dismissable) ? ' alert-dismissable' : '';
     $return .= '">';
     $return .= ($dismissable) ? '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' : '';
-    $return .= ($strong) ? '<strong>'.$strong.'</strong>' : '';
     $return .= do_shortcode( $content ) . '</div>';
     return $return;
   }
 
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_progress
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_progress($atts, $content = null) {
+    extract(shortcode_atts(array(
+      "striped" => false,
+      "animated" => false,
+    ), $atts));
+    $return  =  '<div class="progress ';
+    $return .= ($striped) ? 'progress-striped ' : '';
+    $return .= ($animated) ? 'active' : '';
+    $return .= '">' . do_shortcode( $content ) . '</div>';
+    return $return;
+  }
 
-
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_progress_bar
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_progress_bar($atts, $content = null) {
+    extract(shortcode_atts(array(
+      "type" => false,
+      "percent" => false,
+    ), $atts));
+    $return  =  '<div class="progress-bar ';
+    $return .= ($type) ? ' progress-bar-' . $type : '';
+    $return .= '" role="progressbar" aria-valuenow="'. $percent .'" aria-valuemin="0" aria-valuemax="100" style="width: '. $percent .'%">
+                    <span class="sr-only">'. $percent .'% Complete</span>
+                </div>';
+    return $return;
+  }
 
   /*--------------------------------------------------------------------------------------
     *
@@ -230,8 +381,8 @@ class BoostrapShortcodes {
       "size" => 'size'
     ), $atts));
 
-    return '<div class="span' . $size . '">' . do_shortcode( $content ) . '</div>';
-
+    $return = '<div class="span' . $size . '">' . do_shortcode( $content ) . '</div>';
+    return $return;
   }
 
 
@@ -247,8 +398,8 @@ class BoostrapShortcodes {
     *-------------------------------------------------------------------------------------*/
   function bs_row( $atts, $content = null ) {
 
-    return '<div class="row">' . do_shortcode( $content ) . '</div>';
-
+    $return = '<div class="row">' . do_shortcode( $content ) . '</div>';
+    return $return;
   }
 
 
@@ -280,6 +431,7 @@ class BoostrapShortcodes {
       "push_md" => false,
       "push_sm" => false,
       "push_xs" => false,
+      "xclass" => false
     ), $atts));
     $return  =  '<div class="';
     $return .= ($lg) ? 'col-lg-' . $lg . ' ' : '';
@@ -298,6 +450,7 @@ class BoostrapShortcodes {
     $return .= ($push_md) ? 'col-md-push-' . $push_md . ' ' : '';
     $return .= ($push_sm) ? 'col-sm-push-' . $push_sm . ' ' : '';
     $return .= ($push_xs) ? 'col-xs-push-' . $push_xs . ' ' : '';
+    $return .= ($xclass) ? $xclass : '';
     $return .= '">' . do_shortcode( $content ) . '</div>';
 
     return $return;
@@ -311,8 +464,13 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_list_group( $atts, $content = null ) {
-
-    return '<ul class="list-group">' . do_shortcode( $content ) . '</ul>';
+    extract(shortcode_atts(array(
+      "linked" => false,
+    ), $atts));
+    $return = ($linked) ? ' <div class="list-group">' : '<ul class="list-group">';
+    $return .= do_shortcode( $content );
+    $return .= ($linked) ? ' </div>' : '</ul>';
+    return $return;
 
   }
 
@@ -324,11 +482,67 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_list_group_item( $atts, $content = null ) {
-
-    return '<li class="list-group-item">' . do_shortcode( $content ) . '</li>';
-
+    extract(shortcode_atts(array(
+      "link" => false,
+      "active" => false
+    ), $atts));
+    $return = ($link) ? '<a href="' . $link . '" ' : '<li ';
+    $return .= 'class="list-group-item ';
+    $return .= ($active) ? 'active' : '';
+    $return .= '">' . do_shortcode( $content );
+    $return .= ($link) ? '</a>' : '</li>';
+    return $return;
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_list_group_item_heading
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_list_group_item_heading( $atts, $content = null ) {
+    $return = '<h4 class="list-group-item-heading">' . do_shortcode( $content ) . '</h4>';
+    return $return;
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_list_group_item_text
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_list_group_item_text( $atts, $content = null ) {
+    $return = '<p class="list-group-item-text">' . do_shortcode( $content ) . '</p>';
+    return $return;
   }
 
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_breadcrumb
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_breadcrumb( $atts, $content = null ) {
+    $return = '<ol class="breadcrumb">'.do_shortcode( $content ).'</ol>';
+    return $return;
+  }    
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_breadcrumb_item
+    *
+    * @author M. W. Delaney
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_breadcrumb_item( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+      "link" => false,
+    ), $atts));
+    $return = '<li><a href="' . $link . '">'.do_shortcode( $content ).'</a></li>';
+    return $return;
+  }
+    
   /*--------------------------------------------------------------------------------------
     *
     * bs_label
@@ -342,8 +556,8 @@ class BoostrapShortcodes {
       "type" => 'default'
     ), $atts));
 
-    return '<span class="label label-' . $type . '">' . do_shortcode( $content ) . '</span>';
-
+    $return = '<span class="label label-' . $type . '">' . do_shortcode( $content ) . '</span>';
+    return $return;
   }
 
 
@@ -362,8 +576,8 @@ class BoostrapShortcodes {
       "right" => false
     ), $atts));
     $right = ($right) ? " pull-right" : "";
-    return '<span class="badge' . $right . '">' . do_shortcode( $content ) . '</span>';
-
+    $return = '<span class="badge' . $right . '">' . do_shortcode( $content ) . '</span>';
+    return $return;
   }
 
 
@@ -382,8 +596,8 @@ class BoostrapShortcodes {
       "type" => 'type',
     ), $atts));
 
-    return '<span class="glyphicon glyphicon-' . $type . '"></span>';
-
+    $return = '<span class="glyphicon glyphicon-' . $type . '"></span>';
+    return $return;
   }
 
   /*--------------------------------------------------------------------------------------
@@ -477,7 +691,8 @@ class BoostrapShortcodes {
         $size = ' well-'.$size;
       }
 
-      return '<div class="well' . $size . '">' . do_shortcode( $content ) . '</div>';
+    $return = '<div class="well' . $size . '">' . do_shortcode( $content ) . '</div>';
+    return $return;
     }
 
   /*--------------------------------------------------------------------------------------
@@ -497,8 +712,8 @@ class BoostrapShortcodes {
     if($footer) {
         $footer = '<div class="panel-footer">' . $footer . '</div>';
       }
-    return '<div class="panel panel-' . $type . '"><div class="panel-heading"><h3 class="panel-title">' . $title . '</h3></div><div class="panel-body">' . do_shortcode( $content ) . '</div>' . $footer . '</div>';
-
+    $return = '<div class="panel panel-' . $type . '"><div class="panel-heading"><h3 class="panel-title">' . $title . '</h3></div><div class="panel-body">' . do_shortcode( $content ) . '</div>' . $footer . '</div>';
+    return $return;
   }
 
   /*--------------------------------------------------------------------------------------
@@ -527,31 +742,31 @@ class BoostrapShortcodes {
     $tab_titles = array();
     if( isset($matches[1]) ){ $tab_titles = $matches[1]; }
 
-    $output = '';
+    $return = '';
 
     if( count($tab_titles) ){
-      $output .= '<ul class="nav ' . $class . '" id="custom-tabs-'. rand(1, 100) .'">';
+      $return .= '<ul class="nav ' . $class . '" id="custom-tabs-'. rand(1, 100) .'">';
 
       $i = 0;
       foreach( $tab_titles as $tab ){
         if($i == 0)
-          $output .= '<li class="active">';
+          $return .= '<li class="active">';
         else
-          $output .= '<li>';
+          $return .= '<li>';
 
-        $output .= '<a href="#custom-tab-' . $GLOBALS['tabs_count'] . '-' . sanitize_title( $tab[0] ) . '"  data-toggle="tab">' . $tab[0] . '</a></li>';
+        $return .= '<a href="#custom-tab-' . $GLOBALS['tabs_count'] . '-' . sanitize_title( $tab[0] ) . '"  data-toggle="tab">' . $tab[0] . '</a></li>';
         $i++;
       }
 
-        $output .= '</ul>';
-        $output .= '<div class="tab-content">';
-        $output .= do_shortcode( $content );
-        $output .= '</div>';
+        $return .= '</ul>';
+        $return .= '<div class="tab-content">';
+        $return .= do_shortcode( $content );
+        $return .= '</div>';
     } else {
-      $output .= do_shortcode( $content );
+      $return .= do_shortcode( $content );
     }
 
-    return $output;
+    return $return;
   }
 
 
@@ -583,7 +798,8 @@ class BoostrapShortcodes {
     $defaults = array( 'title' => 'Tab');
     extract( shortcode_atts( $defaults, $atts ) );
 
-    return '<div id="custom-tab-' . $GLOBALS['tabs_count'] . '-'. sanitize_title( $title ) .'" class="tab-pane ' . $state . '">'. do_shortcode( $content ) .'</div>';
+    $return = '<div id="custom-tab-' . $GLOBALS['tabs_count'] . '-'. sanitize_title( $title ) .'" class="tab-pane ' . $state . '">'. do_shortcode( $content ) .'</div>';
+    return $return;
   }
 
 
@@ -613,17 +829,17 @@ class BoostrapShortcodes {
     $tab_titles = array();
     if( isset($matches[1]) ){ $tab_titles = $matches[1]; }
 
-    $output = '';
+    $return = '';
 
     if( count($tab_titles) ){
-      $output .= '<div class="panel-group" id="accordion-' . $GLOBALS['collapsibles_count'] . '">';
-      $output .= do_shortcode( $content );
-      $output .= '</div>';
+      $return .= '<div class="panel-group" id="accordion-' . $GLOBALS['collapsibles_count'] . '">';
+      $return .= do_shortcode( $content );
+      $return .= '</div>';
     } else {
-      $output .= do_shortcode( $content );
+      $return .= do_shortcode( $content );
     }
 
-    return $output;
+    return $return;
   }
 
 
@@ -647,13 +863,14 @@ class BoostrapShortcodes {
     extract(shortcode_atts(array(
       "title" => '',
       "type" => 'default',
-      "state" => false
+      "active" => false
     ), $atts));
 
-    if ($state == "active")
-      $state = 'in';
+    if ($active)
+      $active = 'in';
 
-    return '<div class="panel panel-' . $type . '"><div class="panel-heading"><h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['collapsibles_count'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">' . $title . '</a></h3></div><div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="panel-collapse collapse ' . $state . '"><div class="panel-body">' . do_shortcode($content) . ' </div></div></div>';
+    $return = '<div class="panel panel-' . $type . '"><div class="panel-heading"><h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['collapsibles_count'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">' . $title . '</a></h3></div><div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="panel-collapse collapse ' . $active . '"><div class="panel-body">' . do_shortcode($content) . ' </div></div></div>';
+    return $return;
   }
 
 
@@ -748,7 +965,8 @@ function bs_media( $atts, $content = null ) {
 	   'title' => false,
     );
     extract( shortcode_atts( $defaults, $atts ) );
-    return '<div class="media">' . do_shortcode( $content ) . '</div>';
+    $return = '<div class="media">' . do_shortcode( $content ) . '</div>';
+    return $return;
   }
 
 function bs_media_object( $atts, $content = null ) {
@@ -798,13 +1016,47 @@ function bs_media_body( $atts, $content = null ) {
 
   /*--------------------------------------------------------------------------------------
     *
+    * bs_page_header
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_page_header( $atts, $content = null ) {
+    $classes = "page-header";
+    $dom = new DOMDocument;
+    $dom->loadXML($content);
+    $hasHeader = $dom->getElementsByTagName('h1'); 
+
+    if($hasHeader->length == 0) {
+        
+        $wrapper = $dom->createElement('div');
+        $dom->appendChild($wrapper);
+        
+        $header = $dom->createElement('h1', $content);
+        $wrapper->appendChild($header);
+
+    }
+    else {
+        $new_root = $dom->createElement('div');
+        $new_root->appendChild($dom->documentElement);
+        $dom->appendChild($new_root);
+    }
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+
+    $return = $dom->saveXML();
+    
+    return $return;
+
+  } 
+    
+  /*--------------------------------------------------------------------------------------
+    *
     * bs_lead
     *
     *
     *-------------------------------------------------------------------------------------*/
   function bs_lead( $atts, $content = null ) {
-    return '<p class="lead">' . do_shortcode( $content ) . '</p>';
-
+    $return = '<p class="lead">' . do_shortcode( $content ) . '</p>';
+    return $return;
   }
 
   /*--------------------------------------------------------------------------------------
@@ -817,10 +1069,33 @@ function bs_media_body( $atts, $content = null ) {
     extract(shortcode_atts(array(
       "type" => 'muted'
     ), $atts));
-    return '<p class="text-' . $type . '">' . do_shortcode( $content ) . '</p>';
+    $return = '<span class="text-' . $type . '">' . do_shortcode( $content ) . '</span>';
+    return $return;
+  }
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_img
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+function bs_img( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+      "type" => false,
+      "responsive" => false,
+    ), $atts));
+    $classes .= ($type) ? 'img-' . $type . ' ' : '';
+    $classes .= ($responsive) ? ' img-responsive' : '';   
+    $dom = new DOMDocument;
+    $dom->loadXML($content);
+    foreach($dom->getElementsByTagName('img') as $image) { 
+        $image->setAttribute('class', $image->getAttribute('class') . ' ' . $classes);
+    } 
+    $return = $dom->saveXML();
+    
+    return $return;
 
   }
-
+    
   /*--------------------------------------------------------------------------------------
     *
     * bs_thumbnail
@@ -922,8 +1197,8 @@ function bs_media_body( $atts, $content = null ) {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_modal_footer( $atts, $content = null ) {
-    return '<div class="modal-footer">' . do_shortcode( $content ) . '</div>';
-
+    $return = '<div class="modal-footer">' . do_shortcode( $content ) . '</div>';
+    return $return;
   }
 
 }

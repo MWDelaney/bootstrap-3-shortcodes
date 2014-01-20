@@ -17,16 +17,22 @@ The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
 * [Code](#code)
 * [Tables](#tables)
 * [Buttons](#buttons)
+* [Images](#images)
 * [Responsive utilities](#responsive-utilities)
 
 ### Components
 * [Icons](#icons)
 * [Button Groups](#button-groups)
+* [Button Dropdowns](#button-dropdowns)
+* [Navs](#navs)
+* [Breadcrumbs](#breadcrumbs)
 * [Labels](#labels)
 * [Badges](#badges)
 * [Jumbotron](#jumbotron)
+* [Page Header](#page-header)
 * [Thumbnails](#thumbnails)
 * [Alerts](#alerts)
+* [Progress Bars](#progress-bars)
 * [Media Objects](#media-objects)
 * [List Groups](#list-groups)
 * [Panels](#panels)
@@ -77,6 +83,7 @@ push_xs | Push on extra small screens | optional | 1-12 | false
 push_sm | Push on small screens | optional | 1-12 | false
 push_md | Push on column on medium screens | optional | 1-12 | false
 push_lg | Push on column on large screens | optional | 1-12 | false
+xclass | Any extra classes you want to add | optional | any text | none
 
 [Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
 
@@ -111,30 +118,9 @@ scrollable | Set a max height of 350px and provide a scroll bar. Not usable with
 
 ### Tables
 	[table-wrap bordered="true" striped="true"]
-        <table>
-            <tbody>
-                <tr>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
-                </tr>
-                <tr>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                </tr>
-                <tr>
-                    <td>Data 3</td>
-                    <td>Data 4</td>
-                </tr>
-                <tr>
-                    <td>Data 5</td>
-                    <td>Data 6</td>
-                </tr>
-                <tr>
-                    <td>Data 7</td>
-                    <td>Data 8</td>
-                </tr>
-            </tbody>
-        </table>
+        
+        Standard HTML table code goes here.
+        
     [/table-wrap]
 
 #### [table-wrap] parameters
@@ -156,12 +142,25 @@ Parameter | Description | Required | Values | Default
 type | The type of the button | optional | default, primary, success, info, warning, danger, link | default
 size | The size of the button | optional | xs, sm, lg | none
 block | Whether the button should be a block-level button | optional | true, false | false
+dropdown | Whether the button triggers a dropdown menu (see [dropdowns](#dropdowns)) | optional | true, false | false
 xclass | Any extra classes you want to add | optional | any text | none
 link | The url you want the button to link to | optional | any valid link | none
 target | Target for the link | optional | any valid target | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example below). | optional | any text | none
 
 [Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
+
+### Images
+	[img type="circle" responsive="true"] … [/img]
+
+Wrap any number of HTML image tags or images inserted via the WordPress media manager.
+#### [img] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The effect to apply to wrapped images | optional | rounded, circle, thumbnail | false
+responsive | Make the wrapped images responsive | optional | true, false | false
+
+[Bootstrap images documentation](http://getbootstrap.com/css/#images)
 
 ### Responsive Utilities
 	[responsive visible="sm xs" hidden="lg"] … [/responsive]
@@ -187,11 +186,29 @@ type | The type of icon you want to display | required | See Bootstrap docs | no
 [Bootstrap Glyphicons documentation](http://getbootstrap.com/components/#glyphicons)
 
 ### Button Groups
+#### Basic example
 	[button-group size="lg" justified="" vertical=""]
         [button link="#"] … [/button]
         [button link="#"] … [/button]
         [button link="#"] … [/button]
 	[/button-group]
+    
+#### Button toolbar
+    [button-toolbar]
+    	[button-group]
+            [button link="#"] … [/button]
+            [button link="#"] … [/button]
+            [button link="#"] … [/button]
+    	[/button-group]
+    	[button-group]
+            [button link="#"] … [/button]
+            [button link="#"] … [/button]
+            [button link="#"] … [/button]
+    	[/button-group]
+    	[button-group]
+            [button link="#"] … [/button]
+    	[/button-group]
+    [/button-toolbar]
 
 #### [button-group] parameters
 Parameter | Description | Required | Values | Default
@@ -199,8 +216,115 @@ Parameter | Description | Required | Values | Default
 size | The size of the button group | optional | xs, sm, lg | none
 justified | Whether button group is justified | optional | true, false | false
 vertical | Whether button group is vertical | optional | true, false | false
+dropup | **Must correspond with the use of [dropdown]** | optional | true, false | false
+
+#### [button-toolbar] parameters
+None
 
 [Bootstrap button groups documentation](http://getbootstrap.com/css/#btn-groups)
+
+### Button Dropdowns
+Button Dropdowns can be accomplished by combining the [button-group] shortcode, the "data" parameters of the [button] shortcode, and [dropdown] shortcode as follows.
+
+#### Single button dropdowns
+    [button-group]
+        [button link="#" dropdown="true" data="toggle,dropdown"] … [caret][/button]
+        [dropdown]
+            [dropdown-item link="#"] … [/dropdown-item]
+            [divider]
+            [dropdown-item link="#"] … [/dropdown-item]
+        [/dropdown]
+    [/button-group]
+
+#### Split button dropdowns
+    [button-group]
+        [button link="#"] … [/button]
+        [button dropdown="true" data="toggle,dropdown"][caret][/button]
+        [dropdown]
+            [dropdown-item link="#"] … [/dropdown-item]
+            [divider]
+            [dropdown-item link="#"] … [/dropdown-item]
+        [/dropdown]
+    [/button-group]
+
+#### Dropup variation
+    [button-group dropup="true"]
+        [button link="#"] … [/button]
+        [button dropdown="true" data="toggle,dropdown"][caret][/button]
+        [dropdown]
+            [dropdown-item link="#"] … [/dropdown-item]
+            [divider]
+            [dropdown-item link="#"] … [/dropdown-item]
+        [/dropdown]
+    [/button-group]  
+
+#### [dropdown] parameters
+None
+
+#### [dropdown-item] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+link | The url you want the dropdown-item to link to | optional | any valid link | none
+
+#### [caret] parameters
+None
+
+#### [divider] parameters
+None
+
+[Bootstrap button dropdowns documentation](http://getbootstrap.com/components/#btn-dropdowns)
+
+### Navs
+    [nav type="pills"]
+        [nav-item link="#"] … [/nav-item]
+        [nav-item link="#"] … [/nav-item]
+        [nav-item link="#"] … [/nav-item]
+    [/nav]
+
+#### Nav with dropdowns
+    [nav type="pills"]
+        [nav-item link="#" active="true"] … [/nav-item]
+        [nav-item dropdown="true" link="#"] … [caret]
+            [dropdown]
+                [dropdown-item link="#"] … [/dropdown-item]
+                [dropdown-item link="#"] … [/dropdown-item]
+            [/dropdown]
+        [/nav-item]
+    [/nav]
+
+#### [nav] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of nav | required | tabs, pills | tabs
+stacked | Whether the nav is stacked (should be used with "pills" type | optional | true, false | false
+justified | Whether the nav is justified | optional | true, false | false
+
+#### [nav-item] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+link | The url you want the dropdown-item to link to | optional | any valid link | none
+active | Whether the item has the "active" style applied | optional | true, false | false
+disabled | Whether the item is disabled | optional | true, false | false
+
+[Bootstrap button navs documentation](http://getbootstrap.com/components/#nav)
+
+
+### Breadcrumbs
+	[breadcrumb]
+        [breadcrumb-item link="#"] … [/breadcrumb-item]
+        [breadcrumb-item link="#"] … [/breadcrumb-item]
+        [breadcrumb-item link="#"] … [/breadcrumb-item]
+	[/breadcrumb]
+
+#### [breadcrumb] parameters
+None
+
+#### [breadcrumb-item] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+link | The url you want the breadcrumb-item to link to | optional | any valid link | none
+
+[Bootstrap breadcrumbs documentation](http://getbootstrap.com/components/#breadcrumbs)
 
 ### Labels
 	[label type="success"] … [/label]
@@ -232,6 +356,15 @@ title | The jumbotron title | optional | Any text | none
 
 [Bootstrap jumbotron documentation](http://getbootstrap.com/components/#jumbotron)
 
+### Page Header
+    [page-header] … [/page-header]
+
+Automatically inserts H1 tag if not present
+#### [page-header] parameters
+None
+
+[Bootstrap page-header documentation](http://getbootstrap.com/components/#page-header)
+
 ### Thumbnails
     [thumbnail] … [/thumbnail]
     [thumbnail] … [/thumbnail]
@@ -250,9 +383,29 @@ Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of the alert | required | success, info, warning, danger | success
 dismissable | If the alert should be dismissable | optional | true, false | false
-strong | Text to display in bold at the beginning | optional | any text | false
 
 [Bootstrap alert documentation](http://getbootstrap.com/components/#alerts)
+
+### Progress Bars
+	[progress striped="true"]
+        [progress-bar percent="50"]
+        [progress-bar percent="25" type="success"]
+    [/progress]
+
+#### [progress] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+striped | Whether enclosed progress bars will be striped | optional | true, false | false
+animated | Whether enclosed progress bars will be animated | optional | true, false | false
+
+#### [progress-bar] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+percent | The percentage amount to show in the progress bar | required | any number between 0 and 100 | false
+type | The type of the progress bar | optional | default, primary, success, info, warning, danger  | default
+
+[Bootstrap progress bars documentation](http://getbootstrap.com/components/#progress)
+
 
 ### Media Objects
     [media]
@@ -282,6 +435,8 @@ __NOTE: media-object should contain an image, or linked image, inserted using th
 [Bootstrap media objects documentation](http://getbootstrap.com/components/#media)
 
 ### List Groups
+
+#### Basic Example
 	[list-group]
 	  [list-group-item]
 	    …
@@ -294,7 +449,50 @@ __NOTE: media-object should contain an image, or linked image, inserted using th
 	  [/list-group-item]
 	[/list-group]
 
+#### Linked Items
+	[list-group linked="true"]
+	  [list-group-item link="#" active="true"]
+	    …
+	  [/list-group-item]
+	  [list-group-item link="#"]
+	    …
+	  [/list-group-item]
+	  [list-group-item link="#"]
+	    …
+	  [/list-group-item]
+	[/list-group]
+
+#### Custom Content
+	[list-group linked="true"]
+	  [list-group-item link="#" active="true"]
+	    [list-group-item-heading]…[/list-group-item-heading]
+        [list-group-item-text]…[/list-group-item-text]
+	  [/list-group-item]
+	  [list-group-item link="#"]
+	    [list-group-item-heading]…[/list-group-item-heading]
+        [list-group-item-text]…[/list-group-item-text]
+      [/list-group-item]
+	  [list-group-item link="#"]
+	    [list-group-item-heading]…[/list-group-item-heading]
+        [list-group-item-text]…[/list-group-item-text]
+	  [/list-group-item]
+	[/list-group]
+
 #### [list-group] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+linked | Whether this is a linked list group, or a standard one | optional | true, false | false
+
+#### [list-group-item] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+link | The url you want the list item to link to **Must correspond with the "linked" parameter in [list-group]** | optional | any text | false
+active | Whether the item has the "active" style applied | optional | true, false | false
+
+#### [list-group-item-heading] parameters
+None
+
+#### [list-group-item-text] parameters
 None
 
 [Bootstrap list groups documentation](http://getbootstrap.com/components/#list-group)
@@ -394,7 +592,7 @@ Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 title | The title of the collapsible, visible when collapsed | required | any text | false
 type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
-state | Whether the tab is expanded at load time | optional | active | false
+active | Whether the tab is expanded at load time | optional | true, false | false
 
 [Bootstrap collapse documentation](http://getbootstrap.com/javascript/#collapse)
 
