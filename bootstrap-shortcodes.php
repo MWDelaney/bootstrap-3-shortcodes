@@ -400,8 +400,8 @@ class BoostrapShortcodes {
 	 extract(shortcode_atts(array(
       "xclass" => false
     ), $atts));
-    $return  =  '<div class="row ';
-    $return .= ($xclass) ? $xclass : '';
+    $return  =  '<div class="row';
+    $return .= ($xclass) ? ' '.$xclass : '';
     $return .= '">' . do_shortcode( $content ) . '</div>';
     return $return;
   }
