@@ -66,7 +66,9 @@ The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
 None
 
 #### [row] parameters
-None
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
 
 #### [column] parameters
 Parameter | Description | Required | Values | Default
