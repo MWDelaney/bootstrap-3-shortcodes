@@ -25,7 +25,7 @@ function add_bootstrap_button($context) {
   $title = 'Bootstrap Shortcodes Help';
 
   $context .= "<a title='{$title}'
-    href='#TB_inline?width=640&inlineId={$popup_url}&width=640&height=550' class='thickbox button add_media' style='padding-left: 0px; padding-right: 0px;' title='Bootstrap Shortcodes Help'>
+    href='#TB_inline?&width=640&height=550&inlineId={$popup_url}' class='thickbox button add_media' style='padding-left: 0px; padding-right: 0px;' title='Bootstrap Shortcodes Help'>
     <img src='{$img}' style='height: 20px; position: relative; top: -2px;'></a>";
   
   return $context;
