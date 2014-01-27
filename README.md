@@ -51,6 +51,16 @@ The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
 ## CSS
 
 ### Grid
+	  [row]
+	    [column md="6"]
+	      …
+	    [/column]
+	    [column md="6"]
+	      …
+	    [/column]
+	  [/row]
+    
+The container component is also supported in case your theme doesn't incude a container.
 	[container]
 	  [row]
 	    [column md="6"]
