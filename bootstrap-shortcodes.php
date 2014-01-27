@@ -1159,17 +1159,8 @@ function bs_img( $atts, $content = null ) {
             $classes .= 'hidden-'.$h.' ';
           endforeach;
       }
-    $dom = new DOMDocument;
-    $dom->loadXML($content);
-    if(!$dom->documentElement) {
-        $element = $dom->createElement('p', $content);
-        $dom->appendChild($element);
-    }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
-
-    $return = $dom->saveXML();
-    
-    return $return;
+      $return = '<span class="' . $classes . '">' . do_shortcode($content) . '</span>';
+      return $return;
 
   }
 
