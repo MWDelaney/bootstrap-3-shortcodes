@@ -134,7 +134,7 @@ class BoostrapShortcodes {
         "title" => false,
         "data" => false
      ), $atts));
-      $data_props = parse_data_attributes($data);
+      $data_props = $this->parse_data_attributes($data);
      $return  =  '<a href="' . $link . '" class="btn';
      $return .= ($type) ? ' btn-' . $type : ' btn-default';
      $return .= ($size) ? ' btn-' . $size : '';
@@ -166,7 +166,7 @@ class BoostrapShortcodes {
 		"xclass" => false,
         "data" => false
      ), $atts));
-	  $data_props = parse_data_attributes($data);
+	  $data_props = $this->parse_data_attributes($data);
      $classes .= ($size) ? ' btn-group-' . $size : '';
      $classes .= ($vertical) ? ' btn-group-vertical' : '';
      $classes .= ($justified) ? ' btn-group-justified' : '';
@@ -189,7 +189,7 @@ class BoostrapShortcodes {
 		"xclass" => false,
         "data" => false
      ), $atts));
-	  $data_props = parse_data_attributes($data);
+	  $data_props = $this->parse_data_attributes($data);
      $return = '<div class="btn-toolbar';
 	 $return .= ($xclass) ? ' ' . $xclass : '';
 	 $return .= '"';
@@ -211,7 +211,7 @@ class BoostrapShortcodes {
 		"xclass" => false,
         "data" => false
      ), $atts));
-	  $data_props = parse_data_attributes($data);
+	  $data_props = $this->parse_data_attributes($data);
     $return = '<span class="caret';
 	$return .= ($xclass) ? ' ' . $xclass : '';
 	$return .= '"';
@@ -233,7 +233,7 @@ class BoostrapShortcodes {
 		"xclass" => false,
         "data" => false
     ), $atts));
-	  $data_props = parse_data_attributes($data);
+	  $data_props = $this->parse_data_attributes($data);
     $return = '<div class="container';
 	$return .= ($xclass) ? ' ' . $xclass : '';
 	$return .= '"';
@@ -254,7 +254,7 @@ class BoostrapShortcodes {
 		"xclass" => false,
         "data" => false
      ), $atts));
-	  $data_props = parse_data_attributes($data);
+	  $data_props = $this->parse_data_attributes($data);
      $return = '<ul class="dropdown-menu';
 	 $return .= ($xclass) ? ' ' . $xclass : '';
 	 $return .= '"';
@@ -276,7 +276,7 @@ class BoostrapShortcodes {
 		"xclass" => false,
         "data" => false
      ), $atts));
-	  $data_props = parse_data_attributes($data);
+	  $data_props = $this->parse_data_attributes($data);
      $return = '<li><a href="'. $link .'"';
 	 $return .= ($xclass) ? ' class="' . $xclass . '"' : '';
 	 $return .= ($data_props) ? ' ' . $data_props : '';
@@ -296,7 +296,7 @@ class BoostrapShortcodes {
 		"xclass" => false,
         "data" => false
      ), $atts));
-	  $data_props = parse_data_attributes($data);
+	  $data_props = $this->parse_data_attributes($data);
      $return = '<li class="divider';
 	 $return .= ($xclass) ? ' ' . $xclass : '';
 	 $return .= '"';
@@ -319,7 +319,7 @@ class BoostrapShortcodes {
 		"xclass" => false,
         "data" => false
      ), $atts));
-	  $data_props = parse_data_attributes($data);
+	  $data_props = $this->parse_data_attributes($data);
      $classes = 'nav nav-' . $type;
      $classes .= ($stacked) ? ' nav-stacked' : '';
      $classes .= ($justified) ? ' nav-justified' : '';
@@ -345,7 +345,7 @@ class BoostrapShortcodes {
 		"xclass" => false,
         "data" => false
      ), $atts));
-	  $data_props = parse_data_attributes($data);
+	  $data_props = $this->parse_data_attributes($data);
      $return  =  '<li class="';
      $return .= ($dropdown) ? ' dropdown' : '';
      $return .= ($active) ? ' active' : '';
@@ -376,7 +376,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
       "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return  = '<div class="alert alert-' . $type;
     $return .= ($dismissable) ? ' alert-dismissable' : '';
 	$return .= ($xclass) ? ' ' . $xclass : '';
@@ -401,7 +401,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
       "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return  =  '<div class="progress ';
     $return .= ($striped) ? 'progress-striped ' : '';
     $return .= ($animated) ? 'active' : '';
@@ -425,7 +425,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
       "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return  =  '<div class="progress-bar ';
     $return .= ($type) ? ' progress-bar-' . $type : '';
 	$return .= ($xclass) ? ' ' . $xclass : '';
@@ -452,7 +452,7 @@ class BoostrapShortcodes {
 		"xclass" => false,
 		"data" => false
      ), $atts));
-	  $data_props = parse_data_attributes($data);
+	  $data_props = $this->parse_data_attributes($data);
     if($inline) {
       $return = '<code';
 	  $return .= ($xclass) ? ' class="' . $xclass . '"' : '';
@@ -506,7 +506,7 @@ class BoostrapShortcodes {
       "xclass" => false,
 	  "data" => false
      ), $atts));
-	  $data_props = parse_data_attributes($data);
+	  $data_props = $this->parse_data_attributes($data);
     $return  =  '<div class="row';
     $return .= ($xclass) ? ' ' . $xclass : '';
     $return .= '"';
@@ -547,7 +547,7 @@ class BoostrapShortcodes {
       "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return  =  '<div class="';
     $return .= ($lg) ? 'col-lg-' . $lg . ' ' : '';
     $return .= ($md) ? 'col-md-' . $md . ' ' : '';
@@ -586,7 +586,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return = ($linked) ? ' <div class="list-group' : '<ul class="list-group';
 	$return .= ($xclass) ? ' ' . $xclass : '';
     $return .= '"';
@@ -612,7 +612,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return = ($link) ? '<a href="' . $link . '" ' : '<li ';
     $return .= 'class="list-group-item ';
     $return .= ($active) ? 'active' : '';
@@ -635,7 +635,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return = '<h4 class="list-group-item-heading';
 	$return .= ($xclass) ? ' ' . $xclass : '';
     $return .= '"';
@@ -655,7 +655,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return = '<p class="list-group-item-text';
 	$return .= ($xclass) ? ' ' . $xclass : '';
     $return .= '"';
@@ -676,7 +676,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return = '<ol class="breadcrumb';
 	$return .= ($xclass) ? ' ' . $xclass : '';
     $return .= '"';
@@ -698,7 +698,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return = '<li><a href="' . $link . '"';
 	$return .= ($xclass) ? 'class="' . $xclass .'"': '';
 	$return .= ($data_props) ? ' ' . $data_props : '';
@@ -720,7 +720,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return = '<span class="label label-' . $type;
 	$return .= ($xclass) ? ' ' . $xclass : '';
     $return .= '"';
@@ -746,7 +746,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $right = ($right) ? " pull-right" : "";
     $return = '<span class="badge' . $right;
 	$return .= ($xclass) ? ' ' . $xclass : '';
@@ -773,7 +773,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return = '<span class="glyphicon glyphicon-' . $type;
 	$return .= ($xclass) ? ' ' . $xclass : '';
     $return .= '"';
@@ -880,7 +880,7 @@ class BoostrapShortcodes {
 		"xclass" => false,
 		"data" => false
 	  ), $atts));
-	   $data_props = parse_data_attributes($data);
+	   $data_props = $this->parse_data_attributes($data);
 
       if($size) {
         $size = ' well-'.$size;
@@ -910,7 +910,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
 	  "data" => false
 	), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     if($footer) {
         $footer = '<div class="panel-footer">' . $footer . '</div>';
       }
@@ -943,7 +943,7 @@ class BoostrapShortcodes {
 		'data'		=> false
 	);
     extract( shortcode_atts( $defaults, $atts ) );
-	$data_props = parse_data_attributes($data);
+	$data_props = $this->parse_data_attributes($data);
 
     // Extract the tab titles for use in the tab widget.
     preg_match_all( '/tab title="([^\"]+)"/i', $content, $matches, PREG_OFFSET_CAPTURE );
@@ -1014,7 +1014,7 @@ class BoostrapShortcodes {
 		'data'		=> false
 	);
     extract( shortcode_atts( $defaults, $atts ) );
-	$data_props = parse_data_attributes($data);
+	$data_props = $this->parse_data_attributes($data);
 
     $return = '<div id="custom-tab-' . $GLOBALS['tabs_count'] . '-'. sanitize_title( $title ) .'" class="tab-pane ' . $state;
 	$return .= ($xclass) ? ' ' . $xclass : '';
@@ -1047,7 +1047,7 @@ class BoostrapShortcodes {
 		'data'		=> false
 	);
     extract( shortcode_atts( $defaults, $atts ) );
-	$data_props = parse_data_attributes($data);
+	$data_props = $this->parse_data_attributes($data);
 
     // Extract the tab titles for use in the tab widget.
     preg_match_all( '/collapse title="([^\"]+)"/i', $content, $matches, PREG_OFFSET_CAPTURE );
@@ -1097,7 +1097,7 @@ class BoostrapShortcodes {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
 
     if ($active)
       $active = 'in';
@@ -1203,7 +1203,7 @@ function bs_media( $atts, $content = null ) {
 	   'data' =>false
     );
     extract( shortcode_atts( $defaults, $atts ) );
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
 	 
     $return = '<div class="media';
 	$return .= ($xclass) ? ' ' . $xclass : '';
@@ -1248,7 +1248,7 @@ function bs_media_body( $atts, $content = null ) {
 	   'data' =>false
     );
     extract( shortcode_atts( $defaults, $atts ) );
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return .= '<div class="media-body';
 	$return .= ($xclass) ? ' ' . $xclass : '';
 	$return .= '"';
@@ -1271,7 +1271,7 @@ function bs_media_body( $atts, $content = null ) {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return .='<div class="jumbotron';
 	$return .= ($xclass) ? ' ' . $xclass : '';
 	$return .= '"';
@@ -1293,7 +1293,7 @@ function bs_media_body( $atts, $content = null ) {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $classes = "page-header";
 	$classes .= ($xclass) ? ' ' . $xclass : '';
 	
@@ -1340,7 +1340,7 @@ function bs_media_body( $atts, $content = null ) {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return = '<p class="lead';
 	$return .= ($xclass) ? ' ' . $xclass : '';
 	$return .= '"';
@@ -1361,7 +1361,7 @@ function bs_media_body( $atts, $content = null ) {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return = '<span class="text-' . $type;
 	$return .= ($xclass) ? ' ' . $xclass : '';
 	$return .= '"';
@@ -1449,7 +1449,7 @@ function bs_img( $atts, $content = null ) {
 		  "xclass" => false,
 		  "data" => false
       ), $atts));
-	  $data_props = parse_data_attributes($data);
+	  $data_props = $this->parse_data_attributes($data);
       $classes='';
       if($visible) { 
           $visible = explode(' ',$visible);
@@ -1486,7 +1486,7 @@ function bs_img( $atts, $content = null ) {
       "xclass" => false,
 	  "data"=>false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $sani_title = 'modal'. sanitize_title( $title );
     $return .='<a data-toggle="modal" href="#'. $sani_title .'"';
 	$return .= ($xclass) ? ' class="' . $xclass .'"' : '';
@@ -1522,7 +1522,7 @@ function bs_img( $atts, $content = null ) {
       "xclass" => false,
 	  "data"=>false
     ), $atts));
-	 $data_props = parse_data_attributes($data);
+	 $data_props = $this->parse_data_attributes($data);
     $return = '<div class="modal-footer';
 	$return .= ($xclass) ? ' ' . $xclass : '';
 	$return .= '"';
