@@ -3,7 +3,7 @@
 Plugin Name: Bootstrap 3 Shortcodes
 Plugin URI: http://wp-snippets.com/freebies/bootstrap-shortcodes or https://github.com/filipstefansson/bootstrap-shortcodes
 Description: The plugin adds a shortcodes for all Bootstrap elements.
-Version: 3.0.3.2
+Version: 3.0.3.3
 Author: Filip Stefansson, Simon Yeldon, and Michael W. Delaney
 Author URI: 
 License: GPL2
@@ -64,6 +64,7 @@ class BoostrapShortcodes {
     add_shortcode('button-group', array( $this, 'bs_button_group' ));
     add_shortcode('button-toolbar', array( $this, 'bs_button_toolbar' ));
     add_shortcode('caret', array( $this, 'bs_caret' ));
+    add_shortcode('container', array( $this, 'bs_container' ));
     add_shortcode('dropdown', array( $this, 'bs_dropdown' ));
     add_shortcode('dropdown-item', array( $this, 'bs_dropdown_item' ));
     add_shortcode('nav', array( $this, 'bs_nav' ));
@@ -200,6 +201,19 @@ class BoostrapShortcodes {
     $return = '<span class="caret"></span>';
     return $return;
   }
+
+ /*--------------------------------------------------------------------------------------
+    *
+    * bs_container
+    *
+    * @author Robin Wouters
+    * @since 3.0.3.3
+    *
+    *-------------------------------------------------------------------------------------*/ 
+  function bs_container( $atts, $content = null ) {
+    $return = '<div class="container">' . do_shortcode( $content ) . '</div>';
+    return $return;
+  }  
     
   /*--------------------------------------------------------------------------------------
     *
@@ -1145,17 +1159,8 @@ function bs_img( $atts, $content = null ) {
             $classes .= 'hidden-'.$h.' ';
           endforeach;
       }
-    $dom = new DOMDocument;
-    $dom->loadXML($content);
-    if(!$dom->documentElement) {
-        $element = $dom->createElement('p', $content);
-        $dom->appendChild($element);
-    }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
-
-    $return = $dom->saveXML();
-    
-    return $return;
+      $return = '<span class="' . $classes . '">' . do_shortcode($content) . '</span>';
+      return $return;
 
   }
 
