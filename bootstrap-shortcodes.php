@@ -1186,12 +1186,12 @@ class BoostrapShortcodes {
     ), $atts));
 	 $data_props = $this->parse_data_attributes($data);
     $return = '<div class="item';
-	$return .= ($GLOBALS['carousel_active']) ? ' active' : '';
-	$return .= ($xclass) ? ' ' . $xclass : '';
+    $return .= ($GLOBALS['carousel_active']) ? ' active' : '';
+    $return .= ($xclass) ? ' ' . $xclass : '';
     $return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
+    $return .= ($data_props) ? ' ' . $data_props : '';
     $return .= '>' . do_shortcode($content);
-	$return .= ($caption) ? '<div class="carousel-caption">' . $caption . '</div>' : '';
+    $return .= ($caption) ? '<div class="carousel-caption">' . $caption . '</div>' : '';
     $return .='</div>';
     $GLOBALS['carousel_active'] = false;
     return $return;
