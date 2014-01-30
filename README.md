@@ -43,6 +43,7 @@ The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
 * [Tooltip](#tooltip)
 * [Popover](#popover)
 * [Collapse (Accordion)](#collapse-(accordion))
+* [Carousel](#carousel)
 * [Modal](#modal)
 
 
@@ -706,6 +707,32 @@ xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
 [Bootstrap collapse documentation](http://getbootstrap.com/javascript/#collapse)
+
+### Carousel
+	[carousel]
+        [carousel-item] … [/carousel-item]
+        [carousel-item] … [/carousel-item]
+        [carousel-item] … [/carousel-item]
+	[/carousel]
+
+[carousel-item] wraps an HTML image tag or image inserted via the WordPress editor.
+#### [carousel] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+interval | The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle. | optional | any number (in ms) or "false" | 5000
+wrap | Whether the carousel should cycle continuously or have hard stops. | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [carousel-item] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+caption | This carousel slide's caption | optional | Any text | none
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap carousel documentation](http://getbootstrap.com/javascript/#carousel)
+
 
 ### Modal
     [modal text="This is my modal" title="Modal Title Goes Here" xclass="btn btn-primary btn-large"]

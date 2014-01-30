@@ -91,6 +91,8 @@ class BoostrapShortcodes {
     add_shortcode('table-wrap', array( $this, 'bs_table_wrap' ));
     add_shortcode('collapsibles', array( $this, 'bs_collapsibles' ));
     add_shortcode('collapse', array( $this, 'bs_collapse' ));
+    add_shortcode('carousel', array( $this, 'bs_carousel' ));
+    add_shortcode('carousel-item', array( $this, 'bs_carousel_item' ));
     add_shortcode('well', array( $this, 'bs_well' ));
     add_shortcode('tabs', array( $this, 'bs_tabs' ));
     add_shortcode('tab', array( $this, 'bs_tab' ));
@@ -1073,8 +1075,6 @@ class BoostrapShortcodes {
   }
 
 
-
-
   /*--------------------------------------------------------------------------------------
     *
     * bs_collapse
@@ -1109,6 +1109,99 @@ class BoostrapShortcodes {
 	$return .= '><div class="panel-heading"><h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['collapsibles_count'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">' . $title . '</a></h3></div><div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="panel-collapse collapse ' . $active . '"><div class="panel-body">' . do_shortcode($content) . ' </div></div></div>';
     return $return;
   }
+    
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_carousel
+    *
+    * @author Filip Stefansson
+    * @since 1.0
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_carousel( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+    "interval" => "5000",
+    "pause" => false,
+    "wrap" => false,
+    "xclass" => false,
+    "data" => false,
+    ), $atts));
+      
+    if( isset($GLOBALS['carousel_count']) )
+      $GLOBALS['carousel_count']++;
+    else
+      $GLOBALS['carousel_count'] = 0;
+    
+    $GLOBALS['carousel_active'] = true;
+      
+	$data_props = $this->parse_data_attributes($data);
+
+    $i = 0;
+    $indicator_count = substr_count($content,'<img');
+      while($i < $indicator_count) {
+        $indicators .= '<li data-target="#carousel-' . $GLOBALS['carousel_count'] . '" data-slide-to="' . $i . '"';
+        $indicators .= ($i == 0) ? 'class="active"' : '';
+        $indicators .= '></li>';
+        $i++;
+      }
+    $indicators_return = '<!-- Indicators -->';
+    $indicators_return .= '<ol class="carousel-indicators">';
+    $indicators_return .= $indicators;
+    $indicators_return .= '</ol>';
+
+    $return = '';
+    $return .= '<div id="carousel-' . $GLOBALS['carousel_count'] . '" class="carousel slide';
+    $return .= ($xclass) ? ' ' . $xclass : '';
+    $return .= '"';
+    $return .=  ' data-ride="carousel"';
+    $return .= ($interval) ? ' data-interval="' . $interval . '"' : '';
+    $return .= ($pause) ? ' data-pause="' . $pause . '"' : '';
+    $return .= ($wrap) ? ' data-wrap="' . $wrap . '"' : '';
+    $return .= ($data_props) ? ' ' . $data_props : '';
+    $return .= '>';
+    $return .= $indicators_return;
+    $return .= '<div class="carousel-inner">' . do_shortcode( $content ) . '</div>';
+    $return .= '<!-- Controls -->';
+    $return .= '<a class="left carousel-control" href="#carousel-' . $GLOBALS['carousel_count'] . '" data-slide="prev">';
+    $return .= '<span class="glyphicon glyphicon-chevron-left"></span>';
+    $return .= '</a>';
+    $return .= '<a class="right carousel-control" href="#carousel-' . $GLOBALS['carousel_count'] . '" data-slide="next">';
+    $return .= '<span class="glyphicon glyphicon-chevron-right"></span>';
+    $return .= '</a>';
+    $return .= '</div>';
+
+    return $return;
+  }
+
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_carousel_item
+    *
+    * @author Filip Stefansson
+    * @since 1.0
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_carousel_item( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+      "caption" => false,
+	  "xclass" => false,
+	  "data" => false
+    ), $atts));
+	 $data_props = $this->parse_data_attributes($data);
+    $return = '<div class="item';
+    $return .= ($GLOBALS['carousel_active']) ? ' active' : '';
+    $return .= ($xclass) ? ' ' . $xclass : '';
+    $return .= '"';
+    $return .= ($data_props) ? ' ' . $data_props : '';
+    $return .= '>' . do_shortcode($content);
+    $return .= ($caption) ? '<div class="carousel-caption">' . $caption . '</div>' : '';
+    $return .='</div>';
+    $GLOBALS['carousel_active'] = false;
+    return $return;
+  }
+
 
 
   /*--------------------------------------------------------------------------------------

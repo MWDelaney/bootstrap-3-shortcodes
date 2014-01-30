@@ -1,7 +1,7 @@
 <?php
 function bootstrap_shortcodes_help_styles() {
-	wp_register_style( 'bootstrap-shortcodes-help', plugins_url( 'bootstrap-3-shortcodes/includes/help/css/bootstrap-shortcodes-help.css' ) );
-	wp_enqueue_style( 'bootstrap-shortcodes-help' );
+        wp_register_style( 'bootstrap-shortcodes-help', plugins_url( 'bootstrap-3-shortcodes/includes/help/css/bootstrap-shortcodes-help.css' ) );
+        wp_enqueue_style( 'bootstrap-shortcodes-help' );
 }
 add_action( 'admin_enqueue_scripts', 'bootstrap_shortcodes_help_styles' );
 
@@ -21,7 +21,11 @@ function add_bootstrap_button() {
 
   //append the icon
   $context .= "<a title='{$title}'
+<<<<<<< HEAD
     href='#TB_inline?width=640&height=550&inlineId={$popup_url}' class='thickbox button add_media' style='padding-left: 0px; padding-right: 0px;' title='Bootstrap Shortcodes Help'>
+=======
+    href='#TB_inline?width=640&height=650&inlineId={$popup_url}' class='thickbox button add_media' style='padding-left: 0px; padding-right: 0px;' title='Bootstrap Shortcodes Help'>
+>>>>>>> origin/carousel
     <img src='{$img}' style='height: 20px; position: relative; top: -2px;'></a>";
   
   echo $context;
