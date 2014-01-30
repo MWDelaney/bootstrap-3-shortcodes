@@ -1,271 +1,732 @@
-PHP Markdown
-============
-
-PHP Markdown Lib 1.4.0 - 29 Nov 2013
-
-by Michel Fortin  
-<http://michelf.ca/>
-
-based on Markdown by John Gruber  
-<http://daringfireball.net/>
-
-
-Introduction
-------------
-
-This is a library package that includes the PHP Markdown parser and its 
-sibling PHP Markdown Extra with additional features.
-
-Markdown is a text-to-HTML conversion tool for web writers. Markdown
-allows you to write using an easy-to-read, easy-to-write plain text
-format, then convert it to structurally valid XHTML (or HTML).
-
-"Markdown" is actually two things: a plain text markup syntax, and a 
-software tool, originally written in Perl, that converts the plain text 
-markup to HTML. PHP Markdown is a port to PHP of the original Markdown 
-program by John Gruber.
-
-*	[Full documentation of the Markdown syntax](<http://daringfireball.net/projects/markdown/>)
-	- Daring Fireball (John Gruber)
-*	[Markdown Extra syntax additions](<http://michelf.ca/projects/php-markdown/extra/>)
-	- Michel Fortin
-
-
-Requirement
------------
-
-This library package requires PHP 5.3 or later.
-
-Note: The older plugin/library hybrid package for PHP Markdown and
-PHP Markdown Extra is still maintained and will work with PHP 4.0.5 and later.
-
-Before PHP 5.3.7, pcre.backtrack_limit defaults to 100 000, which is too small
-in many situations. You might need to set it to higher values. Later PHP 
-releases defaults to 1 000 000, which is usually fine.
-
-
-Usage
------
-
-This library package is meant to be used with class autoloading. For autoloading 
-to work, your project needs have setup a PSR-0-compatible autoloader. See the 
-included Readme.php file for a minimal autoloader setup. (If you cannot use 
-autoloading, see below.)
-
-With class autoloading in place, putting the 'Michelf' folder in your 
-include path should be enough for this to work:
-
-	use \Michelf\Markdown;
-	$my_html = Markdown::defaultTransform($my_text);
-
-Markdown Extra syntax is also available the same way:
-
-	use \Michelf\MarkdownExtra;
-	$my_html = MarkdownExtra::defaultTransform($my_text);
-
-If you wish to use PHP Markdown with another text filter function 
-built to parse HTML, you should filter the text *after* the `transform`
-function call. This is an example with [PHP SmartyPants][psp]:
-
-	use \Michelf\Markdown, \Michelf\SmartyPants;
-	$my_html = Markdown::defaultTransform($my_text);
-	$my_html = SmartyPants::defaultTransform($my_html);
-
-All these examples are using the static `defaultTransform` static function 
-found inside the parser class. If you want to customize the parser 
-configuration, you can also instantiate it directly and change some 
-configuration variables:
-
-	use \Michelf\MarkdownExtra;
-	$parser = new MarkdownExtra;
-	$parser->fn_id_prefix = "post22-";
-	$my_html = $parser->transform($my_text);
-
-To learn more, see the full list of [configuration variables].
-
- [configuration variables]: http://michelf.ca/projects/php-markdown/configuration/
-
-
-### Usage without an autoloader
-
-If you cannot use class autoloading, you can still use `include` or `require` 
-to access the parser. To load the `\Michelf\Markdown` parser, do it this way:
-
-	require_once 'Michelf/Markdown.inc.php';
-
-Or, if you need the `\Michelf\MarkdownExtra` parser:
-
-	require_once 'Michelf/MarkdownExtra.inc.php';
-
-While the plain `.php` files depend on autoloading to work correctly, using the
-`.inc.php` files instead will eagerly load the dependencies that would be 
-loaded on demand if you were using autoloading.
-
-
-Public API and Versioning Policy
----------------------------------
-
-Version numbers are of the form *major*.*minor*.*patch*.
-
-The public API of PHP Markdown consist of the two parser classes `Markdown`
-and `MarkdownExtra`, their constructors, the `transform` and `defaultTransform`
-functions and their configuration variables. The public API is stable for
-a given major version number. It might get additions when the minor version
-number increments.
-
-**Protected members are not considered public API.** This is unconventional 
-and deserves an explanation. Incrementing the major version number every time 
-the underlying implementation of something changes is going to give
-nonessential version numbers for the vast majority of people who just use the
-parser.  Protected members are meant to create parser subclasses that behave in
-different ways. Very few people create parser subclasses. I don't want to 
-discourage it by making everything private, but at the same time I can't 
-guarantee any stable hook between versions if you use protected members.
-
-**Syntax changes** will increment the minor number for new features, and the 
-patch number for small corrections. A *new feature* is something that needs a 
-change in the syntax documentation. Note that since PHP Markdown Lib includes
-two parsers, a syntax change for either of them will increment the minor 
-number. Also note that there is nothing perfectly backward-compatible with the
-Markdown syntax: all inputs are always valid, so new features always replace
-something that was previously legal, although generally nonsensical to do.
-
-
-Bugs
-----
-
-To file bug reports please send email to:
-<michel.fortin@michelf.ca>
-
-Please include with your report: (1) the example input; (2) the output you
-expected; (3) the output PHP Markdown actually produced.
-
-If you have a problem where Markdown gives you an empty result, first check 
-that the backtrack limit is not too low by running `php --info | grep pcre`.
-See Installation and Requirement above for details.
-
-
-Development and Testing
------------------------
-
-Pull requests for fixing bugs are welcome. Proposed new features are
-going meticulously reviewed -- taking into account backward compatibility, 
-potential side effects, and future extensibility -- before deciding on
-acceptance or rejection.
-
-If you make a pull request that includes changes to the parser please add 
-tests for what is being changed to [MDTest][] and make a pull request there 
-too.
-
- [MDTest]: https://github.com/michelf/mdtest/
-
-
-Version History
----------------
-
-PHP Markdown Lib 1.4.0 (29 Nov 2013)
-
-*	Added support for the `tel:` URL scheme in automatic links.
-
-		<tel:+1-111-111-1111>
-	
-	It gets converted to this (note the `tel:` prefix becomes invisible):
-	
-		<a href="tel:+1-111-111-1111">+1-111-111-1111</a>
-
-*	Added backtick fenced code blocks to MarkdownExtra, originally from
-	Github-Flavored Markdown.
-
-*	Added an interface called MarkdownInterface implemented by both
-	the Markdown and MarkdownExtra parsers. You can use the interface if
-	you want to create a mockup parser object for unit testing.
-
-*	For those of you who cannot use class autoloading, you can now
-	include `Michelf/Markdown.inc.php` or `Michelf/MarkdownExtra.inc.php` (note 
-	the 	`.inc.php` extension) to automatically include other files required
-	by the parser.
-
-
-PHP Markdown Lib 1.3 (11 Apr 2013)
-
-This is the first release of PHP Markdown Lib. This package requires PHP 
-version 5.3 or later and is designed to work with PSR-0 autoloading and, 
-optionally with Composer. Here is a list of the changes since 
-PHP Markdown Extra 1.2.6:
-
-*	Plugin interface for WordPress and other systems is no longer present in
-	the Lib package. The classic package is still available if you need it:
-	<http://michelf.ca/projects/php-markdown/classic/>
-
-*	Added `public` and `protected` protection attributes, plus a section about
-	what is "public API" and what isn't in the Readme file.
-
-*	Changed HTML output for footnotes: now instead of adding `rel` and `rev`
-	attributes, footnotes links have the class name `footnote-ref` and
-	backlinks `footnote-backref`.
-
-*	Fixed some regular expressions to make PCRE not shout warnings about POSIX
-	collation classes (dependent on your version of PCRE).
-
-*	Added optional class and id attributes to images and links using the same
-	syntax as for headers:
-
-		[link](url){#id .class}  
-		![img](url){#id .class}
-	
-	It work too for reference-style links and images. In this case you need
-	to put those attributes at the reference definition:
-
-		[link][linkref] or [linkref]  
-		![img][linkref]
-		
-		[linkref]: url "optional title" {#id .class}
-
-*	Fixed a PHP notice message triggered when some table column separator 
-	markers are missing on the separator line below column headers.
-
-*	Fixed a small mistake that could cause the parser to retain an invalid
-	state related to parsing links across multiple runs. This was never 
-	observed (that I know of), but it's still worth fixing.
-
-
-Copyright and License
----------------------
-
-PHP Markdown Lib
-Copyright (c) 2004-2013 Michel Fortin  
-<http://michelf.ca/>  
-All rights reserved.
-
-Based on Markdown  
-Copyright (c) 2003-2005 John Gruber   
-<http://daringfireball.net/>   
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are
-met:
-
-*   Redistributions of source code must retain the above copyright 
-    notice, this list of conditions and the following disclaimer.
-
-*   Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions and the following disclaimer in the
-    documentation and/or other materials provided with the 
-    distribution.
-
-*   Neither the name "Markdown" nor the names of its contributors may
-    be used to endorse or promote products derived from this software
-    without specific prior written permission.
-
-This software is provided by the copyright holders and contributors "as
-is" and any express or implied warranties, including, but not limited
-to, the implied warranties of merchantability and fitness for a
-particular purpose are disclaimed. In no event shall the copyright owner
-or contributors be liable for any direct, indirect, incidental, special,
-exemplary, or consequential damages (including, but not limited to,
-procurement of substitute goods or services; loss of use, data, or
-profits; or business interruption) however caused and on any theory of
-liability, whether in contract, strict liability, or tort (including
-negligence or otherwise) arising in any way out of the use of this
-software, even if advised of the possibility of such damage.
+Bootstrap Shortcodes for WordPress
+===
+
+This is a plugin for WordPress that adds shortcodes for easier use of the Bootstrap elements in your content.
+
+## Requirements
+This plugin won't do anything if you don't have WordPress theme built with the [Bootstrap](http://getbootstrap.com/) framework. **This plugin does not include the Bootstrap framework**.
+
+The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
+
+## Supported shortcodes
+
+### CSS
+* [Grid](#grid)
+* [Lead body copy](#lead-body-copy)
+* [Emphasis classes](#emphasis-classes)
+* [Code](#code)
+* [Tables](#tables)
+* [Buttons](#buttons)
+* [Images](#images)
+* [Responsive utilities](#responsive-utilities)
+
+### Components
+* [Icons](#icons)
+* [Button Groups](#button-groups)
+* [Button Dropdowns](#button-dropdowns)
+* [Navs](#navs)
+* [Breadcrumbs](#breadcrumbs)
+* [Labels](#labels)
+* [Badges](#badges)
+* [Jumbotron](#jumbotron)
+* [Page Header](#page-header)
+* [Thumbnails](#thumbnails)
+* [Alerts](#alerts)
+* [Progress Bars](#progress-bars)
+* [Media Objects](#media-objects)
+* [List Groups](#list-groups)
+* [Panels](#panels)
+* [Wells](#wells)
+
+### JavaScript
+* [Tabs](#tabs)
+* [Tooltip](#tooltip)
+* [Popover](#popover)
+* [Collapse (Accordion)](#collapse-(accordion))
+* [Modal](#modal)
+
+
+# Usage
+
+## CSS
+
+### Grid
+	  [row]
+	    [column md="6"]
+	      …
+	    [/column]
+	    [column md="6"]
+	      …
+	    [/column]
+	  [/row]
+    
+The container component is also supported in case your theme doesn't incude a container.
+
+	[container]
+	  [row]
+	    [column md="6"]
+	      …
+	    [/column]
+	    [column md="6"]
+	      …
+	    [/column]
+	  [/row]
+	[/container]
+
+#### [container] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [row] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [column] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xs | Size of column on extra small screens (less than 768px) | optional | 1-12 | false
+sm | Size of column on small screens (greater than 768px) | optional | 1-12 | false
+md | Size of column on medium screens (greater than 992px) | optional | 1-12 | false
+lg | Size of column on large screens (greater than 1200px) | optional | 1-12 | false
+offset_xs | Offset on extra small screens | optional | 1-12 | false
+offset_sm | Offset on small screens | optional | 1-12 | false
+offset_md | Offset on column on medium screens | optional | 1-12 | false
+offset_lg | Offset on column on large screens | optional | 1-12 | false
+pull_xs | Pull on extra small screens | optional | 1-12 | false
+pull_sm | Pull on small screens | optional | 1-12 | false
+pull_md | Pull on column on medium screens | optional | 1-12 | false
+pull_lg | Pull on column on large screens | optional | 1-12 | false
+push_xs | Push on extra small screens | optional | 1-12 | false
+push_sm | Push on small screens | optional | 1-12 | false
+push_md | Push on column on medium screens | optional | 1-12 | false
+push_lg | Push on column on large screens | optional | 1-12 | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
+
+### Lead body copy
+	[lead] … [/lead]
+
+#### [lead] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap body copy documentation](http://getbootstrap.com/css/#type-body-copy)
+
+### Emphasis classes
+	[emphasis type="success"] … [/emphasis]
+
+#### [emphasis] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of label to display | required | muted, primary, success, info, warning, danger | muted
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap emphasis classes documentation](http://getbootstrap.com/css/#type-emphasis)
+
+### Code
+	[code] … [/code]
+
+#### [code] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+inline | Display inline code | optional | true, false | false
+scrollable | Set a max height of 350px and provide a scroll bar. Not usable with inline="true".  | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap code documentation](http://getbootstrap.com/css/#code)
+
+### Tables
+	[table-wrap bordered="true" striped="true"]
+        
+        Standard HTML table code goes here.
+        
+    [/table-wrap]
+
+#### [table-wrap] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+bordered | Set "bordered" table style (see Bootstrap documentation) | optional | true, false | false
+striped | Set "striped" table style (see Bootstrap documentation) | optional | true, false | false
+hover | Set "hover" table style (see Bootstrap documentation) | optional | true, false | false
+condensed | Set "condensed" table style (see Bootstrap documentation) | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap table documentation](http://getbootstrap.com/css/#tables)
+
+### Buttons
+	[button type="success" size="lg" link="#"] … [/button]
+
+#### [button] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of the button | optional | default, primary, success, info, warning, danger, link | default
+size | The size of the button | optional | xs, sm, lg | none
+block | Whether the button should be a block-level button | optional | true, false | false
+dropdown | Whether the button triggers a dropdown menu (see [Button Dropdowns](#button-dropdowns)) | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+link | The url you want the button to link to | optional | any valid link | none
+target | Target for the link | optional | any valid target | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
+
+### Images
+	[img type="circle" responsive="true"] … [/img]
+
+Wrap any number of HTML image tags or images inserted via the WordPress media manager.
+#### [img] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The effect to apply to wrapped images | optional | rounded, circle, thumbnail | false
+responsive | Make the wrapped images responsive | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap images documentation](http://getbootstrap.com/css/#images)
+
+### Responsive Utilities
+	[responsive visible="sm xs" hidden="lg"] … [/responsive]
+
+#### [reponsive] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+visible | Sizes at which this element is visible (separated by spaces) | optional | xs, sm, md, lg  | false
+hidden | Sizes at which this element is hidden (separated by spaces) | optional | xs, sm, md, lg  | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap emphasis classes documentation](http://getbootstrap.com/css/#type-emphasis)
+
+## Components
+
+### Icons
+	[icon type="arrow"]
+
+#### [icon] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of icon you want to display | required | See Bootstrap docs | none
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap Glyphicons documentation](http://getbootstrap.com/components/#glyphicons)
+
+### Button Groups
+#### Basic example
+	[button-group size="lg" justified="" vertical=""]
+        [button link="#"] … [/button]
+        [button link="#"] … [/button]
+        [button link="#"] … [/button]
+	[/button-group]
+    
+#### Button toolbar
+    [button-toolbar]
+    	[button-group]
+            [button link="#"] … [/button]
+            [button link="#"] … [/button]
+            [button link="#"] … [/button]
+    	[/button-group]
+    	[button-group]
+            [button link="#"] … [/button]
+            [button link="#"] … [/button]
+            [button link="#"] … [/button]
+    	[/button-group]
+    	[button-group]
+            [button link="#"] … [/button]
+    	[/button-group]
+    [/button-toolbar]
+
+#### [button-group] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+size | The size of the button group | optional | xs, sm, lg | none
+justified | Whether button group is justified | optional | true, false | false
+vertical | Whether button group is vertical | optional | true, false | false
+dropup | **Must correspond with the use of [dropdown]** | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [button-toolbar] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap button groups documentation](http://getbootstrap.com/css/#btn-groups)
+
+### Button Dropdowns
+Button Dropdowns can be accomplished by combining the [button-group] shortcode, the "data" parameters of the [button] shortcode, and [dropdown] shortcode as follows.
+
+#### Single button dropdowns
+    [button-group]
+        [button link="#" dropdown="true" data="toggle,dropdown"] … [caret][/button]
+        [dropdown]
+            [dropdown-item link="#"] … [/dropdown-item]
+            [divider]
+            [dropdown-item link="#"] … [/dropdown-item]
+        [/dropdown]
+    [/button-group]
+
+#### Split button dropdowns
+    [button-group]
+        [button link="#"] … [/button]
+        [button dropdown="true" data="toggle,dropdown"][caret][/button]
+        [dropdown]
+            [dropdown-item link="#"] … [/dropdown-item]
+            [divider]
+            [dropdown-item link="#"] … [/dropdown-item]
+        [/dropdown]
+    [/button-group]
+
+#### Dropup variation
+    [button-group dropup="true"]
+        [button link="#"] … [/button]
+        [button dropdown="true" data="toggle,dropdown"][caret][/button]
+        [dropdown]
+            [dropdown-item link="#"] … [/dropdown-item]
+            [divider]
+            [dropdown-item link="#"] … [/dropdown-item]
+        [/dropdown]
+    [/button-group]  
+
+#### [dropdown] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [dropdown-item] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+link | The url you want the dropdown-item to link to | optional | any valid link | none
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [caret] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [divider] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap button dropdowns documentation](http://getbootstrap.com/components/#btn-dropdowns)
+
+### Navs
+    [nav type="pills"]
+        [nav-item link="#"] … [/nav-item]
+        [nav-item link="#"] … [/nav-item]
+        [nav-item link="#"] … [/nav-item]
+    [/nav]
+
+#### Nav with dropdowns
+    [nav type="pills"]
+        [nav-item link="#" active="true"] … [/nav-item]
+        [nav-item dropdown="true" link="#"] … [caret]
+            [dropdown]
+                [dropdown-item link="#"] … [/dropdown-item]
+                [dropdown-item link="#"] … [/dropdown-item]
+            [/dropdown]
+        [/nav-item]
+    [/nav]
+
+#### [nav] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of nav | required | tabs, pills | tabs
+stacked | Whether the nav is stacked (should be used with "pills" type | optional | true, false | false
+justified | Whether the nav is justified | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [nav-item] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+link | The url you want the dropdown-item to link to | optional | any valid link | none
+active | Whether the item has the "active" style applied | optional | true, false | false
+disabled | Whether the item is disabled | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap button navs documentation](http://getbootstrap.com/components/#nav)
+
+
+### Breadcrumbs
+	[breadcrumb]
+        [breadcrumb-item link="#"] … [/breadcrumb-item]
+        [breadcrumb-item link="#"] … [/breadcrumb-item]
+        [breadcrumb-item link="#"] … [/breadcrumb-item]
+	[/breadcrumb]
+
+#### [breadcrumb] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [breadcrumb-item] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+link | The url you want the breadcrumb-item to link to | optional | any valid link | none
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap breadcrumbs documentation](http://getbootstrap.com/components/#breadcrumbs)
+
+### Labels
+	[label type="success"] … [/label]
+
+#### [label] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of label to display | optional | default, primary, success, info, warning, danger | default
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap label documentation](http://getbootstrap.com/components/#labels)
+
+### Badges
+	[badge right="true"] … [/badge]
+
+#### [badge] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+right | Whether the badge should align to the right of its container | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap badges documentation](http://getbootstrap.com/components/#badges)
+
+### Jumbotron
+    [jumbotron title="My Jumbotron"] … [/jumbotron]
+
+#### [jumbotron] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+title | The jumbotron title | optional | Any text | none
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap jumbotron documentation](http://getbootstrap.com/components/#jumbotron)
+
+### Page Header
+    [page-header] … [/page-header]
+
+Automatically inserts H1 tag if not present
+#### [page-header] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap page-header documentation](http://getbootstrap.com/components/#page-header)
+
+### Thumbnails
+    [thumbnail] … [/thumbnail]
+    [thumbnail] … [/thumbnail]
+    [thumbnail] … [/thumbnail]
+
+#### [thumbnail] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap thumbnails documentation](http://getbootstrap.com/components/#thumbnails)
+
+### Alerts
+	[alert type="success"] … [/alert]
+
+#### [alert] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of the alert | required | success, info, warning, danger | success
+dismissable | If the alert should be dismissable | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap alert documentation](http://getbootstrap.com/components/#alerts)
+
+### Progress Bars
+	[progress striped="true"]
+        [progress-bar percent="50"]
+        [progress-bar percent="25" type="success"]
+    [/progress]
+
+#### [progress] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+striped | Whether enclosed progress bars will be striped | optional | true, false | false
+animated | Whether enclosed progress bars will be animated | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [progress-bar] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+percent | The percentage amount to show in the progress bar | required | any number between 0 and 100 | false
+type | The type of the progress bar | optional | default, primary, success, info, warning, danger  | default
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap progress bars documentation](http://getbootstrap.com/components/#progress)
+
+
+### Media Objects
+    [media]
+	  [media-object pull="right"]
+	    …
+	  [/media-object]
+	  [media-body title="Testing"]
+	    …
+	  [/media-body]
+    [/media]
+
+#### [media] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [media-object] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+pull | Whether the image pulls to the left or right | optional | left, right | right
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [media-body] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+title | The object title | required | Any text | none
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+__NOTE: media-object should contain an image, or linked image, inserted using the WordPress TinyMCE editor__
+
+[Bootstrap media objects documentation](http://getbootstrap.com/components/#media)
+
+### List Groups
+
+#### Basic Example
+	[list-group]
+	  [list-group-item]
+	    …
+	  [/list-group-item]
+	  [list-group-item]
+	    …
+	  [/list-group-item]
+	  [list-group-item]
+	    …
+	  [/list-group-item]
+	[/list-group]
+
+#### Linked Items
+	[list-group linked="true"]
+	  [list-group-item link="#" active="true"]
+	    …
+	  [/list-group-item]
+	  [list-group-item link="#"]
+	    …
+	  [/list-group-item]
+	  [list-group-item link="#"]
+	    …
+	  [/list-group-item]
+	[/list-group]
+
+#### Custom Content
+	[list-group linked="true"]
+	  [list-group-item link="#" active="true"]
+	    [list-group-item-heading]…[/list-group-item-heading]
+        [list-group-item-text]…[/list-group-item-text]
+	  [/list-group-item]
+	  [list-group-item link="#"]
+	    [list-group-item-heading]…[/list-group-item-heading]
+        [list-group-item-text]…[/list-group-item-text]
+      [/list-group-item]
+	  [list-group-item link="#"]
+	    [list-group-item-heading]…[/list-group-item-heading]
+        [list-group-item-text]…[/list-group-item-text]
+	  [/list-group-item]
+	[/list-group]
+
+#### [list-group] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+linked | Whether this is a linked list group, or a standard one | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [list-group-item] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+link | The url you want the list item to link to **Must correspond with the "linked" parameter in [list-group]** | optional | any text | false
+active | Whether the item has the "active" style applied | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [list-group-item-heading] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [list-group-item-text] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap list groups documentation](http://getbootstrap.com/components/#list-group)
+
+### Panels
+	[panel type="info" title="Panel Title" footer="Footer text"] … [/panel]
+
+#### [panel] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
+title | The panel title | required | any text | none
+footer | The panel footer text if desired | optional | any text | none
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
+
+### Wells
+	[well size="sm"] … [/well]
+
+#### [well] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+size | Modifies the amount of padding inside the well | optional | sm, lg | normal
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
+
+## Javascript
+
+### Tabs
+	[tabs]
+	  [tab title="Home"]
+	    …
+	  [/tab]
+	  [tab title="Profile"]
+	    …
+	  [/tab]
+	  [tab title="Messages"]
+	    …
+	  [/tab]
+	[/tabs]
+
+#### [tabs] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [tab] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+title | The title of the tab | required | any text | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap tabs documentation](http://getbootstrap.com/javascript/#tabs)
+
+### Tooltip
+	[tooltip title="I'm the title" placement="right"] … [/tooltip]
+
+#### [tooltip] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+title | The text of the tooltip | required | any text | none
+placement | The placement of the tooltip | optional | left, top, bottom, right | top
+animation | apply a CSS fade transition to the tooltip | optional | any text | none
+html | Insert HTML into the tooltip | optional | true, false | false
+
+[Bootstrap tooltip documentation](http://getbootstrap.com/javascript/#tooltips)
+
+### Popover
+	[popover title="I'm the title" content="And here's some amazing content. It's very engaging. right?" placement="right"] … [/popover]
+
+#### [popover] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+title | The title of the popover | optional | any text | none
+text | The text of the popover | required | any text | none
+placement | The placement of the popover | optional | left, top, bottom, right | top
+animation | apply a CSS fade transition to the tooltip | optional | any text | none
+html | Insert HTML into the tooltip | optional | true, false | false
+
+[Bootstrap popover documentation](http://getbootstrap.com/javascript/#popovers)
+
+### Collapse (Accordion)
+	[collapsibles]
+	  [collapse title="Collapse 1" state="active"]
+	    …
+	  [/collapse]
+	  [collapse title="Collapse 2"]
+	    …
+	  [/collapse]
+	  [collapse title="Collapse 3"]
+	    …
+	  [/collapse]
+	[/collapsibles]
+
+#### [collapsibles] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [collapse] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+title | The title of the collapsible, visible when collapsed | required | any text | false
+type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
+active | Whether the tab is expanded at load time | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap collapse documentation](http://getbootstrap.com/javascript/#collapse)
+
+### Modal
+    [modal text="This is my modal" title="Modal Title Goes Here" xclass="btn btn-primary btn-large"]
+        …
+        [modal-footer]
+            [button type="primary" link="#" data="dismiss,modal"]Dismiss[/button]
+        [/modal-footer]
+    [/modal]
+
+#### [modal] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+text | Text of the modal trigger link | required | any text  | none
+title | Title of the modal popup | required | any text | none
+xclass | Any extra classes you want to add to the trigger link | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [modal-footer] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap modal documentation](http://getbootstrap.com/javascript/#modals)
