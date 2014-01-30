@@ -1120,19 +1120,21 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_carousel( $atts, $content = null ) {
-
+    extract(shortcode_atts(array(
+    "interval" => "5000",
+    "pause" => false,
+    "wrap" => false,
+    "xclass" => false,
+    "data" => false,
+    ), $atts));
+      
     if( isset($GLOBALS['carousel_count']) )
       $GLOBALS['carousel_count']++;
     else
       $GLOBALS['carousel_count'] = 0;
     
     $GLOBALS['carousel_active'] = true;
-
-    $defaults = array(
-		'xclass'	=> false,
-		'data'		=> false
-	);
-    extract( shortcode_atts( $defaults, $atts ) );
+      
 	$data_props = $this->parse_data_attributes($data);
 
     $i = 0;
@@ -1153,6 +1155,9 @@ class BoostrapShortcodes {
     $return .= ($xclass) ? ' ' . $xclass : '';
     $return .= '"';
     $return .=  ' data-ride="carousel"';
+    $return .= ($interval) ? ' data-interval="' . $interval . '"' : '';
+    $return .= ($pause) ? ' data-pause="' . $pause . '"' : '';
+    $return .= ($wrap) ? ' data-wrap="' . $wrap . '"' : '';
     $return .= ($data_props) ? ' ' . $data_props : '';
     $return .= '>';
     $return .= $indicators_return;

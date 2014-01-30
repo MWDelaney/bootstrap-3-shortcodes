@@ -719,6 +719,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 #### [carousel] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
+interval | The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle. | optional | any number (in ms) or "false" | 5000
+wrap | Whether the carousel should cycle continuously or have hard stops. | optional | true, false | false
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
