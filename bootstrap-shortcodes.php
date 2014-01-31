@@ -60,57 +60,66 @@ class BoostrapShortcodes {
     *-------------------------------------------------------------------------------------*/
   function add_shortcodes() {
 
-    add_shortcode('button', array( $this, 'bs_button' ));
-    add_shortcode('button-group', array( $this, 'bs_button_group' ));
-    add_shortcode('button-toolbar', array( $this, 'bs_button_toolbar' ));
-    add_shortcode('caret', array( $this, 'bs_caret' ));
-    add_shortcode('container', array( $this, 'bs_container' ));
-    add_shortcode('dropdown', array( $this, 'bs_dropdown' ));
-    add_shortcode('dropdown-item', array( $this, 'bs_dropdown_item' ));
-    add_shortcode('nav', array( $this, 'bs_nav' ));
-    add_shortcode('nav-item', array( $this, 'bs_nav_item' ));
-    add_shortcode('divider', array( $this, 'bs_dropdown_divider' ));
-    add_shortcode('alert', array( $this, 'bs_alert' ));
-    add_shortcode('progress', array( $this, 'bs_progress' ));
-    add_shortcode('progress-bar', array( $this, 'bs_progress_bar' ));
-    add_shortcode('code', array( $this, 'bs_code' ));
-    add_shortcode('span', array( $this, 'bs_span' ));
-    add_shortcode('row', array( $this, 'bs_row' ));
-    add_shortcode('column', array( $this, 'bs_column' ));
-    add_shortcode('breadcrumb', array( $this, 'bs_breadcrumb' ));
-    add_shortcode('breadcrumb-item', array( $this, 'bs_breadcrumb_item' ));
-    add_shortcode('label', array( $this, 'bs_label' ));
-    add_shortcode('list-group', array( $this, 'bs_list_group' ));
-    add_shortcode('list-group-item', array( $this, 'bs_list_group_item' ));
-    add_shortcode('list-group-item-heading', array( $this, 'bs_list_group_item_heading' ));
-    add_shortcode('list-group-item-text', array( $this, 'bs_list_group_item_text' ));
-    add_shortcode('badge', array( $this, 'bs_badge' ));
-    add_shortcode('icon', array( $this, 'bs_icon' ));
-    add_shortcode('icon_white', array( $this, 'bs_icon_white' ));
-    add_shortcode('table', array( $this, 'bs_table' ));
-    add_shortcode('table-wrap', array( $this, 'bs_table_wrap' ));
-    add_shortcode('collapsibles', array( $this, 'bs_collapsibles' ));
-    add_shortcode('collapse', array( $this, 'bs_collapse' ));
-    add_shortcode('carousel', array( $this, 'bs_carousel' ));
-    add_shortcode('carousel-item', array( $this, 'bs_carousel_item' ));
-    add_shortcode('well', array( $this, 'bs_well' ));
-    add_shortcode('tabs', array( $this, 'bs_tabs' ));
-    add_shortcode('tab', array( $this, 'bs_tab' ));
-    add_shortcode('tooltip', array( $this, 'bs_tooltip' ));
-    add_shortcode('popover', array( $this, 'bs_popover' ));
-    add_shortcode('panel', array( $this, 'bs_panel' ));
-    add_shortcode('media', array( $this, 'bs_media' ));
-    add_shortcode('media-object', array( $this, 'bs_media_object' ));
-    add_shortcode('media-body', array( $this, 'bs_media_body' ));
-    add_shortcode('jumbotron', array( $this, 'bs_jumbotron' ));
-    add_shortcode('page-header', array( $this, 'bs_page_header' ));
-    add_shortcode('lead', array( $this, 'bs_lead' ));
-    add_shortcode('emphasis', array( $this, 'bs_emphasis' ));
-    add_shortcode('img', array( $this, 'bs_img' ));
-    add_shortcode('thumbnail', array( $this, 'bs_thumbnail' ));
-    add_shortcode('responsive', array( $this, 'bs_responsive' ));
-    add_shortcode('modal', array( $this, 'bs_modal' ));
-    add_shortcode('modal-footer', array( $this, 'bs_modal_footer' ));
+    $shortcodes = array(
+      'alert', 
+      'badge', 
+      'breadcrumb', 
+      'breadcrumb-item', 
+      'button', 
+      'button-group', 
+      'button-toolbar', 
+      'caret', 
+      'carousel', 
+      'carousel-item', 
+      'code', 
+      'collapse', 
+      'collapsibles', 
+      'column', 
+      'container', 
+      'divider', 
+      'dropdown', 
+      'dropdown-item', 
+      'emphasis', 
+      'icon', 
+      'icon_white', 
+      'img', 
+      'jumbotron', 
+      'label', 
+      'lead', 
+      'list-group', 
+      'list-group-item', 
+      'list-group-item-heading', 
+      'list-group-item-text', 
+      'media', 
+      'media-body', 
+      'media-object', 
+      'modal', 
+      'modal-footer',
+      'nav', 
+      'nav-item', 
+      'page-header', 
+      'panel', 
+      'popover', 
+      'progress', 
+      'progress-bar', 
+      'responsive', 
+      'row', 
+      'span', 
+      'tab', 
+      'table', 
+      'table-wrap', 
+      'tabs', 
+      'thumbnail', 
+      'tooltip', 
+      'well', 
+    );
+
+    foreach ( $shortcodes as $shortcode ) {
+
+      $function = 'bs_' . str_replace( '-', '_', $shortcode );
+      add_shortcode( $shortcode, array( $this, $function ) );
+      
+    }
 
   }
 
