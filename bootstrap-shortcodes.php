@@ -1189,7 +1189,8 @@ class BoostrapShortcodes {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-	 $data_props = $this->parse_data_attributes($data);
+      $content=preg_replace('/class=".*?"/', '', $content);
+      $data_props = $this->parse_data_attributes($data);
     $return = '<div class="item';
     $return .= ($GLOBALS['carousel_active']) ? ' active' : '';
     $return .= ($xclass) ? ' ' . $xclass : '';
