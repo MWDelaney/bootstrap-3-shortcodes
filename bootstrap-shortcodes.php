@@ -129,36 +129,43 @@ class BoostrapShortcodes {
     *
     * bs_button
     *
-    * @author Filip Stefansson
+    * @author Filip Stefansson, Nicolas Jonas
     * @since 1.0
     * //DW mod added xclass var
     *-------------------------------------------------------------------------------------*/
-  function bs_button($atts, $content = null) {
-     extract(shortcode_atts(array(
-        "type" => false,
-        "size" => false,
-        "block" => false,
-        "dropdown" => false,
-        "link" => '',
-        "target" => false,
-        "xclass" => false,
-        "title" => false,
-        "data" => false
-     ), $atts));
-      $data_props = $this->parse_data_attributes($data);
-     $return  =  '<a href="' . $link . '" class="btn';
-     $return .= ($type) ? ' btn-' . $type : ' btn-default';
-     $return .= ($size) ? ' btn-' . $size : '';
-     $return .= ($block) ? ' btn-block' : '';
-     $return .= ($dropdown) ? ' dropdown-toggle' : '';
-     $return .= ($xclass) ? ' ' . $xclass : '';
-     $return .= '"';
-     $return .= ($target) ? ' target="' . $target . '"' : '';
-     $return .= ($title) ? ' title="' . $title . '"' : '';
-     $return .= ($data_props) ? ' ' . $data_props : '';
-     $return .= '>' . do_shortcode( $content ) . '</a>';
+  function bs_button( $atts, $content = null ) {
 
-     return $return;
+    extract( shortcode_atts( array(
+      "type"     => false,
+      "size"     => false,
+      "block"    => false,
+      "dropdown" => false,
+      "link"     => '',
+      "target"   => false,
+      "xclass"   => false,
+      "title"    => false,
+      "data"     => false
+    ), $atts ) );
+
+    $class  = 'btn';
+    $class .= ( $type )     ? ' btn-' . $type : ' btn-default';
+    $class .= ( $size )     ? ' btn-' . $size : '';
+    $class .= ( $block )    ? ' btn-block' : '';
+    $class .= ( $dropdown ) ? ' dropdown-toggle' : '';
+    $class .= ( $xclass )   ? ' ' . $xclass : '';
+    
+    $data_props = $this->parse_data_attributes( $data );
+
+    return sprintf( 
+      '<a href="%s" class="%s"%s%s%s>%s</a>',
+      esc_url( $link ),
+      esc_attr( $class ),
+      ( $target )     ? sprintf( ' target="%s"', esc_attr( $target ) ) : '',
+      ( $title )      ? sprintf( ' title="%s"',  esc_attr( $title ) )  : '',
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
+
   }
 
   /*--------------------------------------------------------------------------------------
