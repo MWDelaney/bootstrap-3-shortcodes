@@ -1225,8 +1225,11 @@ function bs_tooltip( $atts, $content = null ) {
     extract( shortcode_atts( $defaults, $atts ) );
     $classes = 'bs-tooltip';    
 
+    $previous_value = libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument;
     $dom->loadXML($content);
+    libxml_clear_errors();
+    libxml_use_internal_errors($previous_value);
     if(!$dom->documentElement) {
         $element = $dom->createElement('span', $content);
         $dom->appendChild($element);
@@ -1261,8 +1264,11 @@ function bs_popover( $atts, $content = null ) {
     extract( shortcode_atts( $defaults, $atts ) );
     $classes = 'bs-popover';
     
+    $previous_value = libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument;
     $dom->loadXML($content);
+    libxml_clear_errors();
+    libxml_use_internal_errors($previous_value);
     if(!$dom->documentElement) {
         $element = $dom->createElement('span', $content);
         $dom->appendChild($element);
