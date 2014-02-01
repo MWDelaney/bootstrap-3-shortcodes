@@ -15,7 +15,9 @@ function retitle($match) {
 //    require 'php_markdown/' . preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
 //});
 
-require_once 'php_markdown/Michelf/MarkdownExtra.inc.php';
+if(!class_exists('\Michelf\MarkdownExtra' )) {
+    require_once 'php_markdown/Michelf/MarkdownExtra.inc.php';
+}
 
 # Get Markdown class
 //use \Michelf\Markdown;
