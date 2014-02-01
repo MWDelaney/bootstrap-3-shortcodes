@@ -176,24 +176,31 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_button_group( $atts, $content = null ) {
-     extract(shortcode_atts(array(
-        "size" => false,
-        "vertical" => false,
-        "justified" => false,
-        "dropup" => false,
-		"xclass" => false,
-        "data" => false
-     ), $atts));
-	  $data_props = $this->parse_data_attributes($data);
-     $classes .= ($size) ? ' btn-group-' . $size : '';
-     $classes .= ($vertical) ? ' btn-group-vertical' : '';
-     $classes .= ($justified) ? ' btn-group-justified' : '';
-     $classes .= ($dropup) ? ' dropup' : '';
-	 $classes .= ($xclass) ? ' ' . $xclass : '';
-     $return = '<div class="btn-group '.$classes .'"';
-	 $return .= ($data_props) ? ' ' . $data_props : '';
-	 $return .= '>' . do_shortcode( $content ) . '</div>';
-     return $return;
+
+    extract( shortcode_atts( array(
+      "size"       => false,
+      "vertical"   => false,
+      "justified"  => false,
+      "dropup"     => false,
+      "xclass"     => false,
+      "data"       => false
+    ), $atts ) );
+
+    $classes  = 'btn-group';
+    $classes .= ( $size )      ? ' btn-group-' . $size : '';
+    $classes .= ( $vertical )  ? ' btn-group-vertical' : '';
+    $classes .= ( $justified ) ? ' btn-group-justified' : '';
+    $classes .= ( $dropup)     ? ' dropup' : '';
+    $classes .= ( $xclass)     ? ' ' . $xclass : '';
+
+    $data_props = $this->parse_data_attributes($data);
+
+    return sprintf( 
+      '<div class="%s"%s>%s</div>',
+      esc_attr( $classes ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }
 
   /*--------------------------------------------------------------------------------------
@@ -203,18 +210,24 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_button_toolbar( $atts, $content = null ) {
-	 extract(shortcode_atts(array(
-		"xclass" => false,
-        "data" => false
-     ), $atts));
-	  $data_props = $this->parse_data_attributes($data);
-     $return = '<div class="btn-toolbar';
-	 $return .= ($xclass) ? ' ' . $xclass : '';
-	 $return .= '"';
-	 $return .= ($data_props) ? ' ' . $data_props : '';
-	 $return .=' role="toolbar">' . do_shortcode( $content ) . '</div>';
-     return $return;
-  }    
+
+    extract( shortcode_atts( array(
+      "xclass" => false,
+      "data"   => false,
+    ), $atts ) );
+
+    $classes  = 'btn-toolbar';
+    $classes .= ( $xclass ) ? ' ' . $xclass : '';
+
+    $data_props = $this->parse_data_attributes($data);
+
+    return sprintf(
+      '<div class="%s" role="toolbar"%s>%s</div>',
+      esc_attr( $classes ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
+  }
     
  /*--------------------------------------------------------------------------------------
     *
@@ -225,17 +238,23 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_caret( $atts, $content = null ) {
-	 extract(shortcode_atts(array(
-		"xclass" => false,
-        "data" => false
-     ), $atts));
-	  $data_props = $this->parse_data_attributes($data);
-    $return = '<span class="caret';
-	$return .= ($xclass) ? ' ' . $xclass : '';
-	$return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-	$return .='></span>';
-    return $return;
+
+    extract( shortcode_atts( array(
+      "xclass" => false,
+      "data"   => false,
+    ), $atts ) );
+
+    $classes  = 'caret';
+    $classes .= ( $xclass ) ? ' ' . $xclass : '';    
+
+    $data_props = $this->parse_data_attributes($data);
+
+    return sprintf(
+      '<span class="%s" role="toolbar"%s>%s</span>',
+      esc_attr( $classes ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }
 
  /*--------------------------------------------------------------------------------------
@@ -247,17 +266,23 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/ 
   function bs_container( $atts, $content = null ) {
-	extract(shortcode_atts(array(
-		"xclass" => false,
-        "data" => false
-    ), $atts));
-	  $data_props = $this->parse_data_attributes($data);
-    $return = '<div class="container';
-	$return .= ($xclass) ? ' ' . $xclass : '';
-	$return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-	$return .='>' . do_shortcode( $content ) . '</div>';
-    return $return;
+
+    extract( shortcode_atts( array(
+      "xclass" => false,
+      "data"   => false,
+    ), $atts ) );
+
+    $classes  = 'container';
+    $classes .= ( $xclass ) ? ' ' . $xclass : '';    
+
+    $data_props = $this->parse_data_attributes( $data );
+
+    return sprintf(
+      '<div class="%s"%s>%s</div>',
+      esc_attr( $classes ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }  
     
   /*--------------------------------------------------------------------------------------
@@ -268,17 +293,23 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_dropdown( $atts, $content = null ) {
-	 extract(shortcode_atts(array(
-		"xclass" => false,
-        "data" => false
-     ), $atts));
-	  $data_props = $this->parse_data_attributes($data);
-     $return = '<ul class="dropdown-menu';
-	 $return .= ($xclass) ? ' ' . $xclass : '';
-	 $return .= '"';
-	 $return .= ($data_props) ? ' ' . $data_props : '';
-	 $return .=' role="menu">' . do_shortcode( $content ) . '</ul>';
-     return $return;
+
+    extract( shortcode_atts( array (
+      "xclass" => false,
+      "data"   => false
+    ), $atts ) );
+
+    $classes  = 'dropdown-menu';
+    $classes .= ( $xclass ) ? ' ' . $xclass : '';  
+
+    $data_props = $this->parse_data_attributes($data);
+
+    return sprintf(
+      '<span class="%s" role="menu"%s>%s</span>',
+      esc_attr( $classes ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }
     
   /*--------------------------------------------------------------------------------------
@@ -289,19 +320,27 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_dropdown_item( $atts, $content = null ) {
-     extract(shortcode_atts(array(
-        "link" => false,
-		"xclass" => false,
-        "data" => false
-     ), $atts));
-	  $data_props = $this->parse_data_attributes($data);
-     $return = '<li><a href="'. $link .'"';
-	 $return .= ($xclass) ? ' class="' . $xclass . '"' : '';
-	 $return .= ($data_props) ? ' ' . $data_props : '';
-	 $return .= '>' . do_shortcode( $content ) . '</a></li>';
-     return $return;
+
+    extract(shortcode_atts(array(
+      "link"   => false,
+      "xclass" => false,
+      "data"   => false,
+    ), $atts ) );
+
+    $classes  = '';
+    $classes .= ( $xclass ) ? ' ' . $xclass : '';      
+
+    $data_props = $this->parse_data_attributes( $data );
+
+    return sprintf(
+      '<li><a href="%s" class="%s">%s</a></li>',
+      esc_url( $link ),
+      ( $data_prop ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }
-    
+
+
   /*--------------------------------------------------------------------------------------
     *
     * bs_dropdown_divider
@@ -310,17 +349,23 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_dropdown_divider( $atts, $content = null ) {
-	 extract(shortcode_atts(array(
-		"xclass" => false,
-        "data" => false
-     ), $atts));
-	  $data_props = $this->parse_data_attributes($data);
-     $return = '<li class="divider';
-	 $return .= ($xclass) ? ' ' . $xclass : '';
-	 $return .= '"';
-	 $return .= ($data_props) ? ' ' . $data_props : '';
-	 $return .='>' . do_shortcode( $content ) . '</li>';
-     return $return;
+
+    extract( shortcode_atts( array(
+      "xclass" => false,
+      "data"   => false,
+    ), $atts ) );
+
+    $classes  = 'divider';
+    $classes .= ( $xclass ) ? ' ' . $xclass : '';      
+
+    $data_props = $this->parse_data_attributes( $data );
+
+    return sprintf(
+      '<li><a href="%s" class="%s">%s</a></li>',
+      esc_url( $link ),
+      ( $data_prop ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }
     
   /*--------------------------------------------------------------------------------------
