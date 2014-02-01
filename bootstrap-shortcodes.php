@@ -1673,28 +1673,41 @@ function bs_img( $atts, $content = null ) {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_modal_footer( $atts, $content = null ) {
-	extract(shortcode_atts(array(
+
+    extract(shortcode_atts(array(
       "xclass" => false,
-	  "data"=>false
-    ), $atts));
-	 $data_props = $this->parse_data_attributes($data);
-    $return = '<div class="modal-footer';
-	$return .= ($xclass) ? ' ' . $xclass : '';
-	$return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-	$return .= '>' . do_shortcode( $content ) . '</div>';
-    return $return;
+      "data"   => false,
+    ), $atts ) );
+
+    $classes  = 'modal-footer';
+    $classes .= ( $xclass ) ? ' ' . $xclass : '';    
+
+    $data_props = $this->parse_data_attributes( $data );
+
+    return sprintf(
+      '<div class="%s"%s>%s</div>',
+      esc_attr( $classes ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }
   
-  function parse_data_attributes($data){
-	if($data) { 
-          $data = explode('|',$data);
-          foreach($data as $d):
-            $d = explode(',',$d);    
-                $data_props .= 'data-'.$d[0]. '="'.trim($d[1]).'" ';
-          endforeach;
-      } else { $data_props = false; }
-	return $data_props;
+  function parse_data_attributes( $data ) {
+
+    $data_props = '';
+
+    if( $data ) {
+      $data = explode( '|', $data );
+
+      foreach( $data as $d ) {
+        $d = explode( ',', $d );
+        $data_props .= sprintf( 'data-%s="%s" ', esc_html( $d[0] ), trim( esc_attr( $d[1] ) ) );
+      }
+    }
+    else { 
+      $data_props = false;
+    }
+    return $data_props;
   }
 
 }
