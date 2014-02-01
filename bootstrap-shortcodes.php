@@ -600,17 +600,23 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_row( $atts, $content = null ) {
-	 extract(shortcode_atts(array(
-      "xclass" => false,
-	  "data" => false
+      
+     extract(shortcode_atts(array(
+		"xclass" => false,
+        "data"   => false
      ), $atts));
-	  $data_props = $this->parse_data_attributes($data);
-    $return  =  '<div class="row';
-    $return .= ($xclass) ? ' ' . $xclass : '';
-    $return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-    $return .= '>' . do_shortcode( $content ) . '</div>';
-    return $return;
+
+    $class  = 'row';      
+    $class .= ( $xclass )   ? ' ' . $xclass : '';
+      
+    $data_props = $this->parse_data_attributes($data);
+      
+    return sprintf( 
+      '<div class="%s"%s>%s</div>',
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }
 
 
@@ -625,50 +631,55 @@ class BoostrapShortcodes {
     * @todo pull and offset
     *-------------------------------------------------------------------------------------*/
   function bs_column( $atts, $content = null ) {
-    extract(shortcode_atts(array(
-      "lg" => false,
-      "md" => false,
-      "sm" => false,
-      "xs" => false,
-      "offset_lg" => false,
-      "offset_md" => false,
-      "offset_sm" => false,
-      "offset_xs" => false,
-      "pull_lg" => false,
-      "pull_md" => false,
-      "pull_sm" => false,
-      "pull_xs" => false,
-      "push_lg" => false,
-      "push_md" => false,
-      "push_sm" => false,
-      "push_xs" => false,
-      "xclass" => false,
-	  "data" => false
-    ), $atts));
-	 $data_props = $this->parse_data_attributes($data);
-    $return  =  '<div class="';
-    $return .= ($lg) ? 'col-lg-' . $lg . ' ' : '';
-    $return .= ($md) ? 'col-md-' . $md . ' ' : '';
-    $return .= ($sm) ? 'col-sm-' . $sm . ' ' : '';
-    $return .= ($xs) ? 'col-xs-' . $xs . ' ' : '';
-    $return .= ($offset_lg) ? 'col-lg-offset-' . $offset_lg . ' ' : '';
-    $return .= ($offset_md) ? 'col-md-offset-' . $offset_md . ' ' : '';
-    $return .= ($offset_sm) ? 'col-sm-offset-' . $offset_sm . ' ' : '';
-    $return .= ($offset_xs) ? 'col-xs-offset-' . $offset_xs . ' ' : '';
-    $return .= ($pull_lg) ? 'col-lg-pull-' . $pull_lg . ' ' : '';
-    $return .= ($pull_md) ? 'col-md-pull-' . $pull_md . ' ' : '';
-    $return .= ($pull_sm) ? 'col-sm-pull-' . $pull_sm . ' ' : '';
-    $return .= ($pull_xs) ? 'col-xs-pull-' . $pull_xs . ' ' : '';
-    $return .= ($push_lg) ? 'col-lg-push-' . $push_lg . ' ' : '';
-    $return .= ($push_md) ? 'col-md-push-' . $push_md . ' ' : '';
-    $return .= ($push_sm) ? 'col-sm-push-' . $push_sm . ' ' : '';
-    $return .= ($push_xs) ? 'col-xs-push-' . $push_xs . ' ' : '';
-    $return .= ($xclass) ? ' ' . $xclass : '';
-    $return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-    $return .= '>' . do_shortcode( $content ) . '</div>';
+      
+     extract(shortcode_atts(array(
+		"lg"          => false,
+		"md"          => false,
+		"sm"          => false,
+		"xs"          => false,
+		"offset_lg"   => false,
+		"offset_md"   => false,
+		"offset_sm"   => false,
+		"offset_xs"   => false,
+		"pull_lg"     => false,
+		"pull_md"     => false,
+		"pull_sm"     => false,
+		"pull_xs"     => false,
+		"push_lg"     => false,
+		"push_md"     => false,
+		"push_sm"     => false,
+		"push_xs"     => false,
+		"xclass"      => false,
+        "data"        => false
+     ), $atts));
 
-    return $return;
+    $class  = '';
+    $class .= ( $lg )             ? ' col-lg-' . $lg : '';
+    $class .= ( $md )             ? ' col-md-' . $md : '';
+    $class .= ( $sm )             ? ' col-sm-' . $sm : '';
+    $class .= ( $xs )             ? ' col-xs-' . $xs : '';
+    $class .= ( $offset_lg )      ? ' col-lg-offset-' . $offset_lg : '';
+    $class .= ( $offset_md )      ? ' col-md-offset-' . $offset_md : '';
+    $class .= ( $offset_sm )      ? ' col-sm-offset-' . $offset_sm : '';
+    $class .= ( $offset_xs )      ? ' col-xs-offset-' . $offset_xs : '';
+    $class .= ( $pull_lg )        ? ' col-lg-pull-' . $pull_lg : '';
+    $class .= ( $pull_md )        ? ' col-md-pull-' . $pull_md : '';
+    $class .= ( $pull_sm )        ? ' col-sm-pull-' . $pull_sm : '';
+    $class .= ( $pull_xs )        ? ' col-xs-pull-' . $pull_xs : '';
+    $class .= ( $push_lg )        ? ' col-lg-push-' . $push_lg : '';
+    $class .= ( $push_md )        ? ' col-md-push-' . $push_md : '';
+    $class .= ( $push_sm )        ? ' col-sm-push-' . $push_sm : '';
+    $class .= ( $push_xs )        ? ' col-xs-push-' . $push_xs : '';
+    $class .= ( $xclass )   ? ' ' . $xclass : '';
+      
+    $data_props = $this->parse_data_attributes($data);
+      
+    return sprintf( 
+      '<div class="%s"%s>%s</div>',
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }
 
   /*--------------------------------------------------------------------------------------
