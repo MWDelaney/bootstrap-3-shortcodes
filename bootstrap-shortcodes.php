@@ -305,7 +305,7 @@ class BoostrapShortcodes {
     $data_props = $this->parse_data_attributes($data);
 
     return sprintf(
-      '<span class="%s" role="menu"%s>%s</span>',
+      '<ul class="%s" role="menu"%s>%s</ul>',
       esc_attr( $classes ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
@@ -335,7 +335,7 @@ class BoostrapShortcodes {
     return sprintf(
       '<li><a href="%s" class="%s">%s</a></li>',
       esc_url( $link ),
-      ( $data_prop ) ? ' ' . $data_props : '',
+      ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
   }
@@ -363,7 +363,7 @@ class BoostrapShortcodes {
     return sprintf(
       '<li><a href="%s" class="%s">%s</a></li>',
       esc_url( $link ),
-      ( $data_prop ) ? ' ' . $data_props : '',
+      ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
   }
@@ -400,28 +400,43 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_nav_item( $atts, $content = null ) {
-     extract(shortcode_atts(array(
-        "link" => false,
-        "active" => false,
-        "disabled" => false,
-        "dropdown" => false,
-		"xclass" => false,
-        "data" => false
-     ), $atts));
-	  $data_props = $this->parse_data_attributes($data);
-     $return  =  '<li class="';
-     $return .= ($dropdown) ? ' dropdown' : '';
-     $return .= ($active) ? ' active' : '';
-     $return .= ($disabled) ? ' disabled' : '';
-     $return .= '"><a href="' . $link . '"';
-     $return .= ($dropdown) ? ' class="dropdown-toggle' : '';
-	 $return .= ($xclass) ? ' ' . $xclass : '';
-	 $return .= '"';
-	 $return .= ($dropdown) ? ' data-toggle="dropdown"' : '';
-	 $return .= ($data_props) ? ' ' . $data_props : '';
-     $return .= ($dropdown) ? '>' . str_replace("<ul", "</a><ul", do_shortcode( $content )) : '>' . do_shortcode( $content ) . '</a>';
-     $return .= '</li>';
-     return $return;
+
+    extract( shortcode_atts( array(
+      "link"     => false,
+      "active"   => false,
+      "disabled" => false,
+      "dropdown" => false,
+      "xclass"   => false,
+      "data"     => false,
+    ), $atts ) );
+
+    $li_classes  = '';
+    $li_classes .= ( $dropdown ) ? 'dropdown' : '';
+    $li_classes .= ( $active )   ? ' active' : '';
+    $li_classes .= ( $disabled ) ? ' disabled' : '';
+
+    $a_classes  = '';
+    $a_classes .= ( $dropdown ) ? ' dropdown-toggle' : '';
+    $a_classes .= ( $xclass )   ? ' ' . $xclass : '';
+
+    $data_props = $this->parse_data_attributes( $data );
+
+    # Wrong idea I guess ....
+    #$pattern = ( $dropdown ) ? '<li%1$s><a href="%2$s"%3$s%4$s%5$s></a>%6$s</li>' : '<li%1$s><a href="%2$s"%3$s%4$s%5$s>%6$s</a></li>';
+
+    //* If we have a dropdown shortcode inside the content we end the link before the dropdown shortcode, else all content goes inside the link
+    $content = ( $dropdown ) ? str_replace( '[dropdown]', '</a>[dropdown]', $content ) : $content . '</a>';
+
+    return sprintf(
+      '<li%1$s><a href="%2$s"%3$s%4$s%5$s>%6$s</li>',
+      ( ! empty( $li_classes ) ) ? sprintf( ' class="%s"', esc_attr( $li_classes ) ) : '',
+      esc_html( $link ),
+      ( ! empty( $a_classes ) )  ? sprintf( ' class="%s"', esc_attr( $a_classes ) )  : '',
+      ( $dropdown )   ? ' data-toggle="dropdown"' : '',
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
+
   }
     
   /*--------------------------------------------------------------------------------------
