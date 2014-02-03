@@ -596,13 +596,14 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 [Bootstrap list groups documentation](http://getbootstrap.com/components/#list-group)
 
 ### Panels
-	[panel type="info" title="Panel Title" footer="Footer text"] … [/panel]
+	[panel type="info" heading="Panel Title" footer="Footer text"] … [/panel]
 
 #### [panel] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
-title | The panel title | optional | any text | none
+heading | The panel heading | optional | any text | none
+title | Whether the panel heading should have a title tag around it | optional | true, false | false
 footer | The panel footer text if desired | optional | any text | none
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none

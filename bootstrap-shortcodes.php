@@ -1055,6 +1055,7 @@ class BoostrapShortcodes {
 
      extract(shortcode_atts(array(
         "title"     => false,
+        "heading"   => false,
         "type"      => false,
         "footer"    => false,
         "xclass"    => false,
@@ -1075,9 +1076,13 @@ class BoostrapShortcodes {
       '<div class="%s"%s>%s%s%s</div>',
       esc_attr( $class ),
       ( $data_props ) ? ' ' . $data_props : '',
-      ( $title ) ? ' ' . $title : '',
-      ( $footer ) ? ' ' . $footer : '',
-      do_shortcode( $content )
+      ( $heading ) ? sprintf( '<div class="panel-heading">%s%s%s</div>', 
+                                   ( $title ) ? '<h3 class="panel-title">' : '',
+                                   esc_html( $heading ),
+                                   ( $title ) ? '</h3>' : ''
+                            ) : '',
+      do_shortcode( $content ),
+      ( $footer ) ? ' ' . $footer : ''
     );
   }
 
