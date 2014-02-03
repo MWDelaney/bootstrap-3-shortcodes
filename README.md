@@ -602,7 +602,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
-title | The panel title | required | any text | none
+title | The panel title | optional | any text | none
 footer | The panel footer text if desired | optional | any text | none
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
