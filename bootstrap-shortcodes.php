@@ -1067,8 +1067,11 @@ class BoostrapShortcodes {
     $class .= ( $xclass )   ? ' ' . $xclass : '';
 
     $data_props = $this->parse_data_attributes($data);
-
-    $title = ( $title ) ? '<div class="panel-heading"><h3 class="panel-title">' . $title . '</h3></div>' : '';
+  
+    if(!is_bool($title) {
+        $heading = $title;
+        $title = true;
+    }
 
     $footer = ( $footer ) ? '<div class="panel-footer">' . $footer . '</div>' : '';
             
