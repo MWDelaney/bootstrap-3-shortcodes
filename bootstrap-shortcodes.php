@@ -1067,16 +1067,11 @@ class BoostrapShortcodes {
     $class .= ( $xclass )   ? ' ' . $xclass : '';
 
     $data_props = $this->parse_data_attributes($data);
-  
-    if(!is_bool($title) {
-        $heading = $title;
-        $title = true;
-    }
 
     $footer = ( $footer ) ? '<div class="panel-footer">' . $footer . '</div>' : '';
             
     return sprintf( 
-      '<div class="%s"%s>%s%s%s</div>',
+      '<div class="%s"%s>%s<div class="panel-body">%s</div>%s</div>',
       esc_attr( $class ),
       ( $data_props ) ? ' ' . $data_props : '',
       ( $heading ) ? sprintf( '<div class="panel-heading">%s%s%s</div>', 
