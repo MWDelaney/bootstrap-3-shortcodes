@@ -8,6 +8,8 @@ This plugin won't do anything if you don't have WordPress theme built with the [
 
 The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
 
+This plugin contains a ```composer.json``` file if you manage your PHP dependencies with [Composer](https://getcomposer.org).
+
 ## Supported shortcodes
 
 ### CSS
