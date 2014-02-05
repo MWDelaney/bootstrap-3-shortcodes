@@ -103,6 +103,7 @@ class BoostrapShortcodes {
       'progress-bar', 
       'responsive', 
       'row', 
+      'scrollspy',
       'span', 
       'tab', 
       'table', 
@@ -1803,5 +1804,45 @@ function bs_img( $atts, $content = null ) {
   }
 
 }
+
+    /*--------------------------------------------------------------------------------------
+    *
+    * scrollspy
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_scrollspy( $atts, $content = null ) {
+
+    // Extract the ids of all H2 tags for use in the scrollspy widget.
+    preg_match_all('#<h2[^>]+>(.+?)</h2>#ims', $content, $matches, PREG_OFFSET_CAPTURE );
+
+    $scrollspy_titles = array();
+    if( isset($matches[1]) ){ $scrollspy_titles = $matches[1]; }
+
+    $return = '';
+
+    if( count($scrollspy_titles) ){
+      $return .= '<div class="scrollspy-container" data-spy="affix" data-offset-top="300" data-offset-bottom="0" id="scrollspy-nav"><ul class="nav nav-pills';
+	  $return .= '"';
+	  $return .= '>';
+
+      $i = 0;
+      foreach( $scrollspy_titles as $title ){
+        if($i == 0)
+          $return .= '<li>';
+        else
+          $return .= '<li>';
+
+        $return .= '<a href="#' . sanitize_title( $title[0] ) . '">' . $title[0] . '</a></li>';
+        $i++;
+      }
+
+        $return .= '</ul></div>';
+        $return .= do_shortcode( $content );
+    } else {
+      $return .= do_shortcode( $content );
+    }
+
+    return $return;
+  }
 
 new BoostrapShortcodes();
