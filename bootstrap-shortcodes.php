@@ -1157,13 +1157,13 @@ class BoostrapShortcodes {
 
      extract(shortcode_atts(array(
 		'title'   => false,
-		'active'   => false,
+		'active'  => false,
 		'xclass'  => false,
 		'data'    => false
      ), $atts));
       
-    $class = 'tab-pane';
-    ( $active ) ? $class .= ' active' : '';
+    $class  = 'tab-pane';
+    $class .= ( $active ) ? ' active' : '';
       
     $id = 'custom-tab-'. $GLOBALS['tabs_count'] . '-'. sanitize_title( $title );
  
