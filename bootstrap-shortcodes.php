@@ -106,7 +106,6 @@ class BoostrapShortcodes {
       'progress-bar', 
       'responsive', 
       'row', 
-      'scrollspy',
       'span', 
       'tab', 
       'table', 
@@ -1808,50 +1807,6 @@ function bs_img( $atts, $content = null ) {
           endforeach;
       } else { $data_props = false; }
 	return $data_props;
-  }
-    
-    /*--------------------------------------------------------------------------------------
-    *
-    * scrollspy
-    *
-    *-------------------------------------------------------------------------------------*/
-  function bs_scrollspy( $atts, $content = null ) {
-
-    extract(shortcode_atts(array(
-        "affix"          => false,
-        "offset_top"     => false,
-        "offset_bottom"  => false,
-        "xclass"         => false,
-        "data"           => false
-     ), $atts));
-
-    $div_class = 'scrollspy-container';
-      
-    $ul_class  = 'nav nav-pills';
-    $ul_class .= ( $xclass )   ? ' ' . $xclass : '';
-
-    // Extract the ids of all h-tags for use in the scrollspy widget.
-    $pattern = '#(?P<full_tag><(?P<tag_name>h\d)(?P<tag_extra>[^>]*)>(?P<tag_contents>[^<]*)</h\d>)#i';
-    if ( preg_match_all( $pattern, $content, $matches, PREG_SET_ORDER ) ) {
-        $lis = array();
-        foreach( $matches as $match ) {
-            $lis[] = sprintf( '<li><a href="#%s">%s</a></li>', 
-                             sanitize_title( $match['tag_contents'] ), 
-                             $match['tag_contents']
-                            );
-        }
-    }
-    return sprintf( 
-      '<div class="%s"%s%s%s><ul class="%s"%s>%s</ul></div>%s',
-      esc_attr( $div_class ),
-      ( $affix )            ? ' data-spy="affix"' : '',
-      ( $offset_top )       ? ' data-offset-top="' . $offset_top . '"' : '',
-      ( $offset_bottom )    ? ' data-offset-bottom="' . $offset_bottom . '"' : '',
-      esc_attr( $ul_class ),
-      ( $data_props ) ? ' ' . $data_props : '',
-      ( $lis )  ? implode( $lis ) : '',
-      do_shortcode( $content )
-    );
   }
     
 }

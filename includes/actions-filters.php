@@ -9,7 +9,6 @@ function bootstrap_shortcodes_help_styles() {
 add_action( 'admin_enqueue_scripts', 'bootstrap_shortcodes_help_styles' );
 
 add_filter('the_content', 'bs_fix_shortcodes');
-add_filter('the_content', 'bs_add_ids_to_header_tags');
 
 //action to add a custom button to the content editor
 function add_bootstrap_button() {
