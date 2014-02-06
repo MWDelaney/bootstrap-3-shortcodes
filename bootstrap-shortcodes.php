@@ -1107,52 +1107,43 @@ class BoostrapShortcodes {
     else
       $GLOBALS['tabs_count'] = 0;
 
-    $defaults = array(
-		'xclass'	=> false,
-		'data'		=> false
-	);
-    extract( shortcode_atts( $defaults, $atts ) );
+     extract(shortcode_atts(array(
+		"xclass" => false,
+        "data"   => false
+     ), $atts));
+ 
+    $ul_class  = 'nav nav-tabs';      
+    $ul_class .= ( $xclass )   ? ' ' . $xclass : '';
+      
+    $div_class = 'tab-content';
+      
+    $id = 'custom-tabs-'. $GLOBALS['tabs_count'];
+ 
 	$data_props = $this->parse_data_attributes($data);
 
     // Extract the tab titles for use in the tab widget.
-    preg_match_all( '/tab title="([^\"]+)"/i', $content, $matches, PREG_OFFSET_CAPTURE );
-
-    $tab_titles = array();
-    if( isset($matches[1]) ){ $tab_titles = $matches[1]; }
-
-    $return = '';
-
-    if( count($tab_titles) ){
-      $return .= '<ul class="nav nav-tabs';
-	  $return .= ($xclass) ? ' ' . $xclass : '';
-	  $return .= '"';
-	  $return .= ($data_props) ? ' ' . $data_props : '';
-	  $return .= ' id="custom-tabs-'. rand(1, 100) .'">';
-
-      $i = 0;
-      foreach( $tab_titles as $tab ){
-        if($i == 0)
-          $return .= '<li class="active">';
-        else
-          $return .= '<li>';
-
-        $return .= '<a href="#custom-tab-' . $GLOBALS['tabs_count'] . '-' . sanitize_title( $tab[0] ) . '"  data-toggle="tab">' . $tab[0] . '</a></li>';
-        $i++;
-      }
-
-        $return .= '</ul>';
-        $return .= '<div class="tab-content">';
-        $return .= do_shortcode( $content );
-        $return .= '</div>';
-    } else {
-      $return .= do_shortcode( $content );
+    if ( $atts_map = bs_attribute_map( $content ) ) {
+        $tabs = array();
+        foreach( $atts_map as $tab ) {
+            $tabs[] = sprintf( '<li%s><a href="#%s"%s>%s</a></li>',
+                             ( $tab["tab"]["active"] ) ? ' class="active"' : '',
+                             'custom-tab-' . $GLOBALS['tabs_count'] . '-' . sanitize_title( $tab["tab"]["title"] ),
+                             ' data-toggle="tab"',
+                             $tab["tab"]["title"]
+                            );
+            $first = false;
+        }
     }
-
-    return $return;
+   return sprintf( 
+      '<ul class="%s" id="%s"%s>%s</ul><div class="%s">%s</div>',
+      esc_attr( $ul_class ),
+      esc_attr( $id ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      ( $tabs )  ? implode( $tabs ) : '',
+      esc_attr( $div_class ),
+      do_shortcode( $content )
+    );
   }
-
-
-
 
   /*--------------------------------------------------------------------------------------
     *
@@ -1164,33 +1155,28 @@ class BoostrapShortcodes {
     *-------------------------------------------------------------------------------------*/
   function bs_tab( $atts, $content = null ) {
 
-    if( !isset($GLOBALS['current_tabs']) ) {
-      $GLOBALS['current_tabs'] = $GLOBALS['tabs_count'];
-      $state = 'active';
-    } else {
-
-      if( $GLOBALS['current_tabs'] == $GLOBALS['tabs_count'] ) {
-        $state = '';
-      } else {
-        $GLOBALS['current_tabs'] = $GLOBALS['tabs_count'];
-        $state = 'active';
-      }
-    }
-
-    $defaults = array(
-		'title' => 'Tab',
-		'xclass'	=> false,
-		'data'		=> false
-	);
-    extract( shortcode_atts( $defaults, $atts ) );
+     extract(shortcode_atts(array(
+		'title'   => false,
+		'active'   => false,
+		'xclass'  => false,
+		'data'    => false
+     ), $atts));
+      
+    $class = 'tab-pane';
+    ( $active ) ? $class .= ' active' : '';
+      
+    $id = 'custom-tab-'. $GLOBALS['tabs_count'] . '-'. sanitize_title( $title );
+ 
 	$data_props = $this->parse_data_attributes($data);
+   
+    return sprintf( 
+      '<div id="%s" class="%s"%s>%s</div>',
+      esc_attr( $id ),
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
 
-    $return = '<div id="custom-tab-' . $GLOBALS['tabs_count'] . '-'. sanitize_title( $title ) .'" class="tab-pane ' . $state;
-	$return .= ($xclass) ? ' ' . $xclass : '';
-	$return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-	$return .= '>'. do_shortcode( $content ) .'</div>';
-    return $return;
   }
 
 
