@@ -1197,34 +1197,26 @@ class BoostrapShortcodes {
     else
       $GLOBALS['collapsibles_count'] = 0;
 
-    $defaults = array(
-		'xclass'	=> false,
-		'data'		=> false
-	);
-    extract( shortcode_atts( $defaults, $atts ) );
+     extract(shortcode_atts(array(
+		"xclass" => false,
+        "data"   => false
+     ), $atts));
+      
+    $class = 'panel-group';
+    $class .= ( $xclass )   ? ' ' . $xclass : '';
+      
+    $id = 'custom-collapse-'. $GLOBALS['collapsibles_count'];
+ 
 	$data_props = $this->parse_data_attributes($data);
 
-    // Extract the tab titles for use in the tab widget.
-    preg_match_all( '/collapse title="([^\"]+)"/i', $content, $matches, PREG_OFFSET_CAPTURE );
+    return sprintf( 
+      '<div class="%s" id="%s"%s>%s</div>',
+      esc_attr( $class ),
+      esc_attr( $id ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
 
-    $tab_titles = array();
-    if( isset($matches[1]) ){ $tab_titles = $matches[1]; }
-
-    $return = '';
-
-    if( count($tab_titles) ){
-      $return .= '<div class="panel-group';
-	  $return .= ($xclass) ? ' ' . $xclass : '';
-	  $return .= '"';
-	  $return .= ($data_props) ? ' ' . $data_props : '';
-	  $return .= ' id="accordion-' . $GLOBALS['collapsibles_count'] . '">';
-      $return .= do_shortcode( $content );
-      $return .= '</div>';
-    } else {
-      $return .= do_shortcode( $content );
-    }
-
-    return $return;
   }
 
 
@@ -1238,29 +1230,45 @@ class BoostrapShortcodes {
     *-------------------------------------------------------------------------------------*/
   function bs_collapse( $atts, $content = null ) {
 
-    if( !isset($GLOBALS['current_collapse']) )
-      $GLOBALS['current_collapse'] = 0;
-    else
-      $GLOBALS['current_collapse']++;
-
     extract(shortcode_atts(array(
-      "title" => '',
-      "type" => 'default',
-      "active" => false,
-	  "xclass" => false,
-	  "data" => false
+      "title"   => false,
+      "type"    => false,
+      "active"  => false,
+	  "xclass"  => false,
+	  "data"    => false
     ), $atts));
-	 $data_props = $this->parse_data_attributes($data);
 
-    if ($active)
-      $active = 'in';
+    $panel_class = 'panel';
+    $panel_class .= ( $type )     ? ' panel-' . $type : ' panel-default';
+    $panel_class .= ( $xclass )   ? ' ' . $xclass : '';
+      
+    $collapse_class = 'panel-collapse collapse';
+    $collapse_class .= ( $active )  ? ' in' . $type : '';
 
-    $return = '<div class="panel panel-' . $type;
-	$return .= ($xclass) ? ' ' . $xclass : '';
-	$return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-	$return .= '><div class="panel-heading"><h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['collapsibles_count'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">' . $title . '</a></h3></div><div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="panel-collapse collapse ' . $active . '"><div class="panel-body">' . do_shortcode($content) . ' </div></div></div>';
-    return $return;
+    $parent = 'custom-collapse-'. $GLOBALS['collapsibles_count'];
+    $current_collapse = $parent . '-'. sanitize_title( $title );
+
+    $data_props = $this->parse_data_attributes($data);
+      
+    return sprintf( 
+      '<div class="%1$s"%2$s>
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#%3$s" href="#%4$s">%5$s</a>
+                </h4>
+            </div>
+            <div id="%4$s" class="%6$s">
+                <div class="panel-body">%7$s</div>
+            </div>
+       </div>',
+      esc_attr( $panel_class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      $parent,
+      $current_collapse,
+      $title,
+      esc_attr( $collapse_class ),
+      do_shortcode( $content )
+    );
   }
     
     
