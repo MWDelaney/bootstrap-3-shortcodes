@@ -1108,11 +1108,13 @@ class BoostrapShortcodes {
       $GLOBALS['tabs_count'] = 0;
 
      extract(shortcode_atts(array(
-		"xclass" => false,
+        "type"   => false,
+        "xclass" => false,
         "data"   => false
      ), $atts));
  
-    $ul_class  = 'nav nav-tabs';      
+    $ul_class  = 'nav';
+    $ul_class .= ( $type )     ? ' nav-' . $type : ' nav-tabs';
     $ul_class .= ( $xclass )   ? ' ' . $xclass : '';
       
     $div_class = 'tab-content';
@@ -1158,12 +1160,15 @@ class BoostrapShortcodes {
      extract(shortcode_atts(array(
 		'title'   => false,
 		'active'  => false,
+		'fade'    => false,
 		'xclass'  => false,
 		'data'    => false
      ), $atts));
       
     $class  = 'tab-pane';
-    $class .= ( $active ) ? ' active' : '';
+    $class .= ( $fade )              ? ' fade' : '';
+    $class .= ( $active )            ? ' active' : '';
+    $class .= ( $active && $fade )   ? ' in' : '';
       
     $id = 'custom-tab-'. $GLOBALS['tabs_count'] . '-'. sanitize_title( $title );
  

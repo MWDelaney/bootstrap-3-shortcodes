@@ -625,7 +625,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 ## Javascript
 
 ### Tabs
-	[tabs]
+	[tabs type="tabs"]
 	  [tab title="Home"]
 	    …
 	  [/tab]
@@ -640,6 +640,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 #### [tabs] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
+type | The type of nav | required | tabs, pills | tabs
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
@@ -647,6 +648,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 title | The title of the tab | required | any text | false
+active | Whether this tab should be "active" or selected | optional | true, false | false
+fade | Whether to use the "fade" effect when showing this tab | optional | true, false | false
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
