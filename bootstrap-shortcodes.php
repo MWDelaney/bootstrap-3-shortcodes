@@ -39,6 +39,9 @@ function bootstrap_shortcodes_scripts()  {
   // Bootstrap popover js
   wp_enqueue_script( 'bootstrap-shortcodes-popover', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-popover.js', array( 'jquery' ), false, true );
 
+  // Bootstrap scrollspy js
+  wp_enqueue_script( 'bootstrap-shortcodes-scrollspy', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-scrollspy.js', array( 'jquery' ), false, true );
+
 }
 add_action( 'wp_enqueue_scripts', 'bootstrap_shortcodes_scripts', 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
 
@@ -328,6 +331,8 @@ class BoostrapShortcodes {
     $class  = '';      
     $class .= ( $xclass )   ? ' ' . $xclass : '';
 
+    $data_props = $this->parse_data_attributes($data);
+
     return sprintf( 
       '<li><a href="%s" class="%s"%s>%s</a></li>',
       esc_url( $link ),
@@ -354,6 +359,8 @@ class BoostrapShortcodes {
     $class  = 'divider';      
     $class .= ( $xclass )   ? ' ' . $xclass : '';
 
+    $data_props = $this->parse_data_attributes($data);
+      
     return sprintf( 
       '<li class="%s"%s>%s</li>',
       esc_attr( $class ),
@@ -1802,9 +1809,7 @@ function bs_img( $atts, $content = null ) {
       } else { $data_props = false; }
 	return $data_props;
   }
-
-}
-
+    
     /*--------------------------------------------------------------------------------------
     *
     * scrollspy
@@ -1812,37 +1817,43 @@ function bs_img( $atts, $content = null ) {
     *-------------------------------------------------------------------------------------*/
   function bs_scrollspy( $atts, $content = null ) {
 
-    // Extract the ids of all H2 tags for use in the scrollspy widget.
-    preg_match_all('#<h2[^>]+>(.+?)</h2>#ims', $content, $matches, PREG_OFFSET_CAPTURE );
+    extract(shortcode_atts(array(
+        "affix"          => false,
+        "offset_top"     => false,
+        "offset_bottom"  => false,
+        "xclass"         => false,
+        "data"           => false
+     ), $atts));
 
-    $scrollspy_titles = array();
-    if( isset($matches[1]) ){ $scrollspy_titles = $matches[1]; }
+    $div_class = 'scrollspy-container';
+      
+    $ul_class  = 'nav nav-pills';
+    $ul_class .= ( $xclass )   ? ' ' . $xclass : '';
 
-    $return = '';
-
-    if( count($scrollspy_titles) ){
-      $return .= '<div class="scrollspy-container" data-spy="affix" data-offset-top="300" data-offset-bottom="0" id="scrollspy-nav"><ul class="nav nav-pills';
-	  $return .= '"';
-	  $return .= '>';
-
-      $i = 0;
-      foreach( $scrollspy_titles as $title ){
-        if($i == 0)
-          $return .= '<li>';
-        else
-          $return .= '<li>';
-
-        $return .= '<a href="#' . sanitize_title( $title[0] ) . '">' . $title[0] . '</a></li>';
-        $i++;
-      }
-
-        $return .= '</ul></div>';
-        $return .= do_shortcode( $content );
-    } else {
-      $return .= do_shortcode( $content );
+    // Extract the ids of all h-tags for use in the scrollspy widget.
+    $pattern = '#(?P<full_tag><(?P<tag_name>h\d)(?P<tag_extra>[^>]*)>(?P<tag_contents>[^<]*)</h\d>)#i';
+    if ( preg_match_all( $pattern, $content, $matches, PREG_SET_ORDER ) ) {
+        $lis = array();
+        foreach( $matches as $match ) {
+            $lis[] = sprintf( '<li><a href="#%s">%s</a></li>', 
+                             sanitize_title( $match['tag_contents'] ), 
+                             $match['tag_contents']
+                            );
+        }
     }
-
-    return $return;
+    return sprintf( 
+      '<div class="%s"%s%s%s><ul class="%s"%s>%s</ul></div>%s',
+      esc_attr( $div_class ),
+      ( $affix )            ? ' data-spy="affix"' : '',
+      ( $offset_top )       ? ' data-offset-top="' . $offset_top . '"' : '',
+      ( $offset_bottom )    ? ' data-offset-bottom="' . $offset_bottom . '"' : '',
+      esc_attr( $ul_class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      ( $lis )  ? implode( $lis ) : '',
+      do_shortcode( $content )
+    );
   }
+    
+}
 
 new BoostrapShortcodes();
