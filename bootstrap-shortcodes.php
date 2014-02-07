@@ -1133,7 +1133,6 @@ class BoostrapShortcodes {
                              ' data-toggle="tab"',
                              $tab["tab"]["title"]
                             );
-            $first = false;
         }
     }
    return sprintf( 
@@ -1286,58 +1285,56 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_carousel( $atts, $content = null ) {
-    extract(shortcode_atts(array(
-    "interval" => "5000",
-    "pause" => false,
-    "wrap" => false,
-    "xclass" => false,
-    "data" => false,
-    ), $atts));
       
     if( isset($GLOBALS['carousel_count']) )
       $GLOBALS['carousel_count']++;
     else
       $GLOBALS['carousel_count'] = 0;
-    
-    $GLOBALS['carousel_active'] = true;
       
+    extract(shortcode_atts(array(
+      "interval" => false,
+      "pause" => false,
+      "wrap" => false,
+      "xclass" => false,
+      "data" => false,
+    ), $atts));
+
+    $div_class  = 'carousel slide';
+    $div_class .= ( $xclass )   ? ' ' . $xclass : '';
+    
+    $inner_class = 'carousel-inner';
+      
+    $id = 'custom-carousel-'. $GLOBALS['carousel_count'];
+          
 	$data_props = $this->parse_data_attributes($data);
-
-    $i = 0;
-    $indicator_count = substr_count($content,'<img');
-      while($i < $indicator_count) {
-        $indicators .= '<li data-target="#carousel-' . $GLOBALS['carousel_count'] . '" data-slide-to="' . $i . '"';
-        $indicators .= ($i == 0) ? 'class="active"' : '';
-        $indicators .= '></li>';
-        $i++;
-      }
-    $indicators_return = '<!-- Indicators -->';
-    $indicators_return .= '<ol class="carousel-indicators">';
-    $indicators_return .= $indicators;
-    $indicators_return .= '</ol>';
-
-    $return = '';
-    $return .= '<div id="carousel-' . $GLOBALS['carousel_count'] . '" class="carousel slide';
-    $return .= ($xclass) ? ' ' . $xclass : '';
-    $return .= '"';
-    $return .=  ' data-ride="carousel"';
-    $return .= ($interval) ? ' data-interval="' . $interval . '"' : '';
-    $return .= ($pause) ? ' data-pause="' . $pause . '"' : '';
-    $return .= ($wrap) ? ' data-wrap="' . $wrap . '"' : '';
-    $return .= ($data_props) ? ' ' . $data_props : '';
-    $return .= '>';
-    $return .= $indicators_return;
-    $return .= '<div class="carousel-inner">' . do_shortcode( $content ) . '</div>';
-    $return .= '<!-- Controls -->';
-    $return .= '<a class="left carousel-control" href="#carousel-' . $GLOBALS['carousel_count'] . '" data-slide="prev">';
-    $return .= '<span class="glyphicon glyphicon-chevron-left"></span>';
-    $return .= '</a>';
-    $return .= '<a class="right carousel-control" href="#carousel-' . $GLOBALS['carousel_count'] . '" data-slide="next">';
-    $return .= '<span class="glyphicon glyphicon-chevron-right"></span>';
-    $return .= '</a>';
-    $return .= '</div>';
-
-    return $return;
+      
+    // Extract the tab titles for use in the tab widget.
+    if ( $atts_map = bs_attribute_map( $content ) ) {
+        $indicators = array();
+        $i = 0;
+        foreach( $atts_map as $slide ) {
+            $indicators[] = sprintf( '<li class="%s"%s%s></li>',
+                             ( $slide["carousel-item"]["active"] ) ? 'active' : '',
+                             ' data-target="# ' . $id . '"',
+                             ' data-slide-to="# ' . $i . '"'
+                            );
+            $i++;
+        }
+    }
+   return sprintf( 
+      '<div class="%s" id="%s" data-ride="carousel"%s%s%s%s>%s<div class="%s">%s</div>%s%s</div>',
+      esc_attr( $div_class ),
+      esc_attr( $id ),
+      ($interval)   ? ' data-interval="' . $interval . '"' : '',
+      ($pause)      ? ' data-pause="' . $pause . '"' : '',
+      ($wrap)       ? ' data-wrap="' . $wrap . '"' : '',
+      ( $data_props ) ? ' ' . $data_props : '',
+      ( $indicators )  ? '<ol class="carousel-indicators">' . implode( $indicators ) . '</ol>' : '',
+      esc_attr( $inner_class ),
+      do_shortcode( $content ),
+      '<a class="left carousel-control" href="#' . $id . '" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>',
+      '<a class="right carousel-control" href="#' . $id . '" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>'
+    );
   }
 
 
@@ -1350,26 +1347,30 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_carousel_item( $atts, $content = null ) {
-    extract(shortcode_atts(array(
+      
+ extract(shortcode_atts(array(
+      "active" => false,
       "caption" => false,
-	  "xclass" => false,
-	  "data" => false
-    ), $atts));
-      $content=preg_replace('/class=".*?"/', '', $content);
-      $data_props = $this->parse_data_attributes($data);
-    $return = '<div class="item';
-    $return .= ($GLOBALS['carousel_active']) ? ' active' : '';
-    $return .= ($xclass) ? ' ' . $xclass : '';
-    $return .= '"';
-    $return .= ($data_props) ? ' ' . $data_props : '';
-    $return .= '>' . do_shortcode($content);
-    $return .= ($caption) ? '<div class="carousel-caption">' . $caption . '</div>' : '';
-    $return .='</div>';
-    $GLOBALS['carousel_active'] = false;
-    return $return;
+      "xclass" => false,
+      "data" => false
+     ), $atts));
+      
+    $class  = 'item';
+    $class .= ( $active )  ? ' active' : '';
+    $class .= ( $xclass )   ? ' ' . $xclass : '';
+    
+    $data_props = $this->parse_data_attributes($data);
+
+    $content = preg_replace('/class=".*?"/', '', $content);
+
+    return sprintf( 
+      '<div class="%s"%s>%s%s</div>',
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content ),
+      ($caption) ? '<div class="carousel-caption">' . $caption . '</div>' : ''
+    );
   }
-
-
 
   /*--------------------------------------------------------------------------------------
     *

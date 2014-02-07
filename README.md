@@ -626,7 +626,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 ### Tabs
 	[tabs type="tabs"]
-	  [tab title="Home"]
+	  [tab title="Home" active="true"]
 	    …
 	  [/tab]
 	  [tab title="Profile"]
@@ -714,7 +714,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 ### Carousel
 	[carousel]
-        [carousel-item] … [/carousel-item]
+        [carousel-item active="true"] … [/carousel-item]
         [carousel-item] … [/carousel-item]
         [carousel-item] … [/carousel-item]
 	[/carousel]
@@ -731,6 +731,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 #### [carousel-item] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
+active | Whether the item has the "active" style applied. One item MUST be set as active. | optional | true, false | false
 caption | This carousel slide's caption | optional | Any text | none
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
