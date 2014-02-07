@@ -1797,16 +1797,24 @@ function bs_img( $atts, $content = null ) {
     return $return;
   }
   
-  function parse_data_attributes($data){
-	if($data) { 
-          $data = explode('|',$data);
-          foreach($data as $d):
-            $d = explode(',',$d);    
-                $data_props .= 'data-'.$d[0]. '="'.trim($d[1]).'" ';
-          endforeach;
-      } else { $data_props = false; }
-	return $data_props;
+  function parse_data_attributes( $data ) {
+
+    $data_props = '';
+
+    if( $data ) {
+      $data = explode( '|', $data );
+
+      foreach( $data as $d ) {
+        $d = explode( ',', $d );
+        $data_props .= sprintf( 'data-%s="%s" ', esc_html( $d[0] ), trim( esc_attr( $d[1] ) ) );
+      }
+    }
+    else { 
+      $data_props = false;
+    }
+    return $data_props;
   }
+
     
 }
 
