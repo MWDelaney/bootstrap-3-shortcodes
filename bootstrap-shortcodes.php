@@ -1368,7 +1368,7 @@ class BoostrapShortcodes {
       esc_attr( $class ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content ),
-      ($caption) ? '<div class="carousel-caption">' . $caption . '</div>' : ''
+      ($caption) ? '<div class="carousel-caption">' . esc_html( $caption ) . '</div>' : ''
     );
   }
 
@@ -1485,19 +1485,18 @@ function bs_popover( $atts, $content = null ) {
 
 function bs_media_object( $atts, $content = null ) {
 
-    $defaults = array(
-	   'pull' => "left",
-	   'xclass' => false,
-	   'data' =>false
-    );
-    extract( shortcode_atts( $defaults, $atts ) );
+     extract(shortcode_atts(array(
+	    "pull" => "left",
+		"xclass" => false,
+        "data"   => false
+     ), $atts));
     
-    $classes = "media-object";
-	$classes .= ($xclass) ? ' ' . $xclass : '';
+    $class = "media-object";
+	$class .= ($xclass) ? ' ' . $xclass : '';
 	
     $dom = new DOMDocument;
     $dom->loadXML($content);
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $class);
 	if($data) { 
           $data = explode('|',$data);
           foreach($data as $d):
@@ -1510,23 +1509,30 @@ function bs_media_object( $atts, $content = null ) {
     return $return;
   }
 
-function bs_media_body( $atts, $content = null ) {
-    
-    $defaults = array(
-	   'title' => false,
-	   'xclass' => false,
-	   'data' =>false
+  function bs_media_body( $atts, $content = null ) {
+
+     extract(shortcode_atts(array(
+		"title"  => false,
+		"xclass" => false,
+        "data"   => false
+     ), $atts));
+
+    $div_class  = 'media-body';      
+    $div_class .= ( $xclass )   ? ' ' . $xclass : '';
+
+    $h4_class  = 'media-heading';      
+    $h4_class .= ( $xclass )   ? ' ' . $xclass : '';
+
+    $data_props = $this->parse_data_attributes($data);
+      
+    return sprintf( 
+      '<div class="%s"%s><h4 class="%s">%s</h4>%s</div>',
+      esc_attr( $div_class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      esc_attr( $h4_class ),
+      esc_html( $title),
+      do_shortcode( $content )
     );
-    extract( shortcode_atts( $defaults, $atts ) );
-	 $data_props = $this->parse_data_attributes($data);
-    $return .= '<div class="media-body';
-	$return .= ($xclass) ? ' ' . $xclass : '';
-	$return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-	$return .= '>';
-    $return .= ($title) ? '<h4 class="media-heading">' . $title . '</h4>' : '';
-    $return .= $content . '</div>';
-    return $return;
   }
 
   /*--------------------------------------------------------------------------------------
