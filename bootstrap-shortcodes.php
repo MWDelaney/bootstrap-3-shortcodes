@@ -1542,20 +1542,25 @@ function bs_media_object( $atts, $content = null ) {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_jumbotron( $atts, $content = null ) {
+      
     extract(shortcode_atts(array(
-      "title" => false,
-	  "xclass" => false,
-	  "data" => false
-    ), $atts));
-	 $data_props = $this->parse_data_attributes($data);
-    $return .='<div class="jumbotron';
-	$return .= ($xclass) ? ' ' . $xclass : '';
-	$return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-	$return .= '>';
-    $return .= ($title) ? '<h1>' . $title . '</h1>' : '';
-    $return .= do_shortcode( $content ) . '</div>';
-    return $return;
+        "title"      => false,
+        "xclass"    => false,
+        "data"      => false
+     ), $atts));
+      
+    $class  = 'jumbotron';
+    $class .= ( $xclass )   ? ' ' . $xclass : '';
+    
+    $data_props = $this->parse_data_attributes($data);
+      
+    return sprintf( 
+      '<div class="%s"%s>%s%s</div>',
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      ( $title ) ? '<h1>' . esc_html($title) . '</h1>' : '',
+      do_shortcode( $content )
+    );
   }
 
   /*--------------------------------------------------------------------------------------
@@ -1570,8 +1575,9 @@ function bs_media_object( $atts, $content = null ) {
 	  "data" => false
     ), $atts));
 	 $data_props = $this->parse_data_attributes($data);
-    $classes = "page-header";
-	$classes .= ($xclass) ? ' ' . $xclass : '';
+    
+    $class = "page-header";
+	$class .= ($xclass) ? ' ' . $xclass : '';
 	
     $dom = new DOMDocument;
     $dom->loadXML($content);
@@ -1591,7 +1597,7 @@ function bs_media_object( $atts, $content = null ) {
         $new_root->appendChild($dom->documentElement);
         $dom->appendChild($new_root);
     }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $class);
 	if($data) { 
           $data = explode('|',$data);
           foreach($data as $d):
@@ -1612,17 +1618,23 @@ function bs_media_object( $atts, $content = null ) {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_lead( $atts, $content = null ) {
-	extract(shortcode_atts(array(
-	  "xclass" => false,
-	  "data" => false
-    ), $atts));
-	 $data_props = $this->parse_data_attributes($data);
-    $return = '<p class="lead';
-	$return .= ($xclass) ? ' ' . $xclass : '';
-	$return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-	$return .= '>' . do_shortcode( $content ) . '</p>';
-    return $return;
+      
+     extract(shortcode_atts(array(
+		"xclass" => false,
+        "data"   => false
+     ), $atts));
+
+    $class  = 'lead';      
+    $class .= ( $xclass )   ? ' ' . $xclass : '';
+      
+    $data_props = $this->parse_data_attributes($data);
+      
+    return sprintf( 
+      '<p class="%s"%s>%s</p>',
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }
 
   /*--------------------------------------------------------------------------------------
@@ -1632,19 +1644,27 @@ function bs_media_object( $atts, $content = null ) {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_emphasis( $atts, $content = null ) {
-    extract(shortcode_atts(array(
-      "type" => 'muted',
-	  "xclass" => false,
-	  "data" => false
-    ), $atts));
-	 $data_props = $this->parse_data_attributes($data);
-    $return = '<span class="text-' . $type;
-	$return .= ($xclass) ? ' ' . $xclass : '';
-	$return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-	$return .= '>' . do_shortcode( $content ) . '</span>';
-    return $return;
+      
+     extract(shortcode_atts(array(
+        "type"   => false,
+		"xclass" => false,
+        "data"   => false
+     ), $atts));
+
+    $class  = '';    
+    $class .= ( $type ) ? 'text-' . $type : 'text-muted';
+    $class .= ( $xclass )   ? ' ' . $xclass : '';
+      
+    $data_props = $this->parse_data_attributes($data);
+      
+    return sprintf( 
+      '<span class="%s"%s>%s</span>',
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }
+
   /*--------------------------------------------------------------------------------------
     *
     * bs_img
@@ -1658,13 +1678,15 @@ function bs_img( $atts, $content = null ) {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-    $classes .= ($type) ? 'img-' . $type . ' ' : '';
-    $classes .= ($responsive) ? ' img-responsive' : '';
-	$classes .= ($xclass) ? ' ' . $xclass : '';
+
+    $class .= ($type) ? 'img-' . $type . ' ' : '';
+    $class .= ($responsive) ? ' img-responsive' : '';
+    $class .= ($xclass) ? ' ' . $xclass : '';
+
     $dom = new DOMDocument;
     $dom->loadXML($content);
     foreach($dom->getElementsByTagName('img') as $image) { 
-        $image->setAttribute('class', $image->getAttribute('class') . ' ' . $classes);
+        $image->setAttribute('class', $image->getAttribute('class') . ' ' . $class);
 		if($data) { 
           $data = explode('|',$data);
           foreach($data as $d):
