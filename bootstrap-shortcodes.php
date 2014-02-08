@@ -1390,7 +1390,7 @@ function bs_tooltip( $atts, $content = null ) {
 	   'html' => 'false'
     );
     extract( shortcode_atts( $defaults, $atts ) );
-    $classes = 'bs-tooltip';    
+    $class = 'bs-tooltip';    
 
     $previous_value = libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument;
@@ -1401,7 +1401,7 @@ function bs_tooltip( $atts, $content = null ) {
         $element = $dom->createElement('span', $content);
         $dom->appendChild($element);
     }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $class);
     $dom->documentElement->setAttribute('title', $title );
     if($animation) { $dom->documentElement->setAttribute('data-animation', $animation ); }
     if($placement) { $dom->documentElement->setAttribute('data-placement', $placement ); }
@@ -1429,7 +1429,7 @@ function bs_popover( $atts, $content = null ) {
 	   'html' => 'false'
     );
     extract( shortcode_atts( $defaults, $atts ) );
-    $classes = 'bs-popover';
+    $class = 'bs-popover';
     
     $previous_value = libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument;
@@ -1440,7 +1440,7 @@ function bs_popover( $atts, $content = null ) {
         $element = $dom->createElement('span', $content);
         $dom->appendChild($element);
     }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $class);
     $dom->documentElement->setAttribute('data-toggle', 'popover' );
     if($title) { $dom->documentElement->setAttribute('data-original-title', $title ); }
     $dom->documentElement->setAttribute('data-content', $text );
@@ -1463,21 +1463,24 @@ function bs_popover( $atts, $content = null ) {
     *
     *-------------------------------------------------------------------------------------*/
     
-function bs_media( $atts, $content = null ) {
-    
-    $defaults = array(
-	   'xclass' => false,
-	   'data' =>false
+  function bs_media( $atts, $content = null ) {
+      
+     extract(shortcode_atts(array(
+		"xclass" => false,
+        "data"   => false
+     ), $atts));
+
+    $class  = 'media';      
+    $class .= ( $xclass )   ? ' ' . $xclass : '';
+      
+    $data_props = $this->parse_data_attributes($data);
+      
+    return sprintf( 
+      '<div class="%s"%s>%s</div>',
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
     );
-    extract( shortcode_atts( $defaults, $atts ) );
-	 $data_props = $this->parse_data_attributes($data);
-	 
-    $return = '<div class="media';
-	$return .= ($xclass) ? ' ' . $xclass : '';
-	$return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-	$return .= '>' . do_shortcode( $content ) . '</div>';
-    return $return;
   }
 
 function bs_media_object( $atts, $content = null ) {
