@@ -1075,6 +1075,11 @@ class BoostrapShortcodes {
     $class .= ( $type )     ? ' panel-' . $type : ' panel-default';
     $class .= ( $xclass )   ? ' ' . $xclass : '';
 
+    if(!$heading && $title) {
+        $heading = $title;
+        $title = true;
+    }
+      
     $data_props = $this->parse_data_attributes($data);
 
     $footer = ( $footer ) ? '<div class="panel-footer">' . $footer . '</div>' : '';
