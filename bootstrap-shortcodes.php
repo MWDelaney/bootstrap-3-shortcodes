@@ -1741,18 +1741,20 @@ function bs_img( $atts, $content = null ) {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_responsive( $atts, $content = null ) {
-      extract( shortcode_atts( array(
-          'visible' => '',
-          'hidden' => '',
-		  "xclass" => false,
-		  "data" => false
-      ), $atts));
-	  $data_props = $this->parse_data_attributes($data);
-      $classes='';
+      
+      
+     extract(shortcode_atts(array(
+        "visible" => false,
+        "hidden"  => false,
+        "xclass"  => false,
+        "data"    => false
+     ), $atts));
+      
+      $class='';
       if($visible) { 
           $visible = explode(' ',$visible);
           foreach($visible as $v):
-            $classes .= 'visible-'.$v.' ';
+            $class .= 'visible-'.$v.' ';
           endforeach;
       }
       if($hidden) { 
@@ -1761,12 +1763,17 @@ function bs_img( $atts, $content = null ) {
             $classes .= 'hidden-'.$h.' ';
           endforeach;
       }
-	  $classes .= ($xclass) ? ' ' . $xclass : '';
-      $return = '<span class="' . $classes . '"';
-	  $return .= ($data_props) ? ' ' . $data_props : '';
-	  $return .= '>' . do_shortcode($content) . '</span>';
-      return $return;
+	  $class .= ($xclass) ? ' ' . $xclass : '';
 
+      
+	  $data_props = $this->parse_data_attributes($data);
+
+    return sprintf( 
+      '<span class="%s"%s>%s</span>',
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }
 
   /*--------------------------------------------------------------------------------------
