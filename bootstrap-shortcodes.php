@@ -551,27 +551,27 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_code($atts, $content = null) {
+      
      extract(shortcode_atts(array(
-        "inline" => false,
-        "scrollable" => false,
-		"xclass" => false,
-		"data" => false
+        "inline"      => false,
+        "scrollable"   => false,
+        "xclass"    => false,
+        "data"      => false
      ), $atts));
-	  $data_props = $this->parse_data_attributes($data);
-    if($inline) {
-      $return = '<code';
-	  $return .= ($xclass) ? ' class="' . $xclass . '"' : '';
-	  $return .= ($data_props) ? ' ' . $data_props : '';
-	  $return .= '>' . $content . '</code>';
-    } else {
-      $return  = '<pre';
-      $classes = ($scrollable) ? 'pre-scrollable': '';
-	  $classes .= ($xclass) ? ' ' . $xclass : '';
-	  $return .= (!empty($classes)) ? 'class="' . $classes . '"' :'';
-	  $return .= ($data_props) ? ' ' . $data_props : '';
-      $return .= '>' . $content . '</pre>';
-    }
-    return $return;
+
+    $class  = '';
+    $class .= ( $scrollable )  ? ' pre-scrollable' : '';
+    $class .= ( $xclass )   ? ' ' . $xclass : '';
+
+    $data_props = $this->parse_data_attributes($data);
+
+    return sprintf( 
+      '<%1$s class="%2$s"%3$s>%4$s</%1$s>',
+      ( $inline ) ? 'code' : 'pre',
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }
 
   /*--------------------------------------------------------------------------------------
@@ -996,15 +996,17 @@ class BoostrapShortcodes {
 		  'xclass'    => false,
 	      'data'      => false
 	  ), $atts));
-    $classes  = 'table';
-    $classes .= ($bordered)     ? ' table-bordered' : '';
-    $classes .= ($striped)      ? ' table-striped' : '';
-    $classes .= ($hover)        ? ' table-hover' : '';
-    $classes .= ($condensed)    ? ' table-condensed' : '';
-	$classes .= ($xclass)       ? ' ' . $xclass : '';	
+
+    $class  = 'table';
+    $class .= ($bordered)     ? ' table-bordered' : '';
+    $class .= ($striped)      ? ' table-striped' : '';
+    $class .= ($hover)      ? ' table-hover' : '';
+    $class .= ($condensed)    ? ' table-condensed' : '';
+    $class .= ($xclass)       ? ' ' . $xclass : '';	
+      
     $dom = new DOMDocument;
     $dom->loadXML($content);
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $class);
 	if($data) { 
           $data = explode('|',$data);
           foreach($data as $d):
@@ -1390,6 +1392,7 @@ function bs_tooltip( $atts, $content = null ) {
 	   'html' => 'false'
     );
     extract( shortcode_atts( $defaults, $atts ) );
+    
     $class = 'bs-tooltip';    
 
     $previous_value = libxml_use_internal_errors(TRUE);
@@ -1429,6 +1432,7 @@ function bs_popover( $atts, $content = null ) {
 	   'html' => 'false'
     );
     extract( shortcode_atts( $defaults, $atts ) );
+    
     $class = 'bs-popover';
     
     $previous_value = libxml_use_internal_errors(TRUE);
@@ -1712,15 +1716,17 @@ function bs_img( $atts, $content = null ) {
 	  "xclass" => false,
 	  "data" => false
     ), $atts));
-    $classes = "thumbnail";
-	$classes .= ($xclass) ? ' ' . $xclass : '';
+      
+    $class = "thumbnail";
+	$class .= ($xclass) ? ' ' . $xclass : '';
+
     $dom = new DOMDocument;
     $dom->loadXML($content);
     if(!$dom->documentElement) {
         $element = $dom->createElement('div', $content);
         $dom->appendChild($element);
     }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $classes);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $class);
 	if($data) { 
           $data = explode('|',$data);
           foreach($data as $d):
@@ -1741,7 +1747,6 @@ function bs_img( $atts, $content = null ) {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_responsive( $atts, $content = null ) {
-      
       
      extract(shortcode_atts(array(
         "visible" => false,
@@ -1785,33 +1790,44 @@ function bs_img( $atts, $content = null ) {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_modal( $atts, $content = null ) {
-    extract(shortcode_atts(array(
-      "text" => '',
-      "title" => '',
-      "xclass" => false,
-	  "data"=>false
-    ), $atts));
-	 $data_props = $this->parse_data_attributes($data);
-    $sani_title = 'modal'. sanitize_title( $title );
-    $return .='<a data-toggle="modal" href="#'. $sani_title .'"';
-	$return .= ($xclass) ? ' class="' . $xclass .'"' : '';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-	$return .= '>'. $text .'</a>';
-    $return .='<div class="modal fade" id="'. $sani_title .'" tabindex="-1" role="dialog" aria-hidden="true">';
-    $return .='<div class="modal-dialog">';
-    $return .='<div class="modal-content">';
-    $return .='<div class="modal-header">';
-    $return .='<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-    $return .='<h4 class="modal-title">'. $title .'</h4>';
-    $return .='</div>';
-    $return .='<div class="modal-body">';
-    $return .= do_shortcode($content);
-    $return .='</div>';
-    $return .='</div><!-- /.modal-content -->';
-    $return .='</div><!-- /.modal-dialog -->';
-    $return .='</div><!-- /.modal -->';  
-    return $return;
 
+     extract(shortcode_atts(array(
+		"text"    => false,
+		"title"   => false,
+		"xclass"  => false,
+		"data"    => false
+     ), $atts));
+
+    $class  = '';      
+    $class .= ( $xclass )   ? ' ' . $xclass : '';
+      
+    $id = 'custom-modal-' . sanitize_title( $title );
+      
+    $data_props = $this->parse_data_attributes($data);
+      
+    return sprintf( 
+      '<a data-toggle="modal" href="#%1$s" class="%2$s"%3$s>%4$s</a>
+        <div class="modal fade" id="%1$s" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        %5$s
+                    </div>
+                    <div class="modal-body">
+                        %6$s
+                    </div>
+                </div> <!-- /.modal-content -->
+            </div> <!-- /.modal-dialog -->
+        </div> <!-- /.modal -->                        
+      ',
+      esc_attr( $id ),
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      esc_html( $text ),
+      ( $title ) ? '<h4 class="modal-title">' . $title . '</h4>' : '',
+      do_shortcode( $content )
+    );
   }
 
   /*--------------------------------------------------------------------------------------
@@ -1823,17 +1839,23 @@ function bs_img( $atts, $content = null ) {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_modal_footer( $atts, $content = null ) {
-	extract(shortcode_atts(array(
+
+    extract(shortcode_atts(array(
       "xclass" => false,
-	  "data"=>false
-    ), $atts));
-	 $data_props = $this->parse_data_attributes($data);
-    $return = '<div class="modal-footer';
-	$return .= ($xclass) ? ' ' . $xclass : '';
-	$return .= '"';
-	$return .= ($data_props) ? ' ' . $data_props : '';
-	$return .= '>' . do_shortcode( $content ) . '</div>';
-    return $return;
+      "data"   => false,
+    ), $atts ) );
+
+    $class  = 'modal-footer';
+    $class .= ( $xclass ) ? ' ' . $xclass : '';    
+
+    $data_props = $this->parse_data_attributes( $data );
+
+    return sprintf(
+      '<div class="%s"%s>%s</div>',
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
   }
   
   function parse_data_attributes( $data ) {
