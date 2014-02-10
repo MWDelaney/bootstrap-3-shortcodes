@@ -40,7 +40,7 @@ function bootstrap_shortcodes_scripts()  {
   wp_enqueue_script( 'bootstrap-shortcodes-popover', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-popover.js', array( 'jquery' ), false, true );
 
   // Bootstrap scrollspy js
-  wp_enqueue_script( 'bootstrap-shortcodes-scrollspy', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-scrollspy.js', array( 'jquery' ), false, true );
+  //wp_enqueue_script( 'bootstrap-shortcodes-scrollspy', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-scrollspy.js', array( 'jquery' ), false, true );
 
 }
 add_action( 'wp_enqueue_scripts', 'bootstrap_shortcodes_scripts', 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
