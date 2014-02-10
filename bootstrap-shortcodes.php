@@ -1114,6 +1114,8 @@ class BoostrapShortcodes {
     else
       $GLOBALS['tabs_count'] = 0;
 
+    $GLOBALS['tabs_default_count'] = 0;
+      
      extract(shortcode_atts(array(
         "type"   => false,
         "xclass" => false,
@@ -1129,17 +1131,27 @@ class BoostrapShortcodes {
     $id = 'custom-tabs-'. $GLOBALS['tabs_count'];
  
 	$data_props = $this->parse_data_attributes($data);
-
+    
+    $atts_map = bs_attribute_map( $content );
+    
     // Extract the tab titles for use in the tab widget.
-    if ( $atts_map = bs_attribute_map( $content ) ) {
+    if ( $atts_map ) {
         $tabs = array();
+        $GLOBALS['tabs_default_active'] = true;
+        foreach( $atts_map as $check ) {
+            if( $check["tab"]["active"] ) {
+                $GLOBALS['tabs_default_active'] = false;
+            }
+        }
+        $i = 0;
         foreach( $atts_map as $tab ) {
             $tabs[] = sprintf( '<li%s><a href="#%s"%s>%s</a></li>',
-                             ( $tab["tab"]["active"] ) ? ' class="active"' : '',
+                             ( ($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? ' class="active"' : '',
                              'custom-tab-' . $GLOBALS['tabs_count'] . '-' . sanitize_title( $tab["tab"]["title"] ),
                              ' data-toggle="tab"',
                              $tab["tab"]["title"]
                             );
+            $i++;
         }
     }
    return sprintf( 
@@ -1170,16 +1182,21 @@ class BoostrapShortcodes {
 		'xclass'  => false,
 		'data'    => false
      ), $atts));
-      
+    
+    if( $GLOBALS['tabs_default_active'] && $GLOBALS['tabs_default_count'] == 0 ) {
+        $active = true;
+    }
+    $GLOBALS['tabs_default_count']++;
+
     $class  = 'tab-pane';
     $class .= ( $fade )              ? ' fade' : '';
-    $class .= ( $active )            ? ' active' : '';
+    $class .= ( $active )  ? ' active' : '';
     $class .= ( $active && $fade )   ? ' in' : '';
       
     $id = 'custom-tab-'. $GLOBALS['tabs_count'] . '-'. sanitize_title( $title );
  
 	$data_props = $this->parse_data_attributes($data);
-   
+      
     return sprintf( 
       '<div id="%s" class="%s"%s>%s</div>',
       esc_attr( $id ),
@@ -1297,7 +1314,9 @@ class BoostrapShortcodes {
       $GLOBALS['carousel_count']++;
     else
       $GLOBALS['carousel_count'] = 0;
-      
+
+    $GLOBALS['tabs_default_count'] = 0;
+
     extract(shortcode_atts(array(
       "interval" => false,
       "pause" => false,
@@ -1314,14 +1333,23 @@ class BoostrapShortcodes {
     $id = 'custom-carousel-'. $GLOBALS['carousel_count'];
           
 	$data_props = $this->parse_data_attributes($data);
-      
+
+   $atts_map = bs_attribute_map( $content );
+    
     // Extract the tab titles for use in the tab widget.
-    if ( $atts_map = bs_attribute_map( $content ) ) {
+    if ( $atts_map ) {
         $indicators = array();
+        $GLOBALS['carousel_default_active'] = true;
+        foreach( $atts_map as $check ) {
+            if( $check["carousel-item"]["active"] ) {
+                $GLOBALS['carousel_default_active'] = false;
+            }
+        }
+    // Extract the tab titles for use in the tab widget.
         $i = 0;
         foreach( $atts_map as $slide ) {
             $indicators[] = sprintf( '<li class="%s"%s%s></li>',
-                             ( $slide["carousel-item"]["active"] ) ? 'active' : '',
+                             ( ($slide["carousel-item"]["active"]) || ($GLOBALS['carousel_default_active'] && $i == 0) ) ? 'active' : '',
                              ' data-target="# ' . $id . '"',
                              ' data-slide-to="# ' . $i . '"'
                             );
@@ -1361,6 +1389,11 @@ class BoostrapShortcodes {
       "xclass" => false,
       "data" => false
      ), $atts));
+      
+    if( $GLOBALS['carousel_default_active'] && $GLOBALS['carousel_default_count'] == 0 ) {
+        $active = true;
+    }
+    $GLOBALS['carousel_default_count']++;
       
     $class  = 'item';
     $class .= ( $active )  ? ' active' : '';
