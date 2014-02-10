@@ -1006,7 +1006,7 @@ class BoostrapShortcodes {
       
     $dom = new DOMDocument;
     $dom->loadXML($content);
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $class);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
 	if($data) { 
           $data = explode('|',$data);
           foreach($data as $d):
@@ -1442,7 +1442,7 @@ function bs_tooltip( $atts, $content = null ) {
         $element = $dom->createElement('span', $content);
         $dom->appendChild($element);
     }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $class);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
     $dom->documentElement->setAttribute('title', $title );
     if($animation) { $dom->documentElement->setAttribute('data-animation', $animation ); }
     if($placement) { $dom->documentElement->setAttribute('data-placement', $placement ); }
@@ -1482,7 +1482,7 @@ function bs_popover( $atts, $content = null ) {
         $element = $dom->createElement('span', $content);
         $dom->appendChild($element);
     }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $class);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
     $dom->documentElement->setAttribute('data-toggle', 'popover' );
     if($title) { $dom->documentElement->setAttribute('data-original-title', $title ); }
     $dom->documentElement->setAttribute('data-content', $text );
@@ -1538,7 +1538,7 @@ function bs_media_object( $atts, $content = null ) {
 	
     $dom = new DOMDocument;
     $dom->loadXML($content);
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $class);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
 	if($data) { 
           $data = explode('|',$data);
           foreach($data as $d):
@@ -1639,7 +1639,7 @@ function bs_media_object( $atts, $content = null ) {
         $new_root->appendChild($dom->documentElement);
         $dom->appendChild($new_root);
     }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $class);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
 	if($data) { 
           $data = explode('|',$data);
           foreach($data as $d):
@@ -1728,7 +1728,7 @@ function bs_img( $atts, $content = null ) {
     $dom = new DOMDocument;
     $dom->loadXML($content);
     foreach($dom->getElementsByTagName('img') as $image) { 
-        $image->setAttribute('class', $image->getAttribute('class') . ' ' . $class);
+        $image->setAttribute('class', $image->getAttribute('class') . ' ' . esc_attr( $class ));
 		if($data) { 
           $data = explode('|',$data);
           foreach($data as $d):
@@ -1764,7 +1764,7 @@ function bs_img( $atts, $content = null ) {
         $element = $dom->createElement('div', $content);
         $dom->appendChild($element);
     }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . $class);
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
 	if($data) { 
           $data = explode('|',$data);
           foreach($data as $d):
