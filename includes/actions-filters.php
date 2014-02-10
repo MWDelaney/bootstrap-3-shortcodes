@@ -1,4 +1,7 @@
 <?php
+
+/*  Include the styling for the help tab in the admin
+*/
 function bootstrap_shortcodes_help_styles() {
         wp_register_style( 'bootstrap-shortcodes-help', plugins_url( 'bootstrap-3-shortcodes/includes/help/css/bootstrap-shortcodes-help.css' ) );
         wp_enqueue_style( 'bootstrap-shortcodes-help' );
@@ -20,9 +23,13 @@ function add_bootstrap_button() {
   $title = 'Bootstrap Shortcodes Help';
 
   //append the icon
-  $context = "<a title='{$title}'
-    href='#TB_inline?width=640&height=650&inlineId={$popup_url}' class='thickbox button add_media' style='padding-left: 0px; padding-right: 0px;' title='Bootstrap Shortcodes Help'>
-    <img src='{$img}' style='height: 20px; position: relative; top: -2px;'></a>";
+  $context = "<a title='" . $title . "' 
+    href='#TB_inline?width=640&height=650&inlineId=" . $popup_url . "' 
+    class='thickbox button add_media' 
+    style='padding-left: 0px; padding-right: 0px;' 
+    title='Bootstrap Shortcodes Help'>
+        <img src='" . $img. "' style='height: 20px; position: relative; top: -2px;'>
+    </a>"; 
   
   echo $context;
 }

@@ -596,13 +596,14 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 [Bootstrap list groups documentation](http://getbootstrap.com/components/#list-group)
 
 ### Panels
-	[panel type="info" title="Panel Title" footer="Footer text"] … [/panel]
+	[panel type="info" heading="Panel Title" footer="Footer text"] … [/panel]
 
 #### [panel] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
-title | The panel title | required | any text | none
+heading | The panel heading | optional | any text | none
+title | Whether the panel heading should have a title tag around it | optional | true, false | false
 footer | The panel footer text if desired | optional | any text | none
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
@@ -624,8 +625,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 ## Javascript
 
 ### Tabs
-	[tabs]
-	  [tab title="Home"]
+	[tabs type="tabs"]
+	  [tab title="Home" active="true"]
 	    …
 	  [/tab]
 	  [tab title="Profile"]
@@ -639,6 +640,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 #### [tabs] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
+type | The type of nav | required | tabs, pills | tabs
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
@@ -646,6 +648,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 title | The title of the tab | required | any text | false
+active | Whether this tab should be "active" or selected | optional | true, false | false
+fade | Whether to use the "fade" effect when showing this tab | optional | true, false | false
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
@@ -710,7 +714,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 ### Carousel
 	[carousel]
-        [carousel-item] … [/carousel-item]
+        [carousel-item active="true"] … [/carousel-item]
         [carousel-item] … [/carousel-item]
         [carousel-item] … [/carousel-item]
 	[/carousel]
@@ -727,6 +731,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 #### [carousel-item] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
+active | Whether the item has the "active" style applied. One item MUST be set as active. | optional | true, false | false
 caption | This carousel slide's caption | optional | Any text | none
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
