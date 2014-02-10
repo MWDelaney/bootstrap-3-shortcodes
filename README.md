@@ -752,6 +752,7 @@ Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 text | Text of the modal trigger link | required | any text  | none
 title | Title of the modal popup | required | any text | none
+size | Optional modal size | optional | lg, sm | none
 xclass | Any extra classes you want to add to the trigger link | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 

@@ -1832,12 +1832,16 @@ function bs_img( $atts, $content = null ) {
      extract(shortcode_atts(array(
 		"text"    => false,
 		"title"   => false,
+		"size"    => false,
 		"xclass"  => false,
 		"data"    => false
      ), $atts));
 
-    $class  = '';      
-    $class .= ( $xclass )   ? ' ' . $xclass : '';
+    $a_class  = '';      
+    $a_class .= ( $xclass )   ? ' ' . $xclass : '';
+      
+    $div_class = 'modal fade';
+    $div_class .= ( $size ) ? ' bs-modal-' . $size : '';
       
     $id = 'custom-modal-' . sanitize_title( $title );
       
@@ -1845,24 +1849,25 @@ function bs_img( $atts, $content = null ) {
       
     return sprintf( 
       '<a data-toggle="modal" href="#%1$s" class="%2$s"%3$s>%4$s</a>
-        <div class="modal fade" id="%1$s" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="%5$s" id="%1$s" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        %5$s
+                        %6$s
                     </div>
                     <div class="modal-body">
-                        %6$s
+                        %7$s
                     </div>
                 </div> <!-- /.modal-content -->
             </div> <!-- /.modal-dialog -->
         </div> <!-- /.modal -->                        
       ',
       esc_attr( $id ),
-      esc_attr( $class ),
+      esc_attr( $a_class ),
       ( $data_props ) ? ' ' . $data_props : '',
       esc_html( $text ),
+      esc_attr( $div_class ),
       ( $title ) ? '<h4 class="modal-title">' . $title . '</h4>' : '',
       do_shortcode( $content )
     );
