@@ -42,7 +42,7 @@ The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
 * [Tabs](#tabs)
 * [Tooltip](#tooltip)
 * [Popover](#popover)
-* [Collapse (Accordion)](#collapse-(accordion))
+* [Collapse (Accordion)](#collapse-accordion)
 * [Carousel](#carousel)
 * [Modal](#modal)
 
