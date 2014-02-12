@@ -44,7 +44,7 @@ This plugin contains a ```composer.json``` file for those of you who manage your
 * [Tabs](#tabs)
 * [Tooltip](#tooltip)
 * [Popover](#popover)
-* [Collapse (Accordion)](#collapse-(accordion))
+* [Collapse (Accordion)](#collapse-accordion)
 * [Carousel](#carousel)
 * [Modal](#modal)
 
