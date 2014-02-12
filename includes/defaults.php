@@ -11,5 +11,3 @@ if(!defined('BS_SHORTCODES_DIR')) {
 if(!defined('BS_SHORTCODES_URL')) {
     define('BS_SHORTCODES_URL', plugin_dir_url( __FILE__ ));
 }
-
-?>
