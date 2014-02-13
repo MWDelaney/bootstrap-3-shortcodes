@@ -341,7 +341,7 @@ class BoostrapShortcodes {
     $data_props = $this->parse_data_attributes( $data );
 
     return sprintf( 
-      '<li role="presentation"><a role="menuitem" href="%s" class="%s"%s>%s</a></li>',
+      '<li role="presentation" class="%s"><a role="menuitem" href="%s" class="%s"%s>%s</a></li>',
       esc_url( $link ),
       esc_attr( $li_class ),
       esc_attr( $a_class ),
