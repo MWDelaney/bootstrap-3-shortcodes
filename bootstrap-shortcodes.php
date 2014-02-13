@@ -720,12 +720,14 @@ class BoostrapShortcodes {
 
     extract( shortcode_atts( array(
       "link"    => false,
+      "type"    => false,
       "active"  => false,
       "xclass"  => false,
       "data"    => false
     ), $atts ) );
 
     $class  = 'list-group-item';
+    $class .= ( $type )     ? ' list-group-item-' . $type : '';
     $class .= ( $active )   ? ' active' : '';
     $class .= ( $xclass )   ? ' ' . $xclass : '';
       
