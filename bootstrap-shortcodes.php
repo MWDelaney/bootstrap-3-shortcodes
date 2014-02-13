@@ -80,6 +80,7 @@ class BoostrapShortcodes {
       'container', 
       'divider', 
       'dropdown', 
+      'dropdown-header', 
       'dropdown-item', 
       'emphasis', 
       'icon', 
@@ -357,6 +358,33 @@ class BoostrapShortcodes {
      ), $atts ) );
 
     $class  = 'divider';      
+    $class .= ( $xclass )   ? ' ' . $xclass : '';
+
+    $data_props = $this->parse_data_attributes( $data );
+      
+    return sprintf( 
+      '<li class="%s"%s>%s</li>',
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      do_shortcode( $content )
+    );
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_dropdown_header
+    *
+    * @author M. W. Delaney
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_dropdown_header( $atts, $content = null ) {
+      
+    extract( shortcode_atts( array(
+        "xclass" => false,
+        "data" => false
+     ), $atts ) );
+
+    $class  = 'dropdown-header';      
     $class .= ( $xclass )   ? ' ' . $xclass : '';
 
     $data_props = $this->parse_data_attributes( $data );

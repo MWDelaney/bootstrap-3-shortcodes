@@ -275,6 +275,9 @@ Button Dropdowns can be accomplished by combining the [button-group] shortcode, 
     [button-group]
         [button link="#" dropdown="true" data="toggle,dropdown"] … [caret][/button]
         [dropdown]
+            [dropdown-header] … [/dropdown-header]
+            [dropdown-item link="#"] … [/dropdown-item]
+            [dropdown-item link="#"] … [/dropdown-item]
             [dropdown-item link="#"] … [/dropdown-item]
             [divider]
             [dropdown-item link="#"] … [/dropdown-item]
@@ -313,6 +316,12 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 link | The url you want the dropdown-item to link to | optional | any valid link | none
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [dropdown-header] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
