@@ -305,7 +305,7 @@ class BoostrapShortcodes {
     $data_props = $this->parse_data_attributes( $data );
       
     return sprintf( 
-      '<ul class="%s"%s role="menu">%s</ul>',
+      '<ul role="menu" class="%s"%s role="menu">%s</ul>',
       esc_attr( $class ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
@@ -322,20 +322,25 @@ class BoostrapShortcodes {
   function bs_dropdown_item( $atts, $content = null ) {
       
     extract( shortcode_atts( array(
-      "link"   => false,
-      "xclass" => false,
-      "data"   => false
+      "link"        => false,
+      "disabled"    => false,
+      "xclass"      => false,
+      "data"        => false
     ), $atts ) );
 
-    $class  = '';      
-    $class .= ( $xclass ) ? ' ' . $xclass : '';
+    $li_class  = '';  
+    $li_class .= ( $disabled ) ? ' disabled' : '';
+
+    $a_class  = '';  
+    $a_class .= ( $xclass ) ? ' ' . $xclass : '';
 
     $data_props = $this->parse_data_attributes( $data );
 
     return sprintf( 
-      '<li><a href="%s" class="%s"%s>%s</a></li>',
+      '<li role="presentation"><a role="menuitem" href="%s" class="%s"%s>%s</a></li>',
       esc_url( $link ),
-      esc_attr( $class ),
+      esc_attr( $li_class ),
+      esc_attr( $a_class ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
