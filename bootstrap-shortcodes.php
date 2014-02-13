@@ -272,11 +272,12 @@ class BoostrapShortcodes {
   function bs_container( $atts, $content = null ) {
       
     extract( shortcode_atts( array(
+      "fluid"  => false,
       "xclass" => false,
       "data"   => false
     ), $atts ) );
 
-    $class  = 'container';      
+    $class  = ( $fluid )  ? 'container-fluid' : 'container';      
     $class .= ( $xclass ) ? ' ' . $xclass : '';
 
     $data_props = $this->parse_data_attributes( $data );

@@ -79,6 +79,7 @@ The container component is also supported in case your theme doesn't incude a co
 #### [container] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
+fluid | Is the container fluid? (see Bootstrap documentation for details) | optional | true, false | false
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
