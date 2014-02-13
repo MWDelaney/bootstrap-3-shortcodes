@@ -357,7 +357,7 @@ class BoostrapShortcodes {
     * @author M. W. Delaney
     *
     *-------------------------------------------------------------------------------------*/
-  function bs_dropdown_divider( $atts, $content = null ) {
+  function bs_divider( $atts, $content = null ) {
       
     extract( shortcode_atts( array(
         "xclass" => false,
