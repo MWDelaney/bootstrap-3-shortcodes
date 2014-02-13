@@ -142,6 +142,8 @@ class BoostrapShortcodes {
       "dropdown" => false,
       "link"     => '',
       "target"   => false,
+      "disabled" => false,
+      "active"   => false,
       "xclass"   => false,
       "title"    => false,
       "data"     => false
@@ -152,6 +154,8 @@ class BoostrapShortcodes {
     $class .= ( $size )     ? ' btn-' . $size : '';
     $class .= ( $block )    ? ' btn-block' : '';
     $class .= ( $dropdown ) ? ' dropdown-toggle' : '';
+    $class .= ( $disabled ) ? ' disabled' : '';
+    $class .= ( $active )   ? ' active' : '';
     $class .= ( $xclass )   ? ' ' . $xclass : '';
     
     $data_props = $this->parse_data_attributes( $data );
@@ -678,8 +682,6 @@ class BoostrapShortcodes {
       "push_md"     => false,
       "push_sm"     => false,
       "push_xs"     => false,
-      "disabled"    => false,
-      "active"      => false,
       "xclass"      => false,
       "data"        => false
     ), $atts ) );
@@ -701,8 +703,6 @@ class BoostrapShortcodes {
     $class .= ( $push_md )        ? ' col-md-push-' . $push_md : '';
     $class .= ( $push_sm )        ? ' col-sm-push-' . $push_sm : '';
     $class .= ( $push_xs )        ? ' col-xs-push-' . $push_xs : '';
-    $class .= ( $disabled )       ? ' disabled' : '';
-    $class .= ( $active )         ? ' active' : '';
     $class .= ( $xclass )   ? ' ' . $xclass : '';
       
     $data_props = $this->parse_data_attributes( $data );

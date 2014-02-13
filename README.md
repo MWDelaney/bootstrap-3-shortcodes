@@ -177,6 +177,8 @@ type | The type of the button | optional | default, primary, success, info, warn
 size | The size of the button | optional | xs, sm, lg | none
 block | Whether the button should be a block-level button | optional | true, false | false
 dropdown | Whether the button triggers a dropdown menu (see [Button Dropdowns](#button-dropdowns)) | optional | true, false | false
+active | Apply the "active" style | optional | true, false | false
+disabled | Whether the button be disabled | optional | true, false | false
 xclass | Any extra classes you want to add | optional | any text | none
 link | The url you want the button to link to | optional | any valid link | none
 target | Target for the link | optional | any valid target | none
