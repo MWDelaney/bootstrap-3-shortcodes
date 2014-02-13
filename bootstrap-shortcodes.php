@@ -84,8 +84,6 @@ class BoostrapShortcodes {
       'dropdown-item', 
       'emphasis', 
       'icon', 
-      'icon-white', 
-      'icon_white', 
       'img', 
       'jumbotron', 
       'label', 
