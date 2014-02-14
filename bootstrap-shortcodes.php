@@ -559,6 +559,7 @@ class BoostrapShortcodes {
      extract( shortcode_atts( array(
         "type"      => false,
         "percent"   => false,
+        "label"     => false,
         "xclass"    => false,
         "data"      => false
      ), $atts ) );
@@ -574,7 +575,7 @@ class BoostrapShortcodes {
       esc_attr( $class ),
       ( $percent )      ? ' aria-value="' . (int) $percent . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . (int) $percent . '%;"' : '',
       ( $data_props )   ? ' ' . $data_props : '',
-      ( $percent )      ? '<span class="sr-only">' . (int) $percent . '% Complete</span>' : ''
+      ( $percent )      ? sprintf('<span%s>%s</span>', ( !$label ) ? ' class="sr-only"' : '', (int) $percent . '% Complete') : ''
     );
   }
 
@@ -1581,21 +1582,25 @@ function bs_popover( $atts, $content = null ) {
       "data"   => false
     ), $atts ) );
     
-    $class = "media-object";
+    $class = "media-object img-responsive";
     $class .= ($xclass) ? ' ' . $xclass : '';
   
+    $previous_value = libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument;
-    $dom->loadXML($content);
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
-    if( $data ) { 
-      $data = explode( '|',$data );
-      foreach( $data as $d ):
-        $d = explode( ',',$d );    
-        $dom->documentElement->setAttribute('data-'.$d[0],trim($d[1]));
-      endforeach;
-    }
-    $return = $dom->saveXML();
-    $return = '<span class="pull-'. $pull . '">' . $return . '</span>';
+    $dom->loadHTML($content);
+    libxml_clear_errors();
+    libxml_use_internal_errors($previous_value);
+    foreach($dom->getElementsByTagName('img') as $image) { 
+      $image->setAttribute('class', $image->getAttribute('class') . ' ' . esc_attr( $class ));
+      if( $data ) { 
+        $data = explode( '|', $data );
+        foreach( $data as $d ):
+          $d = explode(',',$d);    
+          $image->setAttribute('data-'.$d[0],trim($d[1]));
+        endforeach;
+      }
+    } 
+    $return = preg_replace('/^<!DOCTYPE.+?>/', '', str_replace( array('<html>', '</html>', '<body>', '</body>'), array('', '', '', ''), $dom->saveHTML()));    $return = '<span class="pull-'. $pull . '">' . $return . '</span>';
     return $return;
   }
 
@@ -1669,8 +1674,11 @@ function bs_popover( $atts, $content = null ) {
     $class = "page-header";
     $class .= ($xclass) ? ' ' . $xclass : '';
   
+    $previous_value = libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument;
     $dom->loadXML($content);
+    libxml_clear_errors();
+    libxml_use_internal_errors($previous_value);
     $hasHeader = $dom->getElementsByTagName('h1'); 
 
     if( $hasHeader->length == 0 ) {
@@ -1772,8 +1780,11 @@ function bs_popover( $atts, $content = null ) {
     $class .= ( $responsive ) ? ' img-responsive' : '';
     $class .= ( $xclass )     ? ' ' . $xclass : '';
 
+    $previous_value = libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument;
-    $dom->loadXML($content);
+    $dom->loadHTML($content);
+    libxml_clear_errors();
+    libxml_use_internal_errors($previous_value);
     foreach($dom->getElementsByTagName('img') as $image) { 
       $image->setAttribute('class', $image->getAttribute('class') . ' ' . esc_attr( $class ));
       if( $data ) { 
@@ -1784,7 +1795,7 @@ function bs_popover( $atts, $content = null ) {
         endforeach;
       }
     } 
-    $return = $dom->saveXML();
+    $return = preg_replace('/^<!DOCTYPE.+?>/', '', str_replace( array('<html>', '</html>', '<body>', '</body>'), array('', '', '', ''), $dom->saveHTML()));    $return = '<span class="pull-'. $pull . '">' . $return . '</span>';
     
     return $return;
 

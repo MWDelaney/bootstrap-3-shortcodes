@@ -496,6 +496,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 percent | The percentage amount to show in the progress bar | required | any number between 0 and 100 | false
+label | Whether to show the percentage as a text label inside the bar | optional | true, false | false
 type | The type of the progress bar | optional | default, primary, success, info, warning, danger  | default
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
