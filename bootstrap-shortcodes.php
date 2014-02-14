@@ -535,7 +535,7 @@ class BoostrapShortcodes {
       
     $class  = 'progress';
     $class .= ( $striped )  ? ' progress-striped' : '';
-    $class .= ( $animated )  ? ' progress-animated' : '';
+    $class .= ( $animated )  ? ' active' : '';
     $class .= ( $xclass )       ? ' ' . $xclass : '';
     
     $data_props = $this->parse_data_attributes( $data );
