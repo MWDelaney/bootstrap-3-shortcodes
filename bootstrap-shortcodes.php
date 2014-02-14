@@ -1587,20 +1587,20 @@ function bs_popover( $atts, $content = null ) {
   
     $previous_value = libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument;
-    $dom->loadHTML($content);
+    $dom->loadXML($content);
     libxml_clear_errors();
     libxml_use_internal_errors($previous_value);
-    foreach($dom->getElementsByTagName('img') as $image) { 
-      $image->setAttribute('class', $image->getAttribute('class') . ' ' . esc_attr( $class ));
+    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
       if( $data ) { 
         $data = explode( '|', $data );
         foreach( $data as $d ):
           $d = explode(',',$d);    
           $image->setAttribute('data-'.$d[0],trim($d[1]));
         endforeach;
-      }
-    } 
-    $return = preg_replace('/^<!DOCTYPE.+?>/', '', str_replace( array('<html>', '</html>', '<body>', '</body>'), array('', '', '', ''), $dom->saveHTML()));    $return = '<span class="pull-'. $pull . '">' . $return . '</span>';
+      } 
+    $return = $dom->saveXML();
+    $return = '<span class="pull-' . esc_attr($pull) . '">' . $return . '</span>';
+      
     return $return;
   }
 
@@ -1782,7 +1782,7 @@ function bs_popover( $atts, $content = null ) {
 
     $previous_value = libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument;
-    $dom->loadHTML($content);
+    $dom->loadXML($content);
     libxml_clear_errors();
     libxml_use_internal_errors($previous_value);
     foreach($dom->getElementsByTagName('img') as $image) { 
@@ -1795,7 +1795,7 @@ function bs_popover( $atts, $content = null ) {
         endforeach;
       }
     } 
-    $return = preg_replace('/^<!DOCTYPE.+?>/', '', str_replace( array('<html>', '</html>', '<body>', '</body>'), array('', '', '', ''), $dom->saveHTML()));    $return = '<span class="pull-'. $pull . '">' . $return . '</span>';
+    $return = $dom->saveXML();
     
     return $return;
 
@@ -1816,9 +1816,11 @@ function bs_popover( $atts, $content = null ) {
     $class  = "thumbnail";
     $class .= ($xclass) ? ' ' . $xclass : '';
 
+    $previous_value = libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument;
     $dom->loadXML($content);
-    if( ! $dom->documentElement ) {
+    libxml_clear_errors();
+    libxml_use_internal_errors($previous_value);    if( ! $dom->documentElement ) {
         $element = $dom->createElement('div', $content);
         $dom->appendChild($element);
     }
