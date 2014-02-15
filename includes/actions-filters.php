@@ -24,7 +24,7 @@ function add_bootstrap_button() {
 
   //append the icon
   printf(
-    '<a title="%1$s" href="%2$s" class="thickbox button add_media" style="padding-left: 0px; padding-right: 0px;" title="%1$s"><span class="bs_bootstrap-logo wp-media-buttons-icon"></span></a>',
+    '<a title="%1$s" href="%2$s" class="thickbox button add_media" style="padding-left: 0px; padding-right: 0px;"><span class="bs_bootstrap-logo wp-media-buttons-icon"></span></a>',
     esc_attr( $title ),
     esc_url( '#TB_inline?width=640&height=650&inlineId=' . $popup_id )
     //sprintf( '<img src="%s" style="height: 20px; position: relative; top: -2px;">', esc_url( $img ) )
