@@ -1,0 +1,32 @@
+@font-face {
+	font-family: 'Bootstrap-Shortcodes-for-WordPress';
+	src:url('fonts/Bootstrap-Shortcodes-for-WordPress.eot?-o1r0ap');
+	src:url('fonts/Bootstrap-Shortcodes-for-WordPress.eot?#iefix-o1r0ap') format('embedded-opentype'),
+		url('fonts/Bootstrap-Shortcodes-for-WordPress.woff?-o1r0ap') format('woff'),
+		url('fonts/Bootstrap-Shortcodes-for-WordPress.ttf?-o1r0ap') format('truetype'),
+		url('fonts/Bootstrap-Shortcodes-for-WordPress.svg?-o1r0ap#Bootstrap-Shortcodes-for-WordPress') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="bs_"], [class*=" bs_"] {
+	font-family: 'Bootstrap-Shortcodes-for-WordPress' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.bs_bootstrap-logo {
+    padding: 0 3px;
+}
+.bs_bootstrap-logo:before {
+    font-family: 'Bootstrap-Shortcodes-for-WordPress' !important;
+	content: "\e600" !important;
+    color: #6f5499 !important;
+}

@@ -2,7 +2,10 @@
 
 /*  Include the styling for the help tab in the admin
 */
+
 function bootstrap_shortcodes_help_styles() {
+  wp_register_style( 'bs-font', plugins_url( 'bootstrap-3-shortcodes/includes/help/bs-font.css' ) );
+  wp_enqueue_style( 'bs-font' );
   wp_register_style( 'bootstrap-shortcodes-help', plugins_url( 'bootstrap-3-shortcodes/includes/help/css/bootstrap-shortcodes-help.css' ) );
   wp_enqueue_style( 'bootstrap-shortcodes-help' );
 }
@@ -24,10 +27,10 @@ function add_bootstrap_button() {
 
   //append the icon
   printf(
-    '<a title="%s" href="%s" class="thickbox button add_media" style="padding-left: 0px; padding-right: 0px;" title="Bootstrap Shortcodes Help">%s</a>',
+    '<a title="%s" href="%s" class="thickbox button add_media" style="padding-left: 0px; padding-right: 0px;" title="Bootstrap Shortcodes Help"><span class="bs_bootstrap-logo wp-media-buttons-icon"></span></a>',
     esc_attr( $title ),
-    esc_url( '#TB_inline?width=640&height=650&inlineId=' . $popup_id ),
-    sprintf( '<img src="%s" style="height: 20px; position: relative; top: -2px;">', esc_url( $img ) )
+    esc_url( '#TB_inline?width=640&height=650&inlineId=' . $popup_id )
+    //sprintf( '<img src="%s" style="height: 20px; position: relative; top: -2px;">', esc_url( $img ) )
   );
 
 }
