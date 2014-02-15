@@ -16,9 +16,6 @@ add_filter('the_content', 'bs_fix_shortcodes');
 //action to add a custom button to the content editor
 function add_bootstrap_button() {
   
-  //path to my icon
-  $img = BS_SHORTCODES_URL . 'images/Twitter_Boostrap_logo.svg';
-  
   //the id of the container I want to show in the popup
   $popup_id = 'bootstrap-shortcodes-help-popup';
   
@@ -27,13 +24,13 @@ function add_bootstrap_button() {
 
   //append the icon
   printf(
-    '<a title="%s" href="%s" class="thickbox button add_media" style="padding-left: 0px; padding-right: 0px;" title="Bootstrap Shortcodes Help"><span class="bs_bootstrap-logo wp-media-buttons-icon"></span></a>',
+    '<a title="%1$s" href="%2$s" class="thickbox button add_media" style="padding-left: 0px; padding-right: 0px;" title="%1$s"><span class="bs_bootstrap-logo wp-media-buttons-icon"></span></a>',
     esc_attr( $title ),
     esc_url( '#TB_inline?width=640&height=650&inlineId=' . $popup_id )
     //sprintf( '<img src="%s" style="height: 20px; position: relative; top: -2px;">', esc_url( $img ) )
   );
-
 }
+
 // Create a Media Button for the help file
 //add a button to the content editor, next to the media button
 //this button will show a popup that contains inline content
