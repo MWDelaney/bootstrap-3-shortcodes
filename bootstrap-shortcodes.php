@@ -310,7 +310,7 @@ class BoostrapShortcodes {
     $data_props = $this->parse_data_attributes( $data );
       
     return sprintf( 
-      '<ul role="menu" class="%s"%s role="menu">%s</ul>',
+      '<ul role="menu" class="%s"%s>%s</ul>',
       esc_attr( $class ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
