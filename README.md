@@ -44,7 +44,7 @@ This plugin contains a ```composer.json``` file for those of you who manage your
 * [Tabs](#tabs)
 * [Tooltip](#tooltip)
 * [Popover](#popover)
-* [Collapse (Accordion)](#collapse-accordion)
+* [Collapse](#collapse)
 * [Carousel](#carousel)
 * [Modal](#modal)
 
@@ -699,7 +699,7 @@ html | Insert HTML into the tooltip | optional | true, false | false
 
 [Bootstrap popover documentation](http://getbootstrap.com/javascript/#popovers)
 
-### Collapse (Accordion)
+### Collapse
 	[collapsibles]
 	  [collapse title="Collapse 1" state="active"]
 	    …
