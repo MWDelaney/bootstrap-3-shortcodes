@@ -1863,7 +1863,7 @@ function bs_popover( $atts, $content = null ) {
     if( $hidden ) {
       $hidden = explode( ' ', $hidden );
       foreach( $hidden as $h ):
-        $classes .= "hidden-$h ";
+        $class .= "hidden-$h ";
       endforeach;
     }
     $class .= ( $xclass ) ? ' ' . $xclass : '';

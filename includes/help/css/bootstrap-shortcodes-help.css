@@ -5,6 +5,9 @@
     font-size: 14px;
 }
 
+.sticky-menu #TB_window {
+    background-color: #fff;
+}
 
 /* CSS crunched with Crunch - http://crunchapp.net/ */
 #bootstrap-shortcodes-help {
