@@ -1318,8 +1318,8 @@ class BoostrapShortcodes {
     $panel_class .= ( $type )     ? ' panel-' . $type : ' panel-default';
     $panel_class .= ( $xclass )   ? ' ' . $xclass : '';
       
-    $collapse_class = 'panel-collapse collapse';
-    $collapse_class .= ( $active )  ? ' in' . $type : '';
+    $collapse_class = 'panel-collapse';
+    $collapse_class .= ( $active )  ? ' in' : ' collapse';
 
     $parent = 'custom-collapse-'. $GLOBALS['collapsibles_count'];
     $current_collapse = $parent . '-'. sanitize_title( $title );

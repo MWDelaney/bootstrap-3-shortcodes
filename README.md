@@ -701,7 +701,7 @@ html | Insert HTML into the tooltip | optional | true, false | false
 
 ### Collapse
 	[collapsibles]
-	  [collapse title="Collapse 1" state="active"]
+	  [collapse title="Collapse 1" active="true"]
 	    …
 	  [/collapse]
 	  [collapse title="Collapse 2"]
