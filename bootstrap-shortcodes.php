@@ -876,6 +876,8 @@ class BoostrapShortcodes {
     $class  = '';      
     $class .= ( $xclass )   ? ' ' . $xclass : '';
 
+    $data_props = $this->parse_data_attributes( $data );
+
     return sprintf( 
       '<li><a href="%s" class="%s"%s>%s</a></li>',
       esc_url( $link ),
