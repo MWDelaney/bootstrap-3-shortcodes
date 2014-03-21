@@ -1188,16 +1188,17 @@ class BoostrapShortcodes {
       $tabs = array();
       $GLOBALS['tabs_default_active'] = true;
       foreach( $atts_map as $check ) {
-          if( $check["tab"]["active"] ) {
+      	if( isset($check["tab"]["active"]) ) {
+          if( ($check["tab"]["active"]) ) {
               $GLOBALS['tabs_default_active'] = false;
-          }
+          } }
       }
       $i = 0;
       foreach( $atts_map as $tab ) {
 
         $tabs[] = sprintf(
           '<li%s><a href="#%s" data-toggle="tab">%s</a></li>',
-          ( ($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? ' class="active"' : '',
+          ( isset($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? ' class="active"' : '',
           'custom-tab-' . $GLOBALS['tabs_count'] . '-' . sanitize_title( $tab["tab"]["title"] ),
           $tab["tab"]["title"]
         );
@@ -1354,7 +1355,6 @@ class BoostrapShortcodes {
     *
     * bs_carousel
     *
-    * @author Filip Stefansson
     * @since 1.0
     *
     *-------------------------------------------------------------------------------------*/
@@ -1365,7 +1365,7 @@ class BoostrapShortcodes {
     else
       $GLOBALS['carousel_count'] = 0;
 
-    $GLOBALS['tabs_default_count'] = 0;
+    $GLOBALS['carousel_default_count'] = 0;
 
     extract( shortcode_atts( array(
       "interval" => false,
@@ -1391,16 +1391,17 @@ class BoostrapShortcodes {
       $indicators = array();
       $GLOBALS['carousel_default_active'] = true;
       foreach( $atts_map as $check ) {
+      	if ( isset($check["carousel-item"]["active"]) ) {
         if( $check["carousel-item"]["active"] ) {
           $GLOBALS['carousel_default_active'] = false;
-        }
+        } }
       }
       // Extract the tab titles for use in the tab widget.
       $i = 0;
       foreach( $atts_map as $slide ) {
         $indicators[] = sprintf(
           '<li class="%s" data-target="%s" data-slide-to="%s"></li>',
-          ( ($slide["carousel-item"]["active"]) || ($GLOBALS['carousel_default_active'] && $i == 0) ) ? 'active' : '',
+          ( isset($slide["carousel-item"]["active"]) || ($GLOBALS['carousel_default_active'] && $i == 0) ) ? 'active' : '',
           esc_attr( '#' . $id ),
           esc_attr( '#' . $i )
         );
