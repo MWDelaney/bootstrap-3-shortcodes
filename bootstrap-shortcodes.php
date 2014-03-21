@@ -1188,17 +1188,15 @@ class BoostrapShortcodes {
       $tabs = array();
       $GLOBALS['tabs_default_active'] = true;
       foreach( $atts_map as $check ) {
-      	if( isset($check["tab"]["active"]) ) {
-          if( ($check["tab"]["active"]) ) {
+          if( !empty($check["tab"]["active"]) ) {
               $GLOBALS['tabs_default_active'] = false;
-          } }
+          }
       }
       $i = 0;
       foreach( $atts_map as $tab ) {
-
         $tabs[] = sprintf(
           '<li%s><a href="#%s" data-toggle="tab">%s</a></li>',
-          ( isset($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? ' class="active"' : '',
+          ( !empty($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? ' class="active"' : '',
           'custom-tab-' . $GLOBALS['tabs_count'] . '-' . sanitize_title( $tab["tab"]["title"] ),
           $tab["tab"]["title"]
         );
@@ -1386,22 +1384,20 @@ class BoostrapShortcodes {
 
     $atts_map = bs_attribute_map( $content );
     
-    // Extract the tab titles for use in the tab widget.
+    // Extract the slide titles for use in the carousel widget.
     if ( $atts_map ) {
       $indicators = array();
       $GLOBALS['carousel_default_active'] = true;
       foreach( $atts_map as $check ) {
-      	if ( isset($check["carousel-item"]["active"]) ) {
-        if( $check["carousel-item"]["active"] ) {
+        if( !empty($check["carousel-item"]["active"]) ) {
           $GLOBALS['carousel_default_active'] = false;
-        } }
+        } 
       }
-      // Extract the tab titles for use in the tab widget.
       $i = 0;
       foreach( $atts_map as $slide ) {
         $indicators[] = sprintf(
           '<li class="%s" data-target="%s" data-slide-to="%s"></li>',
-          ( isset($slide["carousel-item"]["active"]) || ($GLOBALS['carousel_default_active'] && $i == 0) ) ? 'active' : '',
+          ( !empty($slide["carousel-item"]["active"]) || ($GLOBALS['carousel_default_active'] && $i == 0) ) ? 'active' : '',
           esc_attr( '#' . $id ),
           esc_attr( '#' . $i )
         );
