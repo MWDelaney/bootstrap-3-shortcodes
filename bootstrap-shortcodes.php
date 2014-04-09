@@ -389,11 +389,11 @@ class BoostrapShortcodes {
       
     extract( shortcode_atts( array(
         "xclass" => false,
-        "data" => false
+        "data"   => false
      ), $atts ) );
 
     $class  = 'dropdown-header';      
-    $class .= ( $xclass )   ? ' ' . $xclass : '';
+    $class .= ( $xclass ) ? ' ' . $xclass : '';
 
     $data_props = $this->parse_data_attributes( $data );
       
@@ -535,8 +535,8 @@ class BoostrapShortcodes {
       
     $class  = 'progress';
     $class .= ( $striped )  ? ' progress-striped' : '';
-    $class .= ( $animated )  ? ' active' : '';
-    $class .= ( $xclass )       ? ' ' . $xclass : '';
+    $class .= ( $animated ) ? ' active' : '';
+    $class .= ( $xclass )   ? ' ' . $xclass : '';
     
     $data_props = $this->parse_data_attributes( $data );
       
@@ -565,8 +565,8 @@ class BoostrapShortcodes {
      ), $atts ) );
       
     $class  = 'progress-bar';
-    $class .= ( $type )  ? ' progress-bar-' . $type : '';
-    $class .= ( $xclass )       ? ' ' . $xclass : '';
+    $class .= ( $type )   ? ' progress-bar-' . $type : '';
+    $class .= ( $xclass ) ? ' ' . $xclass : '';
     
     $data_props = $this->parse_data_attributes( $data );
       
@@ -1408,9 +1408,9 @@ class BoostrapShortcodes {
       '<div class="%s" id="%s" data-ride="carousel"%s%s%s%s>%s<div class="%s">%s</div>%s%s</div>',
       esc_attr( $div_class ),
       esc_attr( $id ),
-      ( $interval ) ? sprintf( ' data-interval="%"', (int) $interval ) : '',
-      ( $pause )    ? sprintf( ' data-pause="%"', esc_attr( $pause ) ) : '',
-      ( $wrap )     ? sprintf( ' data-wrap="%"', esc_attr( $wrap ) ) : '',
+      ( $interval )   ? sprintf( ' data-interval="%d"', $interval ) : '',
+      ( $pause )      ? sprintf( ' data-pause="%s"', esc_attr( $pause ) ) : '',
+      ( $wrap )       ? sprintf( ' data-wrap="%s"', esc_attr( $wrap ) ) : '',
       ( $data_props ) ? ' ' . $data_props : '',
       ( $indicators ) ? '<ol class="carousel-indicators">' . implode( $indicators ) . '</ol>' : '',
       esc_attr( $inner_class ),
@@ -1781,16 +1781,16 @@ function bs_popover( $atts, $content = null ) {
 
     $previous_value = libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument;
-    $dom->loadXML($content);
+    $dom->loadXML( $content );
     libxml_clear_errors();
     libxml_use_internal_errors($previous_value);
-    foreach($dom->getElementsByTagName('img') as $image) { 
-      $image->setAttribute('class', $image->getAttribute('class') . ' ' . esc_attr( $class ));
+    foreach( $dom->getElementsByTagName( 'img' ) as $image ) { 
+      $image->setAttribute( 'class', $image->getAttribute( 'class' ) . ' ' . esc_attr( $class ) );
       if( $data ) { 
         $data = explode( '|', $data );
         foreach( $data as $d ):
-          $d = explode(',',$d);    
-          $image->setAttribute('data-'.$d[0],trim($d[1]));
+          $d = explode( ',', $d );    
+          $image->setAttribute( 'data-'.$d[0], trim( $d[1] ) );
         endforeach;
       }
     } 
@@ -1817,18 +1817,19 @@ function bs_popover( $atts, $content = null ) {
 
     $previous_value = libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument;
-    $dom->loadXML($content);
+    $dom->loadXML( $content );
     libxml_clear_errors();
-    libxml_use_internal_errors($previous_value);    if( ! $dom->documentElement ) {
-        $element = $dom->createElement('div', $content);
+    libxml_use_internal_errors( $previous_value );
+    if( ! $dom->documentElement ) {
+        $element = $dom->createElement( 'div', $content );
         $dom->appendChild($element);
     }
     $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
     if( $data ) {
       $data = explode( '|', $data );
       foreach( $data as $d ):
-        $d = explode(',',$d);    
-        $dom->documentElement->setAttribute('data-'.$d[0],trim($d[1]));
+        $d = explode( ',', $d );    
+        $dom->documentElement->setAttribute( 'data-'.$d[0], trim( $d[1] ) );
       endforeach;
     }
     $return = $dom->saveXML();
@@ -1898,7 +1899,7 @@ function bs_popover( $atts, $content = null ) {
     $a_class  = '';      
     $a_class .= ( $xclass )   ? ' ' . $xclass : '';
       
-    $div_class = 'modal fade';
+    $div_class  = 'modal fade';
     $div_class .= ( $size ) ? ' bs-modal-' . $size : '';
       
     $id = 'custom-modal-' . sanitize_title( $title );
