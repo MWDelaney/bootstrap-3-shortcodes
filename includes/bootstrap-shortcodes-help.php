@@ -43,6 +43,16 @@ $html = MarkdownExtra::defaultTransform($text);
         });
     });
 </script>
+<script type="text/javascript">
+    jQuery( '.bootstrap-shortcodes-button' ).each( function( index, value ) {
+    var h = window.innerHeight * .85;
+    var href = jQuery( this ).attr('href');
+    var find = 'height=650';
+    var replace = '&height='+h;
+    href = href.replace( find, replace )
+    jQuery( this ).attr( 'href', href );
+    } );
+</script>
         <div style="display:none;" id="bootstrap-shortcodes-help-popup">
             <div id="bootstrap-shortcodes-help">
             <?php
