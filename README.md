@@ -6,7 +6,7 @@ This is a plugin for WordPress that adds shortcodes for easier use of the Bootst
 ## Requirements
 This plugin won't do anything if you don't have WordPress theme built with the [Bootstrap](http://getbootstrap.com/) framework. **This plugin does not include the Bootstrap framework**.
 
-The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.8```.
+The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.9```.
 
 This plugin contains a ```composer.json``` file for those of you who manage your PHP dependencies with [Composer](https://getcomposer.org).
 
