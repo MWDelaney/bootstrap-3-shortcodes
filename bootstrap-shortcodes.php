@@ -41,6 +41,10 @@ class BoostrapShortcodes {
 
   function bootstrap_shortcodes_scripts()  { 
 
+    if (defined('LOAD_BS_SHORTCODES_SCRIPTS') && LOAD_BS_SHORTCODES_SCRIPTS!==true) {
+        return;
+    }
+    
     // Bootstrap tooltip js
     wp_enqueue_script( 'bootstrap-shortcodes-tooltip', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-tooltip.js', array( 'jquery' ), false, true );
     
