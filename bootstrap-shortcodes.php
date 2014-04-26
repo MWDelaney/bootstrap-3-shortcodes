@@ -343,8 +343,8 @@ class BoostrapShortcodes {
 
     return sprintf( 
       '<li role="presentation" class="%s"><a role="menuitem" href="%s" class="%s"%s>%s</a></li>',
-      esc_url( $link ),
       esc_attr( $li_class ),
+      esc_url( $link ),
       esc_attr( $a_class ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
