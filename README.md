@@ -595,6 +595,7 @@ Parameter | Description | Required | Values | Default
 link | The url you want the list item to link to **Must correspond with the "linked" parameter in [list-group]** | optional | any text | false
 type | The type of the list-group-item | optional | primary, success, info, warning, danger, link | none
 active | Whether the item has the "active" style applied | optional | true, false | false
+target | Target for the link | optional | any valid target | none
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 

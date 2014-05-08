@@ -759,6 +759,7 @@ class BoostrapShortcodes {
       "link"    => false,
       "type"    => false,
       "active"  => false,
+      "target"   => false,
       "xclass"  => false,
       "data"    => false
     ), $atts ) );
@@ -771,9 +772,10 @@ class BoostrapShortcodes {
     $data_props = $this->parse_data_attributes( $data );
       
     return sprintf( 
-      '<%1$s %2$s class="%3$s"%4$s>%5$s</%1$s>',
-      ( $link ) ? 'a' : 'li',
-      ( $link ) ? 'href="' . esc_url( $link ) . '"' : '',
+      '<%1$s %2$s %3$s class="%4$s"%5$s>%6$s</%1$s>',
+      ( $link )     ? 'a' : 'li',
+      ( $link )     ? 'href="' . esc_url( $link ) . '"' : '',
+	  ( $target )   ? sprintf( ' target="%s"', esc_attr( $target ) ) : '',
       esc_attr( $class ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
