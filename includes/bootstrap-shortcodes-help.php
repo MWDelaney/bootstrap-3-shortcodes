@@ -9,13 +9,6 @@ function retitle($match) {
     return "<$h3 id='$id'>$title</$h3>";
 }
 
-//$thisfile = realpath(dirname(__FILE__));
-# Install PSR-0-compatible class autoloader
-//spl_autoload_register(function($class){
-//    require 'php_markdown/' . preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
-//});
-
-
 $html = file_get_contents(dirname(__FILE__) . '/help/readme.html');
 ?>
 
