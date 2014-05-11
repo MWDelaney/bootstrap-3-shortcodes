@@ -1,0 +1,2651 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Requirements</title>
+
+</head>
+<body>
+<h1>Bootstrap Shortcodes for WordPress</h1>
+
+<p>This is a plugin for WordPress that adds shortcodes for easier use of the Bootstrap elements in your content.</p>
+
+<h2>Requirements</h2>
+
+<p>This plugin won't do anything if you don't have WordPress theme built with the <a href="http://getbootstrap.com/">Bootstrap</a> framework. <strong>This plugin does not include the Bootstrap framework</strong>.</p>
+
+<p>The plugin is tested to work with <code>Bootstrap 3</code> and <code>WordPress 3.9</code>.</p>
+
+<p>This plugin contains a <code>composer.json</code> file for those of you who manage your PHP dependencies with <a href="https://getcomposer.org">Composer</a>.</p>
+
+<h2>Supported shortcodes</h2>
+
+<h3>CSS</h3>
+
+<ul>
+<li><a href="#grid">Grid</a></li>
+<li><a href="#lead-body-copy">Lead body copy</a></li>
+<li><a href="#emphasis-classes">Emphasis classes</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#tables">Tables</a></li>
+<li><a href="#buttons">Buttons</a></li>
+<li><a href="#images">Images</a></li>
+<li><a href="#responsive-utilities">Responsive utilities</a></li>
+</ul>
+
+
+<h3>Components</h3>
+
+<ul>
+<li><a href="#icons">Icons</a></li>
+<li><a href="#button-groups">Button Groups</a></li>
+<li><a href="#button-dropdowns">Button Dropdowns</a></li>
+<li><a href="#navs">Navs</a></li>
+<li><a href="#breadcrumbs">Breadcrumbs</a></li>
+<li><a href="#labels">Labels</a></li>
+<li><a href="#badges">Badges</a></li>
+<li><a href="#jumbotron">Jumbotron</a></li>
+<li><a href="#page-header">Page Header</a></li>
+<li><a href="#thumbnails">Thumbnails</a></li>
+<li><a href="#alerts">Alerts</a></li>
+<li><a href="#progress-bars">Progress Bars</a></li>
+<li><a href="#media-objects">Media Objects</a></li>
+<li><a href="#list-groups">List Groups</a></li>
+<li><a href="#panels">Panels</a></li>
+<li><a href="#wells">Wells</a></li>
+</ul>
+
+
+<h3>JavaScript</h3>
+
+<ul>
+<li><a href="#tabs">Tabs</a></li>
+<li><a href="#tooltip">Tooltip</a></li>
+<li><a href="#popover">Popover</a></li>
+<li><a href="#collapse">Collapse</a></li>
+<li><a href="#carousel">Carousel</a></li>
+<li><a href="#modal">Modal</a></li>
+</ul>
+
+
+<h1>Usage</h1>
+
+<h2>CSS</h2>
+
+<h3>Grid</h3>
+
+<pre><code>  [row]
+    [column md="6"]
+      …
+    [/column]
+    [column md="6"]
+      …
+    [/column]
+  [/row]
+</code></pre>
+
+<p>The container component is also supported in case your theme doesn't incude a container.</p>
+
+<pre><code>[container]
+  [row]
+    [column md="6"]
+      …
+    [/column]
+    [column md="6"]
+      …
+    [/column]
+  [/row]
+[/container]
+</code></pre>
+
+<h4>[container] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fluid </td>
+<td> Is the container fluid? (see Bootstrap documentation for details) </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[row] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[column] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xs </td>
+<td> Size of column on extra small screens (less than 768px) </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>sm </td>
+<td> Size of column on small screens (greater than 768px) </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>md </td>
+<td> Size of column on medium screens (greater than 992px) </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>lg </td>
+<td> Size of column on large screens (greater than 1200px) </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>offset_xs </td>
+<td> Offset on extra small screens </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>offset_sm </td>
+<td> Offset on small screens </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>offset_md </td>
+<td> Offset on column on medium screens </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>offset_lg </td>
+<td> Offset on column on large screens </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>pull_xs </td>
+<td> Pull on extra small screens </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>pull_sm </td>
+<td> Pull on small screens </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>pull_md </td>
+<td> Pull on column on medium screens </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>pull_lg </td>
+<td> Pull on column on large screens </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>push_xs </td>
+<td> Push on extra small screens </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>push_sm </td>
+<td> Push on small screens </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>push_md </td>
+<td> Push on column on medium screens </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>push_lg </td>
+<td> Push on column on large screens </td>
+<td> optional </td>
+<td> 1-12 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/css/#grid">Bootstrap grid documentation</a>.</p>
+
+<h3>Lead body copy</h3>
+
+<pre><code>[lead] … [/lead]
+</code></pre>
+
+<h4>[lead] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/css/#type-body-copy">Bootstrap body copy documentation</a></p>
+
+<h3>Emphasis classes</h3>
+
+<pre><code>[emphasis type="success"] … [/emphasis]
+</code></pre>
+
+<h4>[emphasis] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type </td>
+<td> The type of label to display </td>
+<td> required </td>
+<td> muted, primary, success, info, warning, danger </td>
+<td> muted</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/css/#type-emphasis">Bootstrap emphasis classes documentation</a></p>
+
+<h3>Code</h3>
+
+<pre><code>[code] … [/code]
+</code></pre>
+
+<h4>[code] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>inline </td>
+<td> Display inline code </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>scrollable </td>
+<td> Set a max height of 350px and provide a scroll bar. Not usable with inline="true".  </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/css/#code">Bootstrap code documentation</a></p>
+
+<h3>Tables</h3>
+
+<pre><code>[table-wrap bordered="true" striped="true"]
+
+    Standard HTML table code goes here.
+
+[/table-wrap]
+</code></pre>
+
+<h4>[table-wrap] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bordered </td>
+<td> Set "bordered" table style (see Bootstrap documentation) </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>striped </td>
+<td> Set "striped" table style (see Bootstrap documentation) </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>hover </td>
+<td> Set "hover" table style (see Bootstrap documentation) </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>condensed </td>
+<td> Set "condensed" table style (see Bootstrap documentation) </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/css/#tables">Bootstrap table documentation</a></p>
+
+<h3>Buttons</h3>
+
+<pre><code>[button type="success" size="lg" link="#"] … [/button]
+</code></pre>
+
+<h4>[button] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type </td>
+<td> The type of the button </td>
+<td> optional </td>
+<td> default, primary, success, info, warning, danger, link </td>
+<td> default</td>
+</tr>
+<tr>
+<td>size </td>
+<td> The size of the button </td>
+<td> optional </td>
+<td> xs, sm, lg </td>
+<td> none</td>
+</tr>
+<tr>
+<td>block </td>
+<td> Whether the button should be a block-level button </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>dropdown </td>
+<td> Whether the button triggers a dropdown menu (see <a href="#button-dropdowns">Button Dropdowns</a>) </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>active </td>
+<td> Apply the "active" style </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>disabled </td>
+<td> Whether the button be disabled </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>link </td>
+<td> The url you want the button to link to </td>
+<td> optional </td>
+<td> any valid link </td>
+<td> none</td>
+</tr>
+<tr>
+<td>target </td>
+<td> Target for the link </td>
+<td> optional </td>
+<td> any valid target </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/css/#buttons">Bootstrap button documentation</a></p>
+
+<h3>Images</h3>
+
+<pre><code>[img type="circle" responsive="true"] … [/img]
+</code></pre>
+
+<p>Wrap any number of HTML image tags or images inserted via the WordPress media manager.</p>
+
+<h4>[img] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type </td>
+<td> The effect to apply to wrapped images </td>
+<td> optional </td>
+<td> rounded, circle, thumbnail </td>
+<td> false</td>
+</tr>
+<tr>
+<td>responsive </td>
+<td> Make the wrapped images responsive </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/css/#images">Bootstrap images documentation</a></p>
+
+<h3>Responsive Utilities</h3>
+
+<pre><code>[responsive visible="sm xs" hidden="lg"] … [/responsive]
+</code></pre>
+
+<h4>[reponsive] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>visible </td>
+<td> Sizes at which this element is visible (separated by spaces) </td>
+<td> optional </td>
+<td> xs, sm, md, lg  </td>
+<td> false</td>
+</tr>
+<tr>
+<td>hidden </td>
+<td> Sizes at which this element is hidden (separated by spaces) </td>
+<td> optional </td>
+<td> xs, sm, md, lg  </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/css/#type-emphasis">Bootstrap emphasis classes documentation</a></p>
+
+<h2>Components</h2>
+
+<h3>Icons</h3>
+
+<pre><code>[icon type="arrow"]
+</code></pre>
+
+<h4>[icon] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type </td>
+<td> The type of icon you want to display </td>
+<td> required </td>
+<td> See Bootstrap docs </td>
+<td> none</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#glyphicons">Bootstrap Glyphicons documentation</a></p>
+
+<h3>Button Groups</h3>
+
+<h4>Basic example</h4>
+
+<pre><code>[button-group size="lg" justified="" vertical=""]
+    [button link="#"] … [/button]
+    [button link="#"] … [/button]
+    [button link="#"] … [/button]
+[/button-group]
+</code></pre>
+
+<h4>Button toolbar</h4>
+
+<pre><code>[button-toolbar]
+    [button-group]
+        [button link="#"] … [/button]
+        [button link="#"] … [/button]
+        [button link="#"] … [/button]
+    [/button-group]
+    [button-group]
+        [button link="#"] … [/button]
+        [button link="#"] … [/button]
+        [button link="#"] … [/button]
+    [/button-group]
+    [button-group]
+        [button link="#"] … [/button]
+    [/button-group]
+[/button-toolbar]
+</code></pre>
+
+<h4>[button-group] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size </td>
+<td> The size of the button group </td>
+<td> optional </td>
+<td> xs, sm, lg </td>
+<td> none</td>
+</tr>
+<tr>
+<td>justified </td>
+<td> Whether button group is justified </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>vertical </td>
+<td> Whether button group is vertical </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>dropup </td>
+<td> <strong>Must correspond with the use of [dropdown]</strong> </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[button-toolbar] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/css/#btn-groups">Bootstrap button groups documentation</a></p>
+
+<h3>Button Dropdowns</h3>
+
+<p>Button Dropdowns can be accomplished by combining the [button-group] shortcode, the "data" parameters of the [button] shortcode, and [dropdown] shortcode as follows.</p>
+
+<h4>Single button dropdowns</h4>
+
+<pre><code>[button-group]
+    [button link="#" dropdown="true" data="toggle,dropdown"] … [caret][/button]
+    [dropdown]
+        [dropdown-header] … [/dropdown-header]
+        [dropdown-item link="#"] … [/dropdown-item]
+        [dropdown-item link="#"] … [/dropdown-item]
+        [dropdown-item link="#"] … [/dropdown-item]
+        [divider]
+        [dropdown-item link="#"] … [/dropdown-item]
+    [/dropdown]
+[/button-group]
+</code></pre>
+
+<h4>Split button dropdowns</h4>
+
+<pre><code>[button-group]
+    [button link="#"] … [/button]
+    [button dropdown="true" data="toggle,dropdown"][caret][/button]
+    [dropdown]
+        [dropdown-item link="#"] … [/dropdown-item]
+        [divider]
+        [dropdown-item link="#"] … [/dropdown-item]
+    [/dropdown]
+[/button-group]
+</code></pre>
+
+<h4>Dropup variation</h4>
+
+<pre><code>[button-group dropup="true"]
+    [button link="#"] … [/button]
+    [button dropdown="true" data="toggle,dropdown"][caret][/button]
+    [dropdown]
+        [dropdown-item link="#"] … [/dropdown-item]
+        [divider]
+        [dropdown-item link="#"] … [/dropdown-item]
+    [/dropdown]
+[/button-group]  
+</code></pre>
+
+<h4>[dropdown] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[dropdown-item] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>link </td>
+<td> The url you want the dropdown-item to link to </td>
+<td> optional </td>
+<td> any valid link </td>
+<td> none</td>
+</tr>
+<tr>
+<td>disabled </td>
+<td> Whether this menu-item is disabled </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[dropdown-header] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[caret] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[divider] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#btn-dropdowns">Bootstrap button dropdowns documentation</a></p>
+
+<h3>Navs</h3>
+
+<pre><code>[nav type="pills"]
+    [nav-item link="#"] … [/nav-item]
+    [nav-item link="#"] … [/nav-item]
+    [nav-item link="#"] … [/nav-item]
+[/nav]
+</code></pre>
+
+<h4>Nav with dropdowns</h4>
+
+<pre><code>[nav type="pills"]
+    [nav-item link="#" active="true"] … [/nav-item]
+    [nav-item dropdown="true" link="#"] … [caret]
+        [dropdown]
+            [dropdown-item link="#"] … [/dropdown-item]
+            [dropdown-item link="#"] … [/dropdown-item]
+        [/dropdown]
+    [/nav-item]
+[/nav]
+</code></pre>
+
+<h4>[nav] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type </td>
+<td> The type of nav </td>
+<td> required </td>
+<td> tabs, pills </td>
+<td> tabs</td>
+</tr>
+<tr>
+<td>stacked </td>
+<td> Whether the nav is stacked (should be used with "pills" type </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>justified </td>
+<td> Whether the nav is justified </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[nav-item] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>link </td>
+<td> The url you want the dropdown-item to link to </td>
+<td> optional </td>
+<td> any valid link </td>
+<td> none</td>
+</tr>
+<tr>
+<td>active </td>
+<td> Whether the item has the "active" style applied </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>disabled </td>
+<td> Whether the item is disabled </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#nav">Bootstrap button navs documentation</a></p>
+
+<h3>Breadcrumbs</h3>
+
+<pre><code>[breadcrumb]
+    [breadcrumb-item link="#"] … [/breadcrumb-item]
+    [breadcrumb-item link="#"] … [/breadcrumb-item]
+    [breadcrumb-item link="#"] … [/breadcrumb-item]
+[/breadcrumb]
+</code></pre>
+
+<h4>[breadcrumb] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[breadcrumb-item] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>link </td>
+<td> The url you want the breadcrumb-item to link to </td>
+<td> optional </td>
+<td> any valid link </td>
+<td> none</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#breadcrumbs">Bootstrap breadcrumbs documentation</a></p>
+
+<h3>Labels</h3>
+
+<pre><code>[label type="success"] … [/label]
+</code></pre>
+
+<h4>[label] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type </td>
+<td> The type of label to display </td>
+<td> optional </td>
+<td> default, primary, success, info, warning, danger </td>
+<td> default</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#labels">Bootstrap label documentation</a></p>
+
+<h3>Badges</h3>
+
+<pre><code>[badge right="true"] … [/badge]
+</code></pre>
+
+<h4>[badge] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>right </td>
+<td> Whether the badge should align to the right of its container </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#badges">Bootstrap badges documentation</a></p>
+
+<h3>Jumbotron</h3>
+
+<pre><code>[jumbotron title="My Jumbotron"] … [/jumbotron]
+</code></pre>
+
+<h4>[jumbotron] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title </td>
+<td> The jumbotron title </td>
+<td> optional </td>
+<td> Any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#jumbotron">Bootstrap jumbotron documentation</a></p>
+
+<h3>Page Header</h3>
+
+<pre><code>[page-header] … [/page-header]
+</code></pre>
+
+<p>Automatically inserts H1 tag if not present</p>
+
+<h4>[page-header] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#page-header">Bootstrap page-header documentation</a></p>
+
+<h3>Thumbnails</h3>
+
+<pre><code>[thumbnail] … [/thumbnail]
+[thumbnail] … [/thumbnail]
+[thumbnail] … [/thumbnail]
+</code></pre>
+
+<h4>[thumbnail] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#thumbnails">Bootstrap thumbnails documentation</a></p>
+
+<h3>Alerts</h3>
+
+<pre><code>[alert type="success"] … [/alert]
+</code></pre>
+
+<h4>[alert] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type </td>
+<td> The type of the alert </td>
+<td> required </td>
+<td> success, info, warning, danger </td>
+<td> success</td>
+</tr>
+<tr>
+<td>dismissable </td>
+<td> If the alert should be dismissable </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#alerts">Bootstrap alert documentation</a></p>
+
+<h3>Progress Bars</h3>
+
+<pre><code>[progress striped="true"]
+    [progress-bar percent="50"]
+    [progress-bar percent="25" type="success"]
+[/progress]
+</code></pre>
+
+<h4>[progress] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>striped </td>
+<td> Whether enclosed progress bars will be striped </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>animated </td>
+<td> Whether enclosed progress bars will be animated </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[progress-bar] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>percent </td>
+<td> The percentage amount to show in the progress bar </td>
+<td> required </td>
+<td> any number between 0 and 100 </td>
+<td> false</td>
+</tr>
+<tr>
+<td>label </td>
+<td> Whether to show the percentage as a text label inside the bar </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>type </td>
+<td> The type of the progress bar </td>
+<td> optional </td>
+<td> default, primary, success, info, warning, danger  </td>
+<td> default</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#progress">Bootstrap progress bars documentation</a></p>
+
+<h3>Media Objects</h3>
+
+<pre><code>[media]
+  [media-object pull="right"]
+    …
+  [/media-object]
+  [media-body title="Testing"]
+    …
+  [/media-body]
+[/media]
+</code></pre>
+
+<h4>[media] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[media-object] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pull </td>
+<td> Whether the image pulls to the left or right </td>
+<td> optional </td>
+<td> left, right </td>
+<td> right</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[media-body] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title </td>
+<td> The object title </td>
+<td> required </td>
+<td> Any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><strong>NOTE: media-object should contain an image, or linked image, inserted using the WordPress TinyMCE editor</strong></p>
+
+<p><a href="http://getbootstrap.com/components/#media">Bootstrap media objects documentation</a></p>
+
+<h3>List Groups</h3>
+
+<h4>Basic Example</h4>
+
+<pre><code>[list-group]
+  [list-group-item]
+    …
+  [/list-group-item]
+  [list-group-item]
+    …
+  [/list-group-item]
+  [list-group-item]
+    …
+  [/list-group-item]
+[/list-group]
+</code></pre>
+
+<h4>Linked Items</h4>
+
+<pre><code>[list-group linked="true"]
+  [list-group-item link="#" active="true"]
+    …
+  [/list-group-item]
+  [list-group-item link="#"]
+    …
+  [/list-group-item]
+  [list-group-item link="#"]
+    …
+  [/list-group-item]
+[/list-group]
+</code></pre>
+
+<h4>Custom Content</h4>
+
+<pre><code>[list-group linked="true"]
+  [list-group-item link="#" active="true"]
+    [list-group-item-heading]…[/list-group-item-heading]
+    [list-group-item-text]…[/list-group-item-text]
+  [/list-group-item]
+  [list-group-item link="#"]
+    [list-group-item-heading]…[/list-group-item-heading]
+    [list-group-item-text]…[/list-group-item-text]
+  [/list-group-item]
+  [list-group-item link="#"]
+    [list-group-item-heading]…[/list-group-item-heading]
+    [list-group-item-text]…[/list-group-item-text]
+  [/list-group-item]
+[/list-group]
+</code></pre>
+
+<h4>[list-group] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>linked </td>
+<td> Whether this is a linked list group, or a standard one </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[list-group-item] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>link </td>
+<td> The url you want the list item to link to <strong>Must correspond with the "linked" parameter in [list-group]</strong> </td>
+<td> optional </td>
+<td> any text </td>
+<td> false</td>
+</tr>
+<tr>
+<td>type </td>
+<td> The type of the list-group-item </td>
+<td> optional </td>
+<td> primary, success, info, warning, danger, link </td>
+<td> none</td>
+</tr>
+<tr>
+<td>active </td>
+<td> Whether the item has the "active" style applied </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>target </td>
+<td> Target for the link </td>
+<td> optional </td>
+<td> any valid target </td>
+<td> none</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[list-group-item-heading] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[list-group-item-text] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#list-group">Bootstrap list groups documentation</a></p>
+
+<h3>Panels</h3>
+
+<pre><code>[panel type="info" heading="Panel Title" footer="Footer text"] … [/panel]
+</code></pre>
+
+<h4>[panel] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type </td>
+<td> The type of the panel </td>
+<td> optional </td>
+<td> default, primary, success, info, warning, danger, link </td>
+<td> default</td>
+</tr>
+<tr>
+<td>heading </td>
+<td> The panel heading </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>title </td>
+<td> Whether the panel heading should have a title tag around it </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>footer </td>
+<td> The panel footer text if desired </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#panels">Bootstrap panels documentation</a></p>
+
+<h3>Wells</h3>
+
+<pre><code>[well size="sm"] … [/well]
+</code></pre>
+
+<h4>[well] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size </td>
+<td> Modifies the amount of padding inside the well </td>
+<td> optional </td>
+<td> sm, lg </td>
+<td> normal</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/components/#wells">Bootstrap wells documentation</a></p>
+
+<h2>Javascript</h2>
+
+<h3>Tabs</h3>
+
+<pre><code>[tabs type="tabs"]
+  [tab title="Home" active="true"]
+    …
+  [/tab]
+  [tab title="Profile"]
+    …
+  [/tab]
+  [tab title="Messages"]
+    …
+  [/tab]
+[/tabs]
+</code></pre>
+
+<h4>[tabs] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type </td>
+<td> The type of nav </td>
+<td> required </td>
+<td> tabs, pills </td>
+<td> tabs</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[tab] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title </td>
+<td> The title of the tab </td>
+<td> required </td>
+<td> any text </td>
+<td> false</td>
+</tr>
+<tr>
+<td>active </td>
+<td> Whether this tab should be "active" or selected </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>fade </td>
+<td> Whether to use the "fade" effect when showing this tab </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/javascript/#tabs">Bootstrap tabs documentation</a></p>
+
+<h3>Tooltip</h3>
+
+<pre><code>[tooltip title="I'm the title" placement="right"] … [/tooltip]
+</code></pre>
+
+<h4>[tooltip] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title </td>
+<td> The text of the tooltip </td>
+<td> required </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>placement </td>
+<td> The placement of the tooltip </td>
+<td> optional </td>
+<td> left, top, bottom, right </td>
+<td> top</td>
+</tr>
+<tr>
+<td>animation </td>
+<td> apply a CSS fade transition to the tooltip </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>html </td>
+<td> Insert HTML into the tooltip </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/javascript/#tooltips">Bootstrap tooltip documentation</a></p>
+
+<h3>Popover</h3>
+
+<pre><code>[popover title="I'm the title" content="And here's some amazing content. It's very engaging. right?" placement="right"] … [/popover]
+</code></pre>
+
+<h4>[popover] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title </td>
+<td> The title of the popover </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>text </td>
+<td> The text of the popover </td>
+<td> required </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>placement </td>
+<td> The placement of the popover </td>
+<td> optional </td>
+<td> left, top, bottom, right </td>
+<td> top</td>
+</tr>
+<tr>
+<td>animation </td>
+<td> apply a CSS fade transition to the tooltip </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>html </td>
+<td> Insert HTML into the tooltip </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/javascript/#popovers">Bootstrap popover documentation</a></p>
+
+<h3>Collapse</h3>
+
+<pre><code>[collapsibles]
+  [collapse title="Collapse 1" active="true"]
+    …
+  [/collapse]
+  [collapse title="Collapse 2"]
+    …
+  [/collapse]
+  [collapse title="Collapse 3"]
+    …
+  [/collapse]
+[/collapsibles]
+</code></pre>
+
+<h4>[collapsibles] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[collapse] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title </td>
+<td> The title of the collapsible, visible when collapsed </td>
+<td> required </td>
+<td> any text </td>
+<td> false</td>
+</tr>
+<tr>
+<td>type </td>
+<td> The type of the panel </td>
+<td> optional </td>
+<td> default, primary, success, info, warning, danger, link </td>
+<td> default</td>
+</tr>
+<tr>
+<td>active </td>
+<td> Whether the tab is expanded at load time </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/javascript/#collapse">Bootstrap collapse documentation</a></p>
+
+<h3>Carousel</h3>
+
+<pre><code>[carousel]
+    [carousel-item active="true"] … [/carousel-item]
+    [carousel-item] … [/carousel-item]
+    [carousel-item] … [/carousel-item]
+[/carousel]
+</code></pre>
+
+<p>[carousel-item] wraps an HTML image tag or image inserted via the WordPress editor.</p>
+
+<h4>[carousel] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>interval </td>
+<td> The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle. </td>
+<td> optional </td>
+<td> any number (in ms) or "false" </td>
+<td> 5000</td>
+</tr>
+<tr>
+<td>wrap </td>
+<td> Whether the carousel should cycle continuously or have hard stops. </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[carousel-item] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>active </td>
+<td> Whether the item has the "active" style applied. One item MUST be set as active. </td>
+<td> optional </td>
+<td> true, false </td>
+<td> false</td>
+</tr>
+<tr>
+<td>caption </td>
+<td> This carousel slide's caption </td>
+<td> optional </td>
+<td> Any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/javascript/#carousel">Bootstrap carousel documentation</a></p>
+
+<h3>Modal</h3>
+
+<pre><code>[modal text="This is my modal" title="Modal Title Goes Here" xclass="btn btn-primary btn-large"]
+    …
+    [modal-footer]
+        [button type="primary" link="#" data="dismiss,modal"]Dismiss[/button]
+    [/modal-footer]
+[/modal]
+</code></pre>
+
+<h4>[modal] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text </td>
+<td> Text of the modal trigger link </td>
+<td> required </td>
+<td> any text  </td>
+<td> none</td>
+</tr>
+<tr>
+<td>title </td>
+<td> Title of the modal popup </td>
+<td> required </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>size </td>
+<td> Optional modal size </td>
+<td> optional </td>
+<td> lg, sm </td>
+<td> none</td>
+</tr>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add to the trigger link </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>[modal-footer] parameters</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter </th>
+<th> Description </th>
+<th> Required </th>
+<th> Values </th>
+<th> Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass </td>
+<td> Any extra classes you want to add </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+<tr>
+<td>data </td>
+<td> Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>). </td>
+<td> optional </td>
+<td> any text </td>
+<td> none</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><a href="http://getbootstrap.com/javascript/#modals">Bootstrap modal documentation</a></p>
+</body>
+</html>
