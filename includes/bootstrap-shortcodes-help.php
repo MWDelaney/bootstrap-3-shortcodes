@@ -9,22 +9,7 @@ function retitle($match) {
     return "<$h3 id='$id'>$title</$h3>";
 }
 
-//$thisfile = realpath(dirname(__FILE__));
-# Install PSR-0-compatible class autoloader
-//spl_autoload_register(function($class){
-//    require 'php_markdown/' . preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
-//});
-
-if(!class_exists('\Michelf\MarkdownExtra' )) {
-    require_once 'php_markdown/Michelf/MarkdownExtra.inc.php';
-}
-
-# Get Markdown class
-//use \Michelf\Markdown;
-use \Michelf\MarkdownExtra;
-
-$text = file_get_contents(dirname(__FILE__) . '/../README.md');
-$html = MarkdownExtra::defaultTransform($text);
+$html = file_get_contents(dirname(__FILE__) . '/help/readme.html');
 ?>
 
 <script>
