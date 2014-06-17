@@ -26,6 +26,13 @@ $html = file_get_contents(dirname(__FILE__) . '/help/readme.html');
             var win = window.dialogArguments || opener || parent || top;
             win.send_to_editor(paras);
         });
+    
+        jQuery('#bootstrap-shortcodes-help h2').each(function(){
+            var id = jQuery(this).attr("id");
+            jQuery(this).removeAttr("id").nextUntil("h2").andSelf().wrapAll('<div class="tab-pane" id="' + id + '" />');
+        });
+        jQuery('#supported-shortcodes').addClass('active');
+        
     });
 </script>
 <script type="text/javascript">
@@ -37,9 +44,15 @@ $html = file_get_contents(dirname(__FILE__) . '/help/readme.html');
     href = href.replace( find, replace )
     jQuery( this ).attr( 'href', href );
     } );
+    
 </script>
         <div style="display:none;" id="bootstrap-shortcodes-help-popup">
             <div id="bootstrap-shortcodes-help">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#supported-shortcodes" data-toggle="tab">Supported Shortcodes</a></li>
+                <li><a href="#requirements" data-toggle="tab">Requirements</a></li>
+            </ul>
+            <div class="tab-content">
             <?php
                 # Put HTML content in the document
                 $html = preg_replace('/(<a href="http:[^"]+")>/is','\\1 target="_blank">',$html);
@@ -52,5 +65,6 @@ $html = file_get_contents(dirname(__FILE__) . '/help/readme.html');
                 $html = str_replace('</pre>', '</pre><p><button class="btn btn-primary btn-sm insert-code">Insert Example <i class="glyphicon glyphicon-share-alt"></i></button></p>', $html);
                 echo $html;
             ?>
+            </div>
             </div>
         </div>

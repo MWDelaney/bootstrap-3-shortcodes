@@ -1,7 +1,7 @@
 Bootstrap Shortcodes for WordPress
 ===
 
-This is a plugin for WordPress that adds shortcodes for easier use of the Bootstrap elements in your content.
+A pluggin for WordPress that adds shortcodes for easier use of the Bootstrap elements in your content.
 
 ## Requirements
 This plugin won't do anything if you don't have WordPress theme built with the [Bootstrap](http://getbootstrap.com/) framework. **This plugin does not include the Bootstrap framework**.
@@ -51,7 +51,7 @@ This plugin contains a ```composer.json``` file for those of you who manage your
 
 # Usage
 
-## CSS
+### CSS
 
 ### Grid
 	  [row]
@@ -113,6 +113,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
 
+* * *
+
 ### Lead body copy
 	[lead] … [/lead]
 
@@ -123,6 +125,8 @@ xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
 [Bootstrap body copy documentation](http://getbootstrap.com/css/#type-body-copy)
+
+* * *
 
 ### Emphasis classes
 	[emphasis type="success"] … [/emphasis]
@@ -136,6 +140,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap emphasis classes documentation](http://getbootstrap.com/css/#type-emphasis)
 
+* * *
+
 ### Code
 	[code] … [/code]
 
@@ -148,6 +154,8 @@ xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
 [Bootstrap code documentation](http://getbootstrap.com/css/#code)
+
+* * *
 
 ### Tables
 	[table-wrap bordered="true" striped="true"]
@@ -168,6 +176,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap table documentation](http://getbootstrap.com/css/#tables)
 
+* * *
+
 ### Buttons
 	[button type="success" size="lg" link="#"] … [/button]
 
@@ -187,6 +197,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
 
+* * *
+
 ### Images
 	[img type="circle" responsive="true"] … [/img]
 
@@ -201,6 +213,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap images documentation](http://getbootstrap.com/css/#images)
 
+* * *
+
 ### Responsive Utilities
 	[responsive visible="sm xs" hidden="lg"] … [/responsive]
 
@@ -214,7 +228,9 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap emphasis classes documentation](http://getbootstrap.com/css/#type-emphasis)
 
-## Components
+* * *
+
+### Components
 
 ### Icons
 	[icon type="arrow"]
@@ -227,6 +243,8 @@ xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
 [Bootstrap Glyphicons documentation](http://getbootstrap.com/components/#glyphicons)
+
+* * *
 
 ### Button Groups
 #### Basic example
@@ -270,6 +288,8 @@ xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
 [Bootstrap button groups documentation](http://getbootstrap.com/css/#btn-groups)
+
+* * *
 
 ### Button Dropdowns
 Button Dropdowns can be accomplished by combining the [button-group] shortcode, the "data" parameters of the [button] shortcode, and [dropdown] shortcode as follows.
@@ -343,6 +363,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap button dropdowns documentation](http://getbootstrap.com/components/#btn-dropdowns)
 
+* * *
+
 ### Navs
     [nav type="pills"]
         [nav-item link="#"] … [/nav-item]
@@ -381,6 +403,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap button navs documentation](http://getbootstrap.com/components/#nav)
 
+* * *
 
 ### Breadcrumbs
 	[breadcrumb]
@@ -404,6 +427,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap breadcrumbs documentation](http://getbootstrap.com/components/#breadcrumbs)
 
+* * *
+
 ### Labels
 	[label type="success"] … [/label]
 
@@ -415,6 +440,8 @@ xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
 [Bootstrap label documentation](http://getbootstrap.com/components/#labels)
+
+* * *
 
 ### Badges
 	[badge right="true"] … [/badge]
@@ -428,6 +455,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap badges documentation](http://getbootstrap.com/components/#badges)
 
+* * *
+
 ### Jumbotron
     [jumbotron title="My Jumbotron"] … [/jumbotron]
 
@@ -440,6 +469,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap jumbotron documentation](http://getbootstrap.com/components/#jumbotron)
 
+* * *
+
 ### Page Header
     [page-header] … [/page-header]
 
@@ -451,6 +482,8 @@ xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
 [Bootstrap page-header documentation](http://getbootstrap.com/components/#page-header)
+
+* * *
 
 ### Thumbnails
     [thumbnail] … [/thumbnail]
@@ -465,6 +498,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap thumbnails documentation](http://getbootstrap.com/components/#thumbnails)
 
+* * *
+
 ### Alerts
 	[alert type="success"] … [/alert]
 
@@ -477,6 +512,8 @@ xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
 [Bootstrap alert documentation](http://getbootstrap.com/components/#alerts)
+
+* * *
 
 ### Progress Bars
 	[progress striped="true"]
@@ -503,6 +540,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap progress bars documentation](http://getbootstrap.com/components/#progress)
 
+* * *
 
 ### Media Objects
     [media]
@@ -537,6 +575,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 __NOTE: media-object should contain an image, or linked image, inserted using the WordPress TinyMCE editor__
 
 [Bootstrap media objects documentation](http://getbootstrap.com/components/#media)
+
+* * *
 
 ### List Groups
 
@@ -613,6 +653,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap list groups documentation](http://getbootstrap.com/components/#list-group)
 
+* * *
+
 ### Panels
 	[panel type="info" heading="Panel Title" footer="Footer text"] … [/panel]
 
@@ -628,6 +670,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
 
+* * *
+
 ### Wells
 	[well size="sm"] … [/well]
 
@@ -640,7 +684,9 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
 
-## Javascript
+* * *
+
+### Javascript
 
 ### Tabs
 	[tabs type="tabs"]
@@ -673,6 +719,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap tabs documentation](http://getbootstrap.com/javascript/#tabs)
 
+* * *
+
 ### Tooltip
 	[tooltip title="I'm the title" placement="right"] … [/tooltip]
 
@@ -685,6 +733,8 @@ animation | apply a CSS fade transition to the tooltip | optional | any text | n
 html | Insert HTML into the tooltip | optional | true, false | false
 
 [Bootstrap tooltip documentation](http://getbootstrap.com/javascript/#tooltips)
+
+* * *
 
 ### Popover
 	[popover title="I'm the title" content="And here's some amazing content. It's very engaging. right?" placement="right"] … [/popover]
@@ -699,6 +749,8 @@ animation | apply a CSS fade transition to the tooltip | optional | any text | n
 html | Insert HTML into the tooltip | optional | true, false | false
 
 [Bootstrap popover documentation](http://getbootstrap.com/javascript/#popovers)
+
+* * *
 
 ### Collapse
 	[collapsibles]
@@ -730,6 +782,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap collapse documentation](http://getbootstrap.com/javascript/#collapse)
 
+* * *
+
 ### Carousel
 	[carousel]
         [carousel-item active="true"] … [/carousel-item]
@@ -756,6 +810,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 [Bootstrap carousel documentation](http://getbootstrap.com/javascript/#carousel)
 
+* * *
 
 ### Modal
     [modal text="This is my modal" title="Modal Title Goes Here" xclass="btn btn-primary btn-large"]
@@ -781,3 +836,5 @@ xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
 [Bootstrap modal documentation](http://getbootstrap.com/javascript/#modals)
+
+* * *
