@@ -1,4 +1,7 @@
-
+#bootstrap-shortcodes-help h1,
+#bootstrap-shortcodes-help h1+p {
+    display: none;
+}
 #bootstrap-shortcodes-help a:link,
 #bootstrap-shortcodes-help a:visited {
     color: #428bca;
