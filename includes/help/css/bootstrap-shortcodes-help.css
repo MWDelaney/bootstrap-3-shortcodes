@@ -2,6 +2,15 @@
 #bootstrap-shortcodes-help h1+p {
     display: none;
 }
+#bootstrap-shortcodes-help .nav-tabs {
+    border-bottom: 0px !important;
+}
+#bootstrap-shortcodes-help .nav > li > a {
+    padding: 5px 10px !important;
+}
+#bootstrap-shortcodes-help .modal-dialog {
+    margin: 40px auto 20px auto !important;
+}
 #bootstrap-shortcodes-help a:link,
 #bootstrap-shortcodes-help a:visited {
     color: #428bca;
