@@ -29,7 +29,7 @@ $html = file_get_contents(dirname(__FILE__) . '/help/readme.html');
     
         jQuery('#bootstrap-shortcodes-help h2').each(function(){
             var id = jQuery(this).attr("id");
-            jQuery(this).removeAttr("id").nextUntil("h2").andSelf().wrapAll('<div class="tab-pane" id="' + id + '" />');
+            jQuery(this).removeAttr("id").nextUntil("h2").andSelf().wrapAll('<div class="tab-pane" id="bs-' + id + '" />');
         });
         jQuery('#supported-shortcodes').addClass('active');
         
@@ -37,9 +37,9 @@ $html = file_get_contents(dirname(__FILE__) . '/help/readme.html');
 </script>
 
 <script type="text/javascript">
-  jQuery(document).ready(ajustamodal);
-  jQuery(window).resize(ajustamodal);
-  function ajustamodal() {
+  jQuery(document).ready(bsajustamodal);
+  jQuery(window).resize(bsajustamodal);
+  function bsajustamodal() {
     var altura = jQuery(window).height() - 155; //value corresponding to the modal heading + footer
     jQuery(".ativa-scroll").css({"height":altura,"overflow-y":"auto"});
   }
@@ -52,8 +52,8 @@ $html = file_get_contents(dirname(__FILE__) . '/help/readme.html');
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4>Bootstrap Shortcodes Help</h4>  
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#supported-shortcodes" data-toggle="tab">Supported Shortcodes</a></li>
-                    <li><a href="#requirements" data-toggle="tab">System Requirements</a></li>
+                    <li class="active"><a href="#bs-supported-shortcodes" data-toggle="tab">Supported Shortcodes</a></li>
+                    <li><a href="#bs-requirements" data-toggle="tab">System Requirements</a></li>
                 </ul>   
         </div>
       <div class="modal-body ativa-scroll">
