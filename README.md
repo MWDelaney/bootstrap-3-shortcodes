@@ -10,7 +10,7 @@ The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.9```.
 
 This plugin contains a ```composer.json``` file for those of you who manage your PHP dependencies with [Composer](https://getcomposer.org).
 
-## Supported shortcodes
+## Shortcode Reference
 
 ### CSS
 * [Grid](#grid)
