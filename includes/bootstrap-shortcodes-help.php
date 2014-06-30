@@ -31,7 +31,7 @@ $html = file_get_contents(dirname(__FILE__) . '/help/readme.html');
             var id = jQuery(this).attr("id");
             jQuery(this).removeAttr("id").nextUntil("h2").andSelf().wrapAll('<div class="tab-pane" id="bs-' + id + '" />');
         });
-        jQuery('#supported-shortcodes').addClass('active');
+        jQuery('#bs-supported-shortcodes').addClass('active');
         
     });
 </script>
