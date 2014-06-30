@@ -1,7 +1,7 @@
 Bootstrap Shortcodes for WordPress
 ===
 
-A pluggin for WordPress that adds shortcodes for easier use of the Bootstrap elements in your content.
+WordPress plugin that provides shortcodes for easier use of the Bootstrap styles and components in your content.
 
 ## Requirements
 This plugin won't do anything if you don't have WordPress theme built with the [Bootstrap](http://getbootstrap.com/) framework. **This plugin does not include the Bootstrap framework**.
