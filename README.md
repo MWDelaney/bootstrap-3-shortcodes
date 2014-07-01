@@ -6,7 +6,7 @@ WordPress plugin that provides shortcodes for easier use of the Bootstrap styles
 ## Requirements
 This plugin won't do anything if you don't have WordPress theme built with the [Bootstrap](http://getbootstrap.com/) framework. **This plugin does not include the Bootstrap framework**.
 
-The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 3.9```.
+The plugin is tested to work with ```Bootstrap 3.2``` and ```WordPress 3.9```.
 
 This plugin contains a ```composer.json``` file for those of you who manage your PHP dependencies with [Composer](https://getcomposer.org).
 
@@ -216,13 +216,16 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Responsive Utilities
-	[responsive visible="sm xs" hidden="lg"] … [/responsive]
+	[responsive visible_block="lg md" hidden="sn xs"] … [/responsive]
 
 #### [reponsive] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-visible | Sizes at which this element is visible (separated by spaces) | optional | xs, sm, md, lg  | false
+visible | Sizes at which this element is visible (separated by spaces) **NOTE: as of Bootstrap 3.2 "visible" is deprecated in favor of "block", "inline", and "inline-block" (see below)** | optional | xs, sm, md, lg  | false
 hidden | Sizes at which this element is hidden (separated by spaces) | optional | xs, sm, md, lg  | false
+block | Sizes at which this element is visible and displayed as a "block" element (separated by spaces) | optional | xs, sm, md, lg  | false
+inline | Sizes at which this element is visible and displayed as an "inline" element (separated by spaces) | optional | xs, sm, md, lg  | false
+inline_block | Sizes at which this element is visible and displayed as an "inline-block" element (separated by spaces) | optional | xs, sm, md, lg  | false
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 

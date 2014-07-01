@@ -1851,6 +1851,9 @@ function bs_popover( $atts, $content = null ) {
     extract( shortcode_atts( array(
       "visible" => false,
       "hidden"  => false,
+      "block"  => false,
+      "inline"  => false,
+      "inline_block"  => false,
       "xclass"  => false,
       "data"    => false
     ), $atts ) );
@@ -1866,6 +1869,24 @@ function bs_popover( $atts, $content = null ) {
       $hidden = explode( ' ', $hidden );
       foreach( $hidden as $h ):
         $class .= "hidden-$h ";
+      endforeach;
+    }
+    if( $block ) {
+      $block = explode( ' ', $block );
+      foreach( $block as $b ):
+        $class .= "visible-$b-block ";
+      endforeach;
+    }
+    if( $inline ) {
+      $inline = explode( ' ', $inline );
+      foreach( $inline as $i ):
+        $class .= "visible-$i-inline ";
+      endforeach;
+    }
+    if( $inline_block ) {
+      $inline_block = explode( ' ', $inline_block );
+      foreach( $inline_block as $ib ):
+        $class .= "visible-$ib-inline ";
       endforeach;
     }
     $class .= ( $xclass ) ? ' ' . $xclass : '';
