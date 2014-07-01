@@ -2,9 +2,9 @@
 <p>WordPress plugin that provides shortcodes for easier use of the Bootstrap styles and components in your content.</p>
 <h2 id="requirements">Requirements</h2>
 <p>This plugin won&#39;t do anything if you don&#39;t have WordPress theme built with the <a href="http://getbootstrap.com/">Bootstrap</a> framework. <strong>This plugin does not include the Bootstrap framework</strong>.</p>
-<p>The plugin is tested to work with <code>Bootstrap 3</code> and <code>WordPress 3.9</code>.</p>
+<p>The plugin is tested to work with <code>Bootstrap 3.2</code> and <code>WordPress 3.9</code>.</p>
 <p>This plugin contains a <code>composer.json</code> file for those of you who manage your PHP dependencies with <a href="https://getcomposer.org">Composer</a>.</p>
-<h2 id="supported-shortcodes">Shortcode Reference</h2>
+<h2 id="shortcode-reference">Shortcode Reference</h2>
 <h3 id="css">CSS</h3>
 <ul>
 <li><a href="#grid">Grid</a></li>
@@ -588,7 +588,7 @@
 <p><a href="http://getbootstrap.com/css/#images">Bootstrap images documentation</a></p>
 <hr>
 <h3 id="responsive-utilities">Responsive Utilities</h3>
-<pre><code>[responsive visible=&quot;sm xs&quot; hidden=&quot;lg&quot;] … [/responsive]</code></pre>
+<pre><code>[responsive visible_block=&quot;lg md&quot; hidden=&quot;sn xs&quot;] … [/responsive]</code></pre>
 <h4 id="-reponsive-parameters">[reponsive] parameters</h4>
 <table>
 <thead>
@@ -603,7 +603,7 @@
 <tbody>
 <tr>
 <td>visible</td>
-<td>Sizes at which this element is visible (separated by spaces)</td>
+<td>Sizes at which this element is visible (separated by spaces) <strong>NOTE: as of Bootstrap 3.2 &quot;visible&quot; is deprecated in favor of &quot;block&quot;, &quot;inline&quot;, and &quot;inline-block&quot; (see below)</strong></td>
 <td>optional</td>
 <td>xs, sm, md, lg</td>
 <td>false</td>
@@ -611,6 +611,27 @@
 <tr>
 <td>hidden</td>
 <td>Sizes at which this element is hidden (separated by spaces)</td>
+<td>optional</td>
+<td>xs, sm, md, lg</td>
+<td>false</td>
+</tr>
+<tr>
+<td>block</td>
+<td>Sizes at which this element is visible and displayed as a &quot;block&quot; element (separated by spaces)</td>
+<td>optional</td>
+<td>xs, sm, md, lg</td>
+<td>false</td>
+</tr>
+<tr>
+<td>inline</td>
+<td>Sizes at which this element is visible and displayed as an &quot;inline&quot; element (separated by spaces)</td>
+<td>optional</td>
+<td>xs, sm, md, lg</td>
+<td>false</td>
+</tr>
+<tr>
+<td>inline_block</td>
+<td>Sizes at which this element is visible and displayed as an &quot;inline-block&quot; element (separated by spaces)</td>
 <td>optional</td>
 <td>xs, sm, md, lg</td>
 <td>false</td>
@@ -2353,3 +2374,4 @@
 </table>
 <p><a href="http://getbootstrap.com/javascript/#modals">Bootstrap modal documentation</a></p>
 <hr>
+
