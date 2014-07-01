@@ -1401,7 +1401,7 @@ class BoostrapShortcodes {
           '<li class="%s" data-target="%s" data-slide-to="%s"></li>',
           ( !empty($slide["carousel-item"]["active"]) || ($GLOBALS['carousel_default_active'] && $i == 0) ) ? 'active' : '',
           esc_attr( '#' . $id ),
-          esc_attr( '#' . $i )
+          esc_attr( $i )
         );
         $i++;
       }
