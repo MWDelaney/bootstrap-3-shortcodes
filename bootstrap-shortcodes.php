@@ -121,8 +121,17 @@ class BoostrapShortcodes {
       $function = 'bs_' . str_replace( '-', '_', $shortcode );
       add_shortcode( $shortcode, array( $this, $function ) );
       
+    }      
+    // Add 10 levels of potential shortcode depth for every shortcode
+    $depth = 10;
+    $i = 2;
+    while($i <= $depth) {
+        foreach ( $shortcodes as $shortcode ) {
+          $function = 'bs_' . str_replace( '-', '_', $shortcode );
+          add_shortcode( $shortcode . "-" . $i, array( $this, $function ) );
+        }
+        $i++;
     }
-
   }
 
   /*--------------------------------------------------------------------------------------
