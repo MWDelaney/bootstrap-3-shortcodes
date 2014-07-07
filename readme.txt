@@ -73,13 +73,15 @@ No, we assume you are already working with a WordPress theme that includes the B
 
 = 3.2 =
 == New Features ==
-* This release features a brand new, much easier to use popup for the documentation. We're now using Bootstrap's "modal" component rather than the soon-to-be-retired WordPress Thickbox. We've also split the documentation up into tabs so that the technical information about the plugin isn't cluttering up the shortcode reference material. This should make the plugin a little less scary for end-users.
+This release features a brand new, much easier to use popup for the documentation. We're now using Bootstrap's "modal" component rather than the soon-to-be-retired WordPress Thickbox. We've also split the documentation up into tabs so that the technical information about the plugin isn't cluttering up the shortcode reference material. This should make the plugin a little less scary for end-users.
 * Added optional "target" parameter to [list-group-item]
 * Added support for new "block", "inline", and "inline-block" parameters in [responsive] introduced in Bootstrap 3.2
 == Bug Fixes ==
 * Fixed issue with [carousel] indicators (thanks, mebdev!)
-* Fix "Active" state in [collapse] taking any input and setting the collapse as "active". Input now requires the word "true".
-
+* Fix any parameters expecting "true", or "false" accepting any input as "true". Now only accepts the word "true"; other input will be ignored and read as "false".
+* Fix bug that prevented CSS classes from being applied to [dropdown-item]s
+* Fixed bug that completely broke [divider] in dropdowns
+* Fix animated progress bar classes
 
 = 3.1.2 =
 * Tested to work in WordPress 3.9

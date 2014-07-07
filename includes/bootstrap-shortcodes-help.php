@@ -21,7 +21,7 @@ $html = file_get_contents(dirname(__FILE__) . '/help/README.html');
             var id = jQuery(this).attr("id");
             jQuery(this).removeAttr("id").nextUntil("h2").andSelf().wrapAll('<div class="tab-pane" id="bs-' + id + '" />');
         });
-        jQuery('#bs-supported-shortcodes').addClass('active');
+        jQuery('#bs-shortcode-reference').addClass('active');
         
     });
 </script>
@@ -42,7 +42,7 @@ $html = file_get_contents(dirname(__FILE__) . '/help/README.html');
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4>Bootstrap Shortcodes Help</h4>  
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#bs-supported-shortcodes" data-toggle="tab">Shortcode Reference</a></li>
+                    <li class="active"><a href="#bs-shortcode-reference" data-toggle="tab">Shortcode Reference</a></li>
                     <li><a href="#bs-requirements" data-toggle="tab">System Requirements</a></li>
                 </ul>   
         </div>
@@ -50,6 +50,7 @@ $html = file_get_contents(dirname(__FILE__) . '/help/README.html');
             <div>
 
             <div id="bs-top" class="tab-content">
+
             <?php
                 # Put HTML content in the document
                 $html = preg_replace('/(<a href="http:[^"]+")>/is','\\1 target="_blank">',$html);
@@ -58,8 +59,8 @@ $html = file_get_contents(dirname(__FILE__) . '/help/README.html');
                 $html = str_replace('</ul>', '</div>', $html);
                 $html = str_replace('<li><a ', '<a class="list-group-item" ', $html);
                 $html = str_replace('</li>', '', $html);
-                $html = str_replace('<hr>', '<hr><a class="btn btn-link btn-default pull-right" href="#bs-top"><i class="text-muted glyphicon glyphicon-arrow-up"></i></a>', $html);
                 $html = str_replace('href="#', 'href="#bs-', $html);
+                $html = str_replace('<hr>', '<hr><a class="btn btn-link btn-default pull-right" href="#bs-top"><i class="text-muted glyphicon glyphicon-arrow-up"></i></a>', $html);
                 $html = str_replace('<h3 id="', '<h3 id="bs-', $html);
                 $html = str_replace('</pre>', '</pre><p><button data-dismiss="modal" class="btn btn-primary btn-sm insert-code">Insert Example <i class="glyphicon glyphicon-share-alt"></i></button></p>', $html);
                 echo $html;
