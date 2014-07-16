@@ -14,7 +14,7 @@ function bootstrap_shortcodes_help_styles() {
   wp_enqueue_script( 'bootstrap' );
 
 }
-add_action( 'admin_enqueue_scripts', 'bootstrap_shortcodes_help_styles' );
+add_action( 'media_buttons', 'bootstrap_shortcodes_help_styles' );
 
 add_filter('the_content', 'bs_fix_shortcodes');
 
