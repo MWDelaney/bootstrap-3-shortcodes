@@ -3,7 +3,7 @@ Contributors: filipstefansson, nodley, FoolsRun
 Tags: bootstrap, shortcode, shortcodes, responsive, grid
 Requires at least: 3.8
 Tested up to: 3.9
-Stable tag: 3.2.2
+Stable tag: 3.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,7 +71,7 @@ No, we assume you are already working with a WordPress theme that includes the B
 
 == Changelog ==
 
-= 3.2.2 =
+= 3.2.3 =
 * Fix conflicts with other plugins, like Gravity Forms, which use Bootstrap on the WordPress back-end.
 
 = 3.2 =
