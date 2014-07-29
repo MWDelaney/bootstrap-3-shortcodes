@@ -35,7 +35,7 @@ $html = file_get_contents(dirname(__FILE__) . '/help/README.html');
   }
 </script>
 
-<div style="display: none;" id="bootstrap-shortcodes-help" class="modal fade">
+<div id="bootstrap-shortcodes-help" class="modal fade">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
