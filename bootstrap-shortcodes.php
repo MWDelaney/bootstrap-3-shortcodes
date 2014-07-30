@@ -1026,23 +1026,37 @@ class BoostrapShortcodes {
     $class .= ( $striped   == 'true' )      ? ' table-striped' : '';
     $class .= ( $hover     == 'true' )      ? ' table-hover' : '';
     $class .= ( $condensed == 'true' )    ? ' table-condensed' : '';
-    $class .= ($xclass)       ? ' ' . $xclass : ''; 
+    $class .= ($xclass)       ? ' ' . $xclass : '';
+      
+    $return = '';
       
     $dom = new DOMDocument;
-    $dom->loadXML($content);
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
-    if( $data ) {
-      $data = explode( '|', $data );
-      foreach( $data as $d ):
-        $d = explode(',',$d);    
-        $dom->documentElement->setAttribute('data-'.$d[0],trim($d[1]));
-      endforeach;
+    $dom->loadHTML($content);
+      
+    $tags = $dom->getElementsByTagName('table');   //Get contained table
+    foreach ($tags as $tag) {
+        $tabledom = new DOMDocument;
+        $new_root = $tabledom->importNode($tag, true);
+        $tabledom->appendChild($new_root);
+        
+        if(is_object($tabledom->documentElement)) {
+            $tabledom->documentElement->setAttribute('class', $tabledom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
+        }
+        if( $data ) {
+          $data = explode( '|', $data );
+          foreach( $data as $d ):
+            $d = explode(',',$d);    
+            $tabledom->documentElement->setAttribute('data-'.$d[0],trim($d[1]));
+          endforeach;
+        }
+
+        $return .= $tabledom->saveHTML();
+
     }
-    $return = $dom->saveXML();
     return $return;
   }
-
-
+    
+    
   /*--------------------------------------------------------------------------------------
     *
     * bs_well
@@ -1567,7 +1581,7 @@ function bs_popover( $atts, $content = null ) {
     $class = "media-object img-responsive";
     $class .= ($xclass) ? ' ' . $xclass : '';
       
-    $content = do_shortcode($content);
+    $content = do_shortcode($content);  //In order to parse the HTML correctly we need to run any shortcodes in $content
       
     $return = '';
     
@@ -1589,13 +1603,13 @@ function bs_popover( $atts, $content = null ) {
         if(is_object($imagedom->documentElement)) {
             $imagedom->documentElement->setAttribute('class', $imagedom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
         }
-          if( $data ) { 
+        if( $data ) { 
             $data = explode( '|', $data );
             foreach( $data as $d ):
               $d = explode(',',$d);    
-              $image->setAttribute('data-'.$d[0],trim($d[1]));
+              $imagedom->documentElement->setAttribute('data-'.$d[0],trim($d[1]));
             endforeach;
-          }
+        }
 
         $return .= $imagedom->saveHTML();
 
