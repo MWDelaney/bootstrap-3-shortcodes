@@ -4,10 +4,16 @@ function bs_fix_shortcodes($content){
     $array = array (
         '<p>[' => '[', 
         ']</p>' => ']', 
-        ']<br />' => ']'
+        ']<br />' => ']',
+        ']<br>' => ']'
     );
 
     $content = strtr($content, $array);
+    return $content;
+}
+
+function bs_cleanup_domdocument($content) {
+    $content = preg_replace('#(( ){0,}<br( {0,})(/{0,1})>){1,}$#i', '', $content);
     return $content;
 }
 

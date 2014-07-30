@@ -1566,23 +1566,38 @@ function bs_popover( $atts, $content = null ) {
     
     $class = "media-object img-responsive";
     $class .= ($xclass) ? ' ' . $xclass : '';
-  
+      
+    $content = do_shortcode($content);
+      
+    $return = '';
+    
     $previous_value = libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument;
-    $dom->loadXML($content);
+    $dom->loadHTML($content);
     libxml_clear_errors();
     libxml_use_internal_errors($previous_value);
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
-      if( $data ) { 
-        $data = explode( '|', $data );
-        foreach( $data as $d ):
-          $d = explode(',',$d);    
-          $image->setAttribute('data-'.$d[0],trim($d[1]));
-        endforeach;
-      } 
-    $return = $dom->saveXML();
+    
+    $tags = $dom->getElementsByTagName('img');
+    foreach ($tags as $tag) {
+        $imagedom = new DOMDocument;
+        $new_root = $imagedom->importNode($tag, true);
+        $imagedom->appendChild($new_root);
+        
+        if(is_object($imagedom->documentElement)) {
+            $imagedom->documentElement->setAttribute('class', $imagedom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
+        }
+          if( $data ) { 
+            $data = explode( '|', $data );
+            foreach( $data as $d ):
+              $d = explode(',',$d);    
+              $image->setAttribute('data-'.$d[0],trim($d[1]));
+            endforeach;
+          }
+
+        $return .= $imagedom->saveHTML();
+
+    }
     $return = '<span class="pull-' . esc_attr($pull) . '">' . $return . '</span>';
-      
     return $return;
   }
 
