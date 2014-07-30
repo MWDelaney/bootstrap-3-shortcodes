@@ -1577,7 +1577,10 @@ function bs_popover( $atts, $content = null ) {
     libxml_clear_errors();
     libxml_use_internal_errors($previous_value);
     
-    $tags = $dom->getElementsByTagName('img');
+    $tags = $dom->getElementsByTagName('figure');   //Get contained media object assuming it has a caption (and is therefore a <figure> tag)
+    if( $tags->length == 0 ) {  //If no <figure>s were returned, look for <img> tags
+        $tags = $dom->getElementsByTagName('img');
+    }
     foreach ($tags as $tag) {
         $imagedom = new DOMDocument;
         $new_root = $imagedom->importNode($tag, true);
