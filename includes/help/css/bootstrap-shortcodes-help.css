@@ -21,6 +21,19 @@
     background-color: #fff;
 }
 
+.bootstrap-shortcodes-button {
+    padding-left: auto !important;
+    padding-right: 8px !important;
+}
+
+@media (min-width: 782px) {
+    .bootstrap-shortcodes-button {
+        padding-left: 0px !important; 
+        padding-right: 0px !important;
+    }
+}
+
+
 /* CSS crunched with Crunch - http://crunchapp.net/ */
 #bootstrap-shortcodes-help {
   /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
