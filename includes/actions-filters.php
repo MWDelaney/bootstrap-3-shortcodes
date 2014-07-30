@@ -56,3 +56,18 @@ function boostrap_shortcodes_help() {
     include('bootstrap-shortcodes-help.php');
 }
 add_action( 'admin_footer', 'boostrap_shortcodes_help' );
+
+// Add the Bootstrap Shortcodes button to Distraction Free Writing mode 
+function bs_fullscreenbuttons($buttons) {
+	
+	$buttons[] = 'separator';
+	
+	$buttons['bootstrap-shortcodes'] = array(
+		'title' => __('Boostrap 3 Shortcodes Help'),
+		'onclick' => "jQuery('#bootstrap-shortcodes-help').modal('show');",
+		'both' => false 
+	);
+	
+	return $buttons;
+}
+add_action ('wp_fullscreen_buttons', 'bs_fullscreenbuttons');

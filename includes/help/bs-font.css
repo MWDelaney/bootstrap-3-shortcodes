@@ -12,7 +12,8 @@
 .bs_bootstrap-logo {
     padding: 0 3px;
 }
-.wp-media-buttons .add_media span.bs_bootstrap-logo:before {
+.wp-media-buttons .add_media span.bs_bootstrap-logo:before,
+.mce-i-bootstrap-shortcodes:before {
     font-family: 'bss4wp' !important;
 	content: "\e600" !important;
     color: #6f5499 !important;
@@ -26,4 +27,7 @@
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+#wp_fs_bootstrap-shortcodes {
+    font-size: 14px !important;
 }
