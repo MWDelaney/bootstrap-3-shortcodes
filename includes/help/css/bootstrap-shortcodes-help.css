@@ -1,3 +1,26 @@
+/* Fix for WPEngine's stylesheets */
+#bootstrap-shortcodes-help.modal {
+  display: none;
+  overflow: auto;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  background-color: transparent;
+  width: auto;
+  margin-left: auto;
+
+}
+#bootstrap-shortcodes-help .modal-body {
+    max-height: none;
+}
+/* END Fix for WPEngine's stylesheets */
+
 #bootstrap-shortcodes-help h1,
 #bootstrap-shortcodes-help h1+p {
     display: none;
