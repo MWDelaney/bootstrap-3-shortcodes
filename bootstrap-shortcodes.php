@@ -1552,7 +1552,7 @@ function bs_popover( $atts, $content = null ) {
       
     $return = '';
       
-    $tag = array('figure', 'div', 'img');
+    $tag = array('figure', 'div', 'img', 'i', 'span');
     $title = '';
     $content = do_shortcode(preg_replace('/(<br>)+$/', '', $content));
     $return .= $this->scrape_dom_element($tag, $content, $class, $title, $data);
