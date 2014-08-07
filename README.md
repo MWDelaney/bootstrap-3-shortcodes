@@ -741,7 +741,7 @@ html | Insert HTML into the tooltip | optional | true, false | false
 * * *
 
 ### Popover
-	[popover title="I'm the title" content="And here's some amazing content. It's very engaging. right?" placement="right"] ... [/popover]
+	[popover title="I'm the title" text="And here's some amazing content. It's very engaging. right?" placement="right"] ... [/popover]
 
 #### [popover] parameters
 Parameter | Description | Required | Values | Default
