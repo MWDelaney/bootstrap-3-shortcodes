@@ -49,20 +49,20 @@
 <h3 id="grid">Grid</h3>
 <pre><code>  [row]
     [column md=&quot;6&quot;]
-      …
+      ...
     [/column]
     [column md=&quot;6&quot;]
-      …
+      ...
     [/column]
   [/row]</code></pre>
 <p>The container component is also supported in case your theme doesn&#39;t incude a container.</p>
 <pre><code>[container]
   [row]
     [column md=&quot;6&quot;]
-      …
+      ...
     [/column]
     [column md=&quot;6&quot;]
-      …
+      ...
     [/column]
   [/row]
 [/container]</code></pre>
@@ -272,7 +272,7 @@
 <p><a href="http://getbootstrap.com/css/#grid">Bootstrap grid documentation</a>.</p>
 <hr>
 <h3 id="lead-body-copy">Lead body copy</h3>
-<pre><code>[lead] … [/lead]</code></pre>
+<pre><code>[lead] ... [/lead]</code></pre>
 <h4 id="-lead-parameters">[lead] parameters</h4>
 <table>
 <thead>
@@ -304,7 +304,7 @@
 <p><a href="http://getbootstrap.com/css/#type-body-copy">Bootstrap body copy documentation</a></p>
 <hr>
 <h3 id="emphasis-classes">Emphasis classes</h3>
-<pre><code>[emphasis type=&quot;success&quot;] … [/emphasis]</code></pre>
+<pre><code>[emphasis type=&quot;success&quot;] ... [/emphasis]</code></pre>
 <h4 id="-emphasis-parameters">[emphasis] parameters</h4>
 <table>
 <thead>
@@ -343,7 +343,7 @@
 <p><a href="http://getbootstrap.com/css/#type-emphasis">Bootstrap emphasis classes documentation</a></p>
 <hr>
 <h3 id="code">Code</h3>
-<pre><code>[code] … [/code]</code></pre>
+<pre><code>[code] ... [/code]</code></pre>
 <h4 id="-code-parameters">[code] parameters</h4>
 <table>
 <thead>
@@ -453,7 +453,7 @@
 <p><a href="http://getbootstrap.com/css/#tables">Bootstrap table documentation</a></p>
 <hr>
 <h3 id="buttons">Buttons</h3>
-<pre><code>[button type=&quot;success&quot; size=&quot;lg&quot; link=&quot;#&quot;] … [/button]</code></pre>
+<pre><code>[button type=&quot;success&quot; size=&quot;lg&quot; link=&quot;#&quot;] ... [/button]</code></pre>
 <h4 id="-button-parameters">[button] parameters</h4>
 <table>
 <thead>
@@ -541,7 +541,7 @@
 <p><a href="http://getbootstrap.com/css/#buttons">Bootstrap button documentation</a></p>
 <hr>
 <h3 id="images">Images</h3>
-<pre><code>[img type=&quot;circle&quot; responsive=&quot;true&quot;] … [/img]</code></pre>
+<pre><code>[img type=&quot;circle&quot; responsive=&quot;true&quot;] ... [/img]</code></pre>
 <p>Wrap any number of HTML image tags or images inserted via the WordPress media manager.</p>
 <h4 id="-img-parameters">[img] parameters</h4>
 <table>
@@ -588,7 +588,7 @@
 <p><a href="http://getbootstrap.com/css/#images">Bootstrap images documentation</a></p>
 <hr>
 <h3 id="responsive-utilities">Responsive Utilities</h3>
-<pre><code>[responsive visible_block=&quot;lg md&quot; hidden=&quot;sn xs&quot;] … [/responsive]</code></pre>
+<pre><code>[responsive visible_block=&quot;lg md&quot; hidden=&quot;sn xs&quot;] ... [/responsive]</code></pre>
 <h4 id="-reponsive-parameters">[reponsive] parameters</h4>
 <table>
 <thead>
@@ -697,24 +697,24 @@
 <h3 id="button-groups">Button Groups</h3>
 <h4 id="basic-example">Basic example</h4>
 <pre><code>[button-group size=&quot;lg&quot; justified=&quot;&quot; vertical=&quot;&quot;]
-    [button link=&quot;#&quot;] … [/button]
-    [button link=&quot;#&quot;] … [/button]
-    [button link=&quot;#&quot;] … [/button]
+    [button link=&quot;#&quot;] ... [/button]
+    [button link=&quot;#&quot;] ... [/button]
+    [button link=&quot;#&quot;] ... [/button]
 [/button-group]</code></pre>
 <h4 id="button-toolbar">Button toolbar</h4>
 <pre><code>[button-toolbar]
     [button-group]
-        [button link=&quot;#&quot;] … [/button]
-        [button link=&quot;#&quot;] … [/button]
-        [button link=&quot;#&quot;] … [/button]
+        [button link=&quot;#&quot;] ... [/button]
+        [button link=&quot;#&quot;] ... [/button]
+        [button link=&quot;#&quot;] ... [/button]
     [/button-group]
     [button-group]
-        [button link=&quot;#&quot;] … [/button]
-        [button link=&quot;#&quot;] … [/button]
-        [button link=&quot;#&quot;] … [/button]
+        [button link=&quot;#&quot;] ... [/button]
+        [button link=&quot;#&quot;] ... [/button]
+        [button link=&quot;#&quot;] ... [/button]
     [/button-group]
     [button-group]
-        [button link=&quot;#&quot;] … [/button]
+        [button link=&quot;#&quot;] ... [/button]
     [/button-group]
 [/button-toolbar]</code></pre>
 <h4 id="-button-group-parameters">[button-group] parameters</h4>
@@ -807,34 +807,34 @@
 <p>Button Dropdowns can be accomplished by combining the [button-group] shortcode, the &quot;data&quot; parameters of the [button] shortcode, and [dropdown] shortcode as follows.</p>
 <h4 id="single-button-dropdowns">Single button dropdowns</h4>
 <pre><code>[button-group]
-    [button link=&quot;#&quot; dropdown=&quot;true&quot; data=&quot;toggle,dropdown&quot;] … [caret][/button]
+    [button link=&quot;#&quot; dropdown=&quot;true&quot; data=&quot;toggle,dropdown&quot;] ... [caret][/button]
     [dropdown]
-        [dropdown-header] … [/dropdown-header]
-        [dropdown-item link=&quot;#&quot;] … [/dropdown-item]
-        [dropdown-item link=&quot;#&quot;] … [/dropdown-item]
-        [dropdown-item link=&quot;#&quot;] … [/dropdown-item]
+        [dropdown-header] ... [/dropdown-header]
+        [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
+        [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
+        [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
         [divider]
-        [dropdown-item link=&quot;#&quot;] … [/dropdown-item]
+        [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
     [/dropdown]
 [/button-group]</code></pre>
 <h4 id="split-button-dropdowns">Split button dropdowns</h4>
 <pre><code>[button-group]
-    [button link=&quot;#&quot;] … [/button]
+    [button link=&quot;#&quot;] ... [/button]
     [button dropdown=&quot;true&quot; data=&quot;toggle,dropdown&quot;][caret][/button]
     [dropdown]
-        [dropdown-item link=&quot;#&quot;] … [/dropdown-item]
+        [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
         [divider]
-        [dropdown-item link=&quot;#&quot;] … [/dropdown-item]
+        [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
     [/dropdown]
 [/button-group]</code></pre>
 <h4 id="dropup-variation">Dropup variation</h4>
 <pre><code>[button-group dropup=&quot;true&quot;]
-    [button link=&quot;#&quot;] … [/button]
+    [button link=&quot;#&quot;] ... [/button]
     [button dropdown=&quot;true&quot; data=&quot;toggle,dropdown&quot;][caret][/button]
     [dropdown]
-        [dropdown-item link=&quot;#&quot;] … [/dropdown-item]
+        [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
         [divider]
-        [dropdown-item link=&quot;#&quot;] … [/dropdown-item]
+        [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
     [/dropdown]
 [/button-group]  </code></pre>
 <h4 id="-dropdown-parameters">[dropdown] parameters</h4>
@@ -995,17 +995,17 @@
 <hr>
 <h3 id="navs">Navs</h3>
 <pre><code>[nav type=&quot;pills&quot;]
-    [nav-item link=&quot;#&quot;] … [/nav-item]
-    [nav-item link=&quot;#&quot;] … [/nav-item]
-    [nav-item link=&quot;#&quot;] … [/nav-item]
+    [nav-item link=&quot;#&quot;] ... [/nav-item]
+    [nav-item link=&quot;#&quot;] ... [/nav-item]
+    [nav-item link=&quot;#&quot;] ... [/nav-item]
 [/nav]</code></pre>
 <h4 id="nav-with-dropdowns">Nav with dropdowns</h4>
 <pre><code>[nav type=&quot;pills&quot;]
-    [nav-item link=&quot;#&quot; active=&quot;true&quot;] … [/nav-item]
-    [nav-item dropdown=&quot;true&quot; link=&quot;#&quot;] … [caret]
+    [nav-item link=&quot;#&quot; active=&quot;true&quot;] ... [/nav-item]
+    [nav-item dropdown=&quot;true&quot; link=&quot;#&quot;] ... [caret]
         [dropdown]
-            [dropdown-item link=&quot;#&quot;] … [/dropdown-item]
-            [dropdown-item link=&quot;#&quot;] … [/dropdown-item]
+            [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
+            [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
         [/dropdown]
     [/nav-item]
 [/nav]</code></pre>
@@ -1111,9 +1111,9 @@
 <hr>
 <h3 id="breadcrumbs">Breadcrumbs</h3>
 <pre><code>[breadcrumb]
-    [breadcrumb-item link=&quot;#&quot;] … [/breadcrumb-item]
-    [breadcrumb-item link=&quot;#&quot;] … [/breadcrumb-item]
-    [breadcrumb-item link=&quot;#&quot;] … [/breadcrumb-item]
+    [breadcrumb-item link=&quot;#&quot;] ... [/breadcrumb-item]
+    [breadcrumb-item link=&quot;#&quot;] ... [/breadcrumb-item]
+    [breadcrumb-item link=&quot;#&quot;] ... [/breadcrumb-item]
 [/breadcrumb]</code></pre>
 <h4 id="-breadcrumb-parameters">[breadcrumb] parameters</h4>
 <table>
@@ -1181,7 +1181,7 @@
 <p><a href="http://getbootstrap.com/components/#breadcrumbs">Bootstrap breadcrumbs documentation</a></p>
 <hr>
 <h3 id="labels">Labels</h3>
-<pre><code>[label type=&quot;success&quot;] … [/label]</code></pre>
+<pre><code>[label type=&quot;success&quot;] ... [/label]</code></pre>
 <h4 id="-label-parameters">[label] parameters</h4>
 <table>
 <thead>
@@ -1220,7 +1220,7 @@
 <p><a href="http://getbootstrap.com/components/#labels">Bootstrap label documentation</a></p>
 <hr>
 <h3 id="badges">Badges</h3>
-<pre><code>[badge right=&quot;true&quot;] … [/badge]</code></pre>
+<pre><code>[badge right=&quot;true&quot;] ... [/badge]</code></pre>
 <h4 id="-badge-parameters">[badge] parameters</h4>
 <table>
 <thead>
@@ -1259,7 +1259,7 @@
 <p><a href="http://getbootstrap.com/components/#badges">Bootstrap badges documentation</a></p>
 <hr>
 <h3 id="jumbotron">Jumbotron</h3>
-<pre><code>[jumbotron title=&quot;My Jumbotron&quot;] … [/jumbotron]</code></pre>
+<pre><code>[jumbotron title=&quot;My Jumbotron&quot;] ... [/jumbotron]</code></pre>
 <h4 id="-jumbotron-parameters">[jumbotron] parameters</h4>
 <table>
 <thead>
@@ -1298,7 +1298,7 @@
 <p><a href="http://getbootstrap.com/components/#jumbotron">Bootstrap jumbotron documentation</a></p>
 <hr>
 <h3 id="page-header">Page Header</h3>
-<pre><code>[page-header] … [/page-header]</code></pre>
+<pre><code>[page-header] ... [/page-header]</code></pre>
 <p>Automatically inserts H1 tag if not present</p>
 <h4 id="-page-header-parameters">[page-header] parameters</h4>
 <table>
@@ -1331,9 +1331,9 @@
 <p><a href="http://getbootstrap.com/components/#page-header">Bootstrap page-header documentation</a></p>
 <hr>
 <h3 id="thumbnails">Thumbnails</h3>
-<pre><code>[thumbnail] … [/thumbnail]
-[thumbnail] … [/thumbnail]
-[thumbnail] … [/thumbnail]</code></pre>
+<pre><code>[thumbnail] ... [/thumbnail]
+[thumbnail] ... [/thumbnail]
+[thumbnail] ... [/thumbnail]</code></pre>
 <h4 id="-thumbnail-parameters">[thumbnail] parameters</h4>
 <table>
 <thead>
@@ -1346,6 +1346,13 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>has_content</td>
+<td>Set to &quot;true&quot; if this thumbnail contains more than just an image or linked image as in <a href="http://getbootstrap.com/components/#thumbnails-custom-content">Bootstrap&#39;s thumbnail documentation</a>.</td>
+<td>optional</td>
+<td>true, false</td>
+<td>false</td>
+</tr>
 <tr>
 <td>xclass</td>
 <td>Any extra classes you want to add</td>
@@ -1365,7 +1372,7 @@
 <p><a href="http://getbootstrap.com/components/#thumbnails">Bootstrap thumbnails documentation</a></p>
 <hr>
 <h3 id="alerts">Alerts</h3>
-<pre><code>[alert type=&quot;success&quot;] … [/alert]</code></pre>
+<pre><code>[alert type=&quot;success&quot;] ... [/alert]</code></pre>
 <h4 id="-alert-parameters">[alert] parameters</h4>
 <table>
 <thead>
@@ -1511,10 +1518,10 @@
 <h3 id="media-objects">Media Objects</h3>
 <pre><code>[media]
   [media-object pull=&quot;right&quot;]
-    …
+    ...
   [/media-object]
   [media-body title=&quot;Testing&quot;]
-    …
+    ...
   [/media-body]
 [/media]</code></pre>
 <h4 id="-media-parameters">[media] parameters</h4>
@@ -1622,40 +1629,40 @@
 <h4 id="basic-example">Basic Example</h4>
 <pre><code>[list-group]
   [list-group-item]
-    …
+    ...
   [/list-group-item]
   [list-group-item]
-    …
+    ...
   [/list-group-item]
   [list-group-item]
-    …
+    ...
   [/list-group-item]
 [/list-group]</code></pre>
 <h4 id="linked-items">Linked Items</h4>
 <pre><code>[list-group linked=&quot;true&quot;]
   [list-group-item link=&quot;#&quot; active=&quot;true&quot;]
-    …
+    ...
   [/list-group-item]
   [list-group-item link=&quot;#&quot;]
-    …
+    ...
   [/list-group-item]
   [list-group-item link=&quot;#&quot;]
-    …
+    ...
   [/list-group-item]
 [/list-group]</code></pre>
 <h4 id="custom-content">Custom Content</h4>
 <pre><code>[list-group linked=&quot;true&quot;]
   [list-group-item link=&quot;#&quot; active=&quot;true&quot;]
-    [list-group-item-heading]…[/list-group-item-heading]
-    [list-group-item-text]…[/list-group-item-text]
+    [list-group-item-heading]...[/list-group-item-heading]
+    [list-group-item-text]...[/list-group-item-text]
   [/list-group-item]
   [list-group-item link=&quot;#&quot;]
-    [list-group-item-heading]…[/list-group-item-heading]
-    [list-group-item-text]…[/list-group-item-text]
+    [list-group-item-heading]...[/list-group-item-heading]
+    [list-group-item-text]...[/list-group-item-text]
   [/list-group-item]
   [list-group-item link=&quot;#&quot;]
-    [list-group-item-heading]…[/list-group-item-heading]
-    [list-group-item-text]…[/list-group-item-text]
+    [list-group-item-heading]...[/list-group-item-heading]
+    [list-group-item-text]...[/list-group-item-text]
   [/list-group-item]
 [/list-group]</code></pre>
 <h4 id="-list-group-parameters">[list-group] parameters</h4>
@@ -1808,7 +1815,7 @@
 <p><a href="http://getbootstrap.com/components/#list-group">Bootstrap list groups documentation</a></p>
 <hr>
 <h3 id="panels">Panels</h3>
-<pre><code>[panel type=&quot;info&quot; heading=&quot;Panel Title&quot; footer=&quot;Footer text&quot;] … [/panel]</code></pre>
+<pre><code>[panel type=&quot;info&quot; heading=&quot;Panel Title&quot; footer=&quot;Footer text&quot;] ... [/panel]</code></pre>
 <h4 id="-panel-parameters">[panel] parameters</h4>
 <table>
 <thead>
@@ -1868,7 +1875,7 @@
 <p><a href="http://getbootstrap.com/components/#panels">Bootstrap panels documentation</a></p>
 <hr>
 <h3 id="wells">Wells</h3>
-<pre><code>[well size=&quot;sm&quot;] … [/well]</code></pre>
+<pre><code>[well size=&quot;sm&quot;] ... [/well]</code></pre>
 <h4 id="-well-parameters">[well] parameters</h4>
 <table>
 <thead>
@@ -1910,13 +1917,13 @@
 <h3 id="tabs">Tabs</h3>
 <pre><code>[tabs type=&quot;tabs&quot;]
   [tab title=&quot;Home&quot; active=&quot;true&quot;]
-    …
+    ...
   [/tab]
   [tab title=&quot;Profile&quot;]
-    …
+    ...
   [/tab]
   [tab title=&quot;Messages&quot;]
-    …
+    ...
   [/tab]
 [/tabs]</code></pre>
 <h4 id="-tabs-parameters">[tabs] parameters</h4>
@@ -2006,7 +2013,7 @@
 <p><a href="http://getbootstrap.com/javascript/#tabs">Bootstrap tabs documentation</a></p>
 <hr>
 <h3 id="tooltip">Tooltip</h3>
-<pre><code>[tooltip title=&quot;I&#39;m the title&quot; placement=&quot;right&quot;] … [/tooltip]</code></pre>
+<pre><code>[tooltip title=&quot;I&#39;m the title&quot; placement=&quot;right&quot;] ... [/tooltip]</code></pre>
 <h4 id="-tooltip-parameters">[tooltip] parameters</h4>
 <table>
 <thead>
@@ -2052,7 +2059,7 @@
 <p><a href="http://getbootstrap.com/javascript/#tooltips">Bootstrap tooltip documentation</a></p>
 <hr>
 <h3 id="popover">Popover</h3>
-<pre><code>[popover title=&quot;I&#39;m the title&quot; content=&quot;And here&#39;s some amazing content. It&#39;s very engaging. right?&quot; placement=&quot;right&quot;] … [/popover]</code></pre>
+<pre><code>[popover title=&quot;I&#39;m the title&quot; content=&quot;And here&#39;s some amazing content. It&#39;s very engaging. right?&quot; placement=&quot;right&quot;] ... [/popover]</code></pre>
 <h4 id="-popover-parameters">[popover] parameters</h4>
 <table>
 <thead>
@@ -2107,13 +2114,13 @@
 <h3 id="collapse">Collapse</h3>
 <pre><code>[collapsibles]
   [collapse title=&quot;Collapse 1&quot; active=&quot;true&quot;]
-    …
+    ...
   [/collapse]
   [collapse title=&quot;Collapse 2&quot;]
-    …
+    ...
   [/collapse]
   [collapse title=&quot;Collapse 3&quot;]
-    …
+    ...
   [/collapse]
 [/collapsibles]</code></pre>
 <h4 id="-collapsibles-parameters">[collapsibles] parameters</h4>
@@ -2197,9 +2204,9 @@
 <hr>
 <h3 id="carousel">Carousel</h3>
 <pre><code>[carousel]
-    [carousel-item active=&quot;true&quot;] … [/carousel-item]
-    [carousel-item] … [/carousel-item]
-    [carousel-item] … [/carousel-item]
+    [carousel-item active=&quot;true&quot;] ... [/carousel-item]
+    [carousel-item] ... [/carousel-item]
+    [carousel-item] ... [/carousel-item]
 [/carousel]</code></pre>
 <p>[carousel-item] wraps an HTML image tag or image inserted via the WordPress editor.</p>
 <h4 id="-carousel-parameters">[carousel] parameters</h4>
@@ -2290,7 +2297,7 @@
 <hr>
 <h3 id="modal">Modal</h3>
 <pre><code>[modal text=&quot;This is my modal&quot; title=&quot;Modal Title Goes Here&quot; xclass=&quot;btn btn-primary btn-large&quot;]
-    …
+    ...
     [modal-footer]
         [button type=&quot;primary&quot; link=&quot;#&quot; data=&quot;dismiss,modal&quot;]Dismiss[/button]
     [/modal-footer]

@@ -56,10 +56,10 @@ This plugin contains a ```composer.json``` file for those of you who manage your
 ### Grid
 	  [row]
 	    [column md="6"]
-	      …
+	      ...
 	    [/column]
 	    [column md="6"]
-	      …
+	      ...
 	    [/column]
 	  [/row]
     
@@ -68,10 +68,10 @@ The container component is also supported in case your theme doesn't incude a co
 	[container]
 	  [row]
 	    [column md="6"]
-	      …
+	      ...
 	    [/column]
 	    [column md="6"]
-	      …
+	      ...
 	    [/column]
 	  [/row]
 	[/container]
@@ -116,7 +116,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Lead body copy
-	[lead] … [/lead]
+	[lead] ... [/lead]
 
 #### [lead] parameters
 Parameter | Description | Required | Values | Default
@@ -129,7 +129,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Emphasis classes
-	[emphasis type="success"] … [/emphasis]
+	[emphasis type="success"] ... [/emphasis]
 
 #### [emphasis] parameters
 Parameter | Description | Required | Values | Default
@@ -143,7 +143,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Code
-	[code] … [/code]
+	[code] ... [/code]
 
 #### [code] parameters
 Parameter | Description | Required | Values | Default
@@ -179,7 +179,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Buttons
-	[button type="success" size="lg" link="#"] … [/button]
+	[button type="success" size="lg" link="#"] ... [/button]
 
 #### [button] parameters
 Parameter | Description | Required | Values | Default
@@ -200,7 +200,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Images
-	[img type="circle" responsive="true"] … [/img]
+	[img type="circle" responsive="true"] ... [/img]
 
 Wrap any number of HTML image tags or images inserted via the WordPress media manager.
 #### [img] parameters
@@ -216,7 +216,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Responsive Utilities
-	[responsive visible_block="lg md" hidden="sn xs"] … [/responsive]
+	[responsive visible_block="lg md" hidden="sn xs"] ... [/responsive]
 
 #### [reponsive] parameters
 Parameter | Description | Required | Values | Default
@@ -252,25 +252,25 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 ### Button Groups
 #### Basic example
 	[button-group size="lg" justified="" vertical=""]
-        [button link="#"] … [/button]
-        [button link="#"] … [/button]
-        [button link="#"] … [/button]
+        [button link="#"] ... [/button]
+        [button link="#"] ... [/button]
+        [button link="#"] ... [/button]
 	[/button-group]
     
 #### Button toolbar
     [button-toolbar]
     	[button-group]
-            [button link="#"] … [/button]
-            [button link="#"] … [/button]
-            [button link="#"] … [/button]
+            [button link="#"] ... [/button]
+            [button link="#"] ... [/button]
+            [button link="#"] ... [/button]
     	[/button-group]
     	[button-group]
-            [button link="#"] … [/button]
-            [button link="#"] … [/button]
-            [button link="#"] … [/button]
+            [button link="#"] ... [/button]
+            [button link="#"] ... [/button]
+            [button link="#"] ... [/button]
     	[/button-group]
     	[button-group]
-            [button link="#"] … [/button]
+            [button link="#"] ... [/button]
     	[/button-group]
     [/button-toolbar]
 
@@ -299,36 +299,36 @@ Button Dropdowns can be accomplished by combining the [button-group] shortcode, 
 
 #### Single button dropdowns
     [button-group]
-        [button link="#" dropdown="true" data="toggle,dropdown"] … [caret][/button]
+        [button link="#" dropdown="true" data="toggle,dropdown"] ... [caret][/button]
         [dropdown]
-            [dropdown-header] … [/dropdown-header]
-            [dropdown-item link="#"] … [/dropdown-item]
-            [dropdown-item link="#"] … [/dropdown-item]
-            [dropdown-item link="#"] … [/dropdown-item]
+            [dropdown-header] ... [/dropdown-header]
+            [dropdown-item link="#"] ... [/dropdown-item]
+            [dropdown-item link="#"] ... [/dropdown-item]
+            [dropdown-item link="#"] ... [/dropdown-item]
             [divider]
-            [dropdown-item link="#"] … [/dropdown-item]
+            [dropdown-item link="#"] ... [/dropdown-item]
         [/dropdown]
     [/button-group]
 
 #### Split button dropdowns
     [button-group]
-        [button link="#"] … [/button]
+        [button link="#"] ... [/button]
         [button dropdown="true" data="toggle,dropdown"][caret][/button]
         [dropdown]
-            [dropdown-item link="#"] … [/dropdown-item]
+            [dropdown-item link="#"] ... [/dropdown-item]
             [divider]
-            [dropdown-item link="#"] … [/dropdown-item]
+            [dropdown-item link="#"] ... [/dropdown-item]
         [/dropdown]
     [/button-group]
 
 #### Dropup variation
     [button-group dropup="true"]
-        [button link="#"] … [/button]
+        [button link="#"] ... [/button]
         [button dropdown="true" data="toggle,dropdown"][caret][/button]
         [dropdown]
-            [dropdown-item link="#"] … [/dropdown-item]
+            [dropdown-item link="#"] ... [/dropdown-item]
             [divider]
-            [dropdown-item link="#"] … [/dropdown-item]
+            [dropdown-item link="#"] ... [/dropdown-item]
         [/dropdown]
     [/button-group]  
 
@@ -370,18 +370,18 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 ### Navs
     [nav type="pills"]
-        [nav-item link="#"] … [/nav-item]
-        [nav-item link="#"] … [/nav-item]
-        [nav-item link="#"] … [/nav-item]
+        [nav-item link="#"] ... [/nav-item]
+        [nav-item link="#"] ... [/nav-item]
+        [nav-item link="#"] ... [/nav-item]
     [/nav]
 
 #### Nav with dropdowns
     [nav type="pills"]
-        [nav-item link="#" active="true"] … [/nav-item]
-        [nav-item dropdown="true" link="#"] … [caret]
+        [nav-item link="#" active="true"] ... [/nav-item]
+        [nav-item dropdown="true" link="#"] ... [caret]
             [dropdown]
-                [dropdown-item link="#"] … [/dropdown-item]
-                [dropdown-item link="#"] … [/dropdown-item]
+                [dropdown-item link="#"] ... [/dropdown-item]
+                [dropdown-item link="#"] ... [/dropdown-item]
             [/dropdown]
         [/nav-item]
     [/nav]
@@ -410,9 +410,9 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 ### Breadcrumbs
 	[breadcrumb]
-        [breadcrumb-item link="#"] … [/breadcrumb-item]
-        [breadcrumb-item link="#"] … [/breadcrumb-item]
-        [breadcrumb-item link="#"] … [/breadcrumb-item]
+        [breadcrumb-item link="#"] ... [/breadcrumb-item]
+        [breadcrumb-item link="#"] ... [/breadcrumb-item]
+        [breadcrumb-item link="#"] ... [/breadcrumb-item]
 	[/breadcrumb]
 
 #### [breadcrumb] parameters
@@ -433,7 +433,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Labels
-	[label type="success"] … [/label]
+	[label type="success"] ... [/label]
 
 #### [label] parameters
 Parameter | Description | Required | Values | Default
@@ -447,7 +447,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Badges
-	[badge right="true"] … [/badge]
+	[badge right="true"] ... [/badge]
 
 #### [badge] parameters
 Parameter | Description | Required | Values | Default
@@ -461,7 +461,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Jumbotron
-    [jumbotron title="My Jumbotron"] … [/jumbotron]
+    [jumbotron title="My Jumbotron"] ... [/jumbotron]
 
 #### [jumbotron] parameters
 Parameter | Description | Required | Values | Default
@@ -475,7 +475,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Page Header
-    [page-header] … [/page-header]
+    [page-header] ... [/page-header]
 
 Automatically inserts H1 tag if not present
 #### [page-header] parameters
@@ -489,13 +489,14 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Thumbnails
-    [thumbnail] … [/thumbnail]
-    [thumbnail] … [/thumbnail]
-    [thumbnail] … [/thumbnail]
+    [thumbnail] ... [/thumbnail]
+    [thumbnail] ... [/thumbnail]
+    [thumbnail] ... [/thumbnail]
 
 #### [thumbnail] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
+has_content | Set to "true" if this thumbnail contains more than just an image or linked image as in [Bootstrap's thumbnail documentation](http://getbootstrap.com/components/#thumbnails-custom-content). | optional | true, false | false
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
@@ -504,7 +505,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Alerts
-	[alert type="success"] … [/alert]
+	[alert type="success"] ... [/alert]
 
 #### [alert] parameters
 Parameter | Description | Required | Values | Default
@@ -548,10 +549,10 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 ### Media Objects
     [media]
 	  [media-object pull="right"]
-	    …
+	    ...
 	  [/media-object]
 	  [media-body title="Testing"]
-	    …
+	    ...
 	  [/media-body]
     [/media]
 
@@ -586,42 +587,42 @@ __NOTE: media-object should contain an image, or linked image, inserted using th
 #### Basic Example
 	[list-group]
 	  [list-group-item]
-	    …
+	    ...
 	  [/list-group-item]
 	  [list-group-item]
-	    …
+	    ...
 	  [/list-group-item]
 	  [list-group-item]
-	    …
+	    ...
 	  [/list-group-item]
 	[/list-group]
 
 #### Linked Items
 	[list-group linked="true"]
 	  [list-group-item link="#" active="true"]
-	    …
+	    ...
 	  [/list-group-item]
 	  [list-group-item link="#"]
-	    …
+	    ...
 	  [/list-group-item]
 	  [list-group-item link="#"]
-	    …
+	    ...
 	  [/list-group-item]
 	[/list-group]
 
 #### Custom Content
 	[list-group linked="true"]
 	  [list-group-item link="#" active="true"]
-	    [list-group-item-heading]…[/list-group-item-heading]
-        [list-group-item-text]…[/list-group-item-text]
+	    [list-group-item-heading]...[/list-group-item-heading]
+        [list-group-item-text]...[/list-group-item-text]
 	  [/list-group-item]
 	  [list-group-item link="#"]
-	    [list-group-item-heading]…[/list-group-item-heading]
-        [list-group-item-text]…[/list-group-item-text]
+	    [list-group-item-heading]...[/list-group-item-heading]
+        [list-group-item-text]...[/list-group-item-text]
       [/list-group-item]
 	  [list-group-item link="#"]
-	    [list-group-item-heading]…[/list-group-item-heading]
-        [list-group-item-text]…[/list-group-item-text]
+	    [list-group-item-heading]...[/list-group-item-heading]
+        [list-group-item-text]...[/list-group-item-text]
 	  [/list-group-item]
 	[/list-group]
 
@@ -659,7 +660,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Panels
-	[panel type="info" heading="Panel Title" footer="Footer text"] … [/panel]
+	[panel type="info" heading="Panel Title" footer="Footer text"] ... [/panel]
 
 #### [panel] parameters
 Parameter | Description | Required | Values | Default
@@ -676,7 +677,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Wells
-	[well size="sm"] … [/well]
+	[well size="sm"] ... [/well]
 
 #### [well] parameters
 Parameter | Description | Required | Values | Default
@@ -694,13 +695,13 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 ### Tabs
 	[tabs type="tabs"]
 	  [tab title="Home" active="true"]
-	    …
+	    ...
 	  [/tab]
 	  [tab title="Profile"]
-	    …
+	    ...
 	  [/tab]
 	  [tab title="Messages"]
-	    …
+	    ...
 	  [/tab]
 	[/tabs]
 
@@ -725,7 +726,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Tooltip
-	[tooltip title="I'm the title" placement="right"] … [/tooltip]
+	[tooltip title="I'm the title" placement="right"] ... [/tooltip]
 
 #### [tooltip] parameters
 Parameter | Description | Required | Values | Default
@@ -740,7 +741,7 @@ html | Insert HTML into the tooltip | optional | true, false | false
 * * *
 
 ### Popover
-	[popover title="I'm the title" content="And here's some amazing content. It's very engaging. right?" placement="right"] … [/popover]
+	[popover title="I'm the title" content="And here's some amazing content. It's very engaging. right?" placement="right"] ... [/popover]
 
 #### [popover] parameters
 Parameter | Description | Required | Values | Default
@@ -758,13 +759,13 @@ html | Insert HTML into the tooltip | optional | true, false | false
 ### Collapse
 	[collapsibles]
 	  [collapse title="Collapse 1" active="true"]
-	    …
+	    ...
 	  [/collapse]
 	  [collapse title="Collapse 2"]
-	    …
+	    ...
 	  [/collapse]
 	  [collapse title="Collapse 3"]
-	    …
+	    ...
 	  [/collapse]
 	[/collapsibles]
 
@@ -789,9 +790,9 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 ### Carousel
 	[carousel]
-        [carousel-item active="true"] … [/carousel-item]
-        [carousel-item] … [/carousel-item]
-        [carousel-item] … [/carousel-item]
+        [carousel-item active="true"] ... [/carousel-item]
+        [carousel-item] ... [/carousel-item]
+        [carousel-item] ... [/carousel-item]
 	[/carousel]
 
 [carousel-item] wraps an HTML image tag or image inserted via the WordPress editor.
@@ -817,7 +818,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 ### Modal
     [modal text="This is my modal" title="Modal Title Goes Here" xclass="btn btn-primary btn-large"]
-        …
+        ...
         [modal-footer]
             [button type="primary" link="#" data="dismiss,modal"]Dismiss[/button]
         [/modal-footer]

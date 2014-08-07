@@ -1030,29 +1030,11 @@ class BoostrapShortcodes {
       
     $return = '';
       
-    $dom = new DOMDocument;
-    $dom->loadHTML($content);
-      
-    $tags = $dom->getElementsByTagName('table');   //Get contained table
-    foreach ($tags as $tag) {
-        $tabledom = new DOMDocument;
-        $new_root = $tabledom->importNode($tag, true);
-        $tabledom->appendChild($new_root);
-        
-        if(is_object($tabledom->documentElement)) {
-            $tabledom->documentElement->setAttribute('class', $tabledom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
-        }
-        if( $data ) {
-          $data = explode( '|', $data );
-          foreach( $data as $d ):
-            $d = explode(',',$d);    
-            $tabledom->documentElement->setAttribute('data-'.$d[0],trim($d[1]));
-          endforeach;
-        }
+    $tag = array('table');
+    $title = '';
+    $content = do_shortcode($content);
 
-        $return .= $tabledom->saveHTML();
-
-    }
+    $return .= $this->scrape_dom_element($tag, $content, $class, $title, $data);
     return $return;
   }
     
@@ -1466,36 +1448,30 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
 
+
 function bs_tooltip( $atts, $content = null ) {
 
     $defaults = array(
      'title'     => '',
      'placement' => 'top',
      'animation' => 'true',
-     'html'      => 'false'
+     'html'      => 'false',
+     'data'      => ''
     );
     extract( shortcode_atts( $defaults, $atts ) );
     
-    $class = 'bs-tooltip';    
-
-    $previous_value = libxml_use_internal_errors(TRUE);
-    $dom = new DOMDocument;
-    $dom->loadXML($content);
-    libxml_clear_errors();
-    libxml_use_internal_errors($previous_value);
-    if(!$dom->documentElement) {
-        $element = $dom->createElement('span', $content);
-        $dom->appendChild($element);
-    }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
-    $dom->documentElement->setAttribute('title', $title );
-    if($animation) { $dom->documentElement->setAttribute('data-animation', $animation ); }
-    if($placement) { $dom->documentElement->setAttribute('data-placement', $placement ); }
-    if($html) { $dom->documentElement->setAttribute('data-html', $html ); }
-
-    $return = $dom->saveXML();
+    $class  = 'bs-tooltip';
     
+    $data   .= ( $animation ) ? $this->check_for_data($data) . 'animation,' . $animation : '';
+    $data   .= ( $placement ) ? $this->check_for_data($data) . 'placement,' . $placement : '';
+    $data   .= ( $html )      ? $this->check_for_data($data) . 'html,'      . $html      : '';
+
+    $return = '';
+    $tag = 'span';
+    $content = do_shortcode($content);
+    $return .= $this->get_dom_element($tag, $content, $class, $title, $data);
     return $return;
+    
   }
 
   /*--------------------------------------------------------------------------------------
@@ -1512,32 +1488,25 @@ function bs_popover( $atts, $content = null ) {
       'text'      => '',
       'placement' => 'top',
       'animation' => 'true',
-      'html'      => 'false'
+      'html'      => 'false',
+      'data'      => ''
     );
     extract( shortcode_atts( $defaults, $atts ) );
     
     $class = 'bs-popover';
-    
-    $previous_value = libxml_use_internal_errors(TRUE);
-    $dom = new DOMDocument;
-    $dom->loadXML($content);
-    libxml_clear_errors();
-    libxml_use_internal_errors($previous_value);
-    if(!$dom->documentElement) {
-        $element = $dom->createElement('span', $content);
-        $dom->appendChild($element);
-    }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
-    $dom->documentElement->setAttribute('data-toggle', 'popover' );
-    if($title) { $dom->documentElement->setAttribute('data-original-title', $title ); }
-    $dom->documentElement->setAttribute('data-content', $text );
-    if($animation) { $dom->documentElement->setAttribute('data-animation', $animation ); }
-    if($placement) { $dom->documentElement->setAttribute('data-placement', $placement ); }
-    if($html) { $dom->documentElement->setAttribute('data-html', $html ); }
+        
+    $data   .= $this->check_for_data($data) . 'toggle,popover';
+    $data   .= $this->check_for_data($data) . 'content,' . $text;
+    $data   .= ( $animation ) ? $this->check_for_data($data) . 'animation,' . $animation : '';
+    $data   .= ( $placement ) ? $this->check_for_data($data) . 'placement,' . $placement : '';
+    $data   .= ( $html )      ? $this->check_for_data($data) . 'html,'      . $html      : '';
 
-    $return = $dom->saveXML();
-    
+    $return = '';
+    $tag = 'span';
+    $content = do_shortcode($content);
+    $return .= $this->get_dom_element($tag, $content, $class, $title, $data);
     return $return;
+    
   }
 
 
@@ -1581,39 +1550,12 @@ function bs_popover( $atts, $content = null ) {
     $class = "media-object img-responsive";
     $class .= ($xclass) ? ' ' . $xclass : '';
       
-    $content = do_shortcode($content);  //In order to parse the HTML correctly we need to run any shortcodes in $content
-      
     $return = '';
-    
-    $previous_value = libxml_use_internal_errors(TRUE);
-    $dom = new DOMDocument;
-    $dom->loadHTML($content);
-    libxml_clear_errors();
-    libxml_use_internal_errors($previous_value);
-    
-    $tags = $dom->getElementsByTagName('figure');   //Get contained media object assuming it has a caption (and is therefore a <figure> tag)
-    if( $tags->length == 0 ) {  //If no <figure>s were returned, look for <img> tags
-        $tags = $dom->getElementsByTagName('img');
-    }
-    foreach ($tags as $tag) {
-        $imagedom = new DOMDocument;
-        $new_root = $imagedom->importNode($tag, true);
-        $imagedom->appendChild($new_root);
-        
-        if(is_object($imagedom->documentElement)) {
-            $imagedom->documentElement->setAttribute('class', $imagedom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
-        }
-        if( $data ) { 
-            $data = explode( '|', $data );
-            foreach( $data as $d ):
-              $d = explode(',',$d);    
-              $imagedom->documentElement->setAttribute('data-'.$d[0],trim($d[1]));
-            endforeach;
-        }
-
-        $return .= $imagedom->saveHTML();
-
-    }
+      
+    $tag = array('figure', 'div', 'img');
+    $title = '';
+    $content = do_shortcode(preg_replace('/(<br>)+$/', '', $content));
+    $return .= $this->scrape_dom_element($tag, $content, $class, $title, $data);
     $return = '<span class="pull-' . esc_attr($pull) . '">' . $return . '</span>';
     return $return;
   }
@@ -1688,37 +1630,12 @@ function bs_popover( $atts, $content = null ) {
     $class = "page-header";
     $class .= ($xclass) ? ' ' . $xclass : '';
   
-    $previous_value = libxml_use_internal_errors(TRUE);
-    $dom = new DOMDocument;
-    $dom->loadXML($content);
-    libxml_clear_errors();
-    libxml_use_internal_errors($previous_value);
-    $hasHeader = $dom->getElementsByTagName('h1'); 
-
-    if( $hasHeader->length == 0 ) {
-        
-      $wrapper = $dom->createElement('div');
-      $dom->appendChild($wrapper);
-      
-      $header = $dom->createElement('h1', $content);
-      $wrapper->appendChild($header);
-
-    }
-    else {
-      $new_root = $dom->createElement('div');
-      $new_root->appendChild($dom->documentElement);
-      $dom->appendChild($new_root);
-    }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
-    if( $data ) {
-      $data = explode( '|', $data );
-      foreach( $data as $d ):
-        $d = explode( ',', $d );
-        $dom->documentElement->setAttribute( 'data-' . $d[0], trim( $d[1] ) );
-      endforeach;
-    }
-    $return = $dom->saveXML();
-    
+    $return = '';
+    $title = '';
+    $tag = 'div';
+    $content = $this->strip_paragraph($content);
+    $content = $this->nest_dom_element('h1', 'div', $content);
+    $return .= $this->get_dom_element($tag, $content, $class, $title, $data);    
     return $return;
 
   } 
@@ -1794,25 +1711,12 @@ function bs_popover( $atts, $content = null ) {
     $class .= ( $responsive   == 'true' ) ? ' img-responsive' : '';
     $class .= ( $xclass )     ? ' ' . $xclass : '';
 
-    $previous_value = libxml_use_internal_errors(TRUE);
-    $dom = new DOMDocument;
-    $dom->loadXML( $content );
-    libxml_clear_errors();
-    libxml_use_internal_errors($previous_value);
-    foreach( $dom->getElementsByTagName( 'img' ) as $image ) { 
-      $image->setAttribute( 'class', $image->getAttribute( 'class' ) . ' ' . esc_attr( $class ) );
-      if( $data ) { 
-        $data = explode( '|', $data );
-        foreach( $data as $d ):
-          $d = explode( ',', $d );    
-          $image->setAttribute( 'data-'.$d[0], trim( $d[1] ) );
-        endforeach;
-      }
-    } 
-    $return = $dom->saveXML();
-    
+    $return = '';
+    $tag = array('img');
+    $content = do_shortcode($content);
+    $return .= $this->scrape_dom_element($tag, $content, $class, $title, $data);
     return $return;
-
+    
   }
     
   /*--------------------------------------------------------------------------------------
@@ -1823,34 +1727,25 @@ function bs_popover( $atts, $content = null ) {
     *-------------------------------------------------------------------------------------*/
   function bs_thumbnail( $atts, $content = null ) {
     extract( shortcode_atts( array(
-      "xclass" => false,
-      "data"   => false
+      "xclass"  => false,
+      "has_content" => false,
+      "data"    => false
     ), $atts ) );
       
     $class  = "thumbnail";
     $class .= ($xclass) ? ' ' . $xclass : '';
 
-    $previous_value = libxml_use_internal_errors(TRUE);
-    $dom = new DOMDocument;
-    $dom->loadXML( $content );
-    libxml_clear_errors();
-    libxml_use_internal_errors( $previous_value );
-    if( ! $dom->documentElement ) {
-        $element = $dom->createElement( 'div', $content );
-        $dom->appendChild($element);
+    $return = '';
+    if($has_content) {
+      $content = '<div>' . $content . '</div>';
+      $tag = array('div');
+    } else {
+        $tag = array('a', 'img');
     }
-    $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
-    if( $data ) {
-      $data = explode( '|', $data );
-      foreach( $data as $d ):
-        $d = explode( ',', $d );    
-        $dom->documentElement->setAttribute( 'data-'.$d[0], trim( $d[1] ) );
-      endforeach;
-    }
-    $return = $dom->saveXML();
-    
+    $content = do_shortcode($content);
+    $return .= $this->scrape_dom_element($tag, $content, $class, $title, $data);
     return $return;
-
+    
   }
     
     /*--------------------------------------------------------------------------------------
@@ -1996,6 +1891,11 @@ function bs_popover( $atts, $content = null ) {
     );
   }
   
+  /*--------------------------------------------------------------------------------------
+    *
+    * Parse data-attributes for shortcodes
+    *
+    *-------------------------------------------------------------------------------------*/
   function parse_data_attributes( $data ) {
 
     $data_props = '';
@@ -2012,6 +1912,142 @@ function bs_popover( $atts, $content = null ) {
       $data_props = false;
     }
     return $data_props;
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * get DOMDocument element and apply shortcode parameters to it. Create the element if it doesn't exist
+    *
+    *-------------------------------------------------------------------------------------*/
+    function get_dom_element( $tag, $content, $class, $title, $data = null ) {
+      
+      //clean up content
+      $content = trim(trim($content), chr(0xC2).chr(0xA0));
+      $previous_value = libxml_use_internal_errors(TRUE);
+      
+      $dom = new DOMDocument;
+      $dom->loadXML($content);
+        
+      libxml_clear_errors();
+      libxml_use_internal_errors($previous_value);
+      
+      if(!$dom->documentElement) {
+          $element = $dom->createElement($tag, $content);
+          $dom->appendChild($element);
+      }
+      
+      $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
+      if( $title ) {
+          $dom->documentElement->setAttribute('title', $title );
+      }
+      if( $data ) {
+          $data = explode( '|', $data );
+          foreach( $data as $d ):
+          $d = explode(',',$d);
+          $dom->documentElement->setAttribute('data-'.$d[0],trim($d[1]));
+          endforeach;
+      }
+      return $dom->saveXML($dom->documentElement);
+  }
+
+/*--------------------------------------------------------------------------------------
+    *
+    * Scrape the shortcode's contents for a particular DOMDocument tag or tags, pull them out, apply attributes, and return just the tags.
+    *
+    *-------------------------------------------------------------------------------------*/
+  function scrape_dom_element( $tag, $content, $class, $title, $data = null ) {
+
+      $previous_value = libxml_use_internal_errors(TRUE);
+      
+      $dom = new DOMDocument;
+      $dom->loadHTML($content);
+      
+      libxml_clear_errors();
+      libxml_use_internal_errors($previous_value);
+      foreach ($tag as $find) {
+          $tags = $dom->getElementsByTagName($find);
+          foreach ($tags as $find_tag) {
+              $outputdom = new DOMDocument;
+              $new_root = $outputdom->importNode($find_tag, true);
+              $outputdom->appendChild($new_root);
+
+              if(is_object($outputdom->documentElement)) {
+                  $outputdom->documentElement->setAttribute('class', $outputdom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
+                  if( $title ) {
+                      $outputdom->documentElement->setAttribute('title', $title );
+                  }
+                  if( $data ) {
+                      $data = explode( '|', $data );
+                      foreach( $data as $d ):
+                        $d = explode(',',$d);    
+                        $outputdom->documentElement->setAttribute('data-'.$d[0],trim($d[1]));
+                      endforeach;
+                  }
+              }
+            return $outputdom->saveHTML($outputdom->documentElement);
+
+          }
+        }
+  }
+    
+/*--------------------------------------------------------------------------------------
+    *
+    * Find if content contains a particular tag, if not, create it, either way wrap it in a wrapper tag
+    *
+    *       Example: Check if the contents of [page-header] include an h1, if not, add one, then wrap it all in a div so we can add classes to that.
+    *
+    *-------------------------------------------------------------------------------------*/
+  function nest_dom_element($find, $append, $content) {
+
+      $previous_value = libxml_use_internal_errors(TRUE);
+      
+      $dom = new DOMDocument;
+      $dom->loadXML($content);
+      
+      libxml_clear_errors();
+      libxml_use_internal_errors($previous_value);
+      
+      //Does $content include the tag we're looking for?
+      $hasFind = $dom->getElementsByTagName($find); 
+
+      //If not, add it and wrap it all in our append tag
+      if( $hasFind->length == 0 ) {
+          $wrapper = $dom->createElement($append);
+          $dom->appendChild($wrapper);
+      
+          $tag = $dom->createElement($find, $content);
+          $wrapper->appendChild($tag);
+      }
+      
+      //If so, just wrap everything in our append tag
+      else {
+          $new_root = $dom->createElement($append);
+          $new_root->appendChild($dom->documentElement);
+          $dom->appendChild($new_root);
+      }
+      return $dom->saveXML($dom->documentElement);
+  }
+    
+ /*--------------------------------------------------------------------------------------
+    *
+    * Add dividers to data attributes content if needed
+    *
+    *-------------------------------------------------------------------------------------*/
+  function check_for_data( $data ) {
+    if( $data ) {
+      return "|";
+    }
+  }
+    
+ /*--------------------------------------------------------------------------------------
+    *
+    * If the user puts a return between the shortcode and its contents, sometimes we want to strip the resulting P tags out
+    *
+    *-------------------------------------------------------------------------------------*/
+  function strip_paragraph( $content ) {
+      $content = str_ireplace( '<p>','',$content );
+      $content = str_ireplace( '</p>','',$content );
+      return $content;
   }
 
 }
