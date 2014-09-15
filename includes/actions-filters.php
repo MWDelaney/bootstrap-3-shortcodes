@@ -71,3 +71,11 @@ function bs_fullscreenbuttons($buttons) {
 	return $buttons;
 }
 add_action ('wp_fullscreen_buttons', 'bs_fullscreenbuttons');
+
+add_filter("gform_noconflict_styles", "bs_register_script");
+function bs_register_script($scripts){
+
+    //registering my script with Gravity Forms so that it gets enqueued when running on no-conflict mode
+    $scripts[] = "bootstrap-shortcodes-help-all";
+    return $scripts;
+}
