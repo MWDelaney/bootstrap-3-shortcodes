@@ -76,6 +76,11 @@ No, we assume you are already working with a WordPress theme that includes the B
 * Better responsive styles for help popup button on smaller screens
 * Better correction for malformed or unexpected input in [table-wrap], [tooltip], [popover], [page-header], [img], and [media-object]s
 * Fix display problems for WP-Engine users
+* Fix documentation for [popover]
+* Better handling of Gravity Forms' "No Conflict Mode"
+* Fix conflict with All-In-One Events Calendar
+* Fix for some situations where the help-tab popup would be behind other popup elements.
+* WordPress 4.0 support!
 
 = 3.2.3 =
 * Fix conflicts with other plugins, like Gravity Forms, which use Bootstrap on the WordPress back-end.
