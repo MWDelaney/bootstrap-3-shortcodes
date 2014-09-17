@@ -3,7 +3,7 @@ Contributors: filipstefansson, nodley, FoolsRun
 Tags: bootstrap, shortcode, shortcodes, responsive, grid
 Requires at least: 3.8
 Tested up to: 4.0
-Stable tag: 3.2.3
+Stable tag: 3.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,6 +72,7 @@ No, we assume you are already working with a WordPress theme that includes the B
 == Changelog ==
 
 = 3.2.4 =
+* NOTE: this update changes the way the [table-wrap], [tooltip], [popover], [page-header], [img], and [media-object] shortcodes function to better correct for unexpected input. Please report any problems you have with these shortcodes following this update.
 * Add Bootstrap shortcode help popup button to Distraction Free Writing Mode toolbar
 * Better responsive styles for help popup button on smaller screens
 * Better correction for malformed or unexpected input in [table-wrap], [tooltip], [popover], [page-header], [img], and [media-object]s
