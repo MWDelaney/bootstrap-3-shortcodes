@@ -12,38 +12,47 @@ add_action( 'admin_enqueue_scripts', 'bootstrap_shortcodes_styles_all' );
 
 
 function bootstrap_shortcodes_help_styles() {
-  wp_register_style( 'bs-font', plugins_url( 'bootstrap-3-shortcodes/includes/help/bs-font.css' ) );
-  wp_register_style( 'bootstrap-shortcodes-help', plugins_url( 'bootstrap-3-shortcodes/includes/help/css/bootstrap-shortcodes-help.css' ) );
-  wp_register_style( 'bootstrap-modal', plugins_url( 'bootstrap-3-shortcodes/includes/help/css/bootstrap-modal.css' ) );
-  wp_register_script( 'bootstrap', plugins_url( 'bootstrap-3-shortcodes/includes/help/js/bootstrap.min.js' ) );
-  wp_enqueue_style( 'bootstrap-shortcodes-help' );
-  wp_enqueue_style( 'bootstrap-modal' );
-  wp_enqueue_style( 'bs-font' );
-  wp_enqueue_script( 'bootstrap' );
+    $screen = get_current_screen(); 
+    if($screen->parent_base != "gf_edit_forms") {
+        wp_register_style( 'bs-font', plugins_url( 'bootstrap-3-shortcodes/includes/help/bs-font.css' ) );
+        wp_register_style( 'bootstrap-shortcodes-help', plugins_url( 'bootstrap-3-shortcodes/includes/help/css/bootstrap-shortcodes-help.css' ) );
+        wp_register_style( 'bootstrap-modal', plugins_url( 'bootstrap-3-shortcodes/includes/help/css/bootstrap-modal.css' ) );
+        wp_register_script( 'bootstrap', plugins_url( 'bootstrap-3-shortcodes/includes/help/js/bootstrap.min.js' ) );
+        wp_enqueue_style( 'bootstrap-shortcodes-help' );
+        wp_enqueue_style( 'bootstrap-modal' );
+        wp_enqueue_style( 'bs-font' );
+        wp_enqueue_script( 'bootstrap' );
+    }
 
 }
+
 add_action( 'media_buttons', 'bootstrap_shortcodes_help_styles' );
 
 add_filter('the_content', 'bs_fix_shortcodes');
 
 //action to add a custom button to the content editor
 function add_bootstrap_button() {
-  
-  //the id of the container I want to show in the popup
-  $popup_id = 'bootstrap-shortcodes-help';
-  
-  //our popup's title
-  $title = 'Bootstrap Shortcodes Help';
+    
+$screen = get_current_screen(); 
+if($screen->parent_base != "gf_edit_forms") {
 
-  //append the icon
- printf(
-    '<a data-toggle="modal" data-target="#bootstrap-shortcodes-help" title="%2$s" href="%3$s" class="%4$s"><span class="bs_bootstrap-logo wp-media-buttons-icon"></span></a>',
-    esc_attr( $popup_id ),
-    esc_attr( $title ),
-    esc_url( '#' ),
-    esc_attr( 'button add_media bootstrap-shortcodes-button')
-    //sprintf( '<img src="%s" style="height: 20px; position: relative; top: -2px;">', esc_url( $img ) )
-  );
+  
+      //the id of the container I want to show in the popup
+      $popup_id = 'bootstrap-shortcodes-help';
+
+      //our popup's title
+      $title = 'Bootstrap Shortcodes Help';
+
+      //append the icon
+     printf(
+        '<a data-toggle="modal" data-target="#bootstrap-shortcodes-help" title="%2$s" href="%3$s" class="%4$s"><span class="bs_bootstrap-logo wp-media-buttons-icon"></span></a>',
+        esc_attr( $popup_id ),
+        esc_attr( $title ),
+        esc_url( '#' ),
+        esc_attr( 'button add_media bootstrap-shortcodes-button')
+        //sprintf( '<img src="%s" style="height: 20px; position: relative; top: -2px;">', esc_url( $img ) )
+      );
+    }
 }
 
 
