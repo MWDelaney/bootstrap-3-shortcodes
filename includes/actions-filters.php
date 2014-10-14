@@ -25,33 +25,29 @@ function bootstrap_shortcodes_help_styles() {
     }
 
 }
-
 add_action( 'media_buttons', 'bootstrap_shortcodes_help_styles' );
 
 add_filter('the_content', 'bs_fix_shortcodes');
 
 //action to add a custom button to the content editor
 function add_bootstrap_button() {
-    
-$screen = get_current_screen(); 
-if($screen->parent_base != "gf_edit_forms") {
+    $screen = get_current_screen(); 
+    if($screen->parent_base != "gf_edit_forms") {
+        //the id of the container I want to show in the popup
+        $popup_id = 'bootstrap-shortcodes-help';
 
-  
-      //the id of the container I want to show in the popup
-      $popup_id = 'bootstrap-shortcodes-help';
+        //our popup's title
+        $title = 'Bootstrap Shortcodes Help';
 
-      //our popup's title
-      $title = 'Bootstrap Shortcodes Help';
-
-      //append the icon
-     printf(
+        //append the icon
+        printf(
         '<a data-toggle="modal" data-target="#bootstrap-shortcodes-help" title="%2$s" href="%3$s" class="%4$s"><span class="bs_bootstrap-logo wp-media-buttons-icon"></span></a>',
         esc_attr( $popup_id ),
         esc_attr( $title ),
         esc_url( '#' ),
         esc_attr( 'button add_media bootstrap-shortcodes-button')
         //sprintf( '<img src="%s" style="height: 20px; position: relative; top: -2px;">', esc_url( $img ) )
-      );
+        );
     }
 }
 
