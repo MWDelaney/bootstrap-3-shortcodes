@@ -216,7 +216,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Responsive Utilities
-	[responsive visible_block="lg md" hidden="sn xs"] ... [/responsive]
+	[responsive block="lg md" hidden="sn xs"] ... [/responsive]
 
 #### [reponsive] parameters
 Parameter | Description | Required | Values | Default
@@ -229,14 +229,14 @@ inline_block | Sizes at which this element is visible and displayed as an "inlin
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap emphasis classes documentation](http://getbootstrap.com/css/#type-emphasis)
+[Bootstrap responsive utilities documentation](http://getbootstrap.com/css/#responsive-utilities)
 
 * * *
 
 ### Components
 
 ### Icons
-	[icon type="arrow"]
+	[icon type="arrow-right"]
 
 #### [icon] parameters
 Parameter | Description | Required | Values | Default
