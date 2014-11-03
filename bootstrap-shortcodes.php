@@ -512,7 +512,7 @@ class BoostrapShortcodes {
       '<div class="%s"%s>%s%s</div>',
       esc_attr( $class ),
       ( $data_props )  ? ' ' . $data_props : '',
-      $atts['dismissable'],
+      $dismissable,
       do_shortcode( $content )
     );
   }
@@ -572,7 +572,7 @@ class BoostrapShortcodes {
     return sprintf( 
       '<div class="%s" role="progressbar" %s%s>%s</div>',
       esc_attr( $class ),
-      ( $percent )      ? ' aria-value="' . (int) $atts['percent'] . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . (int) $atts['percent'] . '%;"' : '',
+      ( $atts['percent'] )      ? ' aria-value="' . (int) $atts['percent'] . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . (int) $atts['percent'] . '%;"' : '',
       ( $data_props )   ? ' ' . $data_props : '',
       ( $atts['percent'] )      ? sprintf('<span%s>%s</span>', ( !$atts['label'] ) ? ' class="sr-only"' : '', (int) $atts['percent'] . '% Complete') : ''
     );
