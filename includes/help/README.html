@@ -2,7 +2,7 @@
 <p>WordPress plugin that provides shortcodes for easier use of the Bootstrap styles and components in your content.</p>
 <h2 id="requirements">Requirements</h2>
 <p>This plugin won&#39;t do anything if you don&#39;t have WordPress theme built with the <a href="http://getbootstrap.com/">Bootstrap</a> framework. <strong>This plugin does not include the Bootstrap framework</strong>.</p>
-<p>The plugin is tested to work with <code>Bootstrap 3.2</code> and <code>WordPress 3.9</code>.</p>
+<p>The plugin is tested to work with <code>Bootstrap 3.2</code> and <code>WordPress 4.0</code>.</p>
 <p>This plugin contains a <code>composer.json</code> file for those of you who manage your PHP dependencies with <a href="https://getcomposer.org">Composer</a>.</p>
 <h2 id="shortcode-reference">Shortcode Reference</h2>
 <h3 id="css">CSS</h3>
@@ -588,7 +588,7 @@
 <p><a href="http://getbootstrap.com/css/#images">Bootstrap images documentation</a></p>
 <hr>
 <h3 id="responsive-utilities">Responsive Utilities</h3>
-<pre><code>[responsive visible_block=&quot;lg md&quot; hidden=&quot;sn xs&quot;] ... [/responsive]</code></pre>
+<pre><code>[responsive block=&quot;lg md&quot; hidden=&quot;sn xs&quot;] ... [/responsive]</code></pre>
 <h4 id="-reponsive-parameters">[reponsive] parameters</h4>
 <table>
 <thead>
@@ -652,11 +652,11 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/css/#type-emphasis">Bootstrap emphasis classes documentation</a></p>
+<p><a href="http://getbootstrap.com/css/#responsive-utilities">Bootstrap responsive utilities documentation</a></p>
 <hr>
 <h3 id="components">Components</h3>
 <h3 id="icons">Icons</h3>
-<pre><code>[icon type=&quot;arrow&quot;]</code></pre>
+<pre><code>[icon type=&quot;arrow-right&quot;]</code></pre>
 <h4 id="-icon-parameters">[icon] parameters</h4>
 <table>
 <thead>
@@ -2296,7 +2296,7 @@
 <p><a href="http://getbootstrap.com/javascript/#carousel">Bootstrap carousel documentation</a></p>
 <hr>
 <h3 id="modal">Modal</h3>
-<pre><code>[modal text=&quot;This is my modal&quot; title=&quot;Modal Title Goes Here&quot; xclass=&quot;btn btn-primary btn-large&quot;]
+<pre><code>[modal text=&quot;This is my modal&quot; title=&quot;Modal Title Goes Here&quot; xclass=&quot;btn btn-primary btn-lg&quot;]
     ...
     [modal-footer]
         [button type=&quot;primary&quot; link=&quot;#&quot; data=&quot;dismiss,modal&quot;]Dismiss[/button]

@@ -817,7 +817,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 * * *
 
 ### Modal
-    [modal text="This is my modal" title="Modal Title Goes Here" xclass="btn btn-primary btn-large"]
+    [modal text="This is my modal" title="Modal Title Goes Here" xclass="btn btn-primary btn-lg"]
         ...
         [modal-footer]
             [button type="primary" link="#" data="dismiss,modal"]Dismiss[/button]
