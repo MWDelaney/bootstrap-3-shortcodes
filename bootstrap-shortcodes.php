@@ -1553,7 +1553,7 @@ function bs_popover( $atts, $content = null ) {
     $tag = array('figure', 'div', 'img', 'i', 'span');
     $content = do_shortcode(preg_replace('/(<br>)+$/', '', $content));
     $return .= $this->scrape_dom_element($tag, $content, $class, '', $atts['data']);
-    $return = '<span class="pull-' . esc_attr($atts['pull']) . '">' . $return . '</span>';
+    $return = '<span class="media-' . esc_attr($atts['pull']) . '">' . $return . '</span>';
     return $return;
   }
 
