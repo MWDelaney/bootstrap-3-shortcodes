@@ -3,7 +3,7 @@ Contributors: filipstefansson, nodley, FoolsRun
 Tags: bootstrap, shortcode, shortcodes, responsive, grid
 Requires at least: 3.8
 Tested up to: 4.0
-Stable tag: 3.2.4
+Stable tag: 3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,8 +18,8 @@ This plugin creates a simple, out of the way button just above the WordPress Tin
 
 For questions, support, or to contribute to this plugin, check out [our GitHub project](https://github.com/filipstefansson/bootstrap-3-shortcodes)
 
-####Updated for Bootstrap 3.2
-Now supporting the changes to Responsive Utilities introduced in Bootstrap 3.2!
+####Updated for Bootstrap 3.3.x
+Tested and working in the latest version of Bootstrap!
 
 If you like this plugin, check out our companion plugin for Font Awesome, [Font Awesome Shortcodes](http://www.wordpress.org/plugins/font-awesome-shortcodes/)
 
@@ -70,6 +70,15 @@ If you like this plugin, check out our companion plugin for Font Awesome, [Font 
 No, we assume you are already working with a WordPress theme that includes the Bootstrap libraries.
 
 == Changelog ==
+
+= 3.3 =
+* Tested to work with Bootstrap 3.3!
+* Only enqueue tooltip and popover trigger javascript if those shortcodes are in use
+* Added support for offsets, pulls, and pushes of "0" in [column]
+* Added support for Bootstrap's responsive tables in [table-wrap]
+* Better correct for conflicts with Gravity Forms --these two plugins should finally play well together
+* Fix documentation for [modal] and [responsive]
+* Removed use of extract() to better fit with WordPress's best practices.
 
 = 3.2.4 =
 * NOTE: this update changes the way the [table-wrap], [tooltip], [popover], [page-header], [img], and [media-object] shortcodes function to better correct for unexpected input. Please report any problems you have with these shortcodes following this update.
