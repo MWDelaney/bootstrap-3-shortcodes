@@ -3,7 +3,7 @@
 Plugin Name: Bootstrap 3 Shortcodes
 Plugin URI: http://wp-snippets.com/freebies/bootstrap-shortcodes or https://github.com/filipstefansson/bootstrap-shortcodes
 Description: The plugin adds a shortcodes for all Bootstrap elements.
-Version: 3.3.3
+Version: 3.3.4
 Author: Filip Stefansson, Simon Yeldon, and Michael W. Delaney
 Author URI: 
 License: GPL2
@@ -1547,7 +1547,8 @@ function bs_popover( $atts, $content = null ) {
   function bs_media_object( $atts, $content = null ) {
 
 	$atts = shortcode_atts( array(
-      "pull"   => "left",
+      "pull"   => false,
+      "media"  => "left",
       "xclass" => false,
       "data"   => false
 	), $atts );
@@ -1555,12 +1556,16 @@ function bs_popover( $atts, $content = null ) {
     $class = "media-object img-responsive";
     $class .= ($atts['xclass']) ? ' ' . $atts['xclass'] : '';
       
+    $media_class ='';
+    $media_class = ($atts['media']) ? 'media-' . $atts['media'] : '';
+    $media_class = ($atts['pull'])  ? 'pull-' . $atts['pull'] : $media_class;     
+      
     $return = '';
       
     $tag = array('figure', 'div', 'img', 'i', 'span');
     $content = do_shortcode(preg_replace('/(<br>)+$/', '', $content));
     $return .= $this->scrape_dom_element($tag, $content, $class, '', $atts['data']);
-    $return = '<span class="media-' . esc_attr($atts['pull']) . '">' . $return . '</span>';
+    $return = '<span class="' . $media_class . '">' . $return . '</span>';
     return $return;
   }
 

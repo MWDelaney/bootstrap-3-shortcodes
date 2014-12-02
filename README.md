@@ -548,7 +548,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 ### Media Objects
     [media]
-	  [media-object pull="right"]
+	  [media-object media="left"]
 	    ...
 	  [/media-object]
 	  [media-body title="Testing"]
@@ -565,7 +565,8 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 #### [media-object] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-pull | Whether the image pulls to the left or right | optional | left, right | right
+media | Whether the image pulls to the left or right | optional | left, right | right
+pull | Whether the image pulls to the left or right *Deprecated, use only if your theme uses Bootstrap 3.2 or earlier* | optional | left, right | right
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 

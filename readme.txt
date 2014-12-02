@@ -3,7 +3,7 @@ Contributors: filipstefansson, nodley, FoolsRun
 Tags: bootstrap, shortcode, shortcodes, responsive, grid
 Requires at least: 3.8
 Tested up to: 4.0
-Stable tag: 3.3.3
+Stable tag: 3.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,9 @@ If you like this plugin, check out our companion plugin for Font Awesome, [Font 
 No, we assume you are already working with a WordPress theme that includes the Bootstrap libraries.
 
 == Changelog ==
+
+= 3.3.4 =
+* Restore Bootstrap 3.2 backwards compatibility for [media-object] shortcode, updated documentation to use Bootstrap 3.3 example, but offer 3.2 options.
 
 = 3.3 =
 * Tested to work with Bootstrap 3.3!

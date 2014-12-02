@@ -1517,7 +1517,7 @@
 <hr>
 <h3 id="media-objects">Media Objects</h3>
 <pre><code>[media]
-  [media-object pull=&quot;right&quot;]
+  [media-object media=&quot;left&quot;]
     ...
   [/media-object]
   [media-body title=&quot;Testing&quot;]
@@ -1565,8 +1565,15 @@
 </thead>
 <tbody>
 <tr>
-<td>pull</td>
+<td>media</td>
 <td>Whether the image pulls to the left or right</td>
+<td>optional</td>
+<td>left, right</td>
+<td>right</td>
+</tr>
+<tr>
+<td>pull</td>
+<td>Whether the image pulls to the left or right <em>Deprecated, use only if your theme uses Bootstrap 3.2 or earlier</em></td>
 <td>optional</td>
 <td>left, right</td>
 <td>right</td>
