@@ -3,7 +3,7 @@
 Plugin Name: Bootstrap 3 Shortcodes
 Plugin URI: http://wp-snippets.com/freebies/bootstrap-shortcodes or https://github.com/filipstefansson/bootstrap-shortcodes
 Description: The plugin adds a shortcodes for all Bootstrap elements.
-Version: 3.3.1
+Version: 3.3.2
 Author: Filip Stefansson, Simon Yeldon, and Michael W. Delaney
 Author URI: 
 License: GPL2
@@ -36,7 +36,7 @@ class BoostrapShortcodes {
 
   function __construct() {
     add_action( 'init', array( $this, 'add_shortcodes' ) );
-    add_action( 'wp_enqueue_scripts', array( $this, 'bootstrap_shortcodes_scripts' ), 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
+    //add_action( 'wp_enqueue_scripts', array( $this, 'bootstrap_shortcodes_scripts' ), 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
     add_action( 'the_post', array( $this, 'bootstrap_shortcodes_tooltip_script' ), 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
     add_action( 'the_post', array( $this, 'bootstrap_shortcodes_popover_script' ), 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
   }
