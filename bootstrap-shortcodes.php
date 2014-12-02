@@ -1307,6 +1307,9 @@ class BoostrapShortcodes {
       
     $collapse_class = 'panel-collapse';
     $collapse_class .= ( $atts['active'] == 'true' )  ? ' in' : ' collapse';
+      
+    $a_class = '';
+    $a_class .= ( $atts['active'] == 'true' )  ? '' : 'collapsed';
 
     $parent = 'custom-collapse-'. $GLOBALS['collapsibles_count'];
     $current_collapse = $parent . '-'. sanitize_title( $atts['title'] );
@@ -1317,15 +1320,16 @@ class BoostrapShortcodes {
       '<div class="%1$s"%2$s>
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#%3$s" href="#%4$s">%5$s</a>
+            <a class="%3$s" data-toggle="collapse" data-parent="#%4$s" href="#%5$s">%6$s</a>
           </h4>
         </div>
-        <div id="%4$s" class="%6$s">
-          <div class="panel-body">%7$s</div>
+        <div id="%5$s" class="%7$s">
+          <div class="panel-body">%8$s</div>
         </div>
       </div>',
       esc_attr( $panel_class ),
       ( $data_props ) ? ' ' . $data_props : '',
+      $a_class,
       $parent,
       $current_collapse,
       $atts['title'],
