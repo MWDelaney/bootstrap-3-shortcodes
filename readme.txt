@@ -73,6 +73,7 @@ No, we assume you are already working with a WordPress theme that includes the B
 
 = 3.3.4 =
 * Restore Bootstrap 3.2 backwards compatibility for [media-object] shortcode, updated documentation to use Bootstrap 3.3 example, but offer 3.2 options.
+* Add "collapsed" class to non-active [collapse] elements (thanks, Artem!) 
 
 = 3.3 =
 * Tested to work with Bootstrap 3.3!
