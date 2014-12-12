@@ -13,7 +13,7 @@ add_action( 'admin_enqueue_scripts', 'bootstrap_shortcodes_styles_all' );
 
 function bootstrap_shortcodes_help_styles() {
     $screen = get_current_screen(); 
-    if($screen->parent_base != "gf_edit_forms") {
+    if($screen != null && $screen->parent_base != "gf_edit_forms") {
         wp_register_style( 'bs-font', plugins_url( 'bootstrap-3-shortcodes/includes/help/bs-font.css' ) );
         wp_register_style( 'bootstrap-shortcodes-help', plugins_url( 'bootstrap-3-shortcodes/includes/help/css/bootstrap-shortcodes-help.css' ) );
         wp_register_style( 'bootstrap-modal', plugins_url( 'bootstrap-3-shortcodes/includes/help/css/bootstrap-modal.css' ) );
@@ -32,7 +32,7 @@ add_filter('the_content', 'bs_fix_shortcodes');
 //action to add a custom button to the content editor
 function add_bootstrap_button() {
     $screen = get_current_screen(); 
-    if($screen->parent_base != "gf_edit_forms") {
+    if($screen != null && $screen->parent_base != "gf_edit_forms") {
         //the id of the container I want to show in the popup
         $popup_id = 'bootstrap-shortcodes-help';
 
