@@ -1978,7 +1978,7 @@ function bs_popover( $atts, $content = null ) {
       $previous_value = libxml_use_internal_errors(TRUE);
       
       $dom = new DOMDocument;
-      $dom->loadHTML($content);
+      $dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'));
       
       libxml_clear_errors();
       libxml_use_internal_errors($previous_value);
