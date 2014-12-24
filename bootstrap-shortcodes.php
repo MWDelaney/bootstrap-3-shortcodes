@@ -1183,7 +1183,7 @@ class BoostrapShortcodes {
         $tabs[] = sprintf(
           '<li%s><a href="#%s" data-toggle="tab">%s</a></li>',
           ( !empty($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? ' class="active"' : '',
-          'custom-tab-' . $GLOBALS['tabs_count'] . '-' . sanitize_title( $tab["tab"]["title"] ),
+          'custom-tab-' . $GLOBALS['tabs_count'] . '-' . md5($tab["tab"]["title"]),
           $tab["tab"]["title"]
         );
         $i++;
@@ -1219,7 +1219,7 @@ class BoostrapShortcodes {
 	), $atts );
     
     if( $GLOBALS['tabs_default_active'] && $GLOBALS['tabs_default_count'] == 0 ) {
-        $active = true;
+        $atts['active'] = true;
     }
     $GLOBALS['tabs_default_count']++;
 
@@ -1228,7 +1228,7 @@ class BoostrapShortcodes {
     $class .= ( $atts['active'] == 'true' )          ? ' active' : '';
     $class .= ( $atts['active'] == 'true' && $atts['fade'] == 'true' ) ? ' in' : '';
 
-    $id = 'custom-tab-'. $GLOBALS['tabs_count'] . '-'. sanitize_title( $atts['title'] );
+    $id = 'custom-tab-'. $GLOBALS['tabs_count'] . '-'. md5( $atts['title'] );
  
     $data_props = $this->parse_data_attributes( $atts['data'] );
 
@@ -1312,7 +1312,7 @@ class BoostrapShortcodes {
     $a_class .= ( $atts['active'] == 'true' )  ? '' : 'collapsed';
 
     $parent = 'custom-collapse-'. $GLOBALS['collapsibles_count'];
-    $current_collapse = $parent . '-'. sanitize_title( $atts['title'] );
+    $current_collapse = $parent . '-'. md5( $atts['title'] );
 
     $data_props = $this->parse_data_attributes( $atts['data'] );
       
@@ -1851,7 +1851,7 @@ function bs_popover( $atts, $content = null ) {
     $div_class  = 'modal fade';
     $div_class .= ( $atts['size'] ) ? ' bs-modal-' . $atts['size'] : '';
       
-    $id = 'custom-modal-' . sanitize_title( $atts['title'] );
+    $id = 'custom-modal-' . md5( $atts['title'] );
       
     $data_props = $this->parse_data_attributes( $atts['data'] );
       
