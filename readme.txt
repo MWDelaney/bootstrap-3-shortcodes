@@ -2,7 +2,7 @@
 Contributors: filipstefansson, nodley, FoolsRun
 Tags: bootstrap, shortcode, shortcodes, responsive, grid
 Requires at least: 3.8
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: 3.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -70,6 +70,12 @@ If you like this plugin, check out our companion plugin for Font Awesome, [Font 
 No, we assume you are already working with a WordPress theme that includes the Bootstrap libraries.
 
 == Changelog ==
+
+= 3.3.5 =
+* Tested to work in WordPress 4.1!
+* Allow non-English characters in [table-wrap], [media-object], [img], [thumbnail], [modal], [tab], and [collapse]
+* Better compatibility with Visual Composer (Thanks, jannejava!)
+* [tabs] and [tab], fix defaulting the first tab as "active" if no tabs are explicitly set as "active"
 
 = 3.3.4 =
 * Restore Bootstrap 3.2 backwards compatibility for [media-object] shortcode, updated documentation to use Bootstrap 3.3 example, but offer 3.2 options.
