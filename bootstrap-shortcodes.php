@@ -1182,7 +1182,7 @@ class BoostrapShortcodes {
       foreach( $atts_map as $tab ) {
         $tabs[] = sprintf(
           '<li%s><a href="#%s" data-toggle="tab">%s</a></li>',
-          ( !empty($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? ' class="active"' : '',
+          ' class="'.(( !empty($tab["tab"]["xclass"]) ) ? ''.$tab["tab"]["xclass"].'' : '').(( !empty($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? ' active' : '').'"',
           'custom-tab-' . $GLOBALS['tabs_count'] . '-' . md5($tab["tab"]["title"]),
           $tab["tab"]["title"]
         );
