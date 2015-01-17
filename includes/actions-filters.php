@@ -10,7 +10,6 @@ function bootstrap_shortcodes_styles_all() {
 
 add_action( 'admin_enqueue_scripts', 'bootstrap_shortcodes_styles_all' );
 
-
 function bootstrap_shortcodes_help_styles() {
     $screen = get_current_screen(); 
     if($screen != null && $screen->parent_base != "gf_edit_forms") {
@@ -23,9 +22,7 @@ function bootstrap_shortcodes_help_styles() {
         wp_enqueue_style( 'bs-font' );
         wp_enqueue_script( 'bootstrap' );
     }
-
 }
-add_action( 'media_buttons', 'bootstrap_shortcodes_help_styles' );
 
 add_filter('the_content', 'bs_fix_shortcodes');
 
@@ -55,8 +52,10 @@ function add_bootstrap_button() {
 // Create a Media Button for the help file
 //add a button to the content editor, next to the media button
 //this button will show a popup that contains inline content
-add_action('media_buttons', 'add_bootstrap_button', 11);
-
+if(in_array(basename($_SERVER['PHP_SELF']), array('post.php', 'page.php', 'page-new.php', 'post-new.php', 'widgets.php'))) {
+    add_action('media_buttons', 'add_bootstrap_button', 11);
+    add_action( 'media_buttons', 'bootstrap_shortcodes_help_styles' );
+}
 function boostrap_shortcodes_help() {
     include('bootstrap-shortcodes-help.php');
 }
