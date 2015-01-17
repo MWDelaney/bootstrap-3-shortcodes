@@ -1180,9 +1180,14 @@ class BoostrapShortcodes {
       }
       $i = 0;
       foreach( $atts_map as $tab ) {
+        
+        $class  ='';
+        $class .= ( !empty($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? 'active' : '';
+        $class .= ( !empty($tab["tab"]["xclass"]) ) ? ' ' . $tab["tab"]["xclass"] : '';
+        
         $tabs[] = sprintf(
           '<li%s><a href="#%s" data-toggle="tab">%s</a></li>',
-          ( !empty($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? ' class="active"' : '',
+          ( !empty($class) ) ? ' class="' . $class . '"' : '',
           'custom-tab-' . $GLOBALS['tabs_count'] . '-' . md5($tab["tab"]["title"]),
           $tab["tab"]["title"]
         );
@@ -1224,9 +1229,11 @@ class BoostrapShortcodes {
     $GLOBALS['tabs_default_count']++;
 
     $class  = 'tab-pane';
-    $class .= ( $atts['fade']   == 'true' )            ? ' fade' : '';
-    $class .= ( $atts['active'] == 'true' )          ? ' active' : '';
+    $class .= ( $atts['fade']   == 'true' )                            ? ' fade' : '';
+    $class .= ( $atts['active'] == 'true' )                            ? ' active' : '';
     $class .= ( $atts['active'] == 'true' && $atts['fade'] == 'true' ) ? ' in' : '';
+    $class .= ( $atts['xclass'] )                                      ? ' ' . $atts['xclass'] : '';
+
 
     $id = 'custom-tab-'. $GLOBALS['tabs_count'] . '-'. md5( $atts['title'] );
  
