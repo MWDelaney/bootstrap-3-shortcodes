@@ -171,6 +171,7 @@ bordered | Set "bordered" table style (see Bootstrap documentation) | optional |
 striped | Set "striped" table style (see Bootstrap documentation) | optional | true, false | false
 hover | Set "hover" table style (see Bootstrap documentation) | optional | true, false | false
 condensed | Set "condensed" table style (see Bootstrap documentation) | optional | true, false | false
+responsive | Wrap the table in a div with the class "table-respsonve" (see Bootstrap documentation) | optional | true, false | false
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
