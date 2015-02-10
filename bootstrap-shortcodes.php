@@ -1521,7 +1521,9 @@ function bs_popover( $atts, $content = null ) {
     $tag = 'span';
     $content = do_shortcode($content);
     $return .= $this->get_dom_element($tag, $content, $class, $atts['title'], $atts['data']);
-    return $return;
+    
+    // added utf8_encode($return) to fix special characters issue with text being removed when a special character is used
+    return utf8_encode($return);
     
   }
 
