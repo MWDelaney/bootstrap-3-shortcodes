@@ -1512,7 +1512,7 @@ function bs_popover( $atts, $content = null ) {
     $class = 'bs-popover';
         
     $atts['data']   .= $this->check_for_data($atts['data']) . 'toggle,popover';
-    $atts['data']   .= $this->check_for_data($atts['data']) . 'content,' . $atts['text'];
+    $atts['data']   .= $this->check_for_data($atts['data']) . 'content,' . str_replace(',', '&#44;', $atts['text']);
     $atts['data']   .= ( $atts['animation'] ) ? $this->check_for_data($atts['data']) . 'animation,' . $atts['animation'] : '';
     $atts['data']   .= ( $atts['placement'] ) ? $this->check_for_data($atts['data']) . 'placement,' . $atts['placement'] : '';
     $atts['data']   .= ( $atts['html'] )      ? $this->check_for_data($atts['data']) . 'html,'      . $atts['html']      : '';
@@ -1521,7 +1521,7 @@ function bs_popover( $atts, $content = null ) {
     $tag = 'span';
     $content = do_shortcode($content);
     $return .= $this->get_dom_element($tag, $content, $class, $atts['title'], $atts['data']);
-    return $return;
+    return html_entity_decode($return);
     
   }
 
@@ -1951,25 +1951,25 @@ function bs_popover( $atts, $content = null ) {
       $previous_value = libxml_use_internal_errors(TRUE);
       
       $dom = new DOMDocument;
-      $dom->loadXML($content);
+      $dom->loadXML(utf8_encode($content));
         
       libxml_clear_errors();
       libxml_use_internal_errors($previous_value);
       
       if(!$dom->documentElement) {
-          $element = $dom->createElement($tag, $content);
+          $element = $dom->createElement($tag, utf8_encode($content));
           $dom->appendChild($element);
       }
       
-      $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
+      $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( utf8_encode($class) ));
       if( $title ) {
-          $dom->documentElement->setAttribute('title', $title );
+          $dom->documentElement->setAttribute('title', utf8_encode($title) );
       }
       if( $data ) {
           $data = explode( '|', $data );
           foreach( $data as $d ):
           $d = explode(',',$d);
-          $dom->documentElement->setAttribute('data-'.$d[0],trim($d[1]));
+          $dom->documentElement->setAttribute('data-'.utf8_encode($d[0]),trim(utf8_encode($d[1])));
           endforeach;
       }
       return $dom->saveXML($dom->documentElement);
