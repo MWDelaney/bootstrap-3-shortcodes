@@ -1858,6 +1858,8 @@ function bs_popover( $atts, $content = null ) {
     $div_class  = 'modal fade';
     $div_class .= ( $atts['size'] ) ? ' bs-modal-' . $atts['size'] : '';
       
+    $div_size = ( $atts['size'] ) ? ' modal-' . $atts['size'] : '';
+      
     $id = 'custom-modal-' . md5( $atts['title'] );
       
     $data_props = $this->parse_data_attributes( $atts['data'] );
@@ -1865,14 +1867,14 @@ function bs_popover( $atts, $content = null ) {
     return sprintf( 
       '<a data-toggle="modal" href="#%1$s" class="%2$s"%3$s>%4$s</a>
         <div class="%5$s" id="%1$s" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog %6$s">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        %6$s
+                        %7$s
                     </div>
                     <div class="modal-body">
-                        %7$s
+                        %8$s
                     </div>
                 </div> <!-- /.modal-content -->
             </div> <!-- /.modal-dialog -->
@@ -1883,6 +1885,7 @@ function bs_popover( $atts, $content = null ) {
       ( $data_props ) ? ' ' . $data_props : '',
       esc_html( $atts['text'] ),
       esc_attr( $div_class ),
+      esc_attr( $div_size ),
       ( $atts['title'] ) ? '<h4 class="modal-title">' . $atts['title'] . '</h4>' : '',
       do_shortcode( $content )
     );
