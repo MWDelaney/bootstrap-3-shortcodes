@@ -19,6 +19,13 @@ function bootstrap_shortcodes_help_styles() {
         wp_enqueue_style( 'bootstrap-modal' );
         wp_enqueue_style( 'bs-font' );
         wp_enqueue_script( 'bootstrap' );
+    
+        //Visual Composer causes problems
+        $handle = 'vc_bootstrap_js';
+        $list = 'enqueued';
+         if (wp_script_is( $handle, $list )) {
+             wp_dequeue_script( $handle );
+         }
 }
 
 add_filter('the_content', 'bs_fix_shortcodes');
