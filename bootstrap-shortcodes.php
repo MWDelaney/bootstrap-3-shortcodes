@@ -2030,7 +2030,7 @@ function bs_popover( $atts, $content = null ) {
       $previous_value = libxml_use_internal_errors(TRUE);
       
       $dom = new DOMDocument;
-      $dom->loadXML($content);
+      $dom->loadXML(utf8_encode($content));
       
       libxml_clear_errors();
       libxml_use_internal_errors($previous_value);
