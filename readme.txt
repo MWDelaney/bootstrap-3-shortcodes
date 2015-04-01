@@ -2,8 +2,8 @@
 Contributors: filipstefansson, nodley, FoolsRun
 Tags: bootstrap, shortcode, shortcodes, responsive, grid
 Requires at least: 3.8
-Tested up to: 4.1
-Stable tag: 3.3.5
+Tested up to: 4.1.1
+Stable tag: 3.3.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,13 @@ If you like this plugin, check out our companion plugin for Font Awesome, [Font 
 No, we assume you are already working with a WordPress theme that includes the Bootstrap libraries.
 
 == Changelog ==
+
+= 3.3.6 =
+* Allow for xclass property on individual [tab]s
+* Prevent Bootstrap help popup button from appearing on unintended pages
+* Allow for commas in [popover] content
+* Further correction for conflicts with Visual Composer
+* Allow special characters in [page-header]
 
 = 3.3.5 =
 * Tested to work in WordPress 4.1!
