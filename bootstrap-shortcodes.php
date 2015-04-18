@@ -1436,7 +1436,7 @@ class BoostrapShortcodes {
 	), $atts );
       
     if( $GLOBALS['carousel_default_active'] && $GLOBALS['carousel_default_count'] == 0 ) {
-        $active = true;
+        $atts['active'] = true;
     }
     $GLOBALS['carousel_default_count']++;
       
