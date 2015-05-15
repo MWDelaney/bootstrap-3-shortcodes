@@ -706,7 +706,7 @@ class BoostrapShortcodes {
     
     /*--------------------------------------------------------------------------------------
     *
-    * bs_column
+    * bs_col
     *
     * @author Simon Yeldon, Connor Wilson
     * @since 1.0
