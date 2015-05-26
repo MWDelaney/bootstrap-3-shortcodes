@@ -1446,7 +1446,11 @@ class BoostrapShortcodes {
     
     $data_props = $this->parse_data_attributes( $atts['data'] );
 
-    $content = preg_replace('/class=".*?"/', '', $content);
+    //$content = preg_replace('/class=".*?"/', '', $content);
+    $content = preg_replace('/alignnone/', '', $content);
+    $content = preg_replace('/alignright/', '', $content);
+    $content = preg_replace('/alignleft/', '', $content);
+    $content = preg_replace('/aligncenter/', '', $content);
 
     return sprintf( 
       '<div class="%s"%s>%s%s</div>',
