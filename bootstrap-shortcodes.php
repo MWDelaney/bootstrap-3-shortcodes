@@ -473,7 +473,7 @@ class BoostrapShortcodes {
     #$pattern = ( $dropdown ) ? '<li%1$s><a href="%2$s"%3$s%4$s%5$s></a>%6$s</li>' : '<li%1$s><a href="%2$s"%3$s%4$s%5$s>%6$s</a></li>';
 
     //* If we have a dropdown shortcode inside the content we end the link before the dropdown shortcode, else all content goes inside the link
-    $content = ( $dropdown ) ? str_replace( '[dropdown]', '</a>[dropdown]', $content ) : $content . '</a>';
+    $content = ( $atts['dropdown'] ) ? str_replace( '[dropdown]', '</a>[dropdown]', $content ) : $content . '</a>';
 
     return sprintf(
       '<li%1$s><a href="%2$s"%3$s%4$s%5$s>%6$s</li>',
@@ -1299,6 +1299,11 @@ class BoostrapShortcodes {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_collapse( $atts, $content = null ) {
+      
+    if( isset($GLOBALS['single_collapse_count']) )
+      $GLOBALS['single_collapse_count']++;
+    else
+      $GLOBALS['single_collapse_count'] = 0;
 
 	$atts = shortcode_atts( array(
       "title"   => false,
@@ -1318,8 +1323,8 @@ class BoostrapShortcodes {
     $a_class = '';
     $a_class .= ( $atts['active'] == 'true' )  ? '' : 'collapsed';
 
-    $parent = 'custom-collapse-'. $GLOBALS['collapsibles_count'];
-    $current_collapse = $parent . '-'. md5( $atts['title'] );
+    $parent = isset( $GLOBALS['collapsibles_count'] ) ? 'custom-collapse-' . $GLOBALS['collapsibles_count'] : 'single-collapse';
+    $current_collapse = $parent . '-' . $GLOBALS['single_collapse_count'];
 
     $data_props = $this->parse_data_attributes( $atts['data'] );
       
@@ -1327,7 +1332,7 @@ class BoostrapShortcodes {
       '<div class="%1$s"%2$s>
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a class="%3$s" data-toggle="collapse" data-parent="#%4$s" href="#%5$s">%6$s</a>
+            <a class="%3$s" data-toggle="collapse"%4$s href="#%5$s">%6$s</a>
           </h4>
         </div>
         <div id="%5$s" class="%7$s">
@@ -1335,9 +1340,9 @@ class BoostrapShortcodes {
         </div>
       </div>',
       esc_attr( $panel_class ),
-      ( $data_props ) ? ' ' . $data_props : '',
+      ( $data_props )   ? ' ' . $data_props : '',
       $a_class,
-      $parent,
+      ( $parent )       ? ' data-parent="#' . $parent . '""' : '',
       $current_collapse,
       $atts['title'],
       esc_attr( $collapse_class ),
@@ -1598,7 +1603,7 @@ function bs_popover( $atts, $content = null ) {
     $h4_class  = 'media-heading';      
     $h4_class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
-    $data_props = $this->parse_data_attributes( $data );
+    $data_props = $this->parse_data_attributes( $atts['data'] );
       
     return sprintf( 
       '<div class="%s"%s><h4 class="%s">%s</h4>%s</div>',
@@ -1735,6 +1740,7 @@ function bs_popover( $atts, $content = null ) {
       "data"       => false
 	), $atts );
 
+    $class  = '';
     $class .= ( $atts['type'] )       ? 'img-' . $atts['type'] . ' ' : '';
     $class .= ( $atts['responsive']   == 'true' ) ? ' img-responsive' : '';
     $class .= ( $atts['xclass'] )     ? ' ' . $atts['xclass'] : '';
@@ -1847,6 +1853,11 @@ function bs_popover( $atts, $content = null ) {
     *
     *-------------------------------------------------------------------------------------*/
   function bs_modal( $atts, $content = null ) {
+      
+    if( isset($GLOBALS['modal_count']) )
+      $GLOBALS['modal_count']++;
+    else
+      $GLOBALS['modal_count'] = 0;
 
 	$atts = shortcode_atts( array(
       "text"    => false,
@@ -1864,7 +1875,7 @@ function bs_popover( $atts, $content = null ) {
       
     $div_size = ( $atts['size'] ) ? ' modal-' . $atts['size'] : '';
       
-    $id = 'custom-modal-' . md5( $atts['title'] );
+    $id = 'custom-modal-' . $GLOBALS['modal_count'];
       
     $data_props = $this->parse_data_attributes( $atts['data'] );
       

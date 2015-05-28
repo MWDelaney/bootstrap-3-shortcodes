@@ -759,6 +759,13 @@ html | Insert HTML into the tooltip | optional | true, false | false
 * * *
 
 ### Collapse
+
+#### Single Collapse
+	  [collapse title="Collapse 1" active="true"]
+	    ...
+	  [/collapse]
+      
+#### Set of Collapsibles
 	[collapsibles]
 	  [collapse title="Collapse 1" active="true"]
 	    ...
