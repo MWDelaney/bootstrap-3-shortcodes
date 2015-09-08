@@ -46,6 +46,7 @@ This plugin contains a ```composer.json``` file for those of you who manage your
 * [Popover](#popover)
 * [Collapse](#collapse)
 * [Carousel](#carousel)
+* [Imagepostslider](#imagepostslider)
 * [Modal](#modal)
 
 
@@ -62,7 +63,7 @@ This plugin contains a ```composer.json``` file for those of you who manage your
 	      ...
 	    [/column]
 	  [/row]
-    
+
 The container component is also supported in case your theme doesn't incude a container.
 
 	[container]
@@ -159,9 +160,9 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 ### Tables
 	[table-wrap bordered="true" striped="true"]
-        
+
         Standard HTML table code goes here.
-        
+
     [/table-wrap]
 
 #### [table-wrap] parameters
@@ -257,7 +258,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
         [button link="#"] ... [/button]
         [button link="#"] ... [/button]
 	[/button-group]
-    
+
 #### Button toolbar
     [button-toolbar]
     	[button-group]
@@ -331,7 +332,7 @@ Button Dropdowns can be accomplished by combining the [button-group] shortcode, 
             [divider]
             [dropdown-item link="#"] ... [/dropdown-item]
         [/dropdown]
-    [/button-group]  
+    [/button-group]
 
 #### [dropdown] parameters
 Parameter | Description | Required | Values | Default
@@ -813,6 +814,11 @@ active | Whether the item has the "active" style applied. One item MUST be set a
 caption | This carousel slide's caption | optional | Any text | none
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+
+### Image post slider
+It shows an slider with the images attached in the actual post.
+	[imagepostslider]
 
 [Bootstrap carousel documentation](http://getbootstrap.com/javascript/#carousel)
 
