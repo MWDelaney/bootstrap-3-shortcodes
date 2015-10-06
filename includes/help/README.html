@@ -14,6 +14,7 @@
 <li><a href="#tables">Tables</a></li>
 <li><a href="#buttons">Buttons</a></li>
 <li><a href="#images">Images</a></li>
+<li><a href="#responsive-embeds">Responsive Embeds</a></li>
 <li><a href="#responsive-utilities">Responsive utilities</a></li>
 </ul>
 <h3 id="components">Components</h3>
@@ -593,6 +594,46 @@
 </tbody>
 </table>
 <p><a href="http://getbootstrap.com/css/#images">Bootstrap images documentation</a></p>
+<hr>
+<h3 id="responsive-embeds">Responsive Embeds</h3>
+<pre><code>[embed-responsive ratio=&quot;16by9&quot;] ... [/embed-responsive]
+</code></pre><p>Wrap <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;video&gt;</code>, and <code>&lt;object&gt;</code> elements to make them responsive.</p>
+<h4 id="-responsive-embed-parameters">[responsive-embed] parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ratio</td>
+<td>Maintain the aspect ratio of the embed</td>
+<td>optional</td>
+<td>16by9, 4by3</td>
+<td>false</td>
+</tr>
+<tr>
+<td>xclass</td>
+<td>Any extra classes you want to add</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://getbootstrap.com/components/#responsive-embed">Bootstrap responsive embed documentation</a></p>
 <hr>
 <h3 id="responsive-utilities">Responsive Utilities</h3>
 <pre><code>[responsive block=&quot;lg md&quot; hidden=&quot;sn xs&quot;] ... [/responsive]

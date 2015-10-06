@@ -90,6 +90,7 @@ class BoostrapShortcodes {
       'emphasis', 
       'icon', 
       'img', 
+      'embed-responsive', 
       'jumbotron', 
       'label', 
       'lead', 
@@ -1750,6 +1751,39 @@ function bs_popover( $atts, $content = null ) {
     $content = do_shortcode($content);
     $return .= $this->scrape_dom_element($tag, $content, $class, '', $atts['data']);
     return $return;
+    
+  }
+    
+  /*--------------------------------------------------------------------------------------
+    *
+    * bs_embed_responsive
+    *
+    *
+    *-------------------------------------------------------------------------------------*/
+  function bs_embed_responsive( $atts, $content = null ) {
+  
+	$atts = shortcode_atts( array(
+      "ratio"      => false,
+      "xclass"     => false,
+      "data"       => false
+	), $atts );
+
+    $class  = 'embed-responsive ';
+    $class .= ( $atts['ratio'] )       ? ' embed-responsive-' . $atts['ratio'] . ' ' : '';
+    $class .= ( $atts['xclass'] )     ? ' ' . $atts['xclass'] : '';
+      
+    $embed_class = 'embed-responsive-item';
+
+    $tag = array('iframe', 'embed', 'video', 'object');
+    $content = do_shortcode($content);
+    $data_props = $this->parse_data_attributes( $atts['data'] );
+
+    return sprintf(
+      '<div class="%s"%s>%s</div>',
+      esc_attr( $class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      $this->scrape_dom_element($tag, $content, $embed_class, '', '')
+    );
     
   }
     
