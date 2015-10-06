@@ -1668,7 +1668,7 @@ function bs_popover( $atts, $content = null ) {
     $content = $this->strip_paragraph($content);
     $content = $this->nest_dom_element('h1', 'div', $content);
     $return .= $this->get_dom_element($tag, $content, $class, '', $atts['data']);    
-    return $return;
+    return utf8_decode($return);
 
   } 
     
