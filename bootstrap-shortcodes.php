@@ -4,7 +4,6 @@ Plugin Name: Bootstrap 3 Shortcodes
 Plugin URI: http://wp-snippets.com/freebies/bootstrap-shortcodes or https://github.com/filipstefansson/bootstrap-shortcodes
 Description: The plugin adds a shortcodes for all Bootstrap elements.
 Version: 3.3.7
-
 Author: Filip Stefansson, Simon Yeldon, and Michael W. Delaney
 Author URI: 
 License: GPL2
@@ -2024,16 +2023,16 @@ function bs_popover( $atts, $content = null ) {
       
       $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( utf8_encode($class) ));
       if( $title ) {
-          $dom->documentElement->setAttribute('title', utf8_encode($title) );
+          $dom->documentElement->setAttribute('title', $title );
       }
       if( $data ) {
           $data = explode( '|', $data );
           foreach( $data as $d ):
           $d = explode(',',$d);
-          $dom->documentElement->setAttribute('data-'.utf8_encode($d[0]),trim(utf8_encode($d[1])));
+          $dom->documentElement->setAttribute('data-'.$d[0],trim($d[1]));
           endforeach;
       }
-      return $dom->saveXML($dom->documentElement);
+      return utf8_decode( $dom->saveXML($dom->documentElement) );
   }
 
 /*--------------------------------------------------------------------------------------
