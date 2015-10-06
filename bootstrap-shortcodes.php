@@ -1913,30 +1913,38 @@ function bs_popover( $atts, $content = null ) {
       
     $data_props = $this->parse_data_attributes( $atts['data'] );
       
-    return sprintf( 
-      '<a data-toggle="modal" href="#%1$s" class="%2$s"%3$s>%4$s</a>
-        <div class="%5$s" id="%1$s" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog %6$s">
+    $modal_output = sprintf(
+        '<div class="%1$s" id="%2$s" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog %3$s">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        %7$s
+                        %4$s
                     </div>
                     <div class="modal-body">
-                        %8$s
+                        %5$s
                     </div>
                 </div> <!-- /.modal-content -->
             </div> <!-- /.modal-dialog -->
-        </div> <!-- /.modal -->                        
-      ',
-      esc_attr( $id ),
-      esc_attr( $a_class ),
-      ( $data_props ) ? ' ' . $data_props : '',
-      esc_html( $atts['text'] ),
+        </div> <!-- /.modal -->
+        ',
       esc_attr( $div_class ),
+      esc_attr( $id ),
       esc_attr( $div_size ),
       ( $atts['title'] ) ? '<h4 class="modal-title">' . $atts['title'] . '</h4>' : '',
       do_shortcode( $content )
+    );
+      
+    add_action('wp_footer', function() use ($modal_output) {
+        echo $modal_output;
+    }, 100,0);
+      
+    return sprintf( 
+      '<a data-toggle="modal" href="#%1$s" class="%2$s"%3$s>%4$s</a>',
+      esc_attr( $id ),
+      esc_attr( $a_class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      esc_html( $atts['text'] )
     );
   }
 
@@ -1961,7 +1969,7 @@ function bs_popover( $atts, $content = null ) {
     $data_props = $this->parse_data_attributes( $atts['data'] );
 
     return sprintf(
-      '<div class="%s"%s>%s</div>',
+      '</div><div class="%s"%s>%s',
       esc_attr( $class ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
