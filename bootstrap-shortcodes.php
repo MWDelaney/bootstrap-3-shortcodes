@@ -1164,7 +1164,8 @@ class BoostrapShortcodes {
 	$atts = shortcode_atts( array(
       "type"   => false,
       "xclass" => false,
-      "data"   => false
+      "data"   => false,
+      "name"   => false
 	), $atts );
  
     $ul_class  = 'nav';
@@ -1172,9 +1173,13 @@ class BoostrapShortcodes {
     $ul_class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
       
     $div_class = 'tab-content';
-      
-    $id = 'custom-tabs-'. $GLOBALS['tabs_count'];
- 
+
+    // If user defines name of group, use that for ID for tab history purposes
+    if(isset($atts['name'])) {
+      $id = $atts['name'];
+    } else {
+      $id = 'custom-tabs-' . $GLOBALS['tabs_count'];
+    }
     $data_props = $this->parse_data_attributes( $atts['data'] );
     
     $atts_map = bs_attribute_map( $content );
@@ -1207,7 +1212,7 @@ class BoostrapShortcodes {
     return sprintf( 
       '<ul class="%s" id="%s"%s>%s</ul><div class="%s">%s</div>',
       esc_attr( $ul_class ),
-      esc_attr( $id ),
+      urlencode( $id ),
       ( $data_props ) ? ' ' . $data_props : '',
       ( $tabs )  ? implode( $tabs ) : '',
       esc_attr( $div_class ),
