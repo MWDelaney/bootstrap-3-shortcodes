@@ -39,6 +39,7 @@ class BoostrapShortcodes {
     //add_action( 'wp_enqueue_scripts', array( $this, 'bootstrap_shortcodes_scripts' ), 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
     add_action( 'the_post', array( $this, 'bootstrap_shortcodes_tooltip_script' ), 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
     add_action( 'the_post', array( $this, 'bootstrap_shortcodes_popover_script' ), 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
+    add_action( 'the_post', array( $this, 'bootstrap_shortcodes_tab_history_script' ), 9999 ); //Register this fxn and allow WordPress to call it automatically in the header
   }
 
   function bootstrap_shortcodes_tooltip_script()  { 
@@ -55,6 +56,14 @@ class BoostrapShortcodes {
           // Bootstrap popover js
           wp_enqueue_script( 'bootstrap-shortcodes-popover', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-popover.js', array( 'jquery' ), false, true );
       }
+  }
+
+  function bootstrap_shortcodes_tab_history_script() {
+    global $post;
+    if( has_shortcode( $post->post_content, 'tabs')){
+      // Bootstrap popover js
+      wp_enqueue_script( 'bootstrap-shortcodes-tab-history', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-tab-history.js', array( 'jquery' ), false, true );
+    }
   }
 
   /*--------------------------------------------------------------------------------------
