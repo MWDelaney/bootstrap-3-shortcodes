@@ -39,7 +39,6 @@ class BoostrapShortcodes {
     //add_action( 'wp_enqueue_scripts', array( $this, 'bootstrap_shortcodes_scripts' ), 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
     add_action( 'the_post', array( $this, 'bootstrap_shortcodes_tooltip_script' ), 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
     add_action( 'the_post', array( $this, 'bootstrap_shortcodes_popover_script' ), 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
-    add_action( 'the_post', array( $this, 'bootstrap_shortcodes_tab_history_script' ), 9999 ); //Register this fxn and allow WordPress to call it automatically in the header
   }
 
   function bootstrap_shortcodes_tooltip_script()  { 
@@ -58,13 +57,7 @@ class BoostrapShortcodes {
       }
   }
 
-  function bootstrap_shortcodes_tab_history_script() {
-    global $post;
-    if( has_shortcode( $post->post_content, 'tabs')){
-      // Bootstrap popover js
-      wp_enqueue_script( 'bootstrap-shortcodes-tab-history', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-tab-history.js', array( 'jquery' ), false, true );
-    }
-  }
+
 
   /*--------------------------------------------------------------------------------------
     *
@@ -1161,12 +1154,13 @@ class BoostrapShortcodes {
 
     $GLOBALS['tabs_default_count'] = 0;
 
+    $atts = apply_filters('bs_tabs_atts',$atts);
+
 	$atts = shortcode_atts( array(
       "type"    => false,
       "xclass"  => false,
       "data"    => false,
       "name"    => false,
-      "history" => false
 	), $atts );
  
     $ul_class  = 'nav';
@@ -1180,37 +1174,6 @@ class BoostrapShortcodes {
       $id = $atts['name'];
     } else {
       $id = 'custom-tabs-' . $GLOBALS['tabs_count'];
-    }
-
-    /* String variable that serves as status of tab history feature
-     *
-     * @values:
-     * 'off' - no tab history enabled
-     * 'push' - Use history.pushState to update history.state. This will allow the use of history.forward and
-     *          history.back as users switch tabs.
-     * 'replace' - Use history.replaceState to update history.state. This will leave users on the same page
-     *          w.r.t. history.forward and history.back as they switch tabs.
-     *
-     * @default: 'replace'
-     */
-    $tab_history = "replace";
-    $tab_history_options = array('off','push','replace');
-    $tab_history_output = 'data-tab-history="true" data-tab-history-update-url="true" ';
-
-    if(isset($atts['history']) && in_array($atts['history'], $tab_history_options)){
-      $tab_history = $atts['history'];
-    }
-
-    switch($tab_history) {
-      case "off":
-        $tab_history_output = '';
-        break;
-      case "push":
-        $tab_history_output .= 'data-tab-history-changer="push"';
-        break;
-      case "replace":
-        $tab_history_output .= 'data-tab-history-changer="replace"';
-        break;
     }
 
 
@@ -1241,16 +1204,15 @@ class BoostrapShortcodes {
         }
 
         $tabs[] = sprintf(
-          '<li%s><a href="#%s" data-toggle="tab" %s>%s</a></li>',
+          '<li%s><a href="#%s" data-toggle="tab" >%s</a></li>',
           ( !empty($class) ) ? ' class="' . sanitize_html_class($class) . '"' : '',
           sanitize_html_class($tab_id),
-          $tab_history_output,
           $tab["tab"]["title"]
         );
         $i++;
       }
     }
-    return sprintf( 
+    $output = sprintf(
       '<ul class="%s" id="%s"%s>%s</ul><div class="%s">%s</div>',
       esc_attr( $ul_class ),
       sanitize_html_class( $id ),
@@ -1259,6 +1221,8 @@ class BoostrapShortcodes {
       sanitize_html_class( $div_class ),
       do_shortcode( $content )
     );
+
+    return apply_filters('bs_tabs', $output);
   }
 
   /*--------------------------------------------------------------------------------------
