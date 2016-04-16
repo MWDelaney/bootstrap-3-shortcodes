@@ -58,7 +58,7 @@ if(in_array(basename($_SERVER['PHP_SELF']), array('post.php', 'page.php', 'page-
     add_action( 'media_buttons', 'bootstrap_shortcodes_help_styles' );
 }
 function boostrap_shortcodes_help() {
-    include( dir(__FILE__) . 'bootstrap-shortcodes-help.php');
+    include( BS_SHORTCODES_DIR . 'bootstrap-shortcodes-help.php');
 }
 add_action( 'admin_footer', 'boostrap_shortcodes_help' );
 
