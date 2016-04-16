@@ -1152,10 +1152,13 @@ class BoostrapShortcodes {
 
     $GLOBALS['tabs_default_count'] = 0;
 
+    $atts = apply_filters('bs_tabs_atts',$atts);
+
 	$atts = shortcode_atts( array(
-      "type"   => false,
-      "xclass" => false,
-      "data"   => false
+      "type"    => false,
+      "xclass"  => false,
+      "data"    => false,
+      "name"    => false,
 	), $atts );
  
     $ul_class  = 'nav';
@@ -1163,9 +1166,15 @@ class BoostrapShortcodes {
     $ul_class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
       
     $div_class = 'tab-content';
-      
-    $id = 'custom-tabs-'. $GLOBALS['tabs_count'];
- 
+
+    // If user defines name of group, use that for ID for tab history purposes
+    if(isset($atts['name'])) {
+      $id = $atts['name'];
+    } else {
+      $id = 'custom-tabs-' . $GLOBALS['tabs_count'];
+    }
+
+
     $data_props = $this->parse_data_attributes( $atts['data'] );
     
     $atts_map = bs_attribute_map( $content );
@@ -1185,25 +1194,33 @@ class BoostrapShortcodes {
         $class  ='';
         $class .= ( !empty($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? 'active' : '';
         $class .= ( !empty($tab["tab"]["xclass"]) ) ? ' ' . $tab["tab"]["xclass"] : '';
-        
+
+        if(!isset($tab["tab"]["link"])) {
+          $tab_id = 'custom-tab-' . $GLOBALS['tabs_count'] . '-' . md5( $tab["tab"]["title"] );
+        } else {
+          $tab_id = $tab["tab"]["link"];
+        }
+
         $tabs[] = sprintf(
-          '<li%s><a href="#%s" data-toggle="tab">%s</a></li>',
-          ( !empty($class) ) ? ' class="' . $class . '"' : '',
-          'custom-tab-' . $GLOBALS['tabs_count'] . '-' . md5($tab["tab"]["title"]),
+          '<li%s><a href="#%s" data-toggle="tab" >%s</a></li>',
+          ( !empty($class) ) ? ' class="' . sanitize_html_class($class) . '"' : '',
+          sanitize_html_class($tab_id),
           $tab["tab"]["title"]
         );
         $i++;
       }
     }
-    return sprintf( 
+    $output = sprintf(
       '<ul class="%s" id="%s"%s>%s</ul><div class="%s">%s</div>',
       esc_attr( $ul_class ),
-      esc_attr( $id ),
+      sanitize_html_class( $id ),
       ( $data_props ) ? ' ' . $data_props : '',
       ( $tabs )  ? implode( $tabs ) : '',
-      esc_attr( $div_class ),
+      sanitize_html_class( $div_class ),
       do_shortcode( $content )
     );
+
+    return apply_filters('bs_tabs', $output);
   }
 
   /*--------------------------------------------------------------------------------------
@@ -1221,7 +1238,8 @@ class BoostrapShortcodes {
       'active'  => false,
       'fade'    => false,
       'xclass'  => false,
-      'data'    => false
+      'data'    => false,
+      'link'    => false
 	), $atts );
     
     if( $GLOBALS['tabs_default_active'] && $GLOBALS['tabs_default_count'] == 0 ) {
@@ -1236,13 +1254,16 @@ class BoostrapShortcodes {
     $class .= ( $atts['xclass'] )                                      ? ' ' . $atts['xclass'] : '';
 
 
-    $id = 'custom-tab-'. $GLOBALS['tabs_count'] . '-'. md5( $atts['title'] );
- 
+    if(!isset($atts['link']) || $atts['link'] == NULL) {
+      $id = 'custom-tab-' . $GLOBALS['tabs_count'] . '-' . md5( $atts['title'] );
+    } else {
+      $id = $atts['link'];
+    }
     $data_props = $this->parse_data_attributes( $atts['data'] );
 
     return sprintf( 
       '<div id="%s" class="%s"%s>%s</div>',
-      esc_attr( $id ),
+      sanitize_html_class($id),
       esc_attr( $class ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
@@ -1282,8 +1303,8 @@ class BoostrapShortcodes {
 
     return sprintf( 
       '<div class="%s" id="%s"%s>%s</div>',
-      esc_attr( $class ),
-      esc_attr( $id ),
+        esc_attr( $class ),
+        esc_attr($id),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
