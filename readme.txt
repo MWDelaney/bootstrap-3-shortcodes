@@ -2,8 +2,8 @@
 Contributors: filipstefansson, nodley, FoolsRun
 Tags: bootstrap, shortcode, shortcodes, responsive, grid
 Requires at least: 3.8
-Tested up to: 4.2.2
-Stable tag: 3.3.6
+Tested up to: 4.5
+Stable tag: 3.3.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,7 @@ If you like this plugin, check out our companion plugin for Font Awesome, [Font 
 * Tables
 * Buttons
 * Images
+* Responsive embeds
 * Responsive utilities
 ####Components
 * Button Groups
@@ -70,6 +71,13 @@ If you like this plugin, check out our companion plugin for Font Awesome, [Font 
 No, we assume you are already working with a WordPress theme that includes the Bootstrap libraries.
 
 == Changelog ==
+
+= 3.3.8 =
+* Tested to work with WordPress 4.5
+* Set a default "active" slide in carousel if none is specified
+* Add shortcode for responsive embeds 
+* Correct some non-latin characters displaying incorrectly
+* Add filter to hook into tabs for things like tab history (thanks, Jason Maners!)
 
 = 3.3.6 =
 * Allow for xclass property on individual [tab]s
