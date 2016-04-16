@@ -168,7 +168,7 @@ class BoostrapShortcodes {
     return sprintf( 
       '<a href="%s" class="%s"%s%s%s>%s</a>',
       esc_url( $atts['link'] ),
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $atts['target'] )     ? sprintf( ' target="%s"', esc_attr( $atts['target'] ) ) : '',
       ( $atts['title'] )      ? sprintf( ' title="%s"',  esc_attr( $atts['title'] ) )  : '',
       ( $data_props ) ? ' ' . $data_props : '',
@@ -206,7 +206,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<div class="%s"%s>%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -232,7 +232,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<div class="%s"%s>%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -260,7 +260,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<span class="%s"%s>%s</span>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -289,7 +289,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<div class="%s"%s>%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -316,7 +316,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<ul role="menu" class="%s"%s>%s</ul>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -377,7 +377,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<li class="%s"%s>%s</li>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -404,7 +404,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<li class="%s"%s>%s</li>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -436,7 +436,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<ul class="%s"%s>%s</ul>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -516,7 +516,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<div class="%s"%s>%s%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props )  ? ' ' . $data_props : '',
       $dismissable,
       do_shortcode( $content )
@@ -547,7 +547,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<div class="%s"%s>%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props )  ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -577,7 +577,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<div class="%s" role="progressbar" %s%s>%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $atts['percent'] )      ? ' aria-value="' . (int) $atts['percent'] . '" aria-valuemin="0" aria-valuemax="100" style="width: ' . (int) $atts['percent'] . '%;"' : '',
       ( $data_props )   ? ' ' . $data_props : '',
       ( $atts['percent'] )      ? sprintf('<span%s>%s</span>', ( !$atts['label'] ) ? ' class="sr-only"' : '', (int) $atts['percent'] . '% Complete') : ''
@@ -610,7 +610,7 @@ class BoostrapShortcodes {
     return sprintf( 
       '<%1$s class="%2$s"%3$s>%4$s</%1$s>',
       ( $atts['inline'] ) ? 'code' : 'pre',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -638,7 +638,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<div class="%s"%s>%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -698,7 +698,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<div class="%s"%s>%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -727,7 +727,7 @@ class BoostrapShortcodes {
     return sprintf( 
       '<%1$s class="%2$s"%3$s>%4$s</%1$s>',
       ( $atts['linked'] == 'true' ) ? 'div' : 'ul',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -763,7 +763,7 @@ class BoostrapShortcodes {
       ( $atts['link'] )     ? 'a' : 'li',
       ( $atts['link'] )     ? 'href="' . esc_url( $atts['link'] ) . '"' : '',
 	  ( $atts['target'] )   ? sprintf( ' target="%s"', esc_attr( $atts['target'] ) ) : '',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -789,7 +789,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<h4 class="%s"%s>%s</h4>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -815,7 +815,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<p class="%s"%s>%s</p>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -841,7 +841,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<ol class="%s"%s>%s</ol>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -870,7 +870,7 @@ class BoostrapShortcodes {
     return sprintf( 
       '<li><a href="%s" class="%s"%s>%s</a></li>',
       esc_url( $atts['link'] ),
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -900,7 +900,7 @@ class BoostrapShortcodes {
 
     return sprintf( 
       '<span class="%s"%s>%s</span>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -930,7 +930,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<span class="%s"%s>%s</span>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -960,7 +960,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<span class="%s"%s>%s</span>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -1074,7 +1074,7 @@ class BoostrapShortcodes {
       
     return sprintf( 
       '<div class="%s"%s>%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -1126,7 +1126,7 @@ class BoostrapShortcodes {
 
     return sprintf(
       '<div class="%s"%s>%s<div class="panel-body">%s</div>%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       $heading,
       do_shortcode( $content ),
@@ -1264,7 +1264,7 @@ class BoostrapShortcodes {
     return sprintf( 
       '<div id="%s" class="%s"%s>%s</div>',
       sanitize_html_class($id),
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -1303,7 +1303,7 @@ class BoostrapShortcodes {
 
     return sprintf( 
       '<div class="%s" id="%s"%s>%s</div>',
-        esc_attr( $class ),
+        esc_attr( trim($class) ),
         esc_attr($id),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
@@ -1481,7 +1481,7 @@ class BoostrapShortcodes {
 
     return sprintf( 
       '<div class="%s"%s>%s%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content ),
       ( $atts['caption'] ) ? '<div class="carousel-caption">' . esc_html( $atts['caption'] ) . '</div>' : ''
@@ -1580,7 +1580,7 @@ function bs_popover( $atts, $content = null ) {
 
     return sprintf( 
       '<div class="%s"%s>%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -1658,7 +1658,7 @@ function bs_popover( $atts, $content = null ) {
       
     return sprintf( 
       '<div class="%s"%s>%s%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       ( $atts['title'] ) ? '<h1>' . esc_html( $atts['title'] ) . '</h1>' : '',
       do_shortcode( $content )
@@ -1713,7 +1713,7 @@ function bs_popover( $atts, $content = null ) {
       
     return sprintf( 
       '<p class="%s"%s>%s</p>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -1741,7 +1741,7 @@ function bs_popover( $atts, $content = null ) {
       
     return sprintf( 
       '<span class="%s"%s>%s</span>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -1801,7 +1801,7 @@ function bs_popover( $atts, $content = null ) {
 
     return sprintf(
       '<div class="%s"%s>%s</div>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       $this->scrape_dom_element($tag, $content, $embed_class, '', '')
     );
@@ -1893,7 +1893,7 @@ function bs_popover( $atts, $content = null ) {
 
     return sprintf( 
       '<span class="%s"%s>%s</span>',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
@@ -1991,7 +1991,7 @@ function bs_popover( $atts, $content = null ) {
 
     return sprintf(
       '</div><div class="%s"%s>%s',
-      esc_attr( $class ),
+      esc_attr( trim($class) ),
       ( $data_props ) ? ' ' . $data_props : '',
       do_shortcode( $content )
     );
