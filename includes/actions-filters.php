@@ -53,7 +53,7 @@ function add_bootstrap_button() {
 // Create a Media Button for the help file
 //add a button to the content editor, next to the media button
 //this button will show a popup that contains inline content
-if(in_array(basename($_SERVER['PHP_SELF']), array('post.php', 'page.php', 'page-new.php', 'post-new.php', 'widgets.php'))) {
+if(in_array(basename($_SERVER['PHP_SELF']), array('post.php', 'page.php', 'page-new.php', 'post-new.php', 'widgets.php', 'admin-ajax.php'))) {
     add_action('media_buttons', 'add_bootstrap_button', 11);
     add_action( 'media_buttons', 'bootstrap_shortcodes_help_styles' );
 }
