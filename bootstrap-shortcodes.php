@@ -1364,7 +1364,7 @@ class BoostrapShortcodes {
       esc_attr( $panel_class ),
       ( $data_props )   ? ' ' . $data_props : '',
       $a_class,
-      ( $parent )       ? ' data-parent="#' . $parent . '""' : '',
+      ( $parent )       ? ' data-parent="#' . $parent . '"' : '',
       $current_collapse,
       $atts['title'],
       esc_attr( $collapse_class ),
