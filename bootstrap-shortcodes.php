@@ -1,28 +1,12 @@
 <?php
 /*
 Plugin Name: Bootstrap 3 Shortcodes
-Plugin URI: http://wp-snippets.com/freebies/bootstrap-shortcodes or https://github.com/filipstefansson/bootstrap-shortcodes
-Description: The plugin adds a shortcodes for all Bootstrap elements.
+Plugin URI: https://github.com/MWDelaney/bootstrap-shortcodes
+Description: The plugin adds a shortcodes for all Bootstrap 3 elements.
 Version: 3.3.8
-Author: Filip Stefansson, Simon Yeldon, and Michael W. Delaney
+Author: Michael W. Delaney, Filip Stefansson, and Simon Yeldon
 Author URI: 
-License: GPL2
-*/
-
-/*  Copyright 2012  Filipstefansson  (email : filip.stefansson@gmail.com)
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as
-    published by the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+License: MIT
 */
 
 /* ============================================================= */
