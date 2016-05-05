@@ -18,28 +18,56 @@ require_once( dirname( __FILE__ ) . '/includes/actions-filters.php' );
 // Begin Shortcodes
 class BoostrapShortcodes {
 
+// ======================================================================== //		
+// Initialize shortcodes and conditionally include opt-in Bootstrap scripts
+// ======================================================================== //
   function __construct() {
-    add_action( 'init', array( $this, 'add_shortcodes' ) );
-    //add_action( 'wp_enqueue_scripts', array( $this, 'bootstrap_shortcodes_scripts' ), 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
-    add_action( 'the_post', array( $this, 'bootstrap_shortcodes_tooltip_script' ), 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
-    add_action( 'the_post', array( $this, 'bootstrap_shortcodes_popover_script' ), 9999 ); // Register this fxn and allow Wordpress to call it automatcally in the header
-  }
 
-  function bootstrap_shortcodes_tooltip_script()  { 
-      global $post;
-      if( has_shortcode( $post->post_content, 'tooltip')){
+		//Initialize shortcodes
+		add_action( 'init', array( $this, 'add_shortcodes' ) );
+		
+		//Conditionally include tooltip functionality (see function for conditionals)
+		add_action( 'the_post', array( $this, 'bootstrap_shortcodes_tooltip_script' ), 9999 );
+		
+		//Conditionally include popupver functionality (see function for conditionals)
+		add_action( 'the_post', array( $this, 'bootstrap_shortcodes_popover_script' ), 9999 );
+  }
+	// ======================================================================== //
+
+
+
+// ======================================================================== //		
+// Conditionally include tooltip initialization script.
+// See details for why this is necessary here: http://getbootstrap.com/javascript/#callout-tooltip-opt-in
+//
+//  Only includes script if content contains [tooltip] shortcode
+// ======================================================================== //
+
+    function bootstrap_shortcodes_tooltip_script()  { 
+        global $post;
+        if( has_shortcode( $post->post_content, 'tooltip')){
           // Bootstrap tooltip js
           wp_enqueue_script( 'bootstrap-shortcodes-tooltip', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-tooltip.js', array( 'jquery' ), false, true );
-      }
-  }
+        }
+    }
     
-  function bootstrap_shortcodes_popover_script()  { 
-      global $post;
-      if( has_shortcode( $post->post_content, 'popover')){
-          // Bootstrap popover js
-          wp_enqueue_script( 'bootstrap-shortcodes-popover', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-popover.js', array( 'jquery' ), false, true );
-      }
-  }
+// ======================================================================== //		
+
+
+    
+// ======================================================================== //		
+// Conditionally include tooltip initialization script.
+// See details for why this is necessary here: http://getbootstrap.com/javascript/#callout-popover-opt-in
+//
+//  Only includes script if content contains [tooltip] shortcode
+// ======================================================================== //
+    function bootstrap_shortcodes_popover_script()  { 
+        global $post;
+        if( has_shortcode( $post->post_content, 'popover')){
+            // Bootstrap popover js
+            wp_enqueue_script( 'bootstrap-shortcodes-popover', BS_SHORTCODES_URL . 'js/bootstrap-shortcodes-popover.js', array( 'jquery' ), false, true );
+        }
+    }
 
   /*--------------------------------------------------------------------------------------
     *
