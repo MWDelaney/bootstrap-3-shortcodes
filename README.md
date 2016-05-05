@@ -1,14 +1,12 @@
-Bootstrap Shortcodes for WordPress
+Bootstrap 3 Shortcodes for WordPress
 ===
 
-WordPress plugin that provides shortcodes for easier use of the Bootstrap styles and components in your content.
+WordPress plugin that provides shortcodes for easier use of the Bootstrap styles and components in your content. **Bootstrap 3 Shortcodes for WordPress** creates a simple, out of the way button just above the WordPress TinyMCE editor (next to the "Add Media" button) which pops up the plugin's documentation and shortcode examples for reference and handy "Insert Example" links to send the example shortcodes straight to the editor. There are no additional TinyMCE buttons to clutter up your screen, just great, easy to use shortcodes!
 
 ## Requirements
 This plugin won't do anything if you don't have WordPress theme built with the [Bootstrap](http://getbootstrap.com/) framework. **This plugin does not include the Bootstrap framework**.
 
-The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 4```.
-
-This plugin contains a ```composer.json``` file for those of you who manage your PHP dependencies with [Composer](https://getcomposer.org).
+The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 4.5``` and **requires PHP 5.3 or later**.
 
 ## Shortcode Reference
 
