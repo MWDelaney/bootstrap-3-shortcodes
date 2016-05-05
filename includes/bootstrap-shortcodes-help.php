@@ -103,8 +103,8 @@ $html = file_get_contents(dirname(__FILE__) . '/help/README.html');
 
                     <?php
                         // ======================================================================== //		
-                        // Put HTML content in the document
-                        // But first edit the document to make it more useful as popup documentation
+                        // Put HTML content in the page so we can pop it up in a modal
+                        // But first edit the HTML to make it more useful as popup documentation
                         //      * Alter links to open in new tabs
                         //      * Add Bootstrap styling to tables
                         //      * Add Bootstrap styling to lists (and replace ULs with DIVs, and LIs with As)
