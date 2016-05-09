@@ -21,8 +21,7 @@
 }
 /* END Fix for WPEngine's stylesheets */
 
-#bootstrap-shortcodes-help h1,
-#bootstrap-shortcodes-help h1+p {
+#bootstrap-shortcodes-help h1{
     display: none;
 }
 #bootstrap-shortcodes-help .nav-tabs {
