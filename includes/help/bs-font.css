@@ -10,24 +10,26 @@
 }
 
 .bs_bootstrap-logo {
-    padding: 0 3px;
+	padding: 0 3px;
 }
 .wp-media-buttons .add_media span.bs_bootstrap-logo:before,
 .mce-i-bootstrap-shortcodes:before {
-    font-family: 'bss4wp' !important;
+	font-family: 'bss4wp' !important;
 	content: "\e600" !important;
-    color: #6f5499 !important;
+	color: #6f5499 !important;
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
+	position: relative;
+	top: -1px;
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 #wp_fs_bootstrap-shortcodes {
-    font-size: 14px !important;
+	font-size: 14px !important;
 }
