@@ -5,7 +5,7 @@
 # main config
 PLUGINSLUG="bootstrap-3-shortcodes"
 CURRENTDIR=`pwd`
-MAINFILE="bootstrap-3-shortcodes.php" # this should be the name of your main php file in the wordpress plugin
+MAINFILE="bootstrap-shortcodes.php" # this should be the name of your main php file in the wordpress plugin
 
 # git config
 GITPATH="$CURRENTDIR/" # this file should be in the base of your git repository
