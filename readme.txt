@@ -3,7 +3,7 @@ Contributors: FoolsRun, filipstefansson, nodley
 Tags: bootstrap, shortcode, shortcodes, responsive, grid
 Requires at least: 3.8
 Tested up to: 4.6
-Stable tag: 3.3.9
+Stable tag: 3.3.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,7 +72,7 @@ No, we assume you are already working with a WordPress theme that includes the B
 
 == Changelog ==
 
-= 3.3.9 =
+= 3.3.10 =
 * Tested to work with WordPress 4.6
 * Fixed bug in [collapse] (thanks who all who reported it)
 * Note PHP 5.3 or greater requirement in documentation
