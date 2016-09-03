@@ -50,39 +50,38 @@
 <h1 id="usage">Usage</h1>
 <h3 id="css">CSS</h3>
 <h3 id="grid">Grid</h3>
-<pre><code>  [row]
+<pre><code>[row]
     [column md=&quot;6&quot;]
-      ...
+        ...
     [/column]
     [column md=&quot;6&quot;]
-      ...
+        ...
     [/column]
-  [/row]
+[/row]
 </code></pre><p>The container component is also supported in case your theme doesn&#39;t include a container.</p>
 <pre><code>[container]
-  [row]
-    [column md=&quot;6&quot;]
-      ...
-    [/column]
-    [column md=&quot;6&quot;]
-      ...
-    [/column]
-  [/row]
+    [row]
+        [column md=&quot;6&quot;]
+            ...
+        [/column]
+        [column md=&quot;6&quot;]
+            ...
+        [/column]
+    [/row]
 [/container]
-
-The container-fluid component is supported as a discrete shortcode for cases where you want to wrap a container.
-[container-fluid]
-      [container]
+</code></pre><p>The container-fluid component is supported as a discrete shortcode for cases where you want to wrap a container.</p>
+<pre><code>[container-fluid]
+    [container]
         [row]
-          [column md=&quot;6&quot;]
-            ...
-          [/column]
-          [column md=&quot;6&quot;]
-            ...
-          [/column]
+            [column md=&quot;6&quot;]
+                ...
+            [/column]
+            [column md=&quot;6&quot;]
+                ...
+            [/column]
         [/row]
-      [/container]
-    [/container-fluid]
+    [/container]
+[/container-fluid]
 </code></pre><h4 id="-container-parameters">[container] parameters</h4>
 <table>
 <thead>
@@ -436,7 +435,7 @@ The container-fluid component is supported as a discrete shortcode for cases whe
 <h3 id="tables">Tables</h3>
 <pre><code>[table-wrap bordered=&quot;true&quot; striped=&quot;true&quot;]
 
-    Standard HTML table code goes here.
+            Standard HTML table code goes here.
 
 [/table-wrap]
 </code></pre><h4 id="-table-wrap-parameters">[table-wrap] parameters</h4>
@@ -900,14 +899,14 @@ The container-fluid component is supported as a discrete shortcode for cases whe
 <h4 id="single-button-dropdowns">Single button dropdowns</h4>
 <pre><code>[button-group]
     [button link=&quot;#&quot; dropdown=&quot;true&quot; data=&quot;toggle,dropdown&quot;] ... [caret][/button]
-    [dropdown]
-        [dropdown-header] ... [/dropdown-header]
-        [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
-        [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
-        [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
-        [divider]
-        [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
-    [/dropdown]
+        [dropdown]
+            [dropdown-header] ... [/dropdown-header]
+            [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
+            [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
+            [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
+            [divider]
+            [dropdown-item link=&quot;#&quot;] ... [/dropdown-item]
+        [/dropdown]
 [/button-group]
 </code></pre><h4 id="split-button-dropdowns">Split button dropdowns</h4>
 <pre><code>[button-group]
@@ -1609,12 +1608,12 @@ The container-fluid component is supported as a discrete shortcode for cases whe
 <hr>
 <h3 id="media-objects">Media Objects</h3>
 <pre><code>[media]
-  [media-object media=&quot;left&quot;]
-    ...
-  [/media-object]
-  [media-body title=&quot;Testing&quot;]
-    ...
-  [/media-body]
+    [media-object media=&quot;left&quot;]
+        ...
+    [/media-object]
+    [media-body title=&quot;Testing&quot;]
+        ...
+    [/media-body]
 [/media]
 </code></pre><h4 id="-media-parameters">[media] parameters</h4>
 <table>
@@ -1727,42 +1726,42 @@ The container-fluid component is supported as a discrete shortcode for cases whe
 <h3 id="list-groups">List Groups</h3>
 <h4 id="basic-example">Basic Example</h4>
 <pre><code>[list-group]
-  [list-group-item]
-    ...
-  [/list-group-item]
-  [list-group-item]
-    ...
-  [/list-group-item]
-  [list-group-item]
-    ...
-  [/list-group-item]
+    [list-group-item]
+        ...
+    [/list-group-item]
+    [list-group-item]
+        ...
+    [/list-group-item]
+    [list-group-item]
+        ...
+    [/list-group-item]
 [/list-group]
 </code></pre><h4 id="linked-items">Linked Items</h4>
 <pre><code>[list-group linked=&quot;true&quot;]
-  [list-group-item link=&quot;#&quot; active=&quot;true&quot;]
-    ...
-  [/list-group-item]
-  [list-group-item link=&quot;#&quot;]
-    ...
-  [/list-group-item]
-  [list-group-item link=&quot;#&quot;]
-    ...
-  [/list-group-item]
+    [list-group-item link=&quot;#&quot; active=&quot;true&quot;]
+        ...
+    [/list-group-item]
+    [list-group-item link=&quot;#&quot;]
+        ...
+    [/list-group-item]
+    [list-group-item link=&quot;#&quot;]
+        ...
+    [/list-group-item]
 [/list-group]
 </code></pre><h4 id="custom-content">Custom Content</h4>
 <pre><code>[list-group linked=&quot;true&quot;]
-  [list-group-item link=&quot;#&quot; active=&quot;true&quot;]
-    [list-group-item-heading]...[/list-group-item-heading]
-    [list-group-item-text]...[/list-group-item-text]
-  [/list-group-item]
-  [list-group-item link=&quot;#&quot;]
-    [list-group-item-heading]...[/list-group-item-heading]
-    [list-group-item-text]...[/list-group-item-text]
-  [/list-group-item]
-  [list-group-item link=&quot;#&quot;]
-    [list-group-item-heading]...[/list-group-item-heading]
-    [list-group-item-text]...[/list-group-item-text]
-  [/list-group-item]
+    [list-group-item link=&quot;#&quot; active=&quot;true&quot;]
+        [list-group-item-heading]...[/list-group-item-heading]
+        [list-group-item-text]...[/list-group-item-text]
+    [/list-group-item]
+    [list-group-item link=&quot;#&quot;]
+        [list-group-item-heading]...[/list-group-item-heading]
+        [list-group-item-text]...[/list-group-item-text]
+    [/list-group-item]
+    [list-group-item link=&quot;#&quot;]
+        [list-group-item-heading]...[/list-group-item-heading]
+        [list-group-item-text]...[/list-group-item-text]
+    [/list-group-item]
 [/list-group]
 </code></pre><h4 id="-list-group-parameters">[list-group] parameters</h4>
 <table>
@@ -2015,15 +2014,15 @@ The container-fluid component is supported as a discrete shortcode for cases whe
 <h3 id="javascript">Javascript</h3>
 <h3 id="tabs">Tabs</h3>
 <pre><code>[tabs type=&quot;tabs&quot;]
-  [tab title=&quot;Home&quot; active=&quot;true&quot;]
-    ...
-  [/tab]
-  [tab title=&quot;Profile&quot;]
-    ...
-  [/tab]
-  [tab title=&quot;Messages&quot;]
-    ...
-  [/tab]
+    [tab title=&quot;Home&quot; active=&quot;true&quot;]
+        ...
+    [/tab]
+    [tab title=&quot;Profile&quot;]
+        ...
+    [/tab]
+    [tab title=&quot;Messages&quot;]
+        ...
+    [/tab]
 [/tabs]
 </code></pre><h4 id="-tabs-parameters">[tabs] parameters</h4>
 <table>
@@ -2212,20 +2211,20 @@ The container-fluid component is supported as a discrete shortcode for cases whe
 <hr>
 <h3 id="collapse">Collapse</h3>
 <h4 id="single-collapse">Single Collapse</h4>
-<pre><code>  [collapse title=&quot;Collapse 1&quot; active=&quot;true&quot;]
+<pre><code>[collapse title=&quot;Collapse 1&quot; active=&quot;true&quot;]
     ...
-  [/collapse]
+[/collapse]
 </code></pre><h4 id="set-of-collapsibles">Set of Collapsibles</h4>
 <pre><code>[collapsibles]
-  [collapse title=&quot;Collapse 1&quot; active=&quot;true&quot;]
-    ...
-  [/collapse]
-  [collapse title=&quot;Collapse 2&quot;]
-    ...
-  [/collapse]
-  [collapse title=&quot;Collapse 3&quot;]
-    ...
-  [/collapse]
+    [collapse title=&quot;Collapse 1&quot; active=&quot;true&quot;]
+        ...
+    [/collapse]
+    [collapse title=&quot;Collapse 2&quot;]
+        ...
+    [/collapse]
+    [collapse title=&quot;Collapse 3&quot;]
+        ...
+    [/collapse]
 [/collapsibles]
 </code></pre><h4 id="-collapsibles-parameters">[collapsibles] parameters</h4>
 <table>
