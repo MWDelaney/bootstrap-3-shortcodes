@@ -1,5 +1,5 @@
 {
-  "name": "filipstefansson/bootstrap-3-shortcodes",
+  "name": "mwdelaney/bootstrap-3-shortcodes",
   "description": "WordPress shortcodes for easier use of Bootstrap elements in your content.",
   "keywords": [
     "bootstrap",
@@ -7,7 +7,7 @@
     "wordpress",
     "plugin"
   ],
-  "homepage": "https://github.com/filipstefansson/bootstrap-3-shortcodes",
+  "homepage": "https://github.com/mwdelaney/bootstrap-3-shortcodes",
   "license": "GPL2",
   "authors": [
     {
