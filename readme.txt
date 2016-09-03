@@ -2,8 +2,8 @@
 Contributors: FoolsRun, filipstefansson, nodley
 Tags: bootstrap, shortcode, shortcodes, responsive, grid
 Requires at least: 3.8
-Tested up to: 4.5
-Stable tag: 3.3.8
+Tested up to: 4.6
+Stable tag: 3.3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,8 +22,6 @@ For questions, support, or to contribute to this plugin, check out [our GitHub p
 
 ####Updated for Bootstrap 3.3.x
 Tested and working in the latest version of Bootstrap!
-
-If you like this plugin, check out our companion plugin for Font Awesome, [Font Awesome Shortcodes](http://www.wordpress.org/plugins/font-awesome-shortcodes/)
 
 ###Supported Shortcodes
 ####CSS
@@ -74,10 +72,17 @@ No, we assume you are already working with a WordPress theme that includes the B
 
 == Changelog ==
 
+= 3.3.9 =
+* Tested to work with WordPress 4.6
+* Fixed bug in [collapse] (thanks who all who reported it)
+* Note PHP 5.3 or greater requirement in documentation
+* Update documentation for clarity
+* Fix issue with xclass in active tabs (thanks who all who reported it!)
+
 = 3.3.8 =
 * Tested to work with WordPress 4.5
 * Set a default "active" slide in carousel if none is specified
-* Add shortcode for responsive embeds 
+* Add shortcode for responsive embeds
 * Correct some non-latin characters displaying incorrectly
 * Add filter to hook into tabs for things like tab history (thanks, Jason Maners!)
 
@@ -96,7 +101,7 @@ No, we assume you are already working with a WordPress theme that includes the B
 
 = 3.3.4 =
 * Restore Bootstrap 3.2 backwards compatibility for [media-object] shortcode, updated documentation to use Bootstrap 3.3 example, but offer 3.2 options.
-* Add "collapsed" class to non-active [collapse] elements (thanks, Artem!) 
+* Add "collapsed" class to non-active [collapse] elements (thanks, Artem!)
 
 = 3.3 =
 * Tested to work with Bootstrap 3.3!
