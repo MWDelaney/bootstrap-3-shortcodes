@@ -3,7 +3,7 @@ Bootstrap 3 Shortcodes for WordPress
 
 ![WordPress Rating](https://img.shields.io/wordpress/plugin/r/bootstrap-3-shortcodes.svg) ![WordPress Downloads](https://img.shields.io/wordpress/plugin/dt/bootstrap-3-shortcodes.svg)
 
-WordPress plugin that provides shortcodes for easier use of the Bootstrap styles and components in your content. 
+WordPress plugin that provides shortcodes for easier use of the Bootstrap styles and components in your content.
 
 **Bootstrap 3 Shortcodes for WordPress** creates a simple, out of the way button just above the WordPress TinyMCE editor (next to the "Add Media" button) which pops up the plugin's documentation and shortcode examples for reference and handy "Insert Example" links to send the example shortcodes straight to the editor. There are no additional TinyMCE buttons to clutter up your screen, just great, easy to use shortcodes!
 
@@ -67,8 +67,8 @@ The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 4.5``` and 
 	      ...
 	    [/column]
 	  [/row]
-    
-The container component is also supported in case your theme doesn't incude a container.
+
+The container component is also supported in case your theme doesn't include a container.
 
 	[container]
 	  [row]
@@ -81,10 +81,30 @@ The container component is also supported in case your theme doesn't incude a co
 	  [/row]
 	[/container]
 
+	The container-fluid component is supported as a discrete shortcode for cases where you want to wrap a container.
+    [container-fluid]
+		  [container]
+		    [row]
+		      [column md="6"]
+		        ...
+		      [/column]
+		      [column md="6"]
+		        ...
+		      [/column]
+		    [/row]
+		  [/container]
+		[/container-fluid]
+
 #### [container] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 fluid | Is the container fluid? (see Bootstrap documentation for details) | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [container-fluid] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
@@ -164,9 +184,9 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 
 ### Tables
 	[table-wrap bordered="true" striped="true"]
-        
+
         Standard HTML table code goes here.
-        
+
     [/table-wrap]
 
 #### [table-wrap] parameters
@@ -277,7 +297,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
         [button link="#"] ... [/button]
         [button link="#"] ... [/button]
 	[/button-group]
-    
+
 #### Button toolbar
     [button-toolbar]
     	[button-group]
@@ -784,7 +804,7 @@ html | Insert HTML into the tooltip | optional | true, false | false
 	  [collapse title="Collapse 1" active="true"]
 	    ...
 	  [/collapse]
-      
+
 #### Set of Collapsibles
 	[collapsibles]
 	  [collapse title="Collapse 1" active="true"]

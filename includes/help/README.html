@@ -1,6 +1,6 @@
 <h1 id="bootstrap-3-shortcodes-for-wordpress">Bootstrap 3 Shortcodes for WordPress</h1>
 <p><img src="https://img.shields.io/wordpress/plugin/r/bootstrap-3-shortcodes.svg" alt="WordPress Rating"> <img src="https://img.shields.io/wordpress/plugin/dt/bootstrap-3-shortcodes.svg" alt="WordPress Downloads"></p>
-<p>WordPress plugin that provides shortcodes for easier use of the Bootstrap styles and components in your content. </p>
+<p>WordPress plugin that provides shortcodes for easier use of the Bootstrap styles and components in your content.</p>
 <p><strong>Bootstrap 3 Shortcodes for WordPress</strong> creates a simple, out of the way button just above the WordPress TinyMCE editor (next to the &quot;Add Media&quot; button) which pops up the plugin&#39;s documentation and shortcode examples for reference and handy &quot;Insert Example&quot; links to send the example shortcodes straight to the editor. There are no additional TinyMCE buttons to clutter up your screen, just great, easy to use shortcodes!</p>
 <h2 id="requirements">Requirements</h2>
 <p><img src="https://img.shields.io/wordpress/v/bootstrap-3-shortcodes.svg" alt="Tested in WordPress"> <img src="https://img.shields.io/badge/PHP-5.3%2B-blue.svg" alt="PHP 5.3+"> <img src="https://img.shields.io/badge/Bootstrap-3.3.x-6f5499.svg" alt="Bootstrap"></p>
@@ -58,7 +58,7 @@
       ...
     [/column]
   [/row]
-</code></pre><p>The container component is also supported in case your theme doesn&#39;t incude a container.</p>
+</code></pre><p>The container component is also supported in case your theme doesn&#39;t include a container.</p>
 <pre><code>[container]
   [row]
     [column md=&quot;6&quot;]
@@ -69,6 +69,20 @@
     [/column]
   [/row]
 [/container]
+
+The container-fluid component is supported as a discrete shortcode for cases where you want to wrap a container.
+[container-fluid]
+      [container]
+        [row]
+          [column md=&quot;6&quot;]
+            ...
+          [/column]
+          [column md=&quot;6&quot;]
+            ...
+          [/column]
+        [/row]
+      [/container]
+    [/container-fluid]
 </code></pre><h4 id="-container-parameters">[container] parameters</h4>
 <table>
 <thead>
@@ -88,6 +102,34 @@
 <td>true, false</td>
 <td>false</td>
 </tr>
+<tr>
+<td>xclass</td>
+<td>Any extra classes you want to add</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-container-fluid-parameters">[container-fluid] parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>xclass</td>
 <td>Any extra classes you want to add</td>
