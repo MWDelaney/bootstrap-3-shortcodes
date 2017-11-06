@@ -1246,7 +1246,7 @@ License: MIT
 
 				$class  ='';
 				$class .= ( !empty($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? 'active' : '';
-				$class .= ( !empty($tab["tab"]["xclass"]) ) ? ' ' . sanitize_html_class($tab["tab"]["xclass"]) : '';
+				$class .= ( !empty($tab["tab"]["xclass"]) ) ? ' ' . esc_attr($tab["tab"]["xclass"]) : '';
 
 				if(!isset($tab["tab"]["link"])) {
 					$tab_id = 'custom-tab-' . $GLOBALS['tabs_count'] . '-' . md5( $tab["tab"]["title"] );
