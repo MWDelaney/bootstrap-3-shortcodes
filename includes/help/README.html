@@ -21,9 +21,11 @@
 </ul>
 <h3 id="components">Components</h3>
 <ul>
+<li><a href="#callouts">Callouts</a></li>
 <li><a href="#icons">Icons</a></li>
 <li><a href="#button-groups">Button Groups</a></li>
 <li><a href="#button-dropdowns">Button Dropdowns</a></li>
+<li><a href="#cards">Cards</a></li>
 <li><a href="#navs">Navs</a></li>
 <li><a href="#breadcrumbs">Breadcrumbs</a></li>
 <li><a href="#labels">Labels</a></li>
@@ -746,6 +748,66 @@
 <p><a href="http://getbootstrap.com/css/#responsive-utilities">Bootstrap responsive utilities documentation</a></p>
 <hr>
 <h3 id="components">Components</h3>
+<h3 id="callouts">Callouts</h3>
+<pre><code>[callout type=&quot;default&quot; size=&quot;lg&quot;] ... [/callout]
+</code></pre><h4 id="-callout-parameters">[callout] parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>The type of the callout</td>
+<td>optional</td>
+<td>default, primary, success, info, warning, danger</td>
+<td>default</td>
+</tr>
+<tr>
+<td>size</td>
+<td>Modifies the amount of left margin before the callout</td>
+<td>optional</td>
+<td>xl, lg, md, sm, xs</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>transparent background</td>
+<td>Whether background is 30% transparent</td>
+<td>optional</td>
+<td>true, false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>Whether a disabled effect applies</td>
+<td>optional</td>
+<td>true, false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>xclass</td>
+<td>Any extra classes you want to add</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://www.blog.derewonko.com/technology/web/css/twitter-bootstrap-callout-css-styles/">Bootstrap callout integration</a></p>
+<hr>
 <h3 id="icons">Icons</h3>
 <pre><code>[icon type=&quot;arrow-right&quot;]
 </code></pre><h4 id="-icon-parameters">[icon] parameters</h4>
@@ -1083,6 +1145,73 @@
 </tbody>
 </table>
 <p><a href="http://getbootstrap.com/components/#btn-dropdowns">Bootstrap button dropdowns documentation</a></p>
+<hr>
+<h3 id="cards">Cards</h3>
+<p>Cards are like panels but live within their own container. By default, they stack like bricks, in columns, exactly like on Pinterest. More options coming soon.</p>
+<p>Every compoment of a card is optional, however you should not have a footer without a block because its position would not be at the bottom.</p>
+<pre><code>
+[cards]
+  [card]
+    [card-header]
+        ...
+    [/card-header]
+    [card-block]
+        ...
+    [/card-block]
+    [card-footer]
+        ...
+    [/card-footer]
+  [/card]
+[/cards]
+</code></pre><h4 id="-cards-parameters">[card] and [card-block] parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>The type of the card; note that card-block can have their own type, leading to bi-colored cards.</td>
+<td>optional</td>
+<td>default, primary, success, info, warning, danger, link</td>
+<td>default</td>
+</tr>
+<tr>
+<td>xclass</td>
+<td>Any extra classes you want to add</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://v4-alpha.getbootstrap.com/components/card/">Bootstrap 4 Cards documentation</a></p>
+<p>Columns per set of cards is currently dynamic: @screen&lt;576px = 1; @screen&gt;576px = 2; If you want more columns for bigger screens, consider adding this example CSS snippet:</p>
+<pre><code>
+@media (min-width:992px){
+  .card-columns{
+      -webkit-column-count:3;
+      -moz-column-count:3;
+      column-count:3;
+      -webkit-column-gap:1.25rem;
+      -moz-column-gap:1.25rem;
+      column-gap:1.25rem
+  }
+}
+</code></pre>
 <hr>
 <h3 id="navs">Navs</h3>
 <pre><code>[nav type=&quot;pills&quot;]
@@ -1913,7 +2042,18 @@
 <p><a href="http://getbootstrap.com/components/#list-group">Bootstrap list groups documentation</a></p>
 <hr>
 <h3 id="panels">Panels</h3>
-<pre><code>[panel type=&quot;info&quot; heading=&quot;Panel Title&quot; footer=&quot;Footer text&quot;] ... [/panel]
+<pre><code>
+[panel]
+  [panel-header]
+      ...
+  [/panel-header]
+  [panel-body]
+      ...
+  [/panel-body]
+  [panel-footer]
+      ...
+  [/panel-footer]
+[/row]
 </code></pre><h4 id="-panel-parameters">[panel] parameters</h4>
 <table>
 <thead>
@@ -1932,27 +2072,6 @@
 <td>optional</td>
 <td>default, primary, success, info, warning, danger, link</td>
 <td>default</td>
-</tr>
-<tr>
-<td>heading</td>
-<td>The panel heading</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Whether the panel heading should have a title tag around it</td>
-<td>optional</td>
-<td>true, false</td>
-<td>false</td>
-</tr>
-<tr>
-<td>footer</td>
-<td>The panel footer text if desired</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
 </tr>
 <tr>
 <td>xclass</td>

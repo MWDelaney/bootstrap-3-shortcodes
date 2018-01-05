@@ -1,0 +1,97 @@
+/* Bootstrap callout */ 
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 4px;
+  margin-left: 50px;
+}
+.bs-callout-xl {
+  margin-left: 0px;
+}
+.bs-callout-lg {
+  margin-left: 50px;
+}
+.bs-callout-md {
+  margin-left: 100px;
+}
+.bs-callout-sm {
+  margin-left: 150px;
+}
+.bs-callout-xs {
+  margin-left: 200px;
+}
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.bs-callout code {
+  border-radius: 4px;
+}
+.bs-callout+.bs-callout {
+  margin-top: -5px;
+}
+.bs-callout-default {
+  border-left-color: #777;
+  background-color: #f7f7f9;
+}
+.bs-callout-default h4 {
+  color: #777;
+}
+.bs-callout-primary {
+  border-left-color: #428bca;
+}
+.bs-callout-primary h4 {
+  color: #428bca;
+}
+.bs-callout-success {
+  border-left-color: #5cb85c;
+  background-color: #efffe8;
+}
+.bs-callout-success h4 {
+  color: #5cb85c;
+}
+.bs-callout-danger {
+  border-left-color: #d9534f;
+  background-color: #fcf2f2;
+}
+.bs-callout-danger h4 {
+  color: #d9534f;
+}
+.bs-callout-warning {
+  border-left-color: #f0ad4e;
+  background-color: #fefbed;
+}
+.bs-callout-warning h4 {
+  color: #f0ad4e;
+}
+.bs-callout-info {
+  border-left-color: #5bc0de;
+  background-color: #f0f7fd;
+}
+.bs-callout-info h4 {
+  color: #5bc0de;
+}
+/* bg transparency and disabled effects for Bootstrap callout */ 
+.bs-callout-default.transparent {
+  background-color: rgb(247, 247, 249, 0.7); /*#f7f7f9*/
+}
+.bs-callout-success.transparent {
+  background-color: rgb(239, 255, 232, 0.7); /*#efffe8*/
+}
+.bs-callout-warning.transparent {
+  background-color: rgb(254, 251, 237, 0.7); /*#fefbed*/
+}
+.bs-callout-danger.transparent {
+  background-color: rgb(252, 242, 242, 0.7); /*#fcf2f2*/
+}
+.bs-callout-info.transparent {
+  background-color: rgb(240, 247, 253, 0.7); /*#f0f7fd*/
+}
+.bs-callout.disabled {
+  opacity: 0.4;
+}
