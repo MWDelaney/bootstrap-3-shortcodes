@@ -1,0 +1,280 @@
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+.card{
+  position:relative;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -webkit-flex-direction:column;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  background-color:#fff;
+  border:1px solid rgba(0,0,0,.125);
+  border-radius:.5rem
+}
+.card-block{
+  -webkit-box-flex:1;
+  -webkit-flex:1 1 auto;
+  -ms-flex:1 1 auto;
+  flex:1 1 auto;
+  padding:1.25rem
+}
+.card-title{
+  margin-bottom:.75rem
+}
+.card-subtitle{
+  margin-top:-.375rem;
+  margin-bottom:0
+}
+.card-text:last-child{
+  margin-bottom:0
+}
+.card-link:hover{
+  text-decoration:none
+}
+.card-link+.card-link{
+  margin-left:1.25rem
+}
+.card>.list-group:first-child .list-group-item:first-child{
+  border-top-right-radius:.5rem;
+  border-top-left-radius:.5rem
+}
+.card>.list-group:last-child .list-group-item:last-child{
+  border-bottom-right-radius:.5rem;
+  border-bottom-left-radius:.5rem
+}
+.card-header{
+  padding:.75rem 1.25rem;
+  margin-bottom:0;
+  background-color:#f7f7f9;
+  border-bottom:1px solid rgba(0,0,0,.125)
+}
+.card-header:first-child{
+  border-radius:calc(.5rem - 1px) calc(.5rem - 1px) 0 0
+}
+.card-footer{
+  padding:.75rem 1.25rem;
+  background-color:#f7f7f9;
+  border-top:1px solid rgba(0,0,0,.125)
+}
+.card-footer:last-child{
+  border-radius:0 0 calc(.5rem - 1px) calc(.5rem - 1px)
+}
+.card-header-tabs{
+  margin-right:-.625rem;
+  margin-bottom:-.75rem;
+  margin-left:-.625rem;
+  border-bottom:0
+}
+.card-header-pills{
+  margin-right:-.625rem;
+  margin-left:-.625rem
+}
+.card-primary{
+  background-color:#0275d8;
+  border-color:#0275d8
+}
+.card-primary .card-footer,.card-primary .card-header{
+  background-color:transparent
+}
+.card-success{
+  background-color:#5cb85c;
+  border-color:#5cb85c
+}
+.card-success .card-footer,.card-success .card-header{
+  background-color:transparent
+}
+.card-info{
+  background-color:#5bc0de;
+  border-color:#5bc0de
+}
+.card-info .card-footer,.card-info .card-header{
+  background-color:transparent
+}
+.card-warning{
+  background-color:#f0ad4e;
+  border-color:#f0ad4e
+}
+.card-warning .card-footer,.card-warning .card-header{
+  background-color:transparent
+}
+.card-danger{
+  background-color:#d9534f;
+  border-color:#d9534f
+}
+.card-danger .card-footer,.card-danger .card-header{
+  background-color:transparent
+}
+.card-outline-primary{
+  background-color:transparent;
+  border-color:#0275d8
+}
+.card-outline-secondary{
+  background-color:transparent;
+  border-color:#ccc
+}
+.card-outline-info{
+  background-color:transparent;
+  border-color:#5bc0de
+}
+.card-outline-success{
+  background-color:transparent;
+  border-color:#5cb85c
+}
+.card-outline-warning{
+  background-color:transparent;
+  border-color:#f0ad4e
+}
+.card-outline-danger{
+  background-color:transparent;
+  border-color:#d9534f
+}
+.card-inverse{
+  color:rgba(255,255,255,.65)
+}
+.card-inverse .card-footer,.card-inverse .card-header{
+  background-color:transparent;
+  border-color:rgba(255,255,255,.2)
+}
+.card-inverse .card-blockquote,.card-inverse .card-footer,.card-inverse .card-header,.card-inverse .card-title{
+  color:#fff
+}
+.card-inverse .card-blockquote .blockquote-footer,.card-inverse .card-link,.card-inverse .card-subtitle,.card-inverse .card-text{
+  color:rgba(255,255,255,.65)
+}
+.card-inverse .card-link:focus,.card-inverse .card-link:hover{
+  color:#fff
+}
+.card-blockquote{
+  padding:0;
+  margin-bottom:0;
+  border-left:0
+}
+.card-img{
+  border-radius:calc(.5rem - 1px)
+}
+.card-img-overlay{
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  padding:1.25rem
+}
+.card-img-top{
+  border-top-right-radius:calc(.5rem - 1px);
+  border-top-left-radius:calc(.5rem - 1px)
+}
+.card-img-bottom{
+  border-bottom-right-radius:calc(.5rem - 1px);
+  border-bottom-left-radius:calc(.5rem - 1px)
+}
+@media (min-width:576px){
+  .card-deck{
+      display:-webkit-box;
+      display:-webkit-flex;
+      display:-ms-flexbox;
+      display:flex;
+      -webkit-flex-flow:row wrap;
+      -ms-flex-flow:row wrap;
+      flex-flow:row wrap
+  }
+  .card-deck .card{
+      display:-webkit-box;
+      display:-webkit-flex;
+      display:-ms-flexbox;
+      display:flex;
+      -webkit-box-flex:1;
+      -webkit-flex:1 0 0%;
+      -ms-flex:1 0 0%;
+      flex:1 0 0%;
+      -webkit-box-orient:vertical;
+      -webkit-box-direction:normal;
+      -webkit-flex-direction:column;
+      -ms-flex-direction:column;
+      flex-direction:column
+  }
+  .card-deck .card:not(:first-child){
+      margin-left:15px
+  }
+  .card-deck .card:not(:last-child){
+      margin-right:15px
+  }
+}
+@media (min-width:576px){
+  .card-group{
+      display:-webkit-box;
+      display:-webkit-flex;
+      display:-ms-flexbox;
+      display:flex;
+      -webkit-flex-flow:row wrap;
+      -ms-flex-flow:row wrap;
+      flex-flow:row wrap
+  }
+  .card-group .card{
+      -webkit-box-flex:1;
+      -webkit-flex:1 0 0%;
+      -ms-flex:1 0 0%;
+      flex:1 0 0%
+  }
+  .card-group .card+.card{
+      margin-left:0;
+      border-left:0
+  }
+  .card-group .card:first-child{
+      border-bottom-right-radius:0;
+      border-top-right-radius:0
+  }
+  .card-group .card:first-child .card-img-top{
+      border-top-right-radius:0
+  }
+  .card-group .card:first-child .card-img-bottom{
+      border-bottom-right-radius:0
+  }
+  .card-group .card:last-child{
+      border-bottom-left-radius:0;
+      border-top-left-radius:0
+  }
+  .card-group .card:last-child .card-img-top{
+      border-top-left-radius:0
+  }
+  .card-group .card:last-child .card-img-bottom{
+      border-bottom-left-radius:0
+  }
+  .card-group .card:not(:first-child):not(:last-child){
+      border-radius:0
+  }
+  .card-group .card:not(:first-child):not(:last-child) .card-img-bottom,.card-group .card:not(:first-child):not(:last-child) .card-img-top{
+      border-radius:0
+  }
+}
+.card-columns{
+  -webkit-column-gap:1rem;
+  -moz-column-gap:1rem;
+  column-gap:1rem
+}
+.card-columns .card{
+  display:inline-block;
+  width:100%;
+  margin-bottom:1rem
+}
+
+/* WordPress adaptation:
+ * cannot have more than 2 cards width because left content is always between 616-750px
+ */
+@media (min-width:576px){
+  .card-columns{
+      -webkit-column-count:2;
+      -moz-column-count:2;
+      column-count:2;
+      -webkit-column-gap:1.25rem;
+      -moz-column-gap:1.25rem;
+      column-gap:1.25rem
+  }
+}
+
