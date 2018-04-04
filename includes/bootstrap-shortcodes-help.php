@@ -127,7 +127,7 @@ $html = file_get_contents(dirname(__FILE__) . '/help/README.html');
                         $html = str_replace('<hr>', '<hr><a class="btn btn-link btn-default pull-right" href="#bs-top"><i class="text-muted glyphicon glyphicon-arrow-up"></i></a>', $html);
                         $html = str_replace('<h3 id="', '<h3 id="bs-', $html);
                         $html = str_replace('</pre>', '</pre><p><button data-dismiss="modal" class="btn btn-primary btn-sm insert-code">Insert Example <i class="glyphicon glyphicon-share-alt"></i></button></p>', $html);
-                        
+                        $html = preg_replace("/<img[^>]+\>/i", "", $html);
                         //Insert the HTML now that we're done editing it
                         echo $html;
                         

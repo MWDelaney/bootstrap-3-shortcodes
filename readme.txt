@@ -3,7 +3,7 @@ Contributors: FoolsRun, filipstefansson, nodley
 Tags: bootstrap, shortcode, shortcodes, responsive, grid
 Requires at least: 3.8
 Tested up to: 4.9.4
-Stable tag: 3.3.11
+Stable tag: 3.3.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,12 @@ Tested and working in the latest version of Bootstrap!
 No, we assume you are already working with a WordPress theme that includes the Bootstrap libraries.
 
 == Changelog ==
+
+= 3.3.12 =
+* Remove images from help documentation which caused slowdown for some users
+
+= 3.3.11 =
+* Tested to work with WordPress 4.9+
 
 = 3.3.10 =
 * Tested to work with WordPress 4.6

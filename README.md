@@ -12,7 +12,7 @@ WordPress plugin that provides shortcodes for easier use of the Bootstrap styles
 
 This plugin won't do anything if you don't have WordPress theme built with the [Bootstrap](http://getbootstrap.com/) framework. **This plugin does not include the Bootstrap framework**.
 
-The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 4.5``` and **requires PHP 5.3 or later**.
+The plugin is tested to work with ```Bootstrap 3``` and ```WordPress 4.9+``` and **requires PHP 5.3 or later**.
 
 ## Shortcode Reference
 
