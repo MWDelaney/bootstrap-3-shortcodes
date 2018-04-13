@@ -1,7 +1,7 @@
 Bootstrap 3 Shortcodes for WordPress
 ===
 
-![WordPress Rating](https://img.shields.io/wordpress/plugin/r/bootstrap-3-shortcodes.svg) ![WordPress Downloads](https://img.shields.io/wordpress/plugin/dt/bootstrap-3-shortcodes.svg)
+!!!![WordPress Rating](https://img.shields.io/wordpress/plugin/r/bootstrap-3-shortcodes.svg) ![WordPress Downloads](https://img.shields.io/wordpress/plugin/dt/bootstrap-3-shortcodes.svg)
 
 WordPress plugin that provides shortcodes for easier use of the Bootstrap styles and components in your content.
 
